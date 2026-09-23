@@ -239,60 +239,77 @@ details[open] summary svg {
   background-image: radial-gradient(circle, #cbd5e1 1.2px, transparent 1.2px);
 }
 
-/* Fluid Storytelling Micro-Animation Engine */
-/* Crucial: Visible by default so sections are NEVER blank or empty */
-.story-fade-in,
-.story-fade-left,
-.story-fade-right,
-.story-scale-up {
+/* ======================================================== */
+/* STORY MOTION & SCROLL-DRIVEN ANIMATION ENGINE            */
+/* ======================================================== */
+
+/* Safe default when JS is not active */
+[data-motion] {
   opacity: 1;
   transform: none;
-  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
-/* Optional progressive enhancement: animate when scrolled into view */
-.story-fade-in.is-hidden {
+/* When JavaScript initializes animations */
+.motion-js-ready [data-motion] {
   opacity: 0;
-  transform: translateY(20px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.story-fade-in.is-visible,
-.story-fade-in.visible {
+.motion-js-ready [data-motion="fade-up"],
+.motion-js-ready [data-motion]:not([data-motion="fade-left"]):not([data-motion="fade-right"]):not([data-motion="zoom-in"]) {
+  transform: translateY(42px);
+}
+
+.motion-js-ready [data-motion="fade-left"] {
+  transform: translateX(-48px);
+}
+
+.motion-js-ready [data-motion="fade-right"] {
+  transform: translateX(48px);
+}
+
+.motion-js-ready [data-motion="zoom-in"] {
+  transform: scale(0.92) translateY(24px);
+}
+
+/* Active Revealed State: definitive, conflict-free transition */
+.motion-js-ready [data-motion].motion-in {
   opacity: 1 !important;
-  transform: translateY(0) !important;
+  transform: translateY(0) translateX(0) scale(1) !important;
 }
 
-.story-fade-left.is-hidden {
-  opacity: 0;
-  transform: translateX(-24px);
+/* Stagger delay tokens */
+[data-delay="50"] { transition-delay: 50ms !important; }
+[data-delay="100"] { transition-delay: 100ms !important; }
+[data-delay="150"] { transition-delay: 150ms !important; }
+[data-delay="200"] { transition-delay: 200ms !important; }
+[data-delay="250"] { transition-delay: 250ms !important; }
+[data-delay="300"] { transition-delay: 300ms !important; }
+[data-delay="350"] { transition-delay: 350ms !important; }
+[data-delay="400"] { transition-delay: 400ms !important; }
+[data-delay="450"] { transition-delay: 450ms !important; }
+[data-delay="500"] { transition-delay: 500ms !important; }
+[data-delay="600"] { transition-delay: 600ms !important; }
+
+/* Interactive Hover Micro-Interactions */
+.motion-card-hover {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+.motion-card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 35px -10px rgba(15, 23, 42, 0.08), 0 0 1px 1px rgba(58, 70, 225, 0.1);
 }
 
-.story-fade-left.is-visible,
-.story-fade-left.visible {
-  opacity: 1 !important;
-  transform: translateX(0) !important;
+/* Continuous Pulse and Floating Animations */
+@keyframes radar-blip {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.4); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
 }
 
-.story-fade-right.is-hidden {
-  opacity: 0;
-  transform: translateX(24px);
-}
-
-.story-fade-right.is-visible,
-.story-fade-right.visible {
-  opacity: 1 !important;
-  transform: translateX(0) !important;
-}
-
-.story-scale-up.is-hidden {
-  opacity: 0;
-  transform: scale(0.97);
-}
-
-.story-scale-up.is-visible,
-.story-scale-up.visible {
-  opacity: 1 !important;
-  transform: scale(1) !important;
+.radar-blip-pulse {
+  animation: radar-blip 3s ease-out infinite;
 }
 
 /* Data Line System */
@@ -310,7 +327,7 @@ details[open] summary svg {
 }
 
 .radar-sweep-beam-light {
-  background: conic-gradient(from 0deg at 50% 50%, rgba(217, 119, 6, 0) 0deg, rgba(217, 119, 6, 0.2) 60deg, transparent 65deg);
+  background: conic-gradient(from 0deg at 50% 50%, rgba(217, 119, 6, 0) 0deg, rgba(217, 119, 6, 0.25) 60deg, transparent 65deg);
   animation: radar-spin 4s linear infinite;
 }
 

@@ -45,6 +45,39 @@ import {
   <div class="fixed top-0 right-0 w-[600px] h-[600px] bg-blue-100/50 blur-3xl rounded-full pointer-events-none -z-10" aria-hidden="true"></div>
   <div class="fixed bottom-0 left-0 w-[600px] h-[600px] bg-amber-100/40 blur-3xl rounded-full pointer-events-none -z-10" aria-hidden="true"></div>
 
+  <!-- FLOATING CHAPTER PROGRESS RAIL (DESKTOP) -->
+  <aside aria-label="Story Acts Navigation" class="hidden xl:flex fixed right-5 top-1/2 -translate-y-1/2 z-30 flex-col items-end gap-3 bg-white/90 backdrop-blur-md px-3 py-4 rounded-2xl border border-slate-200/90 shadow-md">
+    <div class="text-[9px] font-mono font-bold tracking-widest text-slate-400 mb-1 uppercase px-1">STORY ACTS</div>
+    <a href="#act-1" data-act-nav="act-1" class="act-nav-item group flex items-center gap-2 text-[11px] font-mono text-slate-500 hover:text-blue transition-colors">
+      <span class="act-label hidden group-hover:inline-block font-semibold bg-slate-900 text-white px-2 py-0.5 rounded text-[10px] shadow-sm">01 // Reality Check</span>
+      <span class="act-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300 group-hover:scale-125"></span>
+    </a>
+    <a href="#act-2" data-act-nav="act-2" class="act-nav-item group flex items-center gap-2 text-[11px] font-mono text-slate-500 hover:text-blue transition-colors">
+      <span class="act-label hidden group-hover:inline-block font-semibold bg-slate-900 text-white px-2 py-0.5 rounded text-[10px] shadow-sm">02 // Forensic Audit</span>
+      <span class="act-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300 group-hover:scale-125"></span>
+    </a>
+    <a href="#act-3" data-act-nav="act-3" class="act-nav-item group flex items-center gap-2 text-[11px] font-mono text-slate-500 hover:text-blue transition-colors">
+      <span class="act-label hidden group-hover:inline-block font-semibold bg-slate-900 text-white px-2 py-0.5 rounded text-[10px] shadow-sm">03 // 24-Hour Reel</span>
+      <span class="act-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300 group-hover:scale-125"></span>
+    </a>
+    <a href="#act-4" data-act-nav="act-4" class="act-nav-item group flex items-center gap-2 text-[11px] font-mono text-slate-500 hover:text-blue transition-colors">
+      <span class="act-label hidden group-hover:inline-block font-semibold bg-slate-900 text-white px-2 py-0.5 rounded text-[10px] shadow-sm">04 // Master Overview</span>
+      <span class="act-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300 group-hover:scale-125"></span>
+    </a>
+    <a href="#act-5" data-act-nav="act-5" class="act-nav-item group flex items-center gap-2 text-[11px] font-mono text-slate-500 hover:text-blue transition-colors">
+      <span class="act-label hidden group-hover:inline-block font-semibold bg-slate-900 text-white px-2 py-0.5 rounded text-[10px] shadow-sm">05 // Cockpit Channels</span>
+      <span class="act-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300 group-hover:scale-125"></span>
+    </a>
+    <a href="#act-6" data-act-nav="act-6" class="act-nav-item group flex items-center gap-2 text-[11px] font-mono text-slate-500 hover:text-blue transition-colors">
+      <span class="act-label hidden group-hover:inline-block font-semibold bg-slate-900 text-white px-2 py-0.5 rounded text-[10px] shadow-sm">06 // Profit Loss Radar</span>
+      <span class="act-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300 group-hover:scale-125"></span>
+    </a>
+    <a href="#act-7" data-act-nav="act-7" class="act-nav-item group flex items-center gap-2 text-[11px] font-mono text-slate-500 hover:text-blue transition-colors">
+      <span class="act-label hidden group-hover:inline-block font-semibold bg-slate-900 text-white px-2 py-0.5 rounded text-[10px] shadow-sm">07 // Take Command</span>
+      <span class="act-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300 group-hover:scale-125"></span>
+    </a>
+  </aside>
+
   <!-- MAIN SCROLLING STORYLINE -->
   <div class="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 pb-20 space-y-28 sm:space-y-36">
 
@@ -53,7 +86,7 @@ import {
     <!-- ========================================== -->
     <section id="act-1" class="relative pt-6 sm:pt-10">
       <!-- Telemetry Meta Bar -->
-      <div class="story-fade-in flex items-center justify-between border-b border-slate-200/80 pb-3 mb-10 text-[11px] font-mono tracking-widest text-slate-500">
+      <div data-motion="fade-up" class="flex items-center justify-between border-b border-slate-200/80 pb-3 mb-10 text-[11px] font-mono tracking-widest text-slate-500">
         <div class="flex items-center gap-2">
           <span class="text-blue font-bold">ACT 01 // THE REALITY CHECK</span>
           <span class="text-slate-300">•</span>
@@ -68,24 +101,24 @@ import {
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
         <!-- Left: Narrative -->
         <div class="lg:col-span-7 space-y-6 text-left">
-          <div class="story-fade-in inline-flex items-center gap-2 rounded-full border border-blue/20 bg-blue-soft px-3.5 py-1 text-xs font-semibold text-blue">
+          <div data-motion="fade-up" data-delay="100" class="inline-flex items-center gap-2 rounded-full border border-blue/20 bg-blue-soft px-3.5 py-1 text-xs font-semibold text-blue">
             <Layers class="w-3.5 h-3.5 text-blue" />
             <span>A SINGLE HUB FOR EVERY SITE</span>
           </div>
 
-          <h1 class="story-fade-in text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-[1.08]">
+          <h1 data-motion="fade-up" data-delay="150" class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-[1.08]">
             Stop running ₹50-Crore sites on <br />
             <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue via-indigo-600 to-amber-600">
               scattered chats & pocket diaries.
             </span>
           </h1>
 
-          <p class="story-fade-in text-base sm:text-lg text-slate-600 max-w-2xl leading-relaxed">
+          <p data-motion="fade-up" data-delay="200" class="text-base sm:text-lg text-slate-600 max-w-2xl leading-relaxed">
             You built a construction company to execute landmark structures and compound wealth. Instead, you're trapped in 45 phone calls a day while ₹2.4 Lakhs quietly leaks every month through paper muster rolls, uncounted bags, and forgotten cash advances.
           </p>
 
           <!-- Primary Actions -->
-          <div class="story-fade-in pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+          <div data-motion="fade-up" data-delay="250" class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
             <a
               href="#demo"
               class="inline-flex items-center justify-center rounded-xl bg-blue hover:bg-blue-hover text-white px-8 py-4 text-base font-bold shadow-[0_4px_14px_rgba(58,70,225,0.35)] hover:shadow-[0_6px_20px_rgba(58,70,225,0.45)] transition-all active:scale-95 group focus-visible:outline-none"
@@ -103,16 +136,16 @@ import {
           </div>
 
           <!-- Live Telemetry Badges -->
-          <div class="story-fade-in pt-4 grid grid-cols-3 gap-3 max-w-xl">
-            <div class="rounded-2xl border border-slate-200/80 bg-white p-4 shadow-xs">
-              <span class="text-xl sm:text-2xl font-black text-slate-900 block leading-tight">~₹29.5L</span>
+          <div class="pt-4 grid grid-cols-3 gap-3 max-w-xl">
+            <div data-motion="fade-up" data-delay="300" class="motion-card-hover rounded-2xl border border-slate-200/80 bg-white p-4 shadow-xs">
+              <span data-counter="29.5" data-format="lakh" class="text-xl sm:text-2xl font-black text-slate-900 block leading-tight">~₹29.5L</span>
               <span class="text-xs text-slate-500 block leading-snug">Monthly volume per firm</span>
             </div>
-            <div class="rounded-2xl border border-slate-200/80 bg-white p-4 shadow-xs">
-              <span class="text-xl sm:text-2xl font-black text-emerald-600 block leading-tight">100%</span>
+            <div data-motion="fade-up" data-delay="350" class="motion-card-hover rounded-2xl border border-slate-200/80 bg-white p-4 shadow-xs">
+              <span data-counter="100" data-format="percent" class="text-xl sm:text-2xl font-black text-emerald-600 block leading-tight">100%</span>
               <span class="text-xs text-slate-500 block leading-snug">Offline basement sync</span>
             </div>
-            <div class="rounded-2xl border border-slate-200/80 bg-white p-4 shadow-xs">
+            <div data-motion="fade-up" data-delay="400" class="motion-card-hover rounded-2xl border border-slate-200/80 bg-white p-4 shadow-xs">
               <span class="text-xl sm:text-2xl font-black text-amber-600 block leading-tight">0 Leaks</span>
               <span class="text-xs text-slate-500 block leading-snug">Zero unverified cash</span>
             </div>
@@ -120,8 +153,8 @@ import {
         </div>
 
         <!-- Right: 3D Floating Terminal -->
-        <div class="lg:col-span-5 relative flex justify-center perspective-container story-scale-up">
-          <div class="relative w-full max-w-[340px] sm:max-w-[380px] lg:max-w-[420px] animate-float">
+        <div class="lg:col-span-5 relative flex justify-center perspective-container">
+          <div data-motion="zoom-in" data-delay="200" class="relative w-full max-w-[340px] sm:max-w-[380px] lg:max-w-[420px] animate-float">
             <!-- Ambient halo -->
             <div class="absolute inset-4 bg-gradient-to-tr from-blue/20 via-indigo-200 to-amber-200 blur-3xl rounded-full -z-10" aria-hidden="true"></div>
 
@@ -135,7 +168,7 @@ import {
             />
 
             <!-- Floating Telemetry Overlay Badges -->
-            <div class="absolute -top-3 -left-4 sm:-left-6 rounded-2xl border border-slate-200 bg-white/95 p-3.5 shadow-xl backdrop-blur-md max-w-[210px] hidden sm:block">
+            <div data-motion="fade-left" data-delay="450" class="absolute -top-3 -left-4 sm:-left-6 rounded-2xl border border-slate-200 bg-white/95 p-3.5 shadow-xl backdrop-blur-md max-w-[210px] hidden sm:block">
               <div class="flex items-center gap-2.5">
                 <span class="flex h-7 w-7 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
                   <Check class="w-4 h-4" />
@@ -147,7 +180,7 @@ import {
               </div>
             </div>
 
-            <div class="absolute -bottom-4 -right-4 sm:-right-6 rounded-2xl border border-slate-200 bg-white/95 p-3.5 shadow-xl backdrop-blur-md max-w-[220px]">
+            <div data-motion="fade-right" data-delay="550" class="absolute -bottom-4 -right-4 sm:-right-6 rounded-2xl border border-slate-200 bg-white/95 p-3.5 shadow-xl backdrop-blur-md max-w-[220px]">
               <div class="flex items-center gap-2.5">
                 <div class="h-2.5 w-2.5 rounded-full bg-emerald-500 animate-ping"></div>
                 <div>
@@ -166,7 +199,7 @@ import {
     <!-- ========================================== -->
     <section id="act-2" class="relative">
       <!-- Section Header -->
-      <div class="story-fade-in text-center max-w-3xl mx-auto mb-14 space-y-3">
+      <div data-motion="fade-up" class="text-center max-w-3xl mx-auto mb-14 space-y-3">
         <span class="inline-block text-xs font-bold font-mono uppercase tracking-wider text-red-700 bg-red-50 border border-red-200 px-3.5 py-1 rounded-full">
           ACT 02 // FORENSIC AUDIT
         </span>
@@ -182,7 +215,9 @@ import {
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- Evidence 1 -->
         <div
-          class="story-fade-in rounded-2xl border-2 border-slate-200 bg-white p-6 hover:border-red-500 hover:shadow-xl transition-all duration-300 cursor-pointer group space-y-3"
+          data-motion="fade-up"
+          data-delay="100"
+          class="motion-card-hover rounded-2xl border-2 border-slate-200 bg-white p-6 hover:border-red-500 hover:shadow-xl transition-all duration-300 cursor-pointer group space-y-3"
           onclick="inspectEvidence(1)"
         >
           <div class="flex items-center justify-between">
@@ -206,7 +241,9 @@ import {
 
         <!-- Evidence 2 -->
         <div
-          class="story-fade-in rounded-2xl border-2 border-slate-200 bg-white p-6 hover:border-red-500 hover:shadow-xl transition-all duration-300 cursor-pointer group space-y-3"
+          data-motion="fade-up"
+          data-delay="200"
+          class="motion-card-hover rounded-2xl border-2 border-slate-200 bg-white p-6 hover:border-red-500 hover:shadow-xl transition-all duration-300 cursor-pointer group space-y-3"
           onclick="inspectEvidence(2)"
         >
           <div class="flex items-center justify-between">
@@ -230,7 +267,9 @@ import {
 
         <!-- Evidence 3 -->
         <div
-          class="story-fade-in rounded-2xl border-2 border-slate-200 bg-white p-6 hover:border-red-500 hover:shadow-xl transition-all duration-300 cursor-pointer group space-y-3"
+          data-motion="fade-up"
+          data-delay="300"
+          class="motion-card-hover rounded-2xl border-2 border-slate-200 bg-white p-6 hover:border-red-500 hover:shadow-xl transition-all duration-300 cursor-pointer group space-y-3"
           onclick="inspectEvidence(3)"
         >
           <div class="flex items-center justify-between">
@@ -254,7 +293,9 @@ import {
 
         <!-- Evidence 4 -->
         <div
-          class="story-fade-in rounded-2xl border-2 border-slate-200 bg-white p-6 hover:border-red-500 hover:shadow-xl transition-all duration-300 cursor-pointer group space-y-3"
+          data-motion="fade-up"
+          data-delay="400"
+          class="motion-card-hover rounded-2xl border-2 border-slate-200 bg-white p-6 hover:border-red-500 hover:shadow-xl transition-all duration-300 cursor-pointer group space-y-3"
           onclick="inspectEvidence(4)"
         >
           <div class="flex items-center justify-between">
@@ -278,7 +319,7 @@ import {
       </div>
 
       <!-- Dynamic Forensic Spotlight Box -->
-      <div id="forensic-spotlight" class="story-scale-up mt-8 rounded-3xl border border-blue/30 bg-blue-soft/50 p-6 sm:p-8 shadow-sm">
+      <div data-motion="zoom-in" data-delay="150" id="forensic-spotlight" class="mt-8 rounded-3xl border border-blue/30 bg-blue-soft/50 p-6 sm:p-8 shadow-sm">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-blue/20 pb-4 mb-4">
           <div class="flex items-center gap-2.5">
             <ShieldCheck class="w-5 h-5 text-blue" />
@@ -301,7 +342,7 @@ import {
     <!-- ACT 03 // 24 HOURS ON SITE (TIMELINE REEL) -->
     <!-- ========================================== -->
     <section id="act-3" class="relative">
-      <div class="story-fade-in flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 border-b border-slate-200/80 pb-6">
+      <div data-motion="fade-up" class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 border-b border-slate-200/80 pb-6">
         <div class="space-y-2 max-w-2xl">
           <span class="inline-block text-xs font-bold font-mono uppercase tracking-wider text-amber-800 bg-amber-100 border border-amber-300 px-3.5 py-1 rounded-full">
             ACT 03 // 24-HOUR SITE STORY
@@ -330,7 +371,7 @@ import {
       <!-- Theater Stage -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         <!-- Storyboard Controls -->
-        <div class="lg:col-span-5 space-y-6">
+        <div data-motion="fade-left" data-delay="150" class="lg:col-span-5 space-y-6">
           <div class="grid grid-cols-2 gap-2.5" id="movie-scene-buttons">
             <button
               type="button"
@@ -404,7 +445,7 @@ import {
         </div>
 
         <!-- Projector Screen Frame -->
-        <div class="lg:col-span-7 story-scale-up">
+        <div data-motion="fade-right" data-delay="250" class="lg:col-span-7">
           <div class="rounded-3xl border border-slate-200/90 bg-slate-100 p-3 sm:p-4 shadow-md relative overflow-hidden">
             <div class="flex items-center justify-between px-3 py-2 border-b border-slate-200 text-xs font-mono text-slate-500 mb-3 bg-white/80 rounded-xl">
               <span class="flex items-center gap-2">
@@ -460,7 +501,7 @@ import {
     <!-- (FEATURING REPORTS-OVERVIEW.PNG)          -->
     <!-- ========================================== -->
     <section id="act-4" class="relative">
-      <div class="story-fade-in text-center max-w-4xl mx-auto mb-12 space-y-4">
+      <div data-motion="fade-up" class="text-center max-w-4xl mx-auto mb-12 space-y-4">
         <span class="inline-block text-xs font-bold font-mono uppercase tracking-wider text-indigo-700 bg-indigo-50 border border-indigo-200 px-4 py-1.5 rounded-full">
           ACT 04 // THE MASTER PANORAMIC AUDIT
         </span>
@@ -476,7 +517,7 @@ import {
       </div>
 
       <!-- Panoramic Screen Showcase Frame -->
-      <div class="story-scale-up rounded-3xl border border-slate-300/80 bg-slate-900/5 p-3 sm:p-5 shadow-2xl backdrop-blur-sm">
+      <div data-motion="zoom-in" data-delay="150" class="rounded-3xl border border-slate-300/80 bg-slate-900/5 p-3 sm:p-5 shadow-2xl backdrop-blur-sm">
         <!-- Browser Window Chrome Top Bar -->
         <div class="flex items-center justify-between px-4 py-3 bg-white border border-slate-200/90 rounded-2xl mb-3 shadow-xs">
           <div class="flex items-center gap-2">
@@ -525,7 +566,7 @@ import {
 
       <!-- 4 Pillars Breakdown of the Master Overview -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 pt-8">
-        <div class="rounded-2xl border border-slate-200 bg-white p-5 space-y-2 shadow-xs hover:border-blue transition-colors">
+        <div data-motion="fade-up" data-delay="100" class="motion-card-hover rounded-2xl border border-slate-200 bg-white p-5 space-y-2 shadow-xs hover:border-blue transition-colors">
           <div class="flex items-center gap-2 text-blue">
             <TrendingUp class="w-4 h-4" />
             <h4 class="text-sm font-bold text-slate-900">Money In vs Money Out</h4>
@@ -535,7 +576,7 @@ import {
           </p>
         </div>
 
-        <div class="rounded-2xl border border-slate-200 bg-white p-5 space-y-2 shadow-xs hover:border-blue transition-colors">
+        <div data-motion="fade-up" data-delay="200" class="motion-card-hover rounded-2xl border border-slate-200 bg-white p-5 space-y-2 shadow-xs hover:border-blue transition-colors">
           <div class="flex items-center gap-2 text-emerald-600">
             <FileCheck class="w-4 h-4" />
             <h4 class="text-sm font-bold text-slate-900">7 Built-in Audit Reports</h4>
@@ -545,7 +586,7 @@ import {
           </p>
         </div>
 
-        <div class="rounded-2xl border border-slate-200 bg-white p-5 space-y-2 shadow-xs hover:border-blue transition-colors">
+        <div data-motion="fade-up" data-delay="300" class="motion-card-hover rounded-2xl border border-slate-200 bg-white p-5 space-y-2 shadow-xs hover:border-blue transition-colors">
           <div class="flex items-center gap-2 text-amber-600">
             <Building class="w-4 h-4" />
             <h4 class="text-sm font-bold text-slate-900">10-Stage Milestone Tracking</h4>
@@ -555,7 +596,7 @@ import {
           </p>
         </div>
 
-        <div class="rounded-2xl border border-slate-200 bg-white p-5 space-y-2 shadow-xs hover:border-blue transition-colors">
+        <div data-motion="fade-up" data-delay="400" class="motion-card-hover rounded-2xl border border-slate-200 bg-white p-5 space-y-2 shadow-xs hover:border-blue transition-colors">
           <div class="flex items-center gap-2 text-indigo-600">
             <Wallet class="w-4 h-4" />
             <h4 class="text-sm font-bold text-slate-900">Receivables & Debt Control</h4>
@@ -571,7 +612,7 @@ import {
     <!-- ACT 05 // THE OWNER'S COCKPIT (CONSOLE)    -->
     <!-- ========================================== -->
     <section id="act-5" class="relative">
-      <div class="story-fade-in text-center max-w-3xl mx-auto mb-10 space-y-3">
+      <div data-motion="fade-up" class="text-center max-w-3xl mx-auto mb-10 space-y-3">
         <span class="inline-block text-xs font-bold font-mono uppercase tracking-wider text-blue bg-blue-soft px-3.5 py-1 rounded-full">
           ACT 05 // DEEP-DIVE CHANNELS
         </span>
@@ -583,7 +624,7 @@ import {
         </p>
 
         <!-- Channel Selectors with Lucide Icons -->
-        <div class="pt-4 flex flex-wrap items-center justify-center gap-2.5">
+        <div data-motion="fade-up" data-delay="100" class="pt-4 flex flex-wrap items-center justify-center gap-2.5">
           <button
             type="button"
             class="cockpit-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border-2 border-blue bg-blue text-white shadow-xs transition-all cursor-pointer inline-flex items-center gap-2"
@@ -633,7 +674,7 @@ import {
       </div>
 
       <!-- Cockpit Display Frame -->
-      <div class="story-scale-up rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-8 shadow-lg">
+      <div data-motion="zoom-in" data-delay="200" class="rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-8 shadow-lg">
         <!-- Channel 1: Money -->
         <div id="cockpit-panel-money" class="cockpit-panel grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div class="lg:col-span-7">
@@ -795,7 +836,7 @@ import {
     <!-- ACT 06 // THE PROFIT LOSS RADAR           -->
     <!-- ========================================== -->
     <section id="act-6" class="relative">
-      <div class="story-fade-in text-center max-w-3xl mx-auto mb-10 space-y-3">
+      <div data-motion="fade-up" class="text-center max-w-3xl mx-auto mb-10 space-y-3">
         <span class="inline-block text-xs font-bold font-mono uppercase tracking-wider text-amber-800 bg-amber-100 border border-amber-300 px-3.5 py-1 rounded-full">
           ACT 06 // FINANCIAL LOSS RADAR
         </span>
@@ -807,7 +848,7 @@ import {
         </p>
 
         <!-- Interactive Site Buttons -->
-        <div class="pt-3 flex flex-wrap items-center justify-center gap-2.5">
+        <div data-motion="fade-up" data-delay="100" class="pt-3 flex flex-wrap items-center justify-center gap-2.5">
           <button
             type="button"
             class="radar-site-btn px-4 py-2 rounded-xl text-xs font-mono font-bold border border-slate-200 bg-white text-slate-700 hover:border-amber-400 transition-all cursor-pointer"
@@ -852,9 +893,9 @@ import {
       </div>
 
       <!-- Radar Display Console -->
-      <div class="story-scale-up grid grid-cols-1 lg:grid-cols-12 gap-8 items-center rounded-3xl border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center rounded-3xl border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
         <!-- Visual Radar Animation -->
-        <div class="lg:col-span-5 flex justify-center">
+        <div data-motion="fade-left" data-delay="200" class="lg:col-span-5 flex justify-center">
           <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full border border-amber-300 bg-amber-50/40 flex items-center justify-center overflow-hidden shadow-inner">
             <div class="absolute inset-0 radar-sweep-beam-light rounded-full pointer-events-none"></div>
 
@@ -874,7 +915,7 @@ import {
         </div>
 
         <!-- Radar Financial Tally Box -->
-        <div class="lg:col-span-7 space-y-4">
+        <div data-motion="fade-right" data-delay="300" class="lg:col-span-7 space-y-4">
           <div class="grid grid-cols-2 gap-3 text-xs sm:text-sm">
             <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/80">
               <span class="text-slate-500 block mb-1 text-xs">Unrecorded Advances</span>
@@ -921,9 +962,9 @@ import {
     <!-- ACT 07 // TAKE COMMAND (HERITAGE & DEMO)   -->
     <!-- ========================================== -->
     <section id="act-7" class="relative">
-      <div class="story-fade-in grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         <!-- Left: The Origin Story (SIMAK DNA) -->
-        <div class="lg:col-span-5 space-y-5 text-left">
+        <div data-motion="fade-left" data-delay="150" class="lg:col-span-5 space-y-5 text-left">
           <span class="inline-block text-xs font-mono font-bold uppercase tracking-wider text-amber-800 bg-amber-100 border border-amber-300 px-3.5 py-1 rounded-full">
             ACT 07 // PROVEN FIELD ORIGIN
           </span>
@@ -968,7 +1009,7 @@ import {
         </div>
 
         <!-- Right: Demo Booking Card -->
-        <div id="demo" class="lg:col-span-7 story-scale-up">
+        <div id="demo" data-motion="fade-right" data-delay="250" class="lg:col-span-7">
           <div class="rounded-3xl border-2 border-blue/30 bg-white p-6 sm:p-9 shadow-xl relative overflow-hidden">
             <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-6">
               <div>
@@ -1323,32 +1364,144 @@ import {
       });
     }
 
-    // 5. Scroll-Reveals Engine
-    function initScrollRevealEngine() {
-      const revealElements = document.querySelectorAll(
-        '.story-fade-in, .story-fade-left, .story-fade-right, .story-scale-up'
-      );
+    // 5. Scroll-Reveals & Initial Viewport Motion Engine
+    function initMotionAnimations() {
+      const elements = document.querySelectorAll('[data-motion]');
+      if (!elements.length) return;
 
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-            }
-          });
-        },
-        {
-          rootMargin: '0px 0px -60px 0px',
-          threshold: 0.08
+      document.body.classList.add('motion-js-ready');
+
+      if (!('IntersectionObserver' in window)) {
+        elements.forEach(el => el.classList.add('motion-in'));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('motion-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        rootMargin: '0px 0px -40px 0px',
+        threshold: 0.08
+      });
+
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+      elements.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < viewportHeight * 0.9) {
+          // In initial viewport: stagger and smoothly reveal
+          const delay = parseInt(el.getAttribute('data-delay') || '0', 10);
+          setTimeout(() => {
+            el.classList.add('motion-in');
+          }, delay + 50);
+        } else {
+          // Offscreen: wait for scroll intersection
+          observer.observe(el);
         }
-      );
-
-      revealElements.forEach((el) => observer.observe(el));
+      });
     }
 
-    // 6. Lead Demo Form Submission & Startup
+    // 6. Interactive Animated Number Counters Engine
+    function initCounters() {
+      const counters = document.querySelectorAll('[data-counter]');
+      if (!counters.length) return;
+
+      if (!('IntersectionObserver' in window)) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseFloat(el.getAttribute('data-counter') || '0');
+            const format = el.getAttribute('data-format') || 'raw';
+            const duration = 1200;
+            const startTime = performance.now();
+
+            function tick(now) {
+              const elapsed = now - startTime;
+              const progress = Math.min(elapsed / duration, 1);
+              // Ease-out cubic curve
+              const eased = 1 - Math.pow(1 - progress, 3);
+              const current = target * eased;
+
+              if (format === 'percent') {
+                el.textContent = Math.round(current) + '%';
+              } else if (format === 'lakh') {
+                el.textContent = '~₹' + current.toFixed(1) + 'L';
+              } else if (format === 'plus') {
+                el.textContent = Math.round(current) + '+ Hours';
+              } else if (format === 'inr') {
+                el.textContent = '₹' + Math.round(current).toLocaleString('en-IN');
+              }
+
+              if (progress < 1) {
+                requestAnimationFrame(tick);
+              }
+            }
+            requestAnimationFrame(tick);
+            observer.unobserve(el);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      counters.forEach(c => observer.observe(c));
+    }
+
+    // 7. Floating Story Acts Chapter Navigator
+    function initStoryNavigator() {
+      const acts = ['act-1', 'act-2', 'act-3', 'act-4', 'act-5', 'act-6', 'act-7'];
+      const actSections = acts.map(id => document.getElementById(id)).filter(Boolean);
+      if (!actSections.length) return;
+
+      const navItems = document.querySelectorAll('.act-nav-item');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const currentId = entry.target.id;
+            navItems.forEach(item => {
+              const itemAct = item.getAttribute('data-act-nav');
+              const dot = item.querySelector('.act-dot');
+              const label = item.querySelector('.act-label');
+              if (itemAct === currentId) {
+                item.classList.add('text-blue');
+                item.classList.remove('text-slate-500');
+                if (dot) {
+                  dot.className = 'act-dot w-2.5 h-2.5 rounded-full bg-blue ring-4 ring-blue-100 transition-all duration-300 scale-125';
+                }
+                if (label) {
+                  label.classList.remove('hidden');
+                }
+              } else {
+                item.classList.remove('text-blue');
+                item.classList.add('text-slate-500');
+                if (dot) {
+                  dot.className = 'act-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300';
+                }
+                if (label) {
+                  label.classList.add('hidden');
+                }
+              }
+            });
+          }
+        });
+      }, {
+        rootMargin: '-20% 0px -40% 0px',
+        threshold: 0.15
+      });
+
+      actSections.forEach(section => observer.observe(section));
+    }
+
+    // 8. Lead Demo Form Submission & Startup
     function initializeApp() {
-      initScrollRevealEngine();
+      initMotionAnimations();
+      initCounters();
+      initStoryNavigator();
       initContinuousMovieAutoPlay();
 
       const form = document.getElementById('lead-demo-form');

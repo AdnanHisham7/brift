@@ -1,0 +1,6 @@
+{
+  "question": "How does Brift work on remote construction sites with poor or zero connectivity?",
+  "answer": "Brift installs directly on mobile phones like an app (PWA). Site managers can record worker attendance, upload material bills, and log miscellaneous site expenses even without cell signal. Once the device reconnects to Wi-Fi or cellular network, all queued entries sync cleanly to the central record.",
+  "category": "operations",
+  "order": 3
+}

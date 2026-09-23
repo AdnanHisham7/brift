@@ -1,0 +1,163 @@
+---
+import { getCollection } from 'astro:content';
+
+const pricingEntries = await getCollection('pricing');
+const sortedPlans = pricingEntries.sort((a, b) => a.data.order - b.data.order);
+---
+
+<div class="w-full">
+  <!-- Ascending Staircase Cards Container -->
+  <!-- On desktop: items-end aligns all 3 cards along the shared bottom baseline -->
+  <div class="relative grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-4 items-end max-w-6xl mx-auto">
+    {sortedPlans.map((plan) => {
+      const isDark = plan.data.isDark;
+      const isCore = plan.data.name === 'Core';
+      const isGrowth = plan.data.name === 'Growth';
+      const isPartner = plan.data.name === 'Partner';
+
+      // Ascending height classes for desktop staircase
+      const heightClass = isCore
+        ? 'lg:min-h-[580px]'
+        : isGrowth
+        ? 'lg:min-h-[660px]'
+        : 'lg:min-h-[740px]';
+
+      return (
+        <div class="relative w-full">
+          <!-- Connector Node (01 -> 02) -->
+          {isGrowth && (
+            <div class="hidden lg:flex absolute -left-4 bottom-72 z-20 h-7 w-7 items-center justify-center rounded-full bg-blue text-white shadow-md text-xs font-bold border-2 border-white" title="Growth builds on Core">
+              +
+            </div>
+          )}
+
+          <!-- Connector Node (02 -> 03) -->
+          {isPartner && (
+            <div class="hidden lg:flex absolute -left-4 bottom-80 z-20 h-7 w-7 items-center justify-center rounded-full bg-blue text-white shadow-md text-xs font-bold border-2 border-white" title="Partner builds on Growth">
+              +
+            </div>
+          )}
+
+          <!-- Plan Card -->
+          <div
+            class:list={[
+              'flex flex-col justify-between rounded-card p-6 sm:p-8 transition-all',
+              heightClass,
+              isDark
+                ? 'bg-navy border border-navy-line text-on-dark shadow-card-dark'
+                : 'bg-white border border-line text-ink shadow-subtle',
+              isGrowth && 'ring-1 ring-blue/30',
+            ]}
+          >
+            <!-- Top Section: Step Chip & Tier Details -->
+            <div>
+              <div class="flex items-center justify-between gap-4 mb-6">
+                <!-- Numbered Step Chip -->
+                <span
+                  class:list={[
+                    'inline-flex items-center justify-center px-3 py-1 rounded-full text-xs font-bold tracking-wider',
+                    isDark
+                      ? 'bg-navy-surface text-yellow border border-navy-line'
+                      : isGrowth
+                      ? 'bg-blue text-white'
+                      : 'bg-blue-soft text-blue',
+                  ]}
+                >
+                  STEP {plan.data.step}
+                </span>
+
+                {isGrowth && (
+                  <span class="text-xs font-semibold text-blue bg-blue-soft px-2.5 py-0.5 rounded-full">
+                    Most Popular
+                  </span>
+                )}
+                {isPartner && (
+                  <span class="text-xs font-semibold text-yellow bg-yellow/10 border border-yellow/30 px-2.5 py-0.5 rounded-full">
+                    Full Operations & Presence
+                  </span>
+                )}
+              </div>
+
+              <!-- Plan Name -->
+              <h3 class:list={['text-2xl font-bold tracking-tight', isDark ? 'text-white' : 'text-ink']}>
+                {plan.data.name}
+              </h3>
+
+              <!-- Setup Price -->
+              <div class="mt-4 flex items-baseline gap-2">
+                <span class:list={['text-4xl sm:text-5xl font-extrabold tracking-tight', isDark ? 'text-white' : 'text-ink']}>
+                  {plan.data.setupPriceFormatted}
+                </span>
+                <span class:list={['text-xs font-medium uppercase tracking-wider', isDark ? 'text-on-dark-muted' : 'text-muted']}>
+                  one-time setup
+                </span>
+              </div>
+
+              <!-- Tagline / Description -->
+              <p class:list={['mt-4 text-sm leading-relaxed', isDark ? 'text-on-dark-muted' : 'text-muted']}>
+                {plan.data.description}
+              </p>
+
+              <!-- Monthly Price Block (Month 13 onwards) -->
+              <div class:list={['mt-6 pt-5 border-t', isDark ? 'border-navy-line' : 'border-line']}>
+                <div class="flex items-baseline gap-2">
+                  <span class:list={['text-xl font-bold', isDark ? 'text-yellow' : 'text-blue']}>
+                    {plan.data.monthlyPriceFormatted}
+                  </span>
+                </div>
+                <p class:list={['text-xs mt-1', isDark ? 'text-on-dark-muted' : 'text-muted']}>
+                  {plan.data.monthlyNote}
+                </p>
+              </div>
+
+              <!-- Feature Inclusions -->
+              <div class="mt-6 pt-5 border-t border-line/50">
+                <p class:list={['text-xs font-semibold uppercase tracking-wider mb-3', isDark ? 'text-on-dark-muted' : 'text-muted']}>
+                  {isCore ? 'Includes core capabilities:' : isGrowth ? 'Everything in Core, plus:' : 'Everything in Growth, plus:'}
+                </p>
+                <ul class="space-y-3 text-sm">
+                  {plan.data.features.map((feature) => (
+                    <li class="flex items-start gap-2.5">
+                      <div class:list={['mt-0.5 shrink-0 rounded-full p-0.5', isDark ? 'text-yellow' : 'text-blue']}>
+                        <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                        </svg>
+                      </div>
+                      <span class:list={['leading-snug', isDark ? 'text-on-dark' : 'text-ink-2']}>
+                        {feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <!-- Bottom Action CTA -->
+            <div class="mt-8 pt-4">
+              <a
+                href="/book-a-demo"
+                class:list={[
+                  'w-full flex items-center justify-center rounded-xl py-3 px-4 text-sm font-semibold transition-all active:scale-[0.98] shadow-sm',
+                  isDark
+                    ? 'bg-white text-navy hover:bg-on-dark'
+                    : isGrowth
+                    ? 'bg-blue text-white hover:bg-blue-hover'
+                    : 'bg-blue-soft text-blue hover:bg-blue hover:text-white',
+                ]}
+              >
+                Book a Demo
+              </a>
+            </div>
+          </div>
+        </div>
+      );
+    })}
+  </div>
+
+  <!-- Plain-Language Coverage Reassurance Banner -->
+  <div class="mt-10 mx-auto max-w-3xl rounded-xl border border-line bg-white/70 backdrop-blur-sm px-6 py-4 text-center shadow-sm">
+    <p class="text-sm text-ink-2 leading-relaxed">
+      <strong class="font-semibold text-ink">What your fee covers:</strong> Every plan covers cloud hosting, high-security storage, automated database backups, offline mobile support, and ongoing platform improvements, with the level of coverage matched to your plan.
+    </p>
+  </div>
+</div>

@@ -1,0 +1,223 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #0E1116;
+  --ink-2: #2A3040;
+  --muted: #5A6373;
+  --line: #E4E7EF;
+  --bg: #FAFAFB;
+  --white: #FFFFFF;
+  --blue: #3A46E1;
+  --blue-soft: #E9EBFD;
+  --lavender: #ECE8FB;
+  --pale-blue: #E4EEFB;
+  --yellow: #FFE27A;
+  --navy: #0B1020;
+  --navy-line: #2A3357;
+  --on-dark: #F4F5F9;
+  --on-dark-muted: #A9B0C3;
+}
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--ink);
+    background-color: var(--bg);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #E9EBFD;
+    color: #3A46E1;
+  }
+}
+
+/* Accessible focus ring */
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+/* Top Scroll Progress Bar */
+#scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #3A46E1 0%, #7F56D9 50%, #FFE27A 100%);
+  width: 0%;
+  z-index: 100;
+  transition: width 0.1s cubic-bezier(0.1, 0.5, 0.1, 1);
+  box-shadow: 0 0 10px rgba(58, 70, 225, 0.5);
+}
+
+/* Subtle background gradient moments */
+.hero-gradient-blob {
+  position: absolute;
+  top: -120px;
+  right: -80px;
+  width: 750px;
+  height: 750px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(236, 232, 251, 0.8) 0%,
+    rgba(228, 238, 251, 0.7) 40%,
+    rgba(255, 226, 122, 0.3) 70%,
+    transparent 100%
+  );
+  filter: blur(70px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-gradient-blob-secondary {
+  position: absolute;
+  bottom: -150px;
+  left: -100px;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(228, 238, 251, 0.7) 0%,
+    rgba(236, 232, 251, 0.5) 50%,
+    transparent 100%
+  );
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Floating Animations */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(0.8deg);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(-0.6deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+.animate-float {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 8s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+/* 3D Perspective Card Container */
+.perspective-container {
+  perspective: 1200px;
+}
+
+.card-tilt {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-style: preserve-3d;
+}
+
+/* Native details/summary accordion animation support */
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary {
+  list-style: none;
+}
+
+details[open] summary svg {
+  transform: rotate(180deg);
+}
+
+/* Scroll-Driven Motion Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-fade {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity;
+}
+
+.reveal-fade.is-visible {
+  opacity: 1;
+}
+
+/* Stagger delays */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+
+/* Sticky Story Timeline Active Highlights */
+.story-chapter {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.story-chapter.is-active {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+.story-chapter:not(.is-active) {
+  opacity: 0.45;
+}
+
+/* Respect user's motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-fade,
+  .animate-float,
+  .animate-float-reverse,
+  .animate-glow {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}

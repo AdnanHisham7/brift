@@ -1,0 +1,31 @@
+{
+  "title": "Money & Budgets",
+  "eyebrow": "MONEY & BUDGETS",
+  "headline": "Know where every rupee is going.",
+  "subhead": "Money moves along one traceable path — from the client's payment to the last bill on site.",
+  "description": "Every site shows spend against budget, monthly burn rate and an on-track, warning or over-budget status. See, site by site, what you've spent against what each client has paid.",
+  "steps": [
+    {
+      "number": 1,
+      "title": "Client Pays",
+      "text": "You verify the payment before it counts into funds."
+    },
+    {
+      "number": 2,
+      "title": "Company Funds",
+      "text": "The live balance you actually have in hand."
+    },
+    {
+      "number": 3,
+      "title": "Site Manager's Balance",
+      "text": "Cash you assign; each verified bill reduces it."
+    },
+    {
+      "number": 4,
+      "title": "Site Expenses",
+      "text": "Purchases, wages, contractors and extras post directly to the site."
+    }
+  ],
+  "imageKey": "spend-analytics",
+  "order": 1
+}

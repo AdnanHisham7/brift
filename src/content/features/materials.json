@@ -1,0 +1,31 @@
+{
+  "title": "Materials & Stock",
+  "eyebrow": "MATERIALS",
+  "headline": "Know what was bought, used and moved.",
+  "subhead": "Item names are standardised, so 'cement' and 'Cement ' are never tracked as two different things.",
+  "description": "Stock moves with accountability. Low-stock alerts reach you and your site managers before work halts.",
+  "steps": [
+    {
+      "number": 1,
+      "title": "Bought",
+      "text": "Purchases carry the bill and the vendor. Once you verify, stock and site cost update together."
+    },
+    {
+      "number": 2,
+      "title": "Used",
+      "text": "Site teams log what was used, so what's left is a record, not a guess."
+    },
+    {
+      "number": 3,
+      "title": "Moved",
+      "text": "Transfers between sites need approval, and the stock's value moves with it."
+    },
+    {
+      "number": 4,
+      "title": "Never Surprised",
+      "text": "Set a reorder level per item. Low-stock alerts reach you and the site's managers."
+    }
+  ],
+  "imageKey": "materials-stock",
+  "order": 2
+}

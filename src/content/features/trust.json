@@ -1,0 +1,36 @@
+{
+  "title": "Trust & Control",
+  "eyebrow": "TRUST & CONTROL",
+  "headline": "Every important action leaves a trace.",
+  "subhead": "Built for owners who demand complete accountability and immutable audit logs.",
+  "description": "Nothing in Brift is quietly overwritten or deleted. Role-based permissions ensure that each person sees only what their job requires.",
+  "steps": [
+    {
+      "number": 1,
+      "title": "Money moves after you verify it",
+      "text": "Purchases, client payments, expense requests, stock transfers and stage completion wait for your verification."
+    },
+    {
+      "number": 2,
+      "title": "Every action has an author",
+      "text": "The activity log records who did what, when, and from which device."
+    },
+    {
+      "number": 3,
+      "title": "Deleted isn't erased",
+      "text": "Removing a verified bill posts a reversing entry, so totals and financial history stay consistent."
+    },
+    {
+      "number": 4,
+      "title": "Documents keep their history",
+      "text": "Drawings and agreements maintain version history; clients can sign or reject documents in their portal."
+    },
+    {
+      "number": 5,
+      "title": "Controlled access",
+      "text": "Individual logins, email verification, strong passwords, and reviewable, revocable user sessions."
+    }
+  ],
+  "imageKey": "audit-log",
+  "order": 5
+}

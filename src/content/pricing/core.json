@@ -1,0 +1,17 @@
+{
+  "name": "Core",
+  "step": "01",
+  "setupPrice": 32000,
+  "setupPriceFormatted": "₹32,000",
+  "monthlyPrice": 300,
+  "monthlyPriceFormatted": "+ 300 / month",
+  "monthlyNote": "from month 13 — your first year is covered",
+  "tagline": "Your operational core",
+  "description": "Your operational core — purchases, stock, attendance, contractors, vendors and funds, built around how you work.",
+  "features": [
+    "Budget & burn-rate tracking, client statements",
+    "Roles, access and the audit log"
+  ],
+  "isDark": false,
+  "order": 1
+}

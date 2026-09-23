@@ -1,0 +1,100 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+import { Image } from 'astro:assets';
+import adminDashImg from '../../assets/admin-dashboard.png';
+---
+
+<Layout
+  title="For Construction Company Owners — Brift"
+  description="Built for owner-run construction companies. Run 5, 10, or 20 active sites with complete financial control, real-time burn rates, and zero phone-call chasing."
+>
+  <!-- Hero -->
+  <section class="relative pt-16 pb-14 sm:pt-24 sm:pb-20 bg-bg border-b border-line overflow-hidden">
+    <div class="hero-gradient-blob" aria-hidden="true"></div>
+    <div class="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center space-y-4">
+      <span class="inline-block text-xs font-bold uppercase tracking-wider text-blue bg-blue-soft px-3.5 py-1 rounded-full">
+        FOR CONSTRUCTION OWNERS
+      </span>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-ink leading-tight">
+        Lead your sites without living on the phone.
+      </h1>
+      <p class="text-lg sm:text-xl text-muted max-w-2xl mx-auto leading-relaxed">
+        You started your construction company to build great structures and build wealth — not to spend 12 hours a day chasing WhatsApp bills, deciphering contractor handwriting, and refereeing payment disputes.
+      </p>
+      <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="/book-a-demo" class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-blue px-7 py-3.5 text-sm font-semibold text-white hover:bg-blue-hover transition-all shadow-sm">
+          Book an Owner's Walkthrough
+        </a>
+        <a href="/cost-of-inaction" class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-white border border-line px-6 py-3.5 text-sm font-semibold text-ink hover:bg-bg transition-all">
+          Calculate Your Money Leakage &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- The 3 Big Headaches for Owners -->
+  <section class="py-16 sm:py-24 bg-white border-b border-line">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink">
+          The 3 operational realities every builder faces
+        </h2>
+        <p class="text-base text-muted">
+          How Brift transforms your day-to-day role from firefighter to executive.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="rounded-card border border-line bg-bg p-8 space-y-4 reveal shadow-xs">
+          <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-blue text-white text-base font-bold">1</span>
+          <h3 class="text-xl font-bold text-ink">Zero Phone-Call Chasing</h3>
+          <p class="text-sm text-muted leading-relaxed">
+            Open your dashboard at 7:00 PM and see every worker who marked attendance today, every bag of cement poured, and every bill uploaded across all running sites.
+          </p>
+        </div>
+
+        <div class="rounded-card border border-line bg-bg p-8 space-y-4 reveal delay-100 shadow-xs">
+          <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-blue text-white text-base font-bold">2</span>
+          <h3 class="text-xl font-bold text-ink">Locked Cash Control</h3>
+          <p class="text-sm text-muted leading-relaxed">
+            Not a single rupee leaves your central funds until you verify the purchase. Site managers spend from assigned balances that auto-reduce only when proof is approved.
+          </p>
+        </div>
+
+        <div class="rounded-card border border-line bg-bg p-8 space-y-4 reveal delay-200 shadow-xs">
+          <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-blue text-white text-base font-bold">3</span>
+          <h3 class="text-xl font-bold text-ink">Crystal-Clear Margins</h3>
+          <p class="text-sm text-muted leading-relaxed">
+            Know exactly whether Site A or Site B is making money before the project finishes. Real-time burn-rate analytics flag overruns weeks before they become crises.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Admin Dashboard Visual -->
+  <section class="py-16 sm:py-24 bg-bg border-b border-line">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center space-y-8">
+      <div class="space-y-3">
+        <h2 class="text-3xl font-extrabold tracking-tight text-ink">
+          Your entire company in one view
+        </h2>
+        <p class="text-sm text-muted max-w-xl mx-auto">
+          Active sites, total employees, company liquidity, and stage milestones updated in real time.
+        </p>
+      </div>
+
+      <div class="rounded-card-lg border border-line bg-white p-3 shadow-elevated reveal">
+        <Image
+          src={adminDashImg}
+          alt="Brift Admin Dashboard overview for construction company owner"
+          class="w-full h-auto rounded-card object-cover"
+          format="webp"
+        />
+      </div>
+    </div>
+  </section>
+
+  <CtaBanner />
+</Layout>

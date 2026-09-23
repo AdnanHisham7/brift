@@ -1,0 +1,167 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+import { Image } from 'astro:assets';
+import spendAnalyticsImg from '../../assets/spend-analytics.png';
+import receivablesTableImg from '../../assets/receivables-table.png';
+---
+
+<Layout
+  title="Money & Budget Operations — Brift"
+  description="Know where every rupee is going across your construction sites. Traceable spend flow from client payment to site bills with real-time burn-rate analytics."
+>
+  <!-- Hero -->
+  <section class="relative pt-16 pb-14 sm:pt-24 sm:pb-20 bg-bg border-b border-line overflow-hidden">
+    <div class="hero-gradient-blob" aria-hidden="true"></div>
+    <div class="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center space-y-4">
+      <span class="inline-block text-xs font-bold uppercase tracking-wider text-blue bg-blue-soft px-3.5 py-1 rounded-full">
+        MONEY & SITE BUDGETS
+      </span>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-ink leading-tight">
+        Know where every rupee is going.
+      </h1>
+      <p class="text-lg sm:text-xl text-muted max-w-2xl mx-auto leading-relaxed">
+        Money moves along one traceable path — from the client's payment to the last bill on site. No unaccounted cash, no month-end surprises.
+      </p>
+      <div class="pt-2">
+        <a href="/book-a-demo" class="inline-flex items-center justify-center rounded-xl bg-blue px-7 py-3.5 text-sm font-semibold text-white hover:bg-blue-hover transition-all shadow-sm">
+          Book a Live Financial Walkthrough
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deep Dive 1: Spend Velocity & Burn-Rate -->
+  <section class="py-16 sm:py-24 bg-white border-b border-line">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-6 space-y-6 reveal">
+          <span class="text-xs font-bold uppercase tracking-wider text-blue bg-blue-soft px-3 py-1 rounded-full">
+            REAL-TIME ANALYTICS
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink">
+            Budget health at a glance
+          </h2>
+          <p class="text-base text-muted leading-relaxed">
+            Every site shows spend against budget, monthly burn rate, and an automated on-track, warning, or over-budget status. Know your top cost drivers before they erode your profit margin.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            <div class="rounded-xl border border-line bg-bg p-4 space-y-1">
+              <h3 class="text-sm font-bold text-ink">Spend Velocity Tracking</h3>
+              <p class="text-xs text-muted leading-relaxed">Comparing planned expenditure pace against actual aggregated transactions in real time.</p>
+            </div>
+            <div class="rounded-xl border border-line bg-bg p-4 space-y-1">
+              <h3 class="text-sm font-bold text-ink">Automatic Cost Categorization</h3>
+              <p class="text-xs text-muted leading-relaxed">Categorizes expenses across Purchases & Materials, Contractors, Services, and Daily Wages automatically.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 reveal delay-100">
+          <div class="rounded-card-lg border border-line bg-white p-3 shadow-elevated">
+            <Image
+              src={spendAnalyticsImg}
+              alt="Brift Spend Velocity and Burn-Rate Analytics showing expense category breakdown"
+              class="w-full h-auto rounded-card object-cover"
+              format="webp"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deep Dive 2: Traceable 4-Step Money Path -->
+  <section class="py-16 sm:py-24 bg-bg border-b border-line">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-blue bg-blue-soft px-3 py-1 rounded-full">
+          CLOSED-LOOP CASH RAILS
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink">
+          The 4-step money path
+        </h2>
+        <p class="text-base text-muted">
+          Every rupee that enters or leaves your company is tied to an author, an approval, and a specific project site.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        {[
+          {
+            step: '01',
+            title: 'Client Pays',
+            detail: 'Client submits payment reference in their portal. You verify the receipt into bank funds before it reflects in the site ledger.',
+          },
+          {
+            step: '02',
+            title: 'Company Funds',
+            detail: 'Central company cash pool updates instantly. You see the exact liquidity you have in hand across all operating bank accounts.',
+          },
+          {
+            step: '03',
+            title: "Manager's Balance",
+            detail: 'You assign digital cash allowances to site managers. Every verified bill they upload automatically reduces their balance.',
+          },
+          {
+            step: '04',
+            title: 'Site Expenses',
+            detail: 'Purchases, labor wages, and contractor payments post directly to the site ledger with weighted-average costing.',
+          },
+        ].map((item) => (
+          <div class="rounded-card border border-line bg-white p-6 shadow-xs reveal space-y-3">
+            <span class="inline-block text-xs font-bold px-2.5 py-1 rounded-full bg-blue-soft text-blue">
+              STEP {item.step}
+            </span>
+            <h3 class="text-lg font-bold text-ink">{item.title}</h3>
+            <p class="text-xs text-muted leading-relaxed">{item.detail}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Deep Dive 3: Receivables by Site -->
+  <section class="py-16 sm:py-24 bg-white border-b border-line">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-6 lg:order-2 space-y-6 reveal">
+          <span class="text-xs font-bold uppercase tracking-wider text-blue bg-blue-soft px-3 py-1 rounded-full">
+            CLIENT RECEIVABLES
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink">
+            Amount to be received, site by site
+          </h2>
+          <p class="text-base text-muted leading-relaxed">
+            Never guess how much cash a client still owes you. Brift continuously compares total verified project expenses against verified client deposits, providing a live outstanding balance per client.
+          </p>
+          <ul class="space-y-3 text-sm text-ink-2">
+            <li class="flex items-start gap-2.5">
+              <span class="text-blue font-bold">✓</span>
+              <span><strong>Client statement with supervision fee:</strong> Transparent statements generated in 1 click for client review.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="text-blue font-bold">✓</span>
+              <span><strong>Pre-empt billing disputes:</strong> Every bill, advance, and wage entry is backed by digital proof.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-6 lg:order-1 reveal delay-100">
+          <div class="rounded-card-lg border border-line bg-white p-3 shadow-elevated">
+            <Image
+              src={receivablesTableImg}
+              alt="Amount to be Received table across multiple sites in Brift"
+              class="w-full h-auto rounded-card object-cover"
+              format="webp"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CtaBanner />
+</Layout>

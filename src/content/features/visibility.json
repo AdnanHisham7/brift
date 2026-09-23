@@ -1,0 +1,15 @@
+{
+  "title": "Multi-Site Visibility",
+  "eyebrow": "MULTI-SITE OPERATIONS",
+  "headline": "See every site without calling every manager.",
+  "subhead": "Live progress, stage signoffs, and automated reporting across your company.",
+  "description": "Stop chasing site managers on the phone for answers that a report should already give you.",
+  "bulletPoints": [
+    "Money in, money out: A live monthly view of revenue against expenses across all projects.",
+    "7 built-in reports: Annual financials, payroll register, vendor procurement, contractor advances, capital & debt, site expense statements, and client statements in PDF and Excel.",
+    "Site performance: 10-stage checklist completion and 30-day attendance patterns for every site.",
+    "Funds and receivables: Know what is in hand, and what clients still owe site-by-site."
+  ],
+  "imageKey": "reports-overview",
+  "order": 4
+}

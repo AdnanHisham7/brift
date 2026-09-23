@@ -1,0 +1,181 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+import { Image } from 'astro:assets';
+import auditLogImg from '../../assets/audit-log.png';
+import clientPortalImg from '../../assets/client-portal.png';
+---
+
+<Layout
+  title="Trust, Role Portals & Audit Trail — Brift"
+  description="Every important action leaves a trace. 4 role portals (Owner, Site Manager, Architect, Client), immutable audit logs, and reversing entries."
+>
+  <!-- Hero -->
+  <section class="relative pt-16 pb-14 sm:pt-24 sm:pb-20 bg-bg border-b border-line overflow-hidden">
+    <div class="hero-gradient-blob" aria-hidden="true"></div>
+    <div class="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center space-y-4">
+      <span class="inline-block text-xs font-bold uppercase tracking-wider text-blue bg-blue-soft px-3.5 py-1 rounded-full">
+        SECURITY & ACCOUNTABILITY
+      </span>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-ink leading-tight">
+        Every important action leaves a trace.
+      </h1>
+      <p class="text-lg sm:text-xl text-muted max-w-2xl mx-auto leading-relaxed">
+        Nothing in Brift is quietly deleted or manipulated. Built specifically for construction owners who require complete accountability across all active projects.
+      </p>
+      <div class="pt-2">
+        <a href="/book-a-demo" class="inline-flex items-center justify-center rounded-xl bg-blue px-7 py-3.5 text-sm font-semibold text-white hover:bg-blue-hover transition-all shadow-sm">
+          Book a Live Security Walkthrough
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 Role Portals Section -->
+  <section class="py-16 sm:py-24 bg-white border-b border-line">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-blue bg-blue-soft px-3 py-1 rounded-full">
+          ACCESS CONTROL
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink">
+          Give everyone the access they actually need
+        </h2>
+        <p class="text-base text-muted">
+          One central database, four distinct viewports. Each role sees only what their responsibilities permit.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="rounded-card border border-line bg-bg p-6 space-y-3 reveal">
+          <span class="text-xs font-bold uppercase tracking-wider text-blue bg-blue-soft px-2.5 py-1 rounded-full">
+            ROLE 01
+          </span>
+          <h3 class="text-xl font-bold text-ink">Owner / Admin</h3>
+          <ul class="space-y-2 text-xs text-muted leading-relaxed">
+            <li>• Verifies money, bills, stock moves and stages</li>
+            <li>• Sees every site, person, report and bank account</li>
+            <li>• Assigns cash balances to site managers</li>
+            <li>• Exports annual financials and debt ledgers</li>
+          </ul>
+        </div>
+
+        <div class="rounded-card border border-line bg-bg p-6 space-y-3 reveal delay-100">
+          <span class="text-xs font-bold uppercase tracking-wider text-blue bg-blue-soft px-2.5 py-1 rounded-full">
+            ROLE 02
+          </span>
+          <h3 class="text-xl font-bold text-ink">Site Manager</h3>
+          <ul class="space-y-2 text-xs text-muted leading-relaxed">
+            <li>• Records purchases & snaps bills on mobile</li>
+            <li>• Marks worker attendance full or half day</li>
+            <li>• Pays contractors from assigned cash funds</li>
+            <li>• Works strictly within their assigned project sites</li>
+          </ul>
+        </div>
+
+        <div class="rounded-card border border-line bg-bg p-6 space-y-3 reveal delay-200">
+          <span class="text-xs font-bold uppercase tracking-wider text-blue bg-blue-soft px-2.5 py-1 rounded-full">
+            ROLE 03
+          </span>
+          <h3 class="text-xl font-bold text-ink">Architect</h3>
+          <ul class="space-y-2 text-xs text-muted leading-relaxed">
+            <li>• Uploads structural & architectural drawings</li>
+            <li>• Manages document versions & drawing revisions</li>
+            <li>• Raises material expense requests for approval</li>
+            <li>• Reviews 10-stage checklist execution</li>
+          </ul>
+        </div>
+
+        <div class="rounded-card border border-line bg-bg p-6 space-y-3 reveal delay-300">
+          <span class="text-xs font-bold uppercase tracking-wider text-blue bg-blue-soft px-2.5 py-1 rounded-full">
+            ROLE 04
+          </span>
+          <h3 class="text-xl font-bold text-ink">Client Portal</h3>
+          <ul class="space-y-2 text-xs text-muted leading-relaxed">
+            <li>• Sees only their own project progress & spend</li>
+            <li>• Records payment references for admin verification</li>
+            <li>• Signs documents with digital e-signatures</li>
+            <li>• Submits feedback & star ratings to admin</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Portal Screenshot Section -->
+  <section class="py-16 sm:py-24 bg-bg border-b border-line">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-6 space-y-6 reveal">
+          <span class="text-xs font-bold uppercase tracking-wider text-blue bg-blue-soft px-3 py-1 rounded-full">
+            CLIENT TRANSPARENCY
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink">
+            A private portal for your clients
+          </h2>
+          <p class="text-base text-muted leading-relaxed">
+            Build unshakeable client trust. Instead of sending messy spreadsheets over email, invite clients to their own portal where they track payments, download verified statements, and sign agreements digitally.
+          </p>
+          <ul class="space-y-2.5 text-sm text-ink-2">
+            <li class="flex items-center gap-2">✓ Verified stage completion signoffs</li>
+            <li class="flex items-center gap-2">✓ Direct feedback history with admin response</li>
+            <li class="flex items-center gap-2">✓ Document version archive with e-signatures</li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-6 reveal delay-100">
+          <div class="rounded-card-lg border border-line bg-white p-3 shadow-elevated">
+            <Image
+              src={clientPortalImg}
+              alt="Brift Client Portal showing feedback history and payment submission"
+              class="w-full h-auto rounded-card object-cover"
+              format="webp"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Audit Log Section -->
+  <section class="py-16 sm:py-24 bg-white border-b border-line">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-6 lg:order-2 space-y-6 reveal">
+          <span class="text-xs font-bold uppercase tracking-wider text-blue bg-blue-soft px-3 py-1 rounded-full">
+            IMMUTABLE AUDIT TRAIL
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink">
+            Deleted isn't erased
+          </h2>
+          <p class="text-base text-muted leading-relaxed">
+            In construction accounting, accidental deletions or intentional ledger tampering can create financial chaos. In Brift:
+          </p>
+          <div class="space-y-3 text-sm text-ink-2">
+            <div class="rounded-xl border border-line bg-bg p-4 space-y-1">
+              <h3 class="text-sm font-bold text-ink">Reversing Entries</h3>
+              <p class="text-xs text-muted leading-relaxed">Removing a verified bill posts an automated offsetting reversing entry, ensuring totals and balance history stay mathematically consistent.</p>
+            </div>
+            <div class="rounded-xl border border-line bg-bg p-4 space-y-1">
+              <h3 class="text-sm font-bold text-ink">Device & Author Logging</h3>
+              <p class="text-xs text-muted leading-relaxed">Every action records exact author, time, IP address, and device footprint for complete peace of mind.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 lg:order-1 reveal delay-100">
+          <div class="rounded-card-lg border border-line bg-white p-3 shadow-elevated">
+            <Image
+              src={auditLogImg}
+              alt="Brift Daily Activity Log showing admin verified actions and device timestamps"
+              class="w-full h-auto rounded-card object-cover"
+              format="webp"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CtaBanner />
+</Layout>

@@ -1,0 +1,158 @@
+---
+---
+
+<div class="rounded-card-lg border border-line bg-white p-6 sm:p-10 shadow-elevated">
+  <div class="mb-8">
+    <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+      Book your 30-minute walkthrough
+    </h2>
+    <p class="mt-2 text-sm text-muted">
+      We'll show your day-to-day workflow — purchases, attendance, approvals and reports — live in the product.
+    </p>
+  </div>
+
+  <form
+    id="demo-lead-form"
+    action="https://api.web3forms.com/submit"
+    method="POST"
+    class="space-y-5"
+  >
+    <!-- Web3Forms Access Key (Placeholder or demo key) -->
+    <input type="hidden" name="access_key" value="demo-access-key-brift" />
+    <input type="hidden" name="subject" value="New Brift Demo Request" />
+    <input type="hidden" name="from_name" value="Brift Website Lead" />
+
+    <!-- Full Name -->
+    <div>
+      <label for="full-name" class="block text-xs font-semibold uppercase tracking-wider text-ink-2 mb-1.5">
+        Your Name <span class="text-blue" aria-hidden="true">*</span>
+      </label>
+      <input
+        type="text"
+        id="full-name"
+        name="name"
+        required
+        autocomplete="name"
+        placeholder="e.g. Rajesh Kumar"
+        class="w-full rounded-xl border border-line bg-bg px-4 py-3 text-sm text-ink placeholder-muted/60 transition-colors focus:border-blue focus:bg-white focus:outline-none"
+      />
+    </div>
+
+    <!-- Phone Number -->
+    <div>
+      <label for="phone-number" class="block text-xs font-semibold uppercase tracking-wider text-ink-2 mb-1.5">
+        Phone Number (WhatsApp) <span class="text-blue" aria-hidden="true">*</span>
+      </label>
+      <input
+        type="tel"
+        id="phone-number"
+        name="phone"
+        required
+        autocomplete="tel"
+        placeholder="+91 98765 43210"
+        class="w-full rounded-xl border border-line bg-bg px-4 py-3 text-sm text-ink placeholder-muted/60 transition-colors focus:border-blue focus:bg-white focus:outline-none"
+      />
+    </div>
+
+    <!-- Company Name -->
+    <div>
+      <label for="company-name" class="block text-xs font-semibold uppercase tracking-wider text-ink-2 mb-1.5">
+        Company / Firm Name <span class="text-blue" aria-hidden="true">*</span>
+      </label>
+      <input
+        type="text"
+        id="company-name"
+        name="company"
+        required
+        autocomplete="organization"
+        placeholder="e.g. Apex Construction Services"
+        class="w-full rounded-xl border border-line bg-bg px-4 py-3 text-sm text-ink placeholder-muted/60 transition-colors focus:border-blue focus:bg-white focus:outline-none"
+      />
+    </div>
+
+    <!-- Number of Active Sites -->
+    <div>
+      <label for="active-sites" class="block text-xs font-semibold uppercase tracking-wider text-ink-2 mb-1.5">
+        Number of Active Sites <span class="text-blue" aria-hidden="true">*</span>
+      </label>
+      <select
+        id="active-sites"
+        name="active_sites"
+        required
+        class="w-full rounded-xl border border-line bg-bg px-4 py-3 text-sm text-ink transition-colors focus:border-blue focus:bg-white focus:outline-none"
+      >
+        <option value="" disabled selected>Select number of running sites</option>
+        <option value="1-2">1 to 2 sites</option>
+        <option value="3-5">3 to 5 sites</option>
+        <option value="6-10">6 to 10 sites</option>
+        <option value="10+">More than 10 sites</option>
+      </select>
+    </div>
+
+    <!-- Optional Message -->
+    <div>
+      <label for="form-message" class="block text-xs font-semibold uppercase tracking-wider text-ink-2 mb-1.5">
+        What is your biggest operational headache right now? <span class="text-xs text-muted normal-case font-normal">(Optional)</span>
+      </label>
+      <textarea
+        id="form-message"
+        name="message"
+        rows="3"
+        placeholder="e.g. Chasing WhatsApp bills, tracking worker attendance, or knowing client balances..."
+        class="w-full rounded-xl border border-line bg-bg px-4 py-3 text-sm text-ink placeholder-muted/60 transition-colors focus:border-blue focus:bg-white focus:outline-none resize-none"
+      ></textarea>
+    </div>
+
+    <!-- Submit CTA Button -->
+    <div class="pt-2">
+      <button
+        type="submit"
+        id="submit-demo-btn"
+        class="w-full flex items-center justify-center rounded-xl bg-blue py-3.5 px-6 text-base font-semibold text-white shadow-sm hover:bg-blue-hover transition-all active:scale-[0.99] focus-visible:outline-none cursor-pointer"
+      >
+        <span>Request Demo Walkthrough</span>
+      </button>
+    </div>
+
+    <!-- Plain Reassurance Notice -->
+    <div class="pt-3 text-center">
+      <p class="text-xs text-muted flex items-center justify-center gap-1.5">
+        <svg class="h-4 w-4 text-blue shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span>We'll call you within one business day. No pushy sales pitch, just a direct walkthrough.</span>
+      </p>
+    </div>
+
+    <!-- Success Message Box (Shown via JS upon submission) -->
+    <div id="form-success-box" class="hidden rounded-xl border border-green-200 bg-green-50 p-4 text-center">
+      <h3 class="text-sm font-semibold text-green-800">Walkthrough Request Received</h3>
+      <p class="text-xs text-green-700 mt-1">
+        Thank you. Adnan from Brift will contact you directly on your phone within one business day.
+      </p>
+    </div>
+  </form>
+</div>
+
+<script>
+  const form = document.getElementById('demo-lead-form') as HTMLFormElement | null;
+  const successBox = document.getElementById('form-success-box');
+  const submitBtn = document.getElementById('submit-demo-btn');
+
+  if (form && successBox && submitBtn) {
+    form.addEventListener('submit', (e) => {
+      // In development or static mode, gracefully show confirmation
+      e.preventDefault();
+      const btnSpan = submitBtn.querySelector('span');
+      if (btnSpan) btnSpan.textContent = 'Submitting...';
+      submitBtn.setAttribute('disabled', 'true');
+
+      // Simulate instantaneous client-side success response
+      setTimeout(() => {
+        form.reset();
+        successBox.classList.remove('hidden');
+        if (btnSpan) btnSpan.textContent = 'Request Sent!';
+      }, 600);
+    });
+  }
+</script>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://getbrift.com/sitemap-index.xml

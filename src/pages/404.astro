@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Page Not Found — Brift"
+  description="The page you requested could not be found."
+  noindex={true}
+>
+  <div class="py-24 sm:py-32 bg-bg text-center flex items-center justify-center min-h-[60vh]">
+    <div class="max-w-md px-4 sm:px-6 space-y-6">
+      <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-soft text-blue text-lg font-bold">
+        404
+      </span>
+      <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink">
+        Page not found
+      </h1>
+      <p class="text-sm text-muted leading-relaxed">
+        The link you followed may be broken or the page may have been moved. Everything you need is right here:
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+        <a
+          href="/"
+          class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-white border border-line px-5 py-2.5 text-sm font-semibold text-ink hover:bg-bg shadow-2xs"
+        >
+          Back to Home
+        </a>
+        <a
+          href="/book-a-demo"
+          class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-blue px-5 py-2.5 text-sm font-semibold text-white hover:bg-blue-hover shadow-2xs"
+        >
+          Book a Demo
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,14 @@
+{
+  "title": "People & Payments",
+  "eyebrow": "PEOPLE & PAYMENTS",
+  "headline": "Know who worked, who's owed, who's paid.",
+  "subhead": "Clear records replace memory across labor, sub-contractors, and material suppliers.",
+  "description": "Mark attendance without signal, track contractor advances against verified work, and see vendor balances at a glance.",
+  "bulletPoints": [
+    "Workforce: Attendance is marked per worker, per site — full or half day. Each day's wage posts to the site's cost automatically.",
+    "Contractors: Advance payments and expenses recorded per contractor, per site. A dedicated report shows commitments, advances and remaining balances.",
+    "Vendors: Cash and credit purchases are tracked separately. Outstanding balances are visible at a glance, and settlements apply to oldest bills first."
+  ],
+  "imageKey": "contractor-report",
+  "order": 3
+}

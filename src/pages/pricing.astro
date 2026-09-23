@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+import StaircasePricing from '../components/StaircasePricing.astro';
+import FaqAccordion from '../components/FaqAccordion.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+import { getCollection } from 'astro:content';
+
+const faqEntries = await getCollection('faq');
+const sortedFaqs = faqEntries
+  .sort((a, b) => a.data.order - b.data.order)
+  .map((f) => ({
+    question: f.data.question,
+    answer: f.data.answer,
+    category: f.data.category,
+  }));
+---
+
+<Layout
+  title="Pricing & Investment — Brift"
+  description="Transparent, tailored pricing for construction operations software. One-time setup fee with 12 months included hosting and support, plus low monthly fee starting from month 13."
+  schemaType="pricing"
+  faqItems={sortedFaqs}
+>
+  <!-- Hero Header -->
+  <section class="relative pt-16 pb-12 sm:pt-24 sm:pb-16 bg-bg border-b border-line text-center">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-4">
+      <span class="inline-block text-xs font-bold uppercase tracking-wider text-blue bg-blue-soft px-3.5 py-1 rounded-full">
+        INVESTMENT & PLANS
+      </span>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-ink">
+        The cost of running every site the right way.
+      </h1>
+      <p class="text-lg sm:text-xl text-muted max-w-2xl mx-auto leading-relaxed">
+        Every plan is tailored to your workflow — or tell us what you need, and we'll build it around you.
+      </p>
+    </div>
+  </section>
+
+  <!-- The Staircase Pricing Section -->
+  <section class="py-16 sm:py-24 bg-white border-b border-line">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mb-10 text-center max-w-2xl mx-auto reveal">
+        <h2 class="text-sm font-bold uppercase tracking-wider text-muted">
+          ASCENDING CAPABILITY TIERS
+        </h2>
+        <p class="text-xs text-muted mt-1">
+          Each tier builds directly on top of the last — no fragmented add-ons.
+        </p>
+      </div>
+
+      <!-- Ascending Staircase -->
+      <div class="reveal delay-100">
+        <StaircasePricing />
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section with Native Accessible Details -->
+  <section class="py-16 sm:py-24 bg-bg border-b border-line">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 space-y-3 reveal">
+        <span class="text-xs font-bold uppercase tracking-wider text-blue bg-blue-soft px-3 py-1 rounded-full">
+          COMMON QUESTIONS
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink">
+          Frequently asked questions about pricing
+        </h2>
+        <p class="text-sm text-muted">
+          Direct, honest answers about how setup fees, monthly maintenance, and deployments work.
+        </p>
+      </div>
+
+      <div class="reveal delay-100">
+        <FaqAccordion items={sortedFaqs} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <CtaBanner />
+</Layout>

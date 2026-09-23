@@ -1,0 +1,164 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CtaBanner from '../../components/CtaBanner.astro';
+import { Image } from 'astro:assets';
+import reportsOverviewImg from '../../assets/reports-overview.png';
+import storiesUpdatesImg from '../../assets/stories-site-updates.png';
+---
+
+<Layout
+  title="7 Built-in Reports & Site Progress — Brift"
+  description="See every site without calling every manager. 7 built-in executive financial reports, 10-stage checklist progress, and 24h photo update history."
+>
+  <!-- Hero -->
+  <section class="relative pt-16 pb-14 sm:pt-24 sm:pb-20 bg-bg border-b border-line overflow-hidden">
+    <div class="hero-gradient-blob" aria-hidden="true"></div>
+    <div class="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center space-y-4">
+      <span class="inline-block text-xs font-bold uppercase tracking-wider text-blue bg-blue-soft px-3.5 py-1 rounded-full">
+        EXECUTIVE OVERSIGHT
+      </span>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-ink leading-tight">
+        See every site without calling every manager.
+      </h1>
+      <p class="text-lg sm:text-xl text-muted max-w-2xl mx-auto leading-relaxed">
+        Stop chasing supervisors on the phone for numbers that a clean dashboard should already show you. Full financial and operational clarity across every running project.
+      </p>
+      <div class="pt-2">
+        <a href="/book-a-demo" class="inline-flex items-center justify-center rounded-xl bg-blue px-7 py-3.5 text-sm font-semibold text-white hover:bg-blue-hover transition-all shadow-sm">
+          Book a Live Reports Walkthrough
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reports Overview Section with Screenshot -->
+  <section class="py-16 sm:py-24 bg-white border-b border-line">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider text-blue bg-blue-soft px-3 py-1 rounded-full">
+          EXECUTIVE SUITE
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink">
+          The 7 built-in reports
+        </h2>
+        <p class="text-sm text-muted">
+          All reports generate instantly in your browser and export directly to PDF and Excel.
+        </p>
+      </div>
+
+      <div class="rounded-card-lg border border-line bg-white p-3 shadow-elevated reveal mb-16">
+        <Image
+          src={reportsOverviewImg}
+          alt="Brift Multi-Site Executive Reports Dashboard showing revenue vs expenditure trend and stage completion"
+          class="w-full h-auto rounded-card object-cover"
+          format="webp"
+        />
+      </div>
+
+      <!-- 7 Reports List Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          {
+            num: '01',
+            name: 'Annual Financials',
+            desc: 'Monthly revenue vs expenditure trend, operational profit margins, and cost distribution.',
+          },
+          {
+            num: '02',
+            name: 'Salary & Payroll Register',
+            desc: 'Site-by-site labor wage summaries, staff salary assignments, and paid vs unpaid records.',
+          },
+          {
+            num: '03',
+            name: 'Vendor Procurement',
+            desc: 'Material purchases, vendor credit ledgers, and aging outstanding settlement schedules.',
+          },
+          {
+            num: '04',
+            name: 'Contractor Ledger',
+            desc: 'Trade commitments, work verification, cash advances, and net balances due per sub-contractor.',
+          },
+          {
+            num: '05',
+            name: 'Capital & Debt Ledger',
+            desc: 'Owner equity infusions, partner loans, repayments, and external debt obligations.',
+          },
+          {
+            num: '06',
+            name: 'Site Expense Statement',
+            desc: 'Itemized expenditure statements per site with supervisor cash deductions and bill proof.',
+          },
+          {
+            num: '07',
+            name: 'Client Statement',
+            desc: 'Transparent project billing statements including supervision fee calculations and receipts.',
+          },
+        ].map((rep) => (
+          <div class="rounded-card border border-line bg-bg p-6 space-y-2 reveal shadow-2xs">
+            <span class="text-xs font-bold text-blue bg-blue-soft px-2.5 py-0.5 rounded-full">
+              REPORT {rep.num}
+            </span>
+            <h3 class="text-base font-bold text-ink">{rep.name}</h3>
+            <p class="text-xs text-muted leading-relaxed">{rep.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Progress Checklist & 24h Site Stories -->
+  <section class="py-16 sm:py-24 bg-bg border-b border-line">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-6 space-y-6 reveal">
+          <span class="text-xs font-bold uppercase tracking-wider text-blue bg-blue-soft px-3 py-1 rounded-full">
+            VISUAL PROGRESS
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink">
+            See the site as it happens
+          </h2>
+          <p class="text-base text-muted leading-relaxed">
+            Site updates live in Brift, not in a noisy WhatsApp group where important photos get buried under chatter.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            <div class="flex items-start gap-3 rounded-xl border border-line bg-white p-4 shadow-2xs">
+              <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue text-xs font-bold text-white">1</span>
+              <div>
+                <h4 class="text-sm font-semibold text-ink">24-Hour Story Tray</h4>
+                <p class="text-xs text-muted mt-0.5">Managers and architects post photos with captions. Live for 24 hours for team reactions.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 rounded-xl border border-line bg-white p-4 shadow-2xs">
+              <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue text-xs font-bold text-white">2</span>
+              <div>
+                <h4 class="text-sm font-semibold text-ink">Permanent Visual Media Archive</h4>
+                <p class="text-xs text-muted mt-0.5">Photos tagged to a site automatically become that site's permanent dated construction album.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 rounded-xl border border-line bg-white p-4 shadow-2xs">
+              <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue text-xs font-bold text-white">3</span>
+              <div>
+                <h4 class="text-sm font-semibold text-ink">10-Stage Build Checklist</h4>
+                <p class="text-xs text-muted mt-0.5">From foundation to final paintwork, managers request signoff and admin verifies before releasing milestones.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 reveal delay-100">
+          <div class="rounded-card-lg border border-line bg-white p-3 shadow-elevated">
+            <Image
+              src={storiesUpdatesImg}
+              alt="Brift 24h Site Stories tray and dated site photo archive on mobile"
+              class="w-full h-auto rounded-card object-cover"
+              format="webp"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CtaBanner />
+</Layout>

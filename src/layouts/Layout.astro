@@ -1,0 +1,183 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SchemaJsonLd from '../components/SchemaJsonLd.astro';
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  canonicalURL?: string;
+  schemaType?: 'home' | 'pricing' | 'default';
+  faqItems?: Array<{ question: string; answer: string }>;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  image,
+  canonicalURL,
+  schemaType = 'default',
+  faqItems = [],
+  noindex = false,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={title}
+      description={description}
+      image={image}
+      canonicalURL={canonicalURL}
+      noindex={noindex}
+    />
+    <SchemaJsonLd type={schemaType} faqItems={faqItems} />
+    <meta name="site-base" content={import.meta.env.BASE_URL} />
+  </head>
+  <body class="bg-bg text-ink min-h-screen flex flex-col font-sans selection:bg-blue-soft selection:text-blue">
+    <!-- Global Top Scroll Progress Bar -->
+    <div id="scroll-progress-bar" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-blue via-indigo-500 to-emerald-400 z-50 transition-all duration-75 ease-out" style="width: 0%"></div>
+
+    <!-- Skip to main content link for keyboard accessibility -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-lg focus:bg-blue focus:px-4 focus:py-2 focus:text-white focus:shadow-md"
+    >
+      Skip to main content
+    </a>
+
+    <Header />
+
+    <main id="main-content" class="flex-grow">
+      <slot />
+    </main>
+
+    <Footer />
+
+    <!-- Lightweight Scroll Progress, Story-Mode, and Reveal Animation Engine -->
+    <script>
+      function initScrollProgress() {
+        const progressBar = document.getElementById('scroll-progress-bar');
+        if (!progressBar) return;
+
+        function updateProgress() {
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+          if (progressBar && height > 0) {
+            const percentage = (scrollTop / height) * 100;
+            progressBar.style.width = percentage + '%';
+          }
+        }
+
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+      }
+
+      function initScrollReveal() {
+        const reveals = document.querySelectorAll('.reveal, .reveal-fade');
+        if (!reveals.length) return;
+
+        if ('IntersectionObserver' in window) {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('is-visible');
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            {
+              rootMargin: '0px 0px -40px 0px',
+              threshold: 0.08,
+            }
+          );
+
+          reveals.forEach((el) => observer.observe(el));
+        } else {
+          reveals.forEach((el) => el.classList.add('is-visible'));
+        }
+      }
+
+      function initStoryChapters() {
+        const chapters = document.querySelectorAll('.story-chapter');
+        if (!chapters.length) return;
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const chapterId = entry.target.getAttribute('data-chapter');
+                // Remove active from all
+                chapters.forEach(c => c.classList.remove('is-active', 'border-blue', 'bg-white', 'shadow-md'));
+                entry.target.classList.add('is-active', 'border-blue', 'bg-white', 'shadow-md');
+
+                // Switch corresponding visual stage display if present
+                const stages = document.querySelectorAll('.story-stage-screen');
+                stages.forEach(stage => {
+                  if (stage.getAttribute('data-for-chapter') === chapterId) {
+                    stage.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+                    stage.classList.add('opacity-100', 'scale-100');
+                  } else {
+                    stage.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+                    stage.classList.remove('opacity-100', 'scale-100');
+                  }
+                });
+
+                // Update timeline indicator
+                const badges = document.querySelectorAll('.story-time-badge');
+                badges.forEach(b => {
+                  if (b.getAttribute('data-for-chapter') === chapterId) {
+                    b.classList.add('bg-blue', 'text-white');
+                    b.classList.remove('bg-gray-100', 'text-ink-muted');
+                  } else {
+                    b.classList.remove('bg-blue', 'text-white');
+                    b.classList.add('bg-gray-100', 'text-ink-muted');
+                  }
+                });
+              }
+            });
+          },
+          {
+            rootMargin: '-30% 0px -40% 0px',
+            threshold: 0.2
+          }
+        );
+
+        chapters.forEach(ch => observer.observe(ch));
+      }
+
+      function initBaseLinks() {
+        const baseMeta = document.querySelector('meta[name="site-base"]')?.getAttribute('content');
+        if (baseMeta && baseMeta !== '/' && baseMeta !== '') {
+          const cleanBase = baseMeta.replace(/\/$/, '');
+          document.querySelectorAll('a[href^="/"]').forEach((a) => {
+            const href = a.getAttribute('href');
+            if (href && !href.startsWith(cleanBase) && !href.startsWith('//')) {
+              a.setAttribute('href', cleanBase + href);
+            }
+          });
+        }
+      }
+
+      function initInteractiveFeatures() {
+        initBaseLinks();
+        initScrollProgress();
+        initScrollReveal();
+        initStoryChapters();
+      }
+
+      // Initialize on load & Astro page transitions
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initInteractiveFeatures);
+      } else {
+        initInteractiveFeatures();
+      }
+    </script>
+  </body>
+</html>

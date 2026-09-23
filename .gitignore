@@ -1,0 +1,22 @@
+# Build & cache directories
+dist/
+.astro/
+node_modules/
+.cache/
+extracted_raw/
+
+# Environment files
+.env
+.env.production
+.env.local
+*.env
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*

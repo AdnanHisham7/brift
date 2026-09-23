@@ -1,0 +1,19 @@
+{
+  "name": "Partner",
+  "step": "03",
+  "setupPrice": 60000,
+  "setupPriceFormatted": "₹60,000",
+  "monthlyPrice": 800,
+  "monthlyPriceFormatted": "+ 800 / month",
+  "monthlyNote": "from month 13 — your first year is covered",
+  "tagline": "Public presence & ongoing improvements",
+  "description": "Everything in Growth, plus your public presence and a prepaid line for ongoing improvements.",
+  "features": [
+    "Company portfolio & project showcase",
+    "Public landing page for your brand",
+    "Enquiry inbox for new leads",
+    "Pages built and optimised to be found on Google"
+  ],
+  "isDark": true,
+  "order": 3
+}

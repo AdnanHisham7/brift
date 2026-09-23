@@ -1,12 +1,11 @@
 ---
-const pathname = Astro.url.pathname;
-const cleanPath = pathname.replace(/\/$/, '') || '/';
+// Single Landing Page Navigation with Smooth Section Anchors
 ---
 
 <header class="sticky top-0 z-50 w-full border-b border-line bg-white/95 backdrop-blur-md transition-all">
   <div class="mx-auto flex h-18 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
     <!-- Brand Logo -->
-    <a href="/" class="flex items-center gap-3 group focus-visible:outline-none" aria-label="Brift Homepage">
+    <a href="#" class="flex items-center gap-3 group focus-visible:outline-none" aria-label="Brift Homepage">
       <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-blue text-white shadow-sm transition-transform group-hover:scale-105">
         <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M4 19h4v-5h4v-5h4V4h4" />
@@ -15,225 +14,106 @@ const cleanPath = pathname.replace(/\/$/, '') || '/';
       <span class="text-xl font-bold tracking-tight text-ink">BRIFT</span>
     </a>
 
-    <!-- Desktop Navigation with Dropdowns -->
-    <nav class="hidden lg:flex items-center gap-7" aria-label="Primary Navigation">
-      <!-- 1. Product Mega Dropdown -->
-      <div class="relative group py-5">
-        <button
-          type="button"
-          class:list={[
-            'inline-flex items-center gap-1.5 text-sm font-medium transition-colors focus-visible:outline-none cursor-pointer',
-            cleanPath.startsWith('/product') ? 'text-blue font-semibold' : 'text-ink-2 group-hover:text-blue',
-          ]}
-          aria-expanded="false"
-        >
-          <span>Product</span>
-          <svg class="h-4 w-4 text-muted group-hover:text-blue transition-transform group-hover:rotate-180 duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-
-        <!-- Dropdown Menu Panel -->
-        <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 absolute left-0 top-full -mt-2 w-[540px] rounded-2xl border border-line bg-white p-5 shadow-elevated z-50">
-          <div class="grid grid-cols-2 gap-3">
-            <a href="/product/money" class="p-3 rounded-xl hover:bg-bg transition-colors block group/item">
-              <span class="text-xs font-bold uppercase tracking-wider text-blue block mb-0.5">Money & Budgets</span>
-              <span class="text-sm font-semibold text-ink group-hover/item:text-blue block">Traceable Spend Flow</span>
-              <span class="text-xs text-muted block mt-1 leading-normal">Live burn rate, client statements & fund verification.</span>
-            </a>
-
-            <a href="/product/materials" class="p-3 rounded-xl hover:bg-bg transition-colors block group/item">
-              <span class="text-xs font-bold uppercase tracking-wider text-blue block mb-0.5">Materials & Stock</span>
-              <span class="text-sm font-semibold text-ink group-hover/item:text-blue block">Inventory & Transfers</span>
-              <span class="text-xs text-muted block mt-1 leading-normal">Stock ledgers, transfer approvals & low-stock alerts.</span>
-            </a>
-
-            <a href="/product/workforce" class="p-3 rounded-xl hover:bg-bg transition-colors block group/item">
-              <span class="text-xs font-bold uppercase tracking-wider text-blue block mb-0.5">People & Payments</span>
-              <span class="text-sm font-semibold text-ink group-hover/item:text-blue block">Workforce & Contractors</span>
-              <span class="text-xs text-muted block mt-1 leading-normal">Offline attendance, contractor advances & vendor bills.</span>
-            </a>
-
-            <a href="/product/reports" class="p-3 rounded-xl hover:bg-bg transition-colors block group/item">
-              <span class="text-xs font-bold uppercase tracking-wider text-blue block mb-0.5">Visibility & Oversight</span>
-              <span class="text-sm font-semibold text-ink group-hover/item:text-blue block">7 Executive Reports</span>
-              <span class="text-xs text-muted block mt-1 leading-normal">PDF/Excel financials, 10-stage checklists & 24h stories.</span>
-            </a>
-
-            <a href="/product/trust-and-control" class="col-span-2 p-3 rounded-xl bg-blue-soft/40 hover:bg-blue-soft/70 transition-colors block group/item">
-              <div class="flex items-center justify-between">
-                <div>
-                  <span class="text-xs font-bold uppercase tracking-wider text-blue block mb-0.5">Security & Accountability</span>
-                  <span class="text-sm font-semibold text-ink group-hover/item:text-blue block">4 Role Portals & Immutable Audit Log</span>
-                  <span class="text-xs text-muted block mt-0.5">Role-scoped access, device logging & reversing entry audit trail.</span>
-                </div>
-                <span class="text-blue font-bold text-sm">&rarr;</span>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 2. Solutions Mega Dropdown -->
-      <div class="relative group py-5">
-        <button
-          type="button"
-          class:list={[
-            'inline-flex items-center gap-1.5 text-sm font-medium transition-colors focus-visible:outline-none cursor-pointer',
-            cleanPath.startsWith('/solutions') || cleanPath === '/cost-of-inaction' ? 'text-blue font-semibold' : 'text-ink-2 group-hover:text-blue',
-          ]}
-          aria-expanded="false"
-        >
-          <span>Solutions</span>
-          <svg class="h-4 w-4 text-muted group-hover:text-blue transition-transform group-hover:rotate-180 duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-
-        <!-- Dropdown Menu Panel -->
-        <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 absolute left-0 top-full -mt-2 w-[420px] rounded-2xl border border-line bg-white p-5 shadow-elevated z-50">
-          <div class="space-y-2">
-            <a href="/solutions/owners" class="p-3 rounded-xl hover:bg-bg transition-colors block group/item">
-              <span class="text-xs font-bold uppercase tracking-wider text-blue block mb-0.5">For Company Owners</span>
-              <span class="text-sm font-semibold text-ink group-hover/item:text-blue block">Complete Multi-Site Control</span>
-              <span class="text-xs text-muted block mt-0.5">See every site's finances and progress without calling every supervisor.</span>
-            </a>
-
-            <a href="/solutions/site-managers" class="p-3 rounded-xl hover:bg-bg transition-colors block group/item">
-              <span class="text-xs font-bold uppercase tracking-wider text-blue block mb-0.5">For Site Teams</span>
-              <span class="text-sm font-semibold text-ink group-hover/item:text-blue block">Offline Field PWA</span>
-              <span class="text-xs text-muted block mt-0.5">Log worker attendance, bills, and materials without cell signal.</span>
-            </a>
-
-            <!-- High Impact Cost of Inaction Link -->
-            <a href="/cost-of-inaction" class="p-3 rounded-xl border border-yellow/40 bg-yellow/10 hover:bg-yellow/20 transition-colors block group/item">
-              <div class="flex items-center justify-between">
-                <div>
-                  <span class="text-xs font-bold uppercase tracking-wider text-amber-700 block mb-0.5">Financial Leakage Analysis</span>
-                  <span class="text-sm font-semibold text-ink group-hover/item:text-blue block">The Cost of Inaction Calculator</span>
-                  <span class="text-xs text-muted block mt-0.5">See how much running on WhatsApp & memory quietly costs you each month.</span>
-                </div>
-                <span class="text-amber-700 font-bold text-sm">&rarr;</span>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-
-
-      <!-- 4. Direct About Link -->
-      <a
-        href="/about"
-        class:list={[
-          'text-sm font-medium transition-colors focus-visible:outline-none',
-          cleanPath === '/about' ? 'text-blue font-semibold' : 'text-ink-2 hover:text-blue',
-        ]}
-      >
-        About
+    <!-- Desktop Navigation Anchors -->
+    <nav class="hidden md:flex items-center gap-7" aria-label="Primary Navigation">
+      <a href="#story" class="text-sm font-medium text-ink-2 hover:text-blue transition-colors focus-visible:outline-none">
+        24h Field Story
+      </a>
+      <a href="#comparison" class="text-sm font-medium text-ink-2 hover:text-blue transition-colors focus-visible:outline-none">
+        Chaos vs System
+      </a>
+      <a href="#tour" class="text-sm font-medium text-ink-2 hover:text-blue transition-colors focus-visible:outline-none">
+        Interactive Console
+      </a>
+      <a href="#calculator" class="text-sm font-medium text-amber-700 hover:text-amber-800 transition-colors focus-visible:outline-none flex items-center gap-1.5">
+        <span class="inline-block w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+        <span>Loss Calculator</span>
+      </a>
+      <a href="#about" class="text-sm font-medium text-ink-2 hover:text-blue transition-colors focus-visible:outline-none">
+        Why Brift
       </a>
     </nav>
 
-    <!-- Persistent Action CTA -->
-    <div class="hidden md:flex items-center gap-4">
+    <!-- Right Header Action -->
+    <div class="hidden sm:flex items-center gap-4">
       <a
-        id="header-book-demo-btn"
-        href="/book-a-demo"
-        class="inline-flex items-center justify-center rounded-xl bg-blue px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-hover focus-visible:outline-none transition-all active:scale-[0.98]"
+        href="#demo"
+        class="inline-flex items-center justify-center rounded-xl bg-blue px-5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-blue-hover focus-visible:outline-none transition-all active:scale-[0.98]"
       >
         Book a Demo
       </a>
     </div>
 
-    <!-- Mobile Menu Button -->
-    <div class="flex items-center gap-2 lg:hidden">
-      <a
-        href="/book-a-demo"
-        class="inline-flex items-center justify-center rounded-lg bg-blue px-3.5 py-1.5 text-xs font-semibold text-white shadow-sm hover:bg-blue-hover"
-      >
-        Book a Demo
-      </a>
+    <!-- Mobile Hamburger Toggle -->
+    <div class="flex md:hidden">
       <button
-        id="mobile-nav-toggle"
+        id="mobile-menu-toggle"
         type="button"
-        class="inline-flex items-center justify-center rounded-lg p-2 text-ink-2 hover:bg-blue-soft/50 focus-visible:outline-none"
-        aria-controls="mobile-nav-menu"
+        class="inline-flex items-center justify-center rounded-lg p-2 text-ink hover:bg-bg focus-visible:outline-none"
+        aria-controls="mobile-nav-panel"
         aria-expanded="false"
         aria-label="Toggle navigation menu"
       >
-        <svg id="hamburger-icon" class="h-6 w-6 block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg id="hamburger-icon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
-        <svg id="close-icon" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg id="close-icon" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
     </div>
   </div>
 
-  <!-- Mobile Dropdown Panel -->
-  <div
-    id="mobile-nav-menu"
-    class="hidden lg:hidden border-b border-line bg-white px-5 py-6 shadow-lg transition-all max-h-[85vh] overflow-y-auto"
-  >
-    <div class="flex flex-col gap-5">
-      <!-- Mobile Product Links Group -->
-      <div>
-        <p class="text-xs font-bold uppercase tracking-wider text-muted mb-2">Product Capabilities</p>
-        <div class="space-y-2 pl-2 border-l-2 border-line">
-          <a href="/product/money" class="mobile-nav-link text-sm font-medium text-ink-2 hover:text-blue block py-1">Money & Budgets</a>
-          <a href="/product/materials" class="mobile-nav-link text-sm font-medium text-ink-2 hover:text-blue block py-1">Materials & Stock</a>
-          <a href="/product/workforce" class="mobile-nav-link text-sm font-medium text-ink-2 hover:text-blue block py-1">Workforce & Contractors</a>
-          <a href="/product/reports" class="mobile-nav-link text-sm font-medium text-ink-2 hover:text-blue block py-1">7 Executive Reports</a>
-          <a href="/product/trust-and-control" class="mobile-nav-link text-sm font-medium text-ink-2 hover:text-blue block py-1">Trust & Security</a>
-        </div>
-      </div>
-
-      <!-- Mobile Solutions Links Group -->
-      <div>
-        <p class="text-xs font-bold uppercase tracking-wider text-muted mb-2">Solutions & ROI</p>
-        <div class="space-y-2 pl-2 border-l-2 border-line">
-          <a href="/solutions/owners" class="mobile-nav-link text-sm font-medium text-ink-2 hover:text-blue block py-1">For Construction Owners</a>
-          <a href="/solutions/site-managers" class="mobile-nav-link text-sm font-medium text-ink-2 hover:text-blue block py-1">For Field & Site Teams</a>
-          <a href="/cost-of-inaction" class="mobile-nav-link text-sm font-bold text-amber-700 hover:text-amber-800 block py-1">The Cost of Inaction Calculator</a>
-        </div>
-      </div>
-
-      <div class="pt-2 border-t border-line space-y-3">
-        <a href="/about" class="mobile-nav-link text-base font-semibold text-ink-2 hover:text-blue block">About</a>
+  <!-- Mobile Drawer Panel -->
+  <div id="mobile-nav-panel" class="hidden md:hidden border-t border-line bg-white px-4 pt-3 pb-6 shadow-xl">
+    <nav class="flex flex-col space-y-3" aria-label="Mobile Navigation">
+      <a href="#story" class="mobile-nav-link text-base font-medium text-ink-2 hover:text-blue py-1">24h Field Story</a>
+      <a href="#comparison" class="mobile-nav-link text-base font-medium text-ink-2 hover:text-blue py-1">Chaos vs System</a>
+      <a href="#tour" class="mobile-nav-link text-base font-medium text-ink-2 hover:text-blue py-1">Interactive Console</a>
+      <a href="#calculator" class="mobile-nav-link text-base font-bold text-amber-700 hover:text-amber-800 py-1">Loss Calculator</a>
+      <a href="#about" class="mobile-nav-link text-base font-medium text-ink-2 hover:text-blue py-1">Why Brift</a>
+      <div class="pt-3 border-t border-line">
         <a
-          href="/book-a-demo"
-          class="flex w-full items-center justify-center rounded-xl bg-blue py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-hover"
+          href="#demo"
+          class="mobile-nav-link flex w-full items-center justify-center rounded-xl bg-blue py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-hover"
         >
-          Book a Demo
+          Book a Demo Walkthrough
         </a>
       </div>
-    </div>
+    </nav>
   </div>
 </header>
 
 <script>
-  const toggleBtn = document.getElementById('mobile-nav-toggle');
-  const menu = document.getElementById('mobile-nav-menu');
-  const hamburger = document.getElementById('hamburger-icon');
-  const close = document.getElementById('close-icon');
+  function setupMobileNav() {
+    const toggle = document.getElementById('mobile-menu-toggle');
+    const panel = document.getElementById('mobile-nav-panel');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
+    const links = document.querySelectorAll('.mobile-nav-link');
 
-  if (toggleBtn && menu && hamburger && close) {
-    toggleBtn.addEventListener('click', () => {
-      const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
-      toggleBtn.setAttribute('aria-expanded', String(!isExpanded));
-      menu.classList.toggle('hidden');
-      hamburger.classList.toggle('hidden');
-      close.classList.toggle('hidden');
-    });
+    if (!toggle || !panel || !hamburgerIcon || !closeIcon) return;
 
-    const links = menu.querySelectorAll('.mobile-nav-link');
+    function toggleMenu() {
+      if (!toggle || !panel || !hamburgerIcon || !closeIcon) return;
+      const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!isExpanded));
+      panel.classList.toggle('hidden');
+      hamburgerIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    }
+
+    toggle.onclick = toggleMenu;
+
     links.forEach((link) => {
       link.addEventListener('click', () => {
-        menu.classList.add('hidden');
-        hamburger.classList.remove('hidden');
-        close.classList.add('hidden');
-        toggleBtn.setAttribute('aria-expanded', 'false');
+        panel.classList.add('hidden');
+        hamburgerIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+        toggle.setAttribute('aria-expanded', 'false');
       });
     });
   }
+
+  setupMobileNav();
 </script>

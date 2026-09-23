@@ -1,36 +1,42 @@
 ---
-// Minimalist, high-end navbar: Brand on left, Book a Demo on right, auto-hides on scroll
+// Minimalist, world-class floating dark capsule navbar: Brand on left, Book a Demo on right, auto-hides on scroll
 ---
 
 <header
   id="main-header"
-  class="fixed top-0 left-0 right-0 z-50 w-full border-b border-line bg-white/95 backdrop-blur-md transition-transform duration-300 ease-in-out"
+  class="fixed top-3 sm:top-5 left-1/2 -translate-x-1/2 z-50 w-[94%] max-w-6xl transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]"
 >
-  <div class="mx-auto flex h-18 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+  <div class="rounded-full bg-[#0B0F1B]/85 backdrop-blur-xl border border-white/[0.12] shadow-[0_16px_40px_rgba(0,0,0,0.6)] px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between">
     <!-- Brand Logo & Name (Left) -->
     <a href="#" class="flex items-center gap-3 group focus-visible:outline-none" aria-label="Brift Homepage">
-      <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-blue text-white shadow-sm transition-transform group-hover:scale-105">
-        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <div class="relative flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 text-white shadow-[0_0_16px_rgba(59,130,246,0.5)] transition-transform group-hover:scale-105 border border-white/20">
+        <svg class="h-4 w-4 sm:h-5 sm:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M4 19h4v-5h4v-5h4V4h4" />
         </svg>
       </div>
-      <span class="text-xl font-bold tracking-tight text-ink">BRIFT</span>
+      <div class="flex items-center gap-2">
+        <span class="text-lg sm:text-xl font-extrabold tracking-tight text-white group-hover:text-blue-300 transition-colors">BRIFT</span>
+        <span class="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold tracking-wider bg-white/[0.06] border border-white/[0.08] text-slate-300">
+          <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>CON-OPS</span>
+        </span>
+      </div>
     </a>
 
     <!-- Single Action CTA (Right) -->
     <div class="flex items-center">
       <a
         href="#demo"
-        class="inline-flex items-center justify-center rounded-xl bg-blue px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-hover focus-visible:outline-none transition-all active:scale-[0.98]"
+        class="relative inline-flex items-center justify-center rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 hover:from-blue-500 hover:to-indigo-500 text-white text-xs sm:text-sm font-bold px-4 sm:px-6 py-2 sm:py-2.5 shadow-[0_0_20px_rgba(59,130,246,0.35)] hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] border border-blue-400/30 transition-all duration-200 active:scale-95 group focus-visible:outline-none"
       >
-        Book a Demo
+        <span>Book a Demo</span>
+        <svg class="w-3.5 h-3.5 ml-1.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
       </a>
     </div>
   </div>
 </header>
-
-<!-- Spacer so top content isn't covered by fixed header -->
-<div class="h-18" aria-hidden="true"></div>
 
 <script>
   function initHeaderAutoHide() {
@@ -44,15 +50,15 @@
       if (!header) return;
       const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
 
-      // Always show at top of page
+      // Always show near top of page
       if (currentScrollY <= 80) {
-        header.classList.remove('-translate-y-full');
+        header.classList.remove('-translate-y-28', 'opacity-0', 'pointer-events-none');
       } else if (currentScrollY > lastScrollY && currentScrollY > 120) {
-        // Scrolling DOWN -> hide header
-        header.classList.add('-translate-y-full');
+        // Scrolling DOWN -> hide header smoothly
+        header.classList.add('-translate-y-28', 'opacity-0', 'pointer-events-none');
       } else if (currentScrollY < lastScrollY) {
         // Scrolling UP -> reveal header
-        header.classList.remove('-translate-y-full');
+        header.classList.remove('-translate-y-28', 'opacity-0', 'pointer-events-none');
       }
 
       lastScrollY = Math.max(0, currentScrollY);

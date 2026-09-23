@@ -1,10 +1,13 @@
 ---
-// Single Landing Page Navigation with Smooth Section Anchors
+// Minimalist, high-end navbar: Brand on left, Book a Demo on right, auto-hides on scroll
 ---
 
-<header class="sticky top-0 z-50 w-full border-b border-line bg-white/95 backdrop-blur-md transition-all">
+<header
+  id="main-header"
+  class="fixed top-0 left-0 right-0 z-50 w-full border-b border-line bg-white/95 backdrop-blur-md transition-transform duration-300 ease-in-out"
+>
   <div class="mx-auto flex h-18 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-    <!-- Brand Logo -->
+    <!-- Brand Logo & Name (Left) -->
     <a href="#" class="flex items-center gap-3 group focus-visible:outline-none" aria-label="Brift Homepage">
       <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-blue text-white shadow-sm transition-transform group-hover:scale-105">
         <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -14,106 +17,63 @@
       <span class="text-xl font-bold tracking-tight text-ink">BRIFT</span>
     </a>
 
-    <!-- Desktop Navigation Anchors -->
-    <nav class="hidden md:flex items-center gap-7" aria-label="Primary Navigation">
-      <a href="#story" class="text-sm font-medium text-ink-2 hover:text-blue transition-colors focus-visible:outline-none">
-        24h Field Story
-      </a>
-      <a href="#comparison" class="text-sm font-medium text-ink-2 hover:text-blue transition-colors focus-visible:outline-none">
-        Chaos vs System
-      </a>
-      <a href="#tour" class="text-sm font-medium text-ink-2 hover:text-blue transition-colors focus-visible:outline-none">
-        Interactive Console
-      </a>
-      <a href="#calculator" class="text-sm font-medium text-amber-700 hover:text-amber-800 transition-colors focus-visible:outline-none flex items-center gap-1.5">
-        <span class="inline-block w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
-        <span>Loss Calculator</span>
-      </a>
-      <a href="#about" class="text-sm font-medium text-ink-2 hover:text-blue transition-colors focus-visible:outline-none">
-        Why Brift
-      </a>
-    </nav>
-
-    <!-- Right Header Action -->
-    <div class="hidden sm:flex items-center gap-4">
+    <!-- Single Action CTA (Right) -->
+    <div class="flex items-center">
       <a
         href="#demo"
-        class="inline-flex items-center justify-center rounded-xl bg-blue px-5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-blue-hover focus-visible:outline-none transition-all active:scale-[0.98]"
+        class="inline-flex items-center justify-center rounded-xl bg-blue px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-hover focus-visible:outline-none transition-all active:scale-[0.98]"
       >
         Book a Demo
       </a>
     </div>
-
-    <!-- Mobile Hamburger Toggle -->
-    <div class="flex md:hidden">
-      <button
-        id="mobile-menu-toggle"
-        type="button"
-        class="inline-flex items-center justify-center rounded-lg p-2 text-ink hover:bg-bg focus-visible:outline-none"
-        aria-controls="mobile-nav-panel"
-        aria-expanded="false"
-        aria-label="Toggle navigation menu"
-      >
-        <svg id="hamburger-icon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-        <svg id="close-icon" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
-    </div>
-  </div>
-
-  <!-- Mobile Drawer Panel -->
-  <div id="mobile-nav-panel" class="hidden md:hidden border-t border-line bg-white px-4 pt-3 pb-6 shadow-xl">
-    <nav class="flex flex-col space-y-3" aria-label="Mobile Navigation">
-      <a href="#story" class="mobile-nav-link text-base font-medium text-ink-2 hover:text-blue py-1">24h Field Story</a>
-      <a href="#comparison" class="mobile-nav-link text-base font-medium text-ink-2 hover:text-blue py-1">Chaos vs System</a>
-      <a href="#tour" class="mobile-nav-link text-base font-medium text-ink-2 hover:text-blue py-1">Interactive Console</a>
-      <a href="#calculator" class="mobile-nav-link text-base font-bold text-amber-700 hover:text-amber-800 py-1">Loss Calculator</a>
-      <a href="#about" class="mobile-nav-link text-base font-medium text-ink-2 hover:text-blue py-1">Why Brift</a>
-      <div class="pt-3 border-t border-line">
-        <a
-          href="#demo"
-          class="mobile-nav-link flex w-full items-center justify-center rounded-xl bg-blue py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-hover"
-        >
-          Book a Demo Walkthrough
-        </a>
-      </div>
-    </nav>
   </div>
 </header>
 
+<!-- Spacer so top content isn't covered by fixed header -->
+<div class="h-18" aria-hidden="true"></div>
+
 <script>
-  function setupMobileNav() {
-    const toggle = document.getElementById('mobile-menu-toggle');
-    const panel = document.getElementById('mobile-nav-panel');
-    const hamburgerIcon = document.getElementById('hamburger-icon');
-    const closeIcon = document.getElementById('close-icon');
-    const links = document.querySelectorAll('.mobile-nav-link');
+  function initHeaderAutoHide() {
+    const header = document.getElementById('main-header');
+    if (!header) return;
 
-    if (!toggle || !panel || !hamburgerIcon || !closeIcon) return;
+    let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+    let ticking = false;
 
-    function toggleMenu() {
-      if (!toggle || !panel || !hamburgerIcon || !closeIcon) return;
-      const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', String(!isExpanded));
-      panel.classList.toggle('hidden');
-      hamburgerIcon.classList.toggle('hidden');
-      closeIcon.classList.toggle('hidden');
+    function handleScroll() {
+      if (!header) return;
+      const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+      // Always show at top of page
+      if (currentScrollY <= 80) {
+        header.classList.remove('-translate-y-full');
+      } else if (currentScrollY > lastScrollY && currentScrollY > 120) {
+        // Scrolling DOWN -> hide header
+        header.classList.add('-translate-y-full');
+      } else if (currentScrollY < lastScrollY) {
+        // Scrolling UP -> reveal header
+        header.classList.remove('-translate-y-full');
+      }
+
+      lastScrollY = Math.max(0, currentScrollY);
+      ticking = false;
     }
 
-    toggle.onclick = toggleMenu;
-
-    links.forEach((link) => {
-      link.addEventListener('click', () => {
-        panel.classList.add('hidden');
-        hamburgerIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
-        toggle.setAttribute('aria-expanded', 'false');
-      });
-    });
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (!ticking) {
+          window.requestAnimationFrame(handleScroll);
+          ticking = true;
+        }
+      },
+      { passive: true }
+    );
   }
 
-  setupMobileNav();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHeaderAutoHide);
+  } else {
+    initHeaderAutoHide();
+  }
 </script>

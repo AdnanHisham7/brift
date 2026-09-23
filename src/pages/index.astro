@@ -13,104 +13,113 @@ import storiesImg from '../assets/stories-site-updates.png';
 
 <Layout
   title="Brift — A Single Hub for Every Site"
-  description="A live operating system for construction companies ready to replace spreadsheets, WhatsApp groups and guesswork with one reliable view of every site, rupee and worker."
+  description="A cinematic operating system for construction companies ready to replace spreadsheets, WhatsApp groups and guesswork with one reliable view of every site, rupee and worker."
   schemaType="home"
 >
-  <!-- 1. CINEMATIC HERO SECTION WITH FLOATING TRANSPARENT MOCKUP -->
-  <section class="relative overflow-hidden pt-10 pb-20 sm:pt-20 sm:pb-32 border-b border-line bg-gradient-to-b from-bg via-white to-bg">
-    <!-- Ambient Radial Glows -->
-    <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-gradient-to-tr from-blue/15 via-indigo-500/10 to-transparent blur-3xl rounded-full pointer-events-none" aria-hidden="true"></div>
-    <div class="absolute top-1/3 right-[-10%] w-[450px] h-[450px] bg-yellow/10 blur-3xl rounded-full pointer-events-none" aria-hidden="true"></div>
+  <!-- SCENE 01 // THE OVERTURE (CINEMATIC HERO) -->
+  <section class="relative overflow-hidden pt-12 pb-24 sm:pt-20 sm:pb-32 bg-[#0B1020] text-on-dark border-b border-navy-line">
+    <!-- Atmospheric Stage Lighting -->
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[850px] h-[550px] bg-gradient-to-tr from-blue/25 via-indigo-600/15 to-transparent blur-3xl rounded-full pointer-events-none" aria-hidden="true"></div>
+    <div class="absolute top-1/2 -right-20 w-[500px] h-[500px] bg-yellow/10 blur-3xl rounded-full pointer-events-none" aria-hidden="true"></div>
+    <div class="absolute inset-0 scanline-overlay pointer-events-none opacity-20" aria-hidden="true"></div>
 
     <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <!-- Timecode Telemetry Header -->
+      <div class="flex items-center justify-between border-b border-navy-line/80 pb-3 mb-10 text-[11px] font-mono tracking-widest text-on-dark-muted">
+        <div class="flex items-center gap-2">
+          <span class="inline-block h-2 w-2 rounded-full bg-red-500 animate-ping"></span>
+          <span class="text-white font-bold">REC ● LIVE FIELD FEED</span>
+        </div>
+        <div>FIELD OS // V2.4</div>
+        <div class="hidden sm:block">SYSTEM INTEGRITY: 100% VERIFIED</div>
+      </div>
+
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-        <!-- Hero Text Content -->
+        <!-- Hero Story Text -->
         <div class="lg:col-span-7 space-y-6 text-left reveal">
-          <div class="inline-flex items-center gap-2 rounded-full border border-line bg-white/90 px-3.5 py-1.5 text-xs font-semibold text-ink-2 shadow-xs backdrop-blur-md">
-            <span class="inline-block h-2 w-2 rounded-full bg-blue animate-pulse"></span>
-            <span>Construction Operating System & Field Control</span>
+          <div class="inline-flex items-center gap-2 rounded-full border border-navy-line bg-navy-surface px-3.5 py-1.5 text-xs font-semibold text-yellow backdrop-blur-md">
+            <span>SCENE 01 // THE STAKES</span>
           </div>
 
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-ink leading-[1.08]">
-            A single hub <br class="hidden sm:inline" />
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue via-indigo-600 to-blue">for every site.</span>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.06]">
+            A single hub <br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue via-indigo-400 to-yellow">for every site.</span>
           </h1>
 
-          <p class="text-lg sm:text-xl text-muted max-w-2xl leading-relaxed">
-            A live operating system for construction companies ready to replace spreadsheets, WhatsApp groups, and memory — with one reliable, closed-loop view of every site, rupee, and worker.
+          <p class="text-lg sm:text-xl text-on-dark-muted max-w-2xl leading-relaxed">
+            You started a construction company to shape skylines and build wealth. Instead, you're trapped in 45 phone calls a day while ₹2.4 Lakhs quietly leaks every month through WhatsApp groups, uncounted bags, and unrecorded cash advances.
           </p>
 
-          <!-- Primary Quick CTAs -->
+          <!-- Primary Cinematic Triggers -->
           <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
             <a
-              id="hero-book-demo-cta"
               href="#demo"
-              class="inline-flex items-center justify-center rounded-xl bg-blue px-8 py-4 text-base font-semibold text-white shadow-md hover:bg-blue-hover focus-visible:outline-none transition-all active:scale-[0.98] group"
+              class="inline-flex items-center justify-center rounded-xl bg-yellow text-ink px-8 py-4 text-base font-bold shadow-lg hover:bg-yellow-subtle focus-visible:outline-none transition-all active:scale-[0.98] group"
             >
-              <span>Book a Live Demo Walkthrough</span>
+              <span>Take Command — Book Demo</span>
               <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
               </svg>
             </a>
             <a
-              href="#calculator"
-              class="inline-flex items-center justify-center rounded-xl bg-white/90 border border-line px-6 py-4 text-sm font-semibold text-ink hover:bg-white hover:border-blue/30 shadow-xs transition-all"
+              href="#story"
+              class="inline-flex items-center justify-center rounded-xl bg-navy-surface border border-navy-line px-6 py-4 text-sm font-semibold text-white hover:border-yellow/50 transition-all gap-2"
             >
-              Calculate Your Monthly Leaks &rarr;
+              <svg class="w-4 h-4 text-yellow" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+              <span>Watch The 24h Field Story</span>
             </a>
           </div>
 
-          <!-- Proof Metrics Bar -->
+          <!-- Telemetry Teleprompter Tickers -->
           <div class="pt-4 grid grid-cols-2 sm:grid-cols-3 gap-3 max-w-xl">
-            <div class="rounded-xl border border-line bg-white/80 p-3 shadow-xs backdrop-blur-xs">
-              <span class="text-xl font-black text-ink block">~₹29.5L</span>
-              <span class="text-[11px] text-muted block leading-tight">Monthly volume tracked per firm</span>
+            <div class="rounded-xl border border-navy-line bg-navy-surface p-3.5 shadow-sm">
+              <span class="text-xl font-black text-white block">~₹29.5L</span>
+              <span class="text-[11px] text-on-dark-muted block leading-tight">Monthly volume tracked per firm</span>
             </div>
-            <div class="rounded-xl border border-line bg-white/80 p-3 shadow-xs backdrop-blur-xs">
-              <span class="text-xl font-black text-ink block">100%</span>
-              <span class="text-[11px] text-muted block leading-tight">Offline field sync capability</span>
+            <div class="rounded-xl border border-navy-line bg-navy-surface p-3.5 shadow-sm">
+              <span class="text-xl font-black text-emerald-400 block">100%</span>
+              <span class="text-[11px] text-on-dark-muted block leading-tight">Offline basement sync</span>
             </div>
-            <div class="col-span-2 sm:col-span-1 rounded-xl border border-line bg-white/80 p-3 shadow-xs backdrop-blur-xs">
-              <span class="text-xl font-black text-emerald-600 block">Zero</span>
-              <span class="text-[11px] text-muted block leading-tight">Unapproved cash moves</span>
+            <div class="col-span-2 sm:col-span-1 rounded-xl border border-navy-line bg-navy-surface p-3.5 shadow-sm">
+              <span class="text-xl font-black text-yellow block">0 Leaks</span>
+              <span class="text-[11px] text-on-dark-muted block leading-tight">No unverified cash movements</span>
             </div>
           </div>
         </div>
 
-        <!-- Floating Transparent Hero Mockup with Glass Elements -->
+        <!-- 3D Centerpiece Floating Terminal -->
         <div class="lg:col-span-5 relative flex justify-center perspective-container reveal delay-100">
-          <!-- Floating Transparent Phone Graphic -->
           <div class="relative w-full max-w-[340px] sm:max-w-[380px] lg:max-w-[420px] animate-float">
-            <!-- Glow underneath transparent mockup -->
-            <div class="absolute inset-8 bg-blue/20 blur-2xl rounded-full -z-10" aria-hidden="true"></div>
+            <!-- Holographic Halo -->
+            <div class="absolute inset-4 bg-gradient-to-tr from-blue/30 via-indigo-500/20 to-yellow/20 blur-3xl rounded-full -z-10" aria-hidden="true"></div>
 
             <Image
               src={heroTransparentImg}
-              alt="Real Brift Mobile Interface floating cutout showing live projects and verified financial ledger"
-              class="w-full h-auto drop-shadow-2xl select-none"
+              alt="Brift Mobile Interface floating cutout with live project cards"
+              class="w-full h-auto drop-shadow-[0_25px_35px_rgba(0,0,0,0.6)] select-none"
               loading="eager"
               fetchpriority="high"
               format="webp"
             />
 
-            <!-- Floating Micro Card 1 (Top Left) -->
-            <div class="absolute -top-3 -left-4 sm:-left-8 rounded-2xl border border-line/80 bg-white/95 p-3 shadow-elevated backdrop-blur-md max-w-[190px] hidden sm:block animate-pulse-subtle">
-              <div class="flex items-center gap-2">
-                <span class="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold">✓</span>
+            <!-- Holographic Telemetry Badge (Top Left) -->
+            <div class="absolute -top-3 -left-4 sm:-left-6 rounded-2xl border border-navy-line bg-navy-surface/95 p-3.5 shadow-2xl backdrop-blur-md max-w-[200px] hidden sm:block animate-pulse-subtle">
+              <div class="flex items-center gap-2.5">
+                <span class="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold">✓</span>
                 <div>
-                  <span class="text-[10px] uppercase font-bold text-muted block">Verified Spend</span>
-                  <span class="text-xs font-extrabold text-ink block">₹62,00,000</span>
+                  <span class="text-[10px] uppercase font-mono tracking-wider text-on-dark-muted block">Verified Funds</span>
+                  <span class="text-xs font-black text-white block">₹62,00,000 Locked</span>
                 </div>
               </div>
             </div>
 
-            <!-- Floating Micro Card 2 (Bottom Right) -->
-            <div class="absolute -bottom-4 -right-4 sm:-right-6 rounded-2xl border border-navy-line bg-navy/95 p-3.5 shadow-elevated text-on-dark backdrop-blur-md max-w-[210px]">
+            <!-- Holographic Telemetry Badge (Bottom Right) -->
+            <div class="absolute -bottom-4 -right-4 sm:-right-6 rounded-2xl border border-navy-line bg-navy-surface/95 p-3.5 shadow-2xl backdrop-blur-md max-w-[210px]">
               <div class="flex items-center gap-2.5">
                 <div class="h-2.5 w-2.5 rounded-full bg-emerald-400 animate-ping"></div>
                 <div>
-                  <span class="text-[10px] uppercase font-bold text-yellow block">Live Site Sync</span>
-                  <span class="text-xs font-bold text-white block">30 Workers Logged Offline</span>
+                  <span class="text-[10px] uppercase font-mono tracking-wider text-yellow block">Site Gate 0 Bars</span>
+                  <span class="text-xs font-bold text-white block">30 Workers Synced</span>
                 </div>
               </div>
             </div>
@@ -120,403 +129,279 @@ import storiesImg from '../assets/stories-site-updates.png';
     </div>
   </section>
 
-  <!-- 2. INTERACTIVE REALITY SWITCHER: CHAOS VS CLOSED-LOOP -->
-  <section id="comparison" class="py-16 sm:py-24 border-b border-line bg-white relative">
+  <!-- SCENE 02 // THE CRIME SCENE (FORENSIC LEAK INSPECTION) -->
+  <section id="evidence" class="py-20 sm:py-28 border-b border-line bg-white relative">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-10 space-y-3 reveal">
-        <span class="inline-block text-xs font-bold uppercase tracking-wider text-blue bg-blue-soft px-3 py-1 rounded-full">
-          OPERATIONAL DIAGNOSTIC
+      <div class="text-center max-w-3xl mx-auto mb-14 space-y-3 reveal">
+        <span class="inline-block text-xs font-bold uppercase tracking-wider text-red-600 bg-red-50 border border-red-200 px-3 py-1 rounded-full">
+          SCENE 02 // THE CRIME SCENE
         </span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink">
-          It isn't a people problem. It is a records problem.
-        </h2>
-        <p class="text-base text-muted">
-          Toggle between how construction sites usually operate vs how Brift locks down money, materials, and workforce.
-        </p>
-
-        <!-- Interactive Switch Toggle -->
-        <div class="pt-4 flex items-center justify-center">
-          <div class="inline-flex p-1.5 rounded-2xl bg-bg border border-line shadow-xs">
-            <button
-              id="btn-chaos"
-              type="button"
-              class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-red-600 text-white shadow-sm"
-              onclick="switchReality('chaos')"
-            >
-              ✕ Without Brift (The Chaos)
-            </button>
-            <button
-              id="btn-brift"
-              type="button"
-              class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all text-ink-2 hover:text-blue"
-              onclick="switchReality('brift')"
-            >
-              ✓ With Brift (Closed-Loop)
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- State 1: CHAOS PANEL -->
-      <div id="panel-chaos" class="transition-all duration-300">
-        <div class="rounded-3xl border border-red-200 bg-red-50/40 p-6 sm:p-10 shadow-sm">
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="rounded-2xl border border-red-200/80 bg-white p-5 shadow-2xs space-y-2">
-              <span class="flex h-7 w-7 items-center justify-center rounded-full bg-red-100 text-red-600 text-xs font-bold">✕</span>
-              <h3 class="text-base font-bold text-ink">Bills Lost in WhatsApp Groups</h3>
-              <p class="text-xs text-muted leading-relaxed">
-                Site photos and cash receipts are buried in group chats. When bills are due, office accounts spend days chasing supervisors.
-              </p>
-            </div>
-            <div class="rounded-2xl border border-red-200/80 bg-white p-5 shadow-2xs space-y-2">
-              <span class="flex h-7 w-7 items-center justify-center rounded-full bg-red-100 text-red-600 text-xs font-bold">✕</span>
-              <h3 class="text-base font-bold text-ink">Ghost Workers on Paper Registers</h3>
-              <p class="text-xs text-muted leading-relaxed">
-                Physical muster rolls are easily manipulated. End-of-week wages are paid based on memory and unverified tallies.
-              </p>
-            </div>
-            <div class="rounded-2xl border border-red-200/80 bg-white p-5 shadow-2xs space-y-2">
-              <span class="flex h-7 w-7 items-center justify-center rounded-full bg-red-100 text-red-600 text-xs font-bold">✕</span>
-              <h3 class="text-base font-bold text-ink">Contractor Advances in Pocket Diaries</h3>
-              <p class="text-xs text-muted leading-relaxed">
-                Subcontractors ask for cash advances on site. Without a live ledger, advance amounts become hostile arguments during settlement.
-              </p>
-            </div>
-            <div class="rounded-2xl border border-red-200/80 bg-white p-5 shadow-2xs space-y-2">
-              <span class="flex h-7 w-7 items-center justify-center rounded-full bg-red-100 text-red-600 text-xs font-bold">✕</span>
-              <h3 class="text-base font-bold text-ink">Emergency Retail Material Buys</h3>
-              <p class="text-xs text-muted leading-relaxed">
-                Because site stock is never counted until empty, cement and steel are purchased at inflated retail prices to prevent work stoppages.
-              </p>
-            </div>
-            <div class="rounded-2xl border border-red-200/80 bg-white p-5 shadow-2xs space-y-2">
-              <span class="flex h-7 w-7 items-center justify-center rounded-full bg-red-100 text-red-600 text-xs font-bold">✕</span>
-              <h3 class="text-base font-bold text-ink">Spend Surfacing 20 Days Late</h3>
-              <p class="text-xs text-muted leading-relaxed">
-                Company owners only discover cost overruns after the month closes, when profit margins have already quietly eroded.
-              </p>
-            </div>
-            <div class="rounded-2xl border border-red-200/80 bg-white p-5 shadow-2xs space-y-2">
-              <span class="flex h-7 w-7 items-center justify-center rounded-full bg-red-100 text-red-600 text-xs font-bold">✕</span>
-              <h3 class="text-base font-bold text-ink">2+ Hours of Daily Interrogation Calls</h3>
-              <p class="text-xs text-muted leading-relaxed">
-                Company owners live on evening phone calls asking site supervisors questions that should be available instantly on one screen.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- State 2: BRIFT PANEL (Hidden by default, shown via toggle) -->
-      <div id="panel-brift" class="hidden transition-all duration-300">
-        <div class="rounded-3xl border border-blue/30 bg-blue-soft/30 p-6 sm:p-10 shadow-sm">
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="rounded-2xl border border-blue/20 bg-white p-5 shadow-2xs space-y-2">
-              <span class="flex h-7 w-7 items-center justify-center rounded-full bg-blue text-white text-xs font-bold">✓</span>
-              <h3 class="text-base font-bold text-ink">Closed-Loop Financial Verification</h3>
-              <p class="text-xs text-muted leading-relaxed">
-                Site managers receive assigned fund balances. The balance decreases only when physical bills are photographed and verified.
-              </p>
-            </div>
-            <div class="rounded-2xl border border-blue/20 bg-white p-5 shadow-2xs space-y-2">
-              <span class="flex h-7 w-7 items-center justify-center rounded-full bg-blue text-white text-xs font-bold">✓</span>
-              <h3 class="text-base font-bold text-ink">Offline Field Muster Roll</h3>
-              <p class="text-xs text-muted leading-relaxed">
-                Site supervisors log attendance at the gate even with zero cellular signal. Data auto-syncs to payroll the moment signal connects.
-              </p>
-            </div>
-            <div class="rounded-2xl border border-blue/20 bg-white p-5 shadow-2xs space-y-2">
-              <span class="flex h-7 w-7 items-center justify-center rounded-full bg-blue text-white text-xs font-bold">✓</span>
-              <h3 class="text-base font-bold text-ink">Lifetime Contractor Advance Ledgers</h3>
-              <p class="text-xs text-muted leading-relaxed">
-                Before approving cash advances, the system checks previous payouts against verified stage completion. Advances deduct automatically.
-              </p>
-            </div>
-            <div class="rounded-2xl border border-blue/20 bg-white p-5 shadow-2xs space-y-2">
-              <span class="flex h-7 w-7 items-center justify-center rounded-full bg-blue text-white text-xs font-bold">✓</span>
-              <h3 class="text-base font-bold text-ink">Standardized Item Catalog & Reorders</h3>
-              <p class="text-xs text-muted leading-relaxed">
-                Standard item codes prevent duplicate vendor names. Low-stock thresholds alert the office days before cement or sand runs out.
-              </p>
-            </div>
-            <div class="rounded-2xl border border-blue/20 bg-white p-5 shadow-2xs space-y-2">
-              <span class="flex h-7 w-7 items-center justify-center rounded-full bg-blue text-white text-xs font-bold">✓</span>
-              <h3 class="text-base font-bold text-ink">Real-Time Burn Rate & Funds</h3>
-              <p class="text-xs text-muted leading-relaxed">
-                Live dashboard displays cash in hand, daily spend velocity, and receivables directly tracked against project completion stages.
-              </p>
-            </div>
-            <div class="rounded-2xl border border-blue/20 bg-white p-5 shadow-2xs space-y-2">
-              <span class="flex h-7 w-7 items-center justify-center rounded-full bg-blue text-white text-xs font-bold">✓</span>
-              <h3 class="text-base font-bold text-ink">5-Minute Owner Evening Overview</h3>
-              <p class="text-xs text-muted leading-relaxed">
-                No endless chasing. Open your phone or laptop at 07:30 PM and see every active site reconciled with photo updates and clean numbers.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3. STORY MODE SCROLLING SECTION: "A 24-Hour Day Across Your Sites" -->
-  <section id="story" class="py-20 sm:py-28 border-b border-line bg-bg relative">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <!-- Section Header -->
-      <div class="max-w-3xl mb-12 space-y-3 reveal">
-        <div class="inline-flex items-center gap-2 rounded-full border border-blue/20 bg-blue-soft px-3 py-1 text-xs font-bold uppercase tracking-wider text-blue">
-          <span>Field Reality Story Mode</span>
-        </div>
-        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-ink">
-          A 24-hour day across your construction sites.
+        <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-ink">
+          Where does ₹2.4 Lakhs quietly vanish every single month?
         </h2>
         <p class="text-base sm:text-lg text-muted">
-          Click through or scroll the timeline to see how Brift turns chaotic phone calls, missing receipts, and lost materials into verified, automated company records.
+          Click on any evidence tag to inspect how lack of records creates silent financial bleeding across your sites.
         </p>
+      </div>
 
-        <!-- Clickable Time Selector Buttons for Direct Navigation -->
-        <div class="pt-4 flex flex-wrap items-center gap-2">
+      <!-- Interactive Crime Scene Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Evidence Item 1 -->
+        <div
+          class="evidence-card rounded-2xl border-2 border-line bg-bg p-6 hover:border-red-500 hover:shadow-elevated transition-all duration-300 cursor-pointer group space-y-3"
+          onclick="inspectEvidence(1)"
+        >
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-mono font-bold uppercase text-red-600 bg-red-100 px-2.5 py-0.5 rounded-md">
+              Evidence #01
+            </span>
+            <span class="text-xs font-bold text-red-600">-₹40,000 / mo</span>
+          </div>
+          <h3 class="text-lg font-bold text-ink group-hover:text-red-600 transition-colors">
+            The Ghost Labor Register
+          </h3>
+          <p class="text-xs text-muted leading-relaxed">
+            Attendance taken on crumpled paper notebooks. By Saturday evening, 4 to 6 extra phantom workers have been added to the payout tally.
+          </p>
+          <div class="pt-2 border-t border-line text-[11px] font-bold text-blue flex items-center justify-between">
+            <span>Inspect Brift Fix</span>
+            <span>&rarr;</span>
+          </div>
+        </div>
+
+        <!-- Evidence Item 2 -->
+        <div
+          class="evidence-card rounded-2xl border-2 border-line bg-bg p-6 hover:border-red-500 hover:shadow-elevated transition-all duration-300 cursor-pointer group space-y-3"
+          onclick="inspectEvidence(2)"
+        >
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-mono font-bold uppercase text-red-600 bg-red-100 px-2.5 py-0.5 rounded-md">
+              Evidence #02
+            </span>
+            <span class="text-xs font-bold text-red-600">-₹80,000 / mo</span>
+          </div>
+          <h3 class="text-lg font-bold text-ink group-hover:text-red-600 transition-colors">
+            The Vanishing Cement Challan
+          </h3>
+          <p class="text-xs text-muted leading-relaxed">
+            200 bags billed by the supplier. 170 bags actually unloaded. Delivery challan signed in pencil and lost under a windshield.
+          </p>
+          <div class="pt-2 border-t border-line text-[11px] font-bold text-blue flex items-center justify-between">
+            <span>Inspect Brift Fix</span>
+            <span>&rarr;</span>
+          </div>
+        </div>
+
+        <!-- Evidence Item 3 -->
+        <div
+          class="evidence-card rounded-2xl border-2 border-line bg-bg p-6 hover:border-red-500 hover:shadow-elevated transition-all duration-300 cursor-pointer group space-y-3"
+          onclick="inspectEvidence(3)"
+        >
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-mono font-bold uppercase text-red-600 bg-red-100 px-2.5 py-0.5 rounded-md">
+              Evidence #03
+            </span>
+            <span class="text-xs font-bold text-red-600">-₹70,000 / mo</span>
+          </div>
+          <h3 class="text-lg font-bold text-ink group-hover:text-red-600 transition-colors">
+            The Pocket Diary Advance
+          </h3>
+          <p class="text-xs text-muted leading-relaxed">
+            Site manager hands out ₹35,000 cash advance to electrical contractor. Written in a diary, forgotten by final settlement time.
+          </p>
+          <div class="pt-2 border-t border-line text-[11px] font-bold text-blue flex items-center justify-between">
+            <span>Inspect Brift Fix</span>
+            <span>&rarr;</span>
+          </div>
+        </div>
+
+        <!-- Evidence Item 4 -->
+        <div
+          class="evidence-card rounded-2xl border-2 border-line bg-bg p-6 hover:border-red-500 hover:shadow-elevated transition-all duration-300 cursor-pointer group space-y-3"
+          onclick="inspectEvidence(4)"
+        >
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-mono font-bold uppercase text-red-600 bg-red-100 px-2.5 py-0.5 rounded-md">
+              Evidence #04
+            </span>
+            <span class="text-xs font-bold text-red-600">-₹50,000 / mo</span>
+          </div>
+          <h3 class="text-lg font-bold text-ink group-hover:text-red-600 transition-colors">
+            Emergency Retail Markups
+          </h3>
+          <p class="text-xs text-muted leading-relaxed">
+            Site runs out of steel on Thursday afternoon. Supervisor buys from local retail dealer at an 18% markup so work doesn't stall.
+          </p>
+          <div class="pt-2 border-t border-line text-[11px] font-bold text-blue flex items-center justify-between">
+            <span>Inspect Brift Fix</span>
+            <span>&rarr;</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dynamic Forensic Spotlight Box -->
+      <div id="forensic-spotlight" class="mt-8 rounded-3xl border border-blue/30 bg-blue-soft/30 p-6 sm:p-8 transition-all duration-300">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-blue/20 pb-4 mb-4">
+          <div class="flex items-center gap-2">
+            <span class="h-3 w-3 rounded-full bg-blue animate-pulse"></span>
+            <span class="text-xs font-mono font-bold uppercase tracking-wider text-blue" id="spotlight-title">
+              CASE FILE #01 // GHOST LABOR RESOLUTION
+            </span>
+          </div>
+          <span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">
+            Status: Fully Plugged by Brift
+          </span>
+        </div>
+        <p class="text-sm text-ink leading-relaxed" id="spotlight-desc">
+          <strong>The Brift Closed-Loop:</strong> The site supervisor opens the app at the site gate. Even in a basement with 0 cellular signal, attendance is logged and timestamped with worker categorization (skilled/unskilled). The record locks permanently and syncs to central payroll the second the phone connects to signal. Zero paper registers, zero phantom workers.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENE 03 // THE 24-HOUR MOVIE SEQUENCE (AUTO-ADVANCE THEATER) -->
+  <section id="story" class="py-20 sm:py-28 border-b border-line bg-[#0B1020] text-on-dark relative overflow-hidden">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <!-- Section Title & Movie Controls -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 border-b border-navy-line pb-8 reveal">
+        <div class="space-y-3 max-w-2xl">
+          <span class="inline-block text-xs font-bold uppercase tracking-wider text-yellow bg-navy-surface border border-navy-line px-3 py-1 rounded-full">
+            SCENE 03 // THE 24-HOUR DAY
+          </span>
+          <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-white">
+            Watch a day on your sites unfold.
+          </h2>
+          <p class="text-sm sm:text-base text-on-dark-muted">
+            See how chaotic phone calls and unverified receipts transform into automated, synchronized records.
+          </p>
+        </div>
+
+        <!-- Movie Controls Bar -->
+        <div class="flex items-center gap-3">
           <button
+            id="movie-autoplay-btn"
             type="button"
-            class="story-tab-btn px-4 py-2 rounded-xl text-xs font-bold border border-blue bg-blue text-white shadow-xs transition-all cursor-pointer"
-            data-target-chapter="chap1"
-            onclick="jumpToChapter('chap1')"
+            class="inline-flex items-center gap-2 rounded-xl bg-yellow text-ink px-5 py-3 text-xs font-black shadow-md hover:bg-yellow-subtle transition-all cursor-pointer"
+            onclick="toggleMovieAutoPlay()"
           >
-            07:00 AM • Site Gate
-          </button>
-          <button
-            type="button"
-            class="story-tab-btn px-4 py-2 rounded-xl text-xs font-bold border border-line bg-white text-ink hover:border-blue transition-all cursor-pointer"
-            data-target-chapter="chap2"
-            onclick="jumpToChapter('chap2')"
-          >
-            11:30 AM • Delivery Bay
-          </button>
-          <button
-            type="button"
-            class="story-tab-btn px-4 py-2 rounded-xl text-xs font-bold border border-line bg-white text-ink hover:border-blue transition-all cursor-pointer"
-            data-target-chapter="chap3"
-            onclick="jumpToChapter('chap3')"
-          >
-            03:15 PM • Site Office
-          </button>
-          <button
-            type="button"
-            class="story-tab-btn px-4 py-2 rounded-xl text-xs font-bold border border-line bg-white text-ink hover:border-blue transition-all cursor-pointer"
-            data-target-chapter="chap4"
-            onclick="jumpToChapter('chap4')"
-          >
-            07:30 PM • Owner Evening
+            <span id="play-icon">▶</span>
+            <span id="play-text">Auto-Play Movie Mode</span>
           </button>
         </div>
       </div>
 
-      <!-- Story Timeline Container (Split Grid: Left Chapters, Right Sticky Visual) -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start relative">
-        <!-- Left Column: Scrolling Chapters -->
-        <div class="lg:col-span-6 space-y-10 pb-8">
-          <!-- CHAPTER 1: 07:00 AM -->
-          <div
-            id="chapter-chap1"
-            data-chapter="chap1"
-            class="story-chapter rounded-2xl border border-line bg-white/80 p-6 sm:p-8 transition-all duration-300 relative shadow-xs"
-          >
-            <div class="flex items-center justify-between mb-4">
-              <span class="story-time-badge inline-flex items-center gap-1.5 rounded-full bg-blue text-white px-3 py-1 text-xs font-bold uppercase tracking-wider" data-for-chapter="chap1">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                07:00 AM — Site Gate
-              </span>
-              <span class="text-xs font-semibold text-muted">No Signal Required</span>
+      <!-- Theater Stage: Screen + Storyboard -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <!-- Left: Storyboard Narration Card -->
+        <div class="lg:col-span-5 space-y-6">
+          <!-- Time Buttons -->
+          <div class="grid grid-cols-2 gap-2" id="movie-scene-buttons">
+            <button
+              type="button"
+              class="movie-tab px-4 py-2.5 rounded-xl text-xs font-bold border-2 border-yellow bg-yellow text-ink text-left transition-all cursor-pointer"
+              data-scene="1"
+              onclick="showMovieScene(1)"
+            >
+              07:00 AM • Site Gate
+            </button>
+            <button
+              type="button"
+              class="movie-tab px-4 py-2.5 rounded-xl text-xs font-bold border border-navy-line bg-navy-surface text-on-dark text-left hover:border-yellow transition-all cursor-pointer"
+              data-scene="2"
+              onclick="showMovieScene(2)"
+            >
+              11:30 AM • Delivery Bay
+            </button>
+            <button
+              type="button"
+              class="movie-tab px-4 py-2.5 rounded-xl text-xs font-bold border border-navy-line bg-navy-surface text-on-dark text-left hover:border-yellow transition-all cursor-pointer"
+              data-scene="3"
+              onclick="showMovieScene(3)"
+            >
+              03:15 PM • Site Office
+            </button>
+            <button
+              type="button"
+              class="movie-tab px-4 py-2.5 rounded-xl text-xs font-bold border border-navy-line bg-navy-surface text-on-dark text-left hover:border-yellow transition-all cursor-pointer"
+              data-scene="4"
+              onclick="showMovieScene(4)"
+            >
+              07:30 PM • Living Room
+            </button>
+          </div>
+
+          <!-- Movie Screenplay Subtitle Card -->
+          <div class="rounded-3xl border border-navy-line bg-navy-surface p-6 sm:p-8 space-y-4 shadow-xl">
+            <div class="flex items-center justify-between text-xs font-mono text-yellow border-b border-navy-line/80 pb-3">
+              <span id="scene-timecode">TIMECODE: 07:00:00 AM</span>
+              <span id="scene-location">LOCATION: SITE GATE</span>
             </div>
-            <h3 class="text-2xl font-bold text-ink mb-3">
+
+            <h3 class="text-2xl font-bold text-white leading-tight" id="scene-headline">
               Muster roll logged without network or ghost labor.
             </h3>
-            <p class="text-sm text-ink-2 leading-relaxed mb-4">
-              The site supervisor stands at the gate. Thirty workers arrive. Even in a basement with zero cellular bars, he opens Brift, taps each worker's attendance, and notes skilled vs un-skilled categories.
-            </p>
-            <div class="rounded-xl bg-bg border border-line/70 p-3.5 text-xs text-ink-2 space-y-1.5">
-              <div class="font-bold text-ink flex items-center gap-1.5">
-                <span class="text-emerald-600">●</span> How it stops money loss:
-              </div>
-              <p class="text-muted">
-                No paper register that can be inflated at the end of the week. Attendance is timestamped and syncs to central payroll the second the phone catches signal.
-              </p>
-            </div>
-          </div>
 
-          <!-- CHAPTER 2: 11:30 AM -->
-          <div
-            id="chapter-chap2"
-            data-chapter="chap2"
-            class="story-chapter rounded-2xl border border-line bg-white/80 p-6 sm:p-8 transition-all duration-300 relative shadow-xs"
-          >
-            <div class="flex items-center justify-between mb-4">
-              <span class="story-time-badge inline-flex items-center gap-1.5 rounded-full bg-gray-100 text-ink-muted px-3 py-1 text-xs font-bold uppercase tracking-wider" data-for-chapter="chap2">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                11:30 AM — Delivery Bay
-              </span>
-              <span class="text-xs font-semibold text-muted">Direct Stock Entry</span>
-            </div>
-            <h3 class="text-2xl font-bold text-ink mb-3">
-              200 bags of cement arrive. Verified before the truck leaves.
-            </h3>
-            <p class="text-sm text-ink-2 leading-relaxed mb-4">
-              Instead of signing a paper delivery challan that gets lost under a windshield, the supervisor snaps the challan, records the counted bags, and logs it directly into site inventory.
+            <p class="text-sm text-on-dark-muted leading-relaxed" id="scene-narration">
+              Thirty workers arrive at the gate. Even in a basement with zero cellular bars, the supervisor taps each worker in Brift. Attendance is locked to prevent week-end muster inflation.
             </p>
-            <div class="rounded-xl bg-bg border border-line/70 p-3.5 text-xs text-ink-2 space-y-1.5">
-              <div class="font-bold text-ink flex items-center gap-1.5">
-                <span class="text-emerald-600">●</span> How it stops money loss:
-              </div>
-              <p class="text-muted">
-                Material quantities are locked against standardized item codes. No phantom deliveries, no duplicate vendor billing, and low-stock reorder thresholds alert you before site work halts.
-              </p>
-            </div>
-          </div>
 
-          <!-- CHAPTER 3: 03:15 PM -->
-          <div
-            id="chapter-chap3"
-            data-chapter="chap3"
-            class="story-chapter rounded-2xl border border-line bg-white/80 p-6 sm:p-8 transition-all duration-300 relative shadow-xs"
-          >
-            <div class="flex items-center justify-between mb-4">
-              <span class="story-time-badge inline-flex items-center gap-1.5 rounded-full bg-gray-100 text-ink-muted px-3 py-1 text-xs font-bold uppercase tracking-wider" data-for-chapter="chap3">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                03:15 PM — Site Office
-              </span>
-              <span class="text-xs font-semibold text-muted">Advance Request</span>
-            </div>
-            <h3 class="text-2xl font-bold text-ink mb-3">
-              Subcontractor requests ₹35,000 cash advance.
-            </h3>
-            <p class="text-sm text-ink-2 leading-relaxed mb-4">
-              The electrical contractor demands an advance. The site manager doesn't check WhatsApp or try to remember what was paid last week. Brift instantly displays the contractor's lifetime ledger, prior advances, and current unbilled work.
-            </p>
-            <div class="rounded-xl bg-bg border border-line/70 p-3.5 text-xs text-ink-2 space-y-1.5">
-              <div class="font-bold text-ink flex items-center gap-1.5">
-                <span class="text-emerald-600">●</span> How it stops money loss:
-              </div>
-              <p class="text-muted">
-                Zero untracked cash disbursements. Advances are deducted automatically from the final bill. The site manager’s cash balance decreases only upon verified bill submission.
-              </p>
-            </div>
-          </div>
-
-          <!-- CHAPTER 4: 07:30 PM -->
-          <div
-            id="chapter-chap4"
-            data-chapter="chap4"
-            class="story-chapter rounded-2xl border border-line bg-white/80 p-6 sm:p-8 transition-all duration-300 relative shadow-xs"
-          >
-            <div class="flex items-center justify-between mb-4">
-              <span class="story-time-badge inline-flex items-center gap-1.5 rounded-full bg-gray-100 text-ink-muted px-3 py-1 text-xs font-bold uppercase tracking-wider" data-for-chapter="chap4">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                07:30 PM — Owner's Evening
-              </span>
-              <span class="text-xs font-semibold text-muted">Zero Phone Calls</span>
-            </div>
-            <h3 class="text-2xl font-bold text-ink mb-3">
-              The owner opens one screen. All sites reconciled.
-            </h3>
-            <p class="text-sm text-ink-2 leading-relaxed mb-4">
-              No 45-minute evening phone calls interrogating supervisors. In under 5 minutes from your phone or desk, you see total funds in hand, verified spend vs budget, photo progress trays, and pending contractor signoffs.
-            </p>
-            <div class="rounded-xl bg-bg border border-line/70 p-3.5 text-xs text-ink-2 space-y-1.5">
-              <div class="font-bold text-ink flex items-center gap-1.5">
-                <span class="text-emerald-600">●</span> How it stops money loss:
-              </div>
-              <p class="text-muted">
-                Executive financial visibility in real-time, not 15 days after month-end when cost overruns have already consumed your company margin.
-              </p>
+            <div class="pt-3 border-t border-navy-line/80 flex items-center justify-between text-xs">
+              <span class="text-on-dark-muted">Money Leak Status:</span>
+              <span class="font-bold text-emerald-400" id="scene-leak-status">✓ Zero Ghost Labor Paid</span>
             </div>
           </div>
         </div>
 
-        <!-- Right Column: Sticky Visual Stage -->
-        <div class="hidden lg:block lg:col-span-6 sticky top-28">
-          <div class="rounded-3xl border border-line/80 bg-white p-4 shadow-elevated relative overflow-hidden min-h-[480px]">
-            <!-- Subtle backdrop gradient -->
-            <div class="absolute -inset-2 bg-gradient-to-br from-blue-soft/50 via-transparent to-bg -z-10"></div>
-
-            <!-- Header Stage Bar -->
-            <div class="flex items-center justify-between pb-3 border-b border-line mb-3 px-2">
-              <div class="flex items-center gap-2">
-                <span class="h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
-                <span class="text-xs font-bold text-ink tracking-tight">Live Site Operations Console</span>
-              </div>
-              <span class="text-[10px] text-muted font-mono uppercase">Verified Closed-Loop Engine</span>
+        <!-- Right: Screen Projector Frame -->
+        <div class="lg:col-span-7">
+          <div class="rounded-3xl border-2 border-navy-line bg-navy p-3 sm:p-4 shadow-[0_0_60px_rgba(58,70,225,0.25)] relative overflow-hidden">
+            <!-- Screen Ticker HUD -->
+            <div class="flex items-center justify-between px-3 py-2 border-b border-navy-line text-[10px] font-mono text-on-dark-muted mb-3">
+              <span class="flex items-center gap-1.5">
+                <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>PROJECTOR FEED</span>
+              </span>
+              <span id="projector-id">FEED // 01 • MUSTER SYNC</span>
             </div>
 
-            <!-- Screen 1: Muster Roll / Stories Attendance -->
-            <div
-              data-for-chapter="chap1"
-              class="story-stage-screen transition-all duration-500 ease-out absolute inset-x-4 top-14 bottom-4 flex flex-col justify-center"
-            >
-              <div class="rounded-xl overflow-hidden border border-line shadow-sm bg-bg">
-                <Image
-                  src={storiesImg}
-                  alt="Site updates and attendance verification screen"
-                  class="w-full h-auto object-cover max-h-[420px]"
-                  format="webp"
-                />
-              </div>
-              <div class="mt-2 text-center">
-                <span class="text-[11px] text-muted font-medium">Site Gate 07:00 AM • Offline Attendance Syncing</span>
-              </div>
+            <!-- Slide 1 -->
+            <div id="movie-screen-1" class="movie-screen transition-all duration-500 ease-out">
+              <Image
+                src={storiesImg}
+                alt="Site attendance and daily photo update feed"
+                class="w-full h-auto rounded-xl object-cover max-h-[460px]"
+                format="webp"
+              />
             </div>
 
-            <!-- Screen 2: Materials & Inventory -->
-            <div
-              data-for-chapter="chap2"
-              class="story-stage-screen opacity-0 scale-95 pointer-events-none transition-all duration-500 ease-out absolute inset-x-4 top-14 bottom-4 flex flex-col justify-center"
-            >
-              <div class="rounded-xl overflow-hidden border border-line shadow-sm bg-bg">
-                <Image
-                  src={materialsImg}
-                  alt="Materials stock ledger and delivery intake"
-                  class="w-full h-auto object-cover max-h-[420px]"
-                  format="webp"
-                />
-              </div>
-              <div class="mt-2 text-center">
-                <span class="text-[11px] text-muted font-medium">Delivery Bay 11:30 AM • Challan Locked to Inventory</span>
-              </div>
+            <!-- Slide 2 -->
+            <div id="movie-screen-2" class="movie-screen hidden transition-all duration-500 ease-out">
+              <Image
+                src={materialsImg}
+                alt="Materials stock ledger and delivery intake"
+                class="w-full h-auto rounded-xl object-cover max-h-[460px]"
+                format="webp"
+              />
             </div>
 
-            <!-- Screen 3: Contractor Ledger & Advance -->
-            <div
-              data-for-chapter="chap3"
-              class="story-stage-screen opacity-0 scale-95 pointer-events-none transition-all duration-500 ease-out absolute inset-x-4 top-14 bottom-4 flex flex-col justify-center"
-            >
-              <div class="rounded-xl overflow-hidden border border-line shadow-sm bg-bg">
-                <Image
-                  src={contractorImg}
-                  alt="Contractor ledger and advance settlement"
-                  class="w-full h-auto object-cover max-h-[420px]"
-                  format="webp"
-                />
-              </div>
-              <div class="mt-2 text-center">
-                <span class="text-[11px] text-muted font-medium">Site Office 03:15 PM • Verified Advance Ledger & Signoff</span>
-              </div>
+            <!-- Slide 3 -->
+            <div id="movie-screen-3" class="movie-screen hidden transition-all duration-500 ease-out">
+              <Image
+                src={contractorImg}
+                alt="Contractor ledger and advance settlement"
+                class="w-full h-auto rounded-xl object-cover max-h-[460px]"
+                format="webp"
+              />
             </div>
 
-            <!-- Screen 4: Spend Analytics & Executive Dashboard -->
-            <div
-              data-for-chapter="chap4"
-              class="story-stage-screen opacity-0 scale-95 pointer-events-none transition-all duration-500 ease-out absolute inset-x-4 top-14 bottom-4 flex flex-col justify-center"
-            >
-              <div class="rounded-xl overflow-hidden border border-line shadow-sm bg-bg">
-                <Image
-                  src={spendImg}
-                  alt="Owner executive overview showing spend velocity and funds"
-                  class="w-full h-auto object-cover max-h-[420px]"
-                  format="webp"
-                />
-              </div>
-              <div class="mt-2 text-center">
-                <span class="text-[11px] text-muted font-medium">Owner Office 07:30 PM • Real-Time Financial Reconciliations</span>
-              </div>
+            <!-- Slide 4 -->
+            <div id="movie-screen-4" class="movie-screen hidden transition-all duration-500 ease-out">
+              <Image
+                src={spendImg}
+                alt="Owner executive overview showing live funds"
+                class="w-full h-auto rounded-xl object-cover max-h-[460px]"
+                format="webp"
+              />
             </div>
           </div>
         </div>
@@ -524,109 +409,100 @@ import storiesImg from '../assets/stories-site-updates.png';
     </div>
   </section>
 
-  <!-- 4. INTERACTIVE SYSTEM TOUR: 5-TAB CONSOLE -->
+  <!-- SCENE 04 // THE OWNER'S COCKPIT (INTERACTIVE CONSOLE) -->
   <section id="tour" class="py-20 sm:py-28 border-b border-line bg-white relative">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-10 space-y-3 reveal">
         <span class="inline-block text-xs font-bold uppercase tracking-wider text-blue bg-blue-soft px-3 py-1 rounded-full">
-          INTERACTIVE CONSOLE TOUR
+          SCENE 04 // THE CONTROL ROOM
         </span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink">
-          Five purpose-built systems. One connected engine.
+        <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-ink">
+          Five operational channels. One unified cockpit.
         </h2>
         <p class="text-base text-muted">
-          Select any operational pillar to see how Brift locks down leak points across your active construction sites.
+          Click any channel to test-drive how Brift displays your live finances, inventory, and field progress without picking up the phone.
         </p>
 
-        <!-- Interactive Tab Navigation -->
-        <div class="pt-4 flex flex-wrap items-center justify-center gap-2" id="tour-tabs-container">
+        <!-- Channel Selectors -->
+        <div class="pt-4 flex flex-wrap items-center justify-center gap-2">
           <button
             type="button"
-            class="tour-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border-2 border-blue bg-blue text-white shadow-xs transition-all cursor-pointer"
-            data-tab="money"
-            onclick="switchTourTab('money')"
+            class="cockpit-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border-2 border-blue bg-blue text-white shadow-xs transition-all cursor-pointer"
+            data-channel="money"
+            onclick="switchCockpit('money')"
           >
-            💰 Money & Budgets
+            💰 Money Stream
           </button>
           <button
             type="button"
-            class="tour-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold border border-line bg-white text-ink hover:border-blue transition-all cursor-pointer"
-            data-tab="materials"
-            onclick="switchTourTab('materials')"
+            class="cockpit-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold border border-line bg-white text-ink hover:border-blue transition-all cursor-pointer"
+            data-channel="materials"
+            onclick="switchCockpit('materials')"
           >
-            📦 Materials & Stock
+            📦 Cement & Steel
           </button>
           <button
             type="button"
-            class="tour-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold border border-line bg-white text-ink hover:border-blue transition-all cursor-pointer"
-            data-tab="workforce"
-            onclick="switchTourTab('workforce')"
+            class="cockpit-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold border border-line bg-white text-ink hover:border-blue transition-all cursor-pointer"
+            data-channel="workforce"
+            onclick="switchCockpit('workforce')"
           >
-            👷 Workforce & Payroll
+            👷 Labor & Contractors
           </button>
           <button
             type="button"
-            class="tour-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold border border-line bg-white text-ink hover:border-blue transition-all cursor-pointer"
-            data-tab="reports"
-            onclick="switchTourTab('reports')"
+            class="cockpit-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold border border-line bg-white text-ink hover:border-blue transition-all cursor-pointer"
+            data-channel="reports"
+            onclick="switchCockpit('reports')"
           >
-            📊 7 Executive Reports
+            📊 7 Audit Reports
           </button>
           <button
             type="button"
-            class="tour-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold border border-line bg-white text-ink hover:border-blue transition-all cursor-pointer"
-            data-tab="roles"
-            onclick="switchTourTab('roles')"
+            class="cockpit-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold border border-line bg-white text-ink hover:border-blue transition-all cursor-pointer"
+            data-channel="roles"
+            onclick="switchCockpit('roles')"
           >
-            🔒 Role Portals & Audit
+            🔒 Four Role Vaults
           </button>
         </div>
       </div>
 
-      <!-- Tab Content Showcase Card -->
+      <!-- Cockpit Viewport -->
       <div class="rounded-3xl border border-line bg-bg p-6 sm:p-10 shadow-elevated">
-        <!-- TAB 1: MONEY -->
-        <div id="tour-panel-money" class="tour-panel grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <!-- CHANNEL 1: MONEY -->
+        <div id="cockpit-panel-money" class="cockpit-panel grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div class="lg:col-span-5 space-y-4">
             <span class="text-xs font-bold uppercase tracking-wider text-blue bg-blue-soft px-3 py-1 rounded-full">
-              Pillar 01 • Financial Control
+              Channel 01 // Financial Control
             </span>
             <h3 class="text-2xl sm:text-3xl font-extrabold text-ink">
               Know where every single rupee is going in real-time.
             </h3>
             <p class="text-sm text-ink-2 leading-relaxed">
-              Track project burn velocity against initial budget estimates. Client payments, contractor deductions, and site manager petty cash reconcile into one master live funds balance.
+              Track project burn rate against initial budgets. Assigned site cash only reduces when real photographed bills are approved. Client receivables are mapped directly to project milestones.
             </p>
             <ul class="space-y-2.5 text-xs text-ink-2 pt-2">
               <li class="flex items-center gap-2">
                 <span class="h-5 w-5 rounded-full bg-blue text-white flex items-center justify-center text-[10px] font-bold">✓</span>
-                <span>Stage budget tracking with color-coded overrun alerts</span>
+                <span>Stage budget tracking with overrun early warnings</span>
               </li>
               <li class="flex items-center gap-2">
                 <span class="h-5 w-5 rounded-full bg-blue text-white flex items-center justify-center text-[10px] font-bold">✓</span>
-                <span>Manager assigned balance reduces only upon verified bills</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="h-5 w-5 rounded-full bg-blue text-white flex items-center justify-center text-[10px] font-bold">✓</span>
-                <span>Client payment schedules and milestone receivable tracking</span>
+                <span>Site manager cash balances locked to verified receipts</span>
               </li>
             </ul>
           </div>
           <div class="lg:col-span-7 rounded-2xl overflow-hidden border border-line bg-white p-2 shadow-sm">
-            <Image
-              src={spendImg}
-              alt="Live Spend Velocity and Burn-Rate Dashboard"
-              class="w-full h-auto rounded-xl object-cover"
-              format="webp"
-            />
+            <Image src={spendImg} alt="Spend Velocity & Burn-Rate Interface" class="w-full h-auto rounded-xl object-cover" format="webp" />
           </div>
         </div>
 
-        <!-- TAB 2: MATERIALS -->
-        <div id="tour-panel-materials" class="tour-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <!-- CHANNEL 2: MATERIALS -->
+        <div id="cockpit-panel-materials" class="cockpit-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div class="lg:col-span-5 space-y-4">
             <span class="text-xs font-bold uppercase tracking-wider text-blue bg-blue-soft px-3 py-1 rounded-full">
-              Pillar 02 • Inventory Integrity
+              Channel 02 // Inventory Integrity
             </span>
             <h3 class="text-2xl sm:text-3xl font-extrabold text-ink">
               Know what was bought, used, and transferred.
@@ -643,27 +519,18 @@ import storiesImg from '../assets/stories-site-updates.png';
                 <span class="h-5 w-5 rounded-full bg-blue text-white flex items-center justify-center text-[10px] font-bold">✓</span>
                 <span>Inter-site stock movement approvals with sender/receiver signoff</span>
               </li>
-              <li class="flex items-center gap-2">
-                <span class="h-5 w-5 rounded-full bg-blue text-white flex items-center justify-center text-[10px] font-bold">✓</span>
-                <span>Automated reorder thresholds prevent emergency retail markups</span>
-              </li>
             </ul>
           </div>
           <div class="lg:col-span-7 rounded-2xl overflow-hidden border border-line bg-white p-2 shadow-sm">
-            <Image
-              src={materialsImg}
-              alt="Materials stock inventory ledger and reorder status"
-              class="w-full h-auto rounded-xl object-cover"
-              format="webp"
-            />
+            <Image src={materialsImg} alt="Materials stock inventory ledger" class="w-full h-auto rounded-xl object-cover" format="webp" />
           </div>
         </div>
 
-        <!-- TAB 3: WORKFORCE -->
-        <div id="tour-panel-workforce" class="tour-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <!-- CHANNEL 3: WORKFORCE -->
+        <div id="cockpit-panel-workforce" class="cockpit-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div class="lg:col-span-5 space-y-4">
             <span class="text-xs font-bold uppercase tracking-wider text-blue bg-blue-soft px-3 py-1 rounded-full">
-              Pillar 03 • People & Ledgers
+              Channel 03 // People & Advances
             </span>
             <h3 class="text-2xl sm:text-3xl font-extrabold text-ink">
               Know who worked, who is owed, and who got paid.
@@ -674,76 +541,58 @@ import storiesImg from '../assets/stories-site-updates.png';
             <ul class="space-y-2.5 text-xs text-ink-2 pt-2">
               <li class="flex items-center gap-2">
                 <span class="h-5 w-5 rounded-full bg-blue text-white flex items-center justify-center text-[10px] font-bold">✓</span>
-                <span>Offline attendance with zero paper muster roll inflation</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="h-5 w-5 rounded-full bg-blue text-white flex items-center justify-center text-[10px] font-bold">✓</span>
                 <span>Subcontractor advance deduction directly from running bills</span>
               </li>
               <li class="flex items-center gap-2">
                 <span class="h-5 w-5 rounded-full bg-blue text-white flex items-center justify-center text-[10px] font-bold">✓</span>
-                <span>Complete vendor procurement ledger with outstanding dues</span>
+                <span>Complete vendor procurement ledger with outstanding balances</span>
               </li>
             </ul>
           </div>
           <div class="lg:col-span-7 rounded-2xl overflow-hidden border border-line bg-white p-2 shadow-sm">
-            <Image
-              src={contractorImg}
-              alt="Contractor ledger and wage statement"
-              class="w-full h-auto rounded-xl object-cover"
-              format="webp"
-            />
+            <Image src={contractorImg} alt="Contractor ledger report" class="w-full h-auto rounded-xl object-cover" format="webp" />
           </div>
         </div>
 
-        <!-- TAB 4: REPORTS -->
-        <div id="tour-panel-reports" class="tour-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <!-- CHANNEL 4: REPORTS -->
+        <div id="cockpit-panel-reports" class="cockpit-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div class="lg:col-span-5 space-y-4">
             <span class="text-xs font-bold uppercase tracking-wider text-blue bg-blue-soft px-3 py-1 rounded-full">
-              Pillar 04 • Executive Visibility
+              Channel 04 // 7 Audit Statements
             </span>
             <h3 class="text-2xl sm:text-3xl font-extrabold text-ink">
-              7 built-in statements without 20 phone calls.
+              Export CA-ready financials without calling supervisors.
             </h3>
             <p class="text-sm text-ink-2 leading-relaxed">
-              Export pristine PDF and Excel reports for bank audits, client progress billing, and weekly partner reviews. Monitor your 10-stage checklist and daily photo updates from anywhere.
+              One-click PDF/Excel export of multi-site financials, debt statements, labor payout summaries, and visual 10-stage milestone checklists.
             </p>
             <ul class="space-y-2.5 text-xs text-ink-2 pt-2">
               <li class="flex items-center gap-2">
                 <span class="h-5 w-5 rounded-full bg-blue text-white flex items-center justify-center text-[10px] font-bold">✓</span>
-                <span>One-click PDF financial summaries for chartered accountants</span>
+                <span>Instant PDF summaries for tax accountants and bank audits</span>
               </li>
               <li class="flex items-center gap-2">
                 <span class="h-5 w-5 rounded-full bg-blue text-white flex items-center justify-center text-[10px] font-bold">✓</span>
-                <span>10-stage checklist from foundation to final electrical handover</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="h-5 w-5 rounded-full bg-blue text-white flex items-center justify-center text-[10px] font-bold">✓</span>
-                <span>24h photo update trays showing physical visual progress</span>
+                <span>Visual 10-stage checklist from foundation to final paint signoff</span>
               </li>
             </ul>
           </div>
           <div class="lg:col-span-7 rounded-2xl overflow-hidden border border-line bg-white p-2 shadow-sm">
-            <Image
-              src={reportsImg}
-              alt="Executive multi-site reports overview"
-              class="w-full h-auto rounded-xl object-cover"
-              format="webp"
-            />
+            <Image src={reportsImg} alt="Executive reports overview" class="w-full h-auto rounded-xl object-cover" format="webp" />
           </div>
         </div>
 
-        <!-- TAB 5: ROLES & AUDIT -->
-        <div id="tour-panel-roles" class="tour-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <!-- CHANNEL 5: ROLES -->
+        <div id="cockpit-panel-roles" class="cockpit-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div class="lg:col-span-5 space-y-4">
             <span class="text-xs font-bold uppercase tracking-wider text-blue bg-blue-soft px-3 py-1 rounded-full">
-              Pillar 05 • Role Security
+              Channel 05 // Four Role Portals
             </span>
             <h3 class="text-2xl sm:text-3xl font-extrabold text-ink">
-              Four role portals. Immutable audit trail.
+              Segregated role access with an immutable audit log.
             </h3>
             <p class="text-sm text-ink-2 leading-relaxed">
-              Site managers only see their assigned sites. Clients only see their milestone progress. Architects upload drawings. Owners see everything. Every financial modification is permanently recorded.
+              Owners see every site. Site managers only access their assigned jobs. Clients see clean progress milestones. Architects review drawings. Every price edit records user, timestamp, and IP.
             </p>
             <ul class="space-y-2.5 text-xs text-ink-2 pt-2">
               <li class="flex items-center gap-2">
@@ -754,28 +603,18 @@ import storiesImg from '../assets/stories-site-updates.png';
                 <span class="h-5 w-5 rounded-full bg-blue text-white flex items-center justify-center text-[10px] font-bold">✓</span>
                 <span>Irreversible audit trail: Who modified an amount, date, and IP</span>
               </li>
-              <li class="flex items-center gap-2">
-                <span class="h-5 w-5 rounded-full bg-blue text-white flex items-center justify-center text-[10px] font-bold">✓</span>
-                <span>Zero client confusion: Professional portal replaces WhatsApp chatter</span>
-              </li>
             </ul>
           </div>
           <div class="lg:col-span-7 rounded-2xl overflow-hidden border border-line bg-white p-2 shadow-sm">
-            <Image
-              src={adminDashboardImg}
-              alt="Role-based permissions and administrative audit trail console"
-              class="w-full h-auto rounded-xl object-cover"
-              format="webp"
-            />
+            <Image src={adminDashboardImg} alt="Administrative role control console" class="w-full h-auto rounded-xl object-cover" format="webp" />
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 5. INTERACTIVE MONEY LEAKAGE CALCULATOR -->
-  <section id="calculator" class="py-20 sm:py-28 bg-navy text-on-dark border-b border-navy-line relative overflow-hidden">
-    <!-- Ambient dark mode background lights -->
+  <!-- SCENE 05 // THE FINANCIAL RADAR SCANNER (INTERACTIVE CALCULATOR) -->
+  <section id="calculator" class="py-20 sm:py-28 bg-[#0B1020] text-on-dark border-b border-navy-line relative overflow-hidden">
     <div class="absolute -top-24 -right-24 w-96 h-96 bg-blue/20 blur-3xl rounded-full pointer-events-none" aria-hidden="true"></div>
     <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-yellow/10 blur-3xl rounded-full pointer-events-none" aria-hidden="true"></div>
 
@@ -784,58 +623,58 @@ import storiesImg from '../assets/stories-site-updates.png';
         <!-- Left copy and controls -->
         <div class="lg:col-span-6 space-y-6 reveal">
           <span class="inline-block text-xs font-bold uppercase tracking-wider text-yellow bg-navy-surface border border-navy-line px-3 py-1 rounded-full">
-            INTERACTIVE FINANCIAL AUDIT
+            SCENE 05 // THE RADAR SCANNER
           </span>
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
-            How much money are you quietly losing each month?
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+            Scan your business for quiet cash leaks.
           </h2>
           <p class="text-base sm:text-lg text-on-dark-muted leading-relaxed">
-            Construction businesses don't fail from lack of work. They fail from unrecorded cash advances, phantom ghost labor, unverified material deliveries, and last-minute retail price premiums.
+            Select your current active site count to run a simulated forensic audit on how much unmonitored cash slips away each month.
           </p>
 
-          <!-- Interactive Site Selector Buttons -->
+          <!-- Interactive Site Buttons -->
           <div class="pt-2 space-y-3">
             <label class="text-xs font-bold uppercase tracking-wider text-yellow block">
-              Select Your Active Construction Sites:
+              Tap Your Active Site Count:
             </label>
-            <div class="flex flex-wrap items-center gap-2" id="calc-site-buttons">
+            <div class="flex flex-wrap items-center gap-2">
               <button
                 type="button"
                 data-sites="2"
-                class="calc-site-btn px-4 py-2 rounded-xl text-xs font-bold border border-navy-line bg-navy-surface text-white hover:border-yellow transition-all cursor-pointer"
-                onclick="setCalculatorSites(2)"
+                class="radar-site-btn px-4 py-2.5 rounded-xl text-xs font-bold border border-navy-line bg-navy-surface text-white hover:border-yellow transition-all cursor-pointer"
+                onclick="runRadarScan(2)"
               >
                 2 Sites
               </button>
               <button
                 type="button"
                 data-sites="4"
-                class="calc-site-btn px-4 py-2 rounded-xl text-xs font-bold border-2 border-yellow bg-yellow text-ink shadow-sm transition-all cursor-pointer"
-                onclick="setCalculatorSites(4)"
+                class="radar-site-btn px-4 py-2.5 rounded-xl text-xs font-bold border-2 border-yellow bg-yellow text-ink shadow-sm transition-all cursor-pointer"
+                onclick="runRadarScan(4)"
               >
                 4 Sites
               </button>
               <button
                 type="button"
                 data-sites="6"
-                class="calc-site-btn px-4 py-2 rounded-xl text-xs font-bold border border-navy-line bg-navy-surface text-white hover:border-yellow transition-all cursor-pointer"
-                onclick="setCalculatorSites(6)"
+                class="radar-site-btn px-4 py-2.5 rounded-xl text-xs font-bold border border-navy-line bg-navy-surface text-white hover:border-yellow transition-all cursor-pointer"
+                onclick="runRadarScan(6)"
               >
                 6 Sites
               </button>
               <button
                 type="button"
                 data-sites="8"
-                class="calc-site-btn px-4 py-2 rounded-xl text-xs font-bold border border-navy-line bg-navy-surface text-white hover:border-yellow transition-all cursor-pointer"
-                onclick="setCalculatorSites(8)"
+                class="radar-site-btn px-4 py-2.5 rounded-xl text-xs font-bold border border-navy-line bg-navy-surface text-white hover:border-yellow transition-all cursor-pointer"
+                onclick="runRadarScan(8)"
               >
                 8 Sites
               </button>
               <button
                 type="button"
                 data-sites="12"
-                class="calc-site-btn px-4 py-2 rounded-xl text-xs font-bold border border-navy-line bg-navy-surface text-white hover:border-yellow transition-all cursor-pointer"
-                onclick="setCalculatorSites(12)"
+                class="radar-site-btn px-4 py-2.5 rounded-xl text-xs font-bold border border-navy-line bg-navy-surface text-white hover:border-yellow transition-all cursor-pointer"
+                onclick="runRadarScan(12)"
               >
                 12+ Sites
               </button>
@@ -847,7 +686,7 @@ import storiesImg from '../assets/stories-site-updates.png';
               href="#demo"
               class="inline-flex items-center gap-2 rounded-xl bg-yellow text-ink px-7 py-4 text-sm font-bold shadow-md hover:bg-yellow-subtle transition-all active:scale-[0.98]"
             >
-              <span>Stop The Leaks — Book a Demo Walkthrough</span>
+              <span>Stop The Bleed — Book a Demo Walkthrough</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
             </a>
           </div>
@@ -858,42 +697,42 @@ import storiesImg from '../assets/stories-site-updates.png';
           <div class="rounded-3xl border border-navy-line bg-navy-surface p-6 sm:p-8 shadow-2xl relative space-y-5">
             <div class="flex items-center justify-between border-b border-navy-line pb-4">
               <div>
-                <span class="text-xs font-mono uppercase text-on-dark-muted block">Benchmark Calculation</span>
-                <span class="text-sm font-bold text-white block mt-0.5" id="calc-site-label">4 Active Sites</span>
+                <span class="text-xs font-mono uppercase text-on-dark-muted block">Forensic Telemetry</span>
+                <span class="text-sm font-bold text-white block mt-0.5" id="radar-site-label">4 Active Construction Sites</span>
               </div>
               <span class="h-2.5 w-2.5 rounded-full bg-yellow animate-ping"></span>
             </div>
 
             <!-- Big Stat Readout -->
             <div class="rounded-2xl border border-navy-line/80 bg-navy/60 p-5 text-center">
-              <span class="text-xs uppercase tracking-wider text-on-dark-muted block font-semibold">Estimated Monthly Profit Loss</span>
-              <span class="text-4xl sm:text-5xl font-black text-yellow tracking-tight block mt-1" id="calc-monthly-total">₹2,40,000 / mo</span>
-              <span class="text-xs text-on-dark-muted block mt-1">That is <strong class="text-white" id="calc-annual-total">₹28.8 Lakhs every year</strong> lost without central records.</span>
+              <span class="text-xs uppercase tracking-wider text-on-dark-muted block font-semibold">Simulated Monthly Leakage</span>
+              <span class="text-4xl sm:text-5xl font-black text-yellow tracking-tight block mt-1" id="radar-monthly-total">₹2,40,000 / mo</span>
+              <span class="text-xs text-on-dark-muted block mt-1">That is <strong class="text-white" id="radar-annual-total">₹28.8 Lakhs every year</strong> lost to fragmented records.</span>
             </div>
 
             <!-- Itemized Loss Breakdown -->
             <div class="space-y-2.5 text-xs">
               <div class="flex justify-between py-2 border-b border-navy-line/60">
                 <span class="text-on-dark-muted">Unrecorded Subcontractor Advances</span>
-                <span class="text-white font-bold" id="loss-advances">₹70,000 / mo</span>
+                <span class="text-white font-bold" id="radar-advances">₹70,000 / mo</span>
               </div>
               <div class="flex justify-between py-2 border-b border-navy-line/60">
                 <span class="text-on-dark-muted">Ghost Workers & Inflated Muster Rolls</span>
-                <span class="text-white font-bold" id="loss-muster">₹40,000 / mo</span>
+                <span class="text-white font-bold" id="radar-muster">₹40,000 / mo</span>
               </div>
               <div class="flex justify-between py-2 border-b border-navy-line/60">
                 <span class="text-on-dark-muted">Material Slippage & Uncounted Stock</span>
-                <span class="text-white font-bold" id="loss-materials">₹80,000 / mo</span>
+                <span class="text-white font-bold" id="radar-materials">₹80,000 / mo</span>
               </div>
               <div class="flex justify-between py-2">
                 <span class="text-on-dark-muted">Emergency Retail Price Markups</span>
-                <span class="text-white font-bold" id="loss-retail">₹50,000 / mo</span>
+                <span class="text-white font-bold" id="radar-retail">₹50,000 / mo</span>
               </div>
             </div>
 
             <div class="pt-2 border-t border-navy-line text-center">
               <p class="text-xs text-yellow/90 italic">
-                "Brift pays for itself within the first 14 days by closing these unmonitored cash gaps."
+                "Brift pays for itself within the first 14 days by preventing unverified disbursements."
               </p>
             </div>
           </div>
@@ -902,18 +741,18 @@ import storiesImg from '../assets/stories-site-updates.png';
     </div>
   </section>
 
-  <!-- 6. THE ORIGIN & WHY BRIFT SECTION -->
+  <!-- SCENE 06 // THE FIELD CHRONICLE (CONSTRUCTION DNA) -->
   <section id="about" class="py-20 sm:py-24 border-b border-line bg-white relative">
     <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
       <div class="rounded-3xl border border-line bg-bg p-8 sm:p-12 shadow-sm text-center max-w-4xl mx-auto space-y-6 reveal">
         <span class="inline-block text-xs font-bold uppercase tracking-wider text-blue bg-blue-soft px-3 py-1 rounded-full">
-          CONSTRUCTION DNA
+          SCENE 06 // THE DNA
         </span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink">
-          Born on dusty site gates. Not in a Silicon Valley incubator.
+        <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-ink">
+          Born on dusty site gates. Built inside SIMAK Builders.
         </h2>
         <p class="text-base sm:text-lg text-ink-2 leading-relaxed max-w-2xl mx-auto">
-          Brift was developed directly inside <strong>SIMAK Builders</strong> to solve the raw, daily friction of active Indian construction projects — site supervisors with cement on their hands, spotty cellular networks, and managing directors who shouldn't have to spend their evenings interrogating site teams on phone calls.
+          Brift was not designed by software theorists in an air-conditioned office. It was forged directly in the red dust of real residential and commercial construction sites to solve supervisor friction, zero-signal basements, and owner anxiety.
         </p>
 
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 text-left">
@@ -940,18 +779,18 @@ import storiesImg from '../assets/stories-site-updates.png';
     </div>
   </section>
 
-  <!-- 7. EMBEDDED DEMO BOOKING SECTION (NO REDIRECTS, INSTANT VALUE) -->
+  <!-- SCENE 07 // THE CLIMAX: TAKE BACK COMMAND (EMBEDDED DEMO BOOKING) -->
   <section id="demo" class="py-20 sm:py-28 bg-gradient-to-b from-bg to-white border-b border-line relative">
     <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12 space-y-3 reveal">
         <span class="inline-block text-xs font-bold uppercase tracking-wider text-blue bg-blue-soft px-3.5 py-1 rounded-full">
-          DIRECT ONBOARDING
+          SCENE 07 // TAKE COMMAND
         </span>
-        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-ink">
-          See Brift configured around your active sites.
+        <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-ink">
+          Book your private 20-minute operational screening.
         </h2>
         <p class="text-base sm:text-lg text-muted max-w-2xl mx-auto">
-          In a 20-minute live screen share, we map Brift directly to your site count, subcontractor ledgers, and team workflow. No sales pressure, no generic slides.
+          In a 1-on-1 live screen share, we map Brift directly to your site count, subcontractor ledgers, and team workflow. No generic PowerPoint, no sales pressure.
         </p>
       </div>
 
@@ -1060,14 +899,14 @@ import storiesImg from '../assets/stories-site-updates.png';
             ✓
           </div>
           <h3 class="text-2xl font-bold text-ink">
-            Thank you! We've received your details.
+            Thank you! We've received your screening request.
           </h3>
           <p class="text-sm text-muted max-w-md mx-auto leading-relaxed">
             Our technical team will reach out via WhatsApp or phone within a few hours to confirm your preferred 20-minute slot.
           </p>
           <div class="pt-2">
             <a
-              href="https://wa.me/919037532036?text=Hi%20Brift%20team,%20I%20just%20booked%20a%20demo%20walkthrough."
+              href="https://wa.me/919037532036?text=Hi%20Brift%20team,%20I%20just%20booked%20a%20demo%20screening."
               target="_blank"
               rel="noopener noreferrer"
               class="inline-flex items-center gap-2 rounded-xl bg-emerald-600 text-white px-5 py-2.5 text-xs font-bold hover:bg-emerald-700 transition-colors shadow-xs"
@@ -1080,97 +919,160 @@ import storiesImg from '../assets/stories-site-updates.png';
     </div>
   </section>
 
-  <!-- INTERACTIVE CLIENT-SIDE ENGINE -->
+  <!-- CINEMATIC CLIENT INTERACTIVITY SCRIPT -->
   <script is:inline>
-    // 1. Reality Switcher (Chaos vs Brift)
-    function switchReality(mode) {
-      const panelChaos = document.getElementById('panel-chaos');
-      const panelBrift = document.getElementById('panel-brift');
-      const btnChaos = document.getElementById('btn-chaos');
-      const btnBrift = document.getElementById('btn-brift');
+    // 1. Evidence Inspection Engine
+    const evidenceData = {
+      1: {
+        title: "CASE FILE #01 // GHOST LABOR RESOLUTION",
+        desc: "<strong>The Brift Closed-Loop:</strong> The site supervisor opens the app at the site gate. Even in a basement with 0 cellular bars, attendance is logged and timestamped with worker categorization (skilled/unskilled). The record locks permanently and syncs to central payroll the second the phone connects to signal. Zero paper registers, zero phantom workers."
+      },
+      2: {
+        title: "CASE FILE #02 // CEMENT CHALLAN RECONCILIATION",
+        desc: "<strong>The Brift Closed-Loop:</strong> Before the supplier's truck pulls away, the site supervisor counts the actual physical bags unloaded and snaps a high-res photo of the signed delivery challan inside Brift. The stock count updates centrally in real time. If 200 bags were billed but only 170 unloaded, the discrepancy is flagged instantly before accounts disburse payment."
+      },
+      3: {
+        title: "CASE FILE #03 // SUBCONTRACTOR ADVANCE CONTROL",
+        desc: "<strong>The Brift Closed-Loop:</strong> When a contractor demands an advance, the supervisor doesn't check pocket diaries or WhatsApp. Brift immediately displays the contractor's lifetime ledger, prior advances, and current unbilled work. Once approved, the cash advance is auto-deducted from their running bill without dispute."
+      },
+      4: {
+        title: "CASE FILE #04 // REORDER THRESHOLD ENGINE",
+        desc: "<strong>The Brift Closed-Loop:</strong> Automated minimum stock alerts notify procurement 3 days before critical steel, sand, or cement runs dry. Purchases are bulk-negotiated at wholesale contractor prices instead of rushed panic orders paying an 18% retail surcharge."
+      }
+    };
 
-      if (!panelChaos || !panelBrift || !btnChaos || !btnBrift) return;
+    function inspectEvidence(id) {
+      const titleEl = document.getElementById('spotlight-title');
+      const descEl = document.getElementById('spotlight-desc');
+      if (titleEl && descEl && evidenceData[id]) {
+        titleEl.textContent = evidenceData[id].title;
+        descEl.innerHTML = evidenceData[id].desc;
+      }
+    }
 
-      if (mode === 'chaos') {
-        panelChaos.classList.remove('hidden');
-        panelBrift.classList.add('hidden');
-        btnChaos.className = 'px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-red-600 text-white shadow-sm';
-        btnBrift.className = 'px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all text-ink-2 hover:text-blue';
+    // 2. 24-Hour Movie Sequence Engine
+    const movieScenes = {
+      1: {
+        timecode: "TIMECODE: 07:00:00 AM",
+        location: "LOCATION: SITE GATE",
+        headline: "Muster roll logged without network or ghost labor.",
+        narration: "Thirty workers arrive at the gate. Even in a basement with zero cellular bars, the supervisor taps each worker in Brift. Attendance is locked to prevent week-end muster inflation.",
+        leak: "✓ Zero Ghost Labor Paid",
+        feed: "FEED // 01 • MUSTER SYNC"
+      },
+      2: {
+        timecode: "TIMECODE: 11:30:00 AM",
+        location: "LOCATION: UNLOADING BAY",
+        headline: "200 bags of cement arrive. Verified before the truck leaves.",
+        narration: "The supervisor snaps the delivery challan, logs the counted bags directly into inventory, and locks stock to standardized item codes. Phantom deliveries are physically impossible.",
+        leak: "✓ Challan Locked to Stock",
+        feed: "FEED // 02 • INVENTORY INTAKE"
+      },
+      3: {
+        timecode: "TIMECODE: 03:15:00 PM",
+        location: "LOCATION: SITE OFFICE",
+        headline: "Subcontractor requests ₹35,000 cash advance.",
+        narration: "Before handing over cash, Brift inspects the electrical contractor's lifetime ledger, previous advances, and unbilled work. The advance deducts automatically from the final bill.",
+        leak: "✓ Advance Deducted from Bill",
+        feed: "FEED // 03 • ADVANCE LEDGER"
+      },
+      4: {
+        timecode: "TIMECODE: 07:30:00 PM",
+        location: "LOCATION: LIVING ROOM",
+        headline: "The owner opens one screen. All sites reconciled.",
+        narration: "No 45-minute interrogation calls. In under 5 minutes from your phone or desk, you see total funds in hand, verified spend vs budget, and daily photo progress trays.",
+        leak: "✓ Real-Time Company Margin",
+        feed: "FEED // 04 • OWNER COCKPIT"
+      }
+    };
+
+    let currentMovieScene = 1;
+    let movieAutoPlayInterval = null;
+
+    function showMovieScene(sceneId) {
+      currentMovieScene = sceneId;
+
+      // Update Subtitles
+      const data = movieScenes[sceneId];
+      if (data) {
+        document.getElementById('scene-timecode').textContent = data.timecode;
+        document.getElementById('scene-location').textContent = data.location;
+        document.getElementById('scene-headline').textContent = data.headline;
+        document.getElementById('scene-narration').textContent = data.narration;
+        document.getElementById('scene-leak-status').textContent = data.leak;
+        document.getElementById('projector-id').textContent = data.feed;
+      }
+
+      // Update Screen
+      for (let i = 1; i <= 4; i++) {
+        const screen = document.getElementById('movie-screen-' + i);
+        if (screen) {
+          if (i === sceneId) {
+            screen.classList.remove('hidden');
+          } else {
+            screen.classList.add('hidden');
+          }
+        }
+      }
+
+      // Update Tab Buttons
+      document.querySelectorAll('.movie-tab').forEach(tab => {
+        if (parseInt(tab.getAttribute('data-scene'), 10) === sceneId) {
+          tab.className = 'movie-tab px-4 py-2.5 rounded-xl text-xs font-bold border-2 border-yellow bg-yellow text-ink text-left transition-all cursor-pointer';
+        } else {
+          tab.className = 'movie-tab px-4 py-2.5 rounded-xl text-xs font-bold border border-navy-line bg-navy-surface text-on-dark text-left hover:border-yellow transition-all cursor-pointer';
+        }
+      });
+    }
+
+    function toggleMovieAutoPlay() {
+      const btnText = document.getElementById('play-text');
+      const btnIcon = document.getElementById('play-icon');
+
+      if (movieAutoPlayInterval) {
+        clearInterval(movieAutoPlayInterval);
+        movieAutoPlayInterval = null;
+        if (btnText) btnText.textContent = "Auto-Play Movie Mode";
+        if (btnIcon) btnIcon.textContent = "▶";
       } else {
-        panelChaos.classList.add('hidden');
-        panelBrift.classList.remove('hidden');
-        btnChaos.className = 'px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all text-ink-2 hover:text-red-600';
-        btnBrift.className = 'px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-blue text-white shadow-sm';
+        if (btnText) btnText.textContent = "Pause Movie (Playing...)";
+        if (btnIcon) btnIcon.textContent = "❚❚";
+        movieAutoPlayInterval = setInterval(() => {
+          let nextScene = currentMovieScene + 1;
+          if (nextScene > 4) nextScene = 1;
+          showMovieScene(nextScene);
+        }, 4000);
       }
     }
 
-    // 2. Story Mode Jump
-    function jumpToChapter(chapId) {
-      const target = document.getElementById('chapter-' + chapId);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
+    // 3. Cockpit Channel Switcher
+    function switchCockpit(channelId) {
+      document.querySelectorAll('.cockpit-panel').forEach(p => p.classList.add('hidden'));
+      const active = document.getElementById('cockpit-panel-' + channelId);
+      if (active) active.classList.remove('hidden');
 
-      // Update screens directly
-      const stages = document.querySelectorAll('.story-stage-screen');
-      stages.forEach(stage => {
-        if (stage.getAttribute('data-for-chapter') === chapId) {
-          stage.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
-          stage.classList.add('opacity-100', 'scale-100');
+      document.querySelectorAll('.cockpit-btn').forEach(btn => {
+        if (btn.getAttribute('data-channel') === channelId) {
+          btn.className = 'cockpit-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border-2 border-blue bg-blue text-white shadow-xs transition-all cursor-pointer';
         } else {
-          stage.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
-          stage.classList.remove('opacity-100', 'scale-100');
-        }
-      });
-
-      // Update button highlights
-      document.querySelectorAll('.story-tab-btn').forEach(btn => {
-        if (btn.getAttribute('data-target-chapter') === chapId) {
-          btn.className = 'story-tab-btn px-4 py-2 rounded-xl text-xs font-bold border border-blue bg-blue text-white shadow-xs transition-all cursor-pointer';
-        } else {
-          btn.className = 'story-tab-btn px-4 py-2 rounded-xl text-xs font-bold border border-line bg-white text-ink hover:border-blue transition-all cursor-pointer';
+          btn.className = 'cockpit-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold border border-line bg-white text-ink hover:border-blue transition-all cursor-pointer';
         }
       });
     }
 
-    // 3. Interactive Tour Tabs
-    function switchTourTab(tabId) {
-      const panels = document.querySelectorAll('.tour-panel');
-      panels.forEach(p => p.classList.add('hidden'));
-
-      const activePanel = document.getElementById('tour-panel-' + tabId);
-      if (activePanel) {
-        activePanel.classList.remove('hidden');
-      }
-
-      document.querySelectorAll('.tour-btn').forEach(btn => {
-        if (btn.getAttribute('data-tab') === tabId) {
-          btn.className = 'tour-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border-2 border-blue bg-blue text-white shadow-xs transition-all cursor-pointer';
-        } else {
-          btn.className = 'tour-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold border border-line bg-white text-ink hover:border-blue transition-all cursor-pointer';
-        }
-      });
-    }
-
-    // 4. Interactive Leakage Calculator
-    function setCalculatorSites(numSites) {
-      const siteButtons = document.querySelectorAll('.calc-site-btn');
-      siteButtons.forEach(btn => {
+    // 4. Financial Radar Scanner
+    function runRadarScan(numSites) {
+      document.querySelectorAll('.radar-site-btn').forEach(btn => {
         if (parseInt(btn.getAttribute('data-sites'), 10) === numSites) {
-          btn.className = 'calc-site-btn px-4 py-2 rounded-xl text-xs font-bold border-2 border-yellow bg-yellow text-ink shadow-sm transition-all cursor-pointer';
+          btn.className = 'radar-site-btn px-4 py-2.5 rounded-xl text-xs font-bold border-2 border-yellow bg-yellow text-ink shadow-sm transition-all cursor-pointer';
         } else {
-          btn.className = 'calc-site-btn px-4 py-2 rounded-xl text-xs font-bold border border-navy-line bg-navy-surface text-white hover:border-yellow transition-all cursor-pointer';
+          btn.className = 'radar-site-btn px-4 py-2.5 rounded-xl text-xs font-bold border border-navy-line bg-navy-surface text-white hover:border-yellow transition-all cursor-pointer';
         }
       });
 
-      const label = document.getElementById('calc-site-label');
-      if (label) label.textContent = numSites + ' Active Sites';
+      const label = document.getElementById('radar-site-label');
+      if (label) label.textContent = numSites + ' Active Construction Sites';
 
-      // Base rates per site:
-      // Advances: ₹17,500/site/mo
-      // Muster: ₹10,000/site/mo
-      // Materials: ₹20,000/site/mo
-      // Retail markups: ₹12,500/site/mo
       const adv = numSites * 17500;
       const muster = numSites * 10000;
       const mat = numSites * 20000;
@@ -1178,22 +1080,14 @@ import storiesImg from '../assets/stories-site-updates.png';
       const monthlyTotal = adv + muster + mat + retail;
       const annualTotal = monthlyTotal * 12;
 
-      const advEl = document.getElementById('loss-advances');
-      const musterEl = document.getElementById('loss-muster');
-      const matEl = document.getElementById('loss-materials');
-      const retailEl = document.getElementById('loss-retail');
-      const monthlyEl = document.getElementById('calc-monthly-total');
-      const annualEl = document.getElementById('calc-annual-total');
-
-      if (advEl) advEl.textContent = '₹' + adv.toLocaleString('en-IN') + ' / mo';
-      if (musterEl) musterEl.textContent = '₹' + muster.toLocaleString('en-IN') + ' / mo';
-      if (matEl) matEl.textContent = '₹' + mat.toLocaleString('en-IN') + ' / mo';
-      if (retailEl) retailEl.textContent = '₹' + retail.toLocaleString('en-IN') + ' / mo';
-      if (monthlyEl) monthlyEl.textContent = '₹' + monthlyTotal.toLocaleString('en-IN') + ' / mo';
-      if (annualEl) {
-        const lakhs = (annualTotal / 100000).toFixed(1);
-        annualEl.textContent = '₹' + lakhs + ' Lakhs every year';
-      }
+      document.getElementById('radar-advances').textContent = '₹' + adv.toLocaleString('en-IN') + ' / mo';
+      document.getElementById('radar-muster').textContent = '₹' + muster.toLocaleString('en-IN') + ' / mo';
+      document.getElementById('radar-materials').textContent = '₹' + mat.toLocaleString('en-IN') + ' / mo';
+      document.getElementById('radar-retail').textContent = '₹' + retail.toLocaleString('en-IN') + ' / mo';
+      document.getElementById('radar-monthly-total').textContent = '₹' + monthlyTotal.toLocaleString('en-IN') + ' / mo';
+      
+      const lakhs = (annualTotal / 100000).toFixed(1);
+      document.getElementById('radar-annual-total').textContent = '₹' + lakhs + ' Lakhs every year';
     }
 
     // 5. Demo Form Submission Simulation

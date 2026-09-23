@@ -208,13 +208,40 @@ details[open] summary svg {
   opacity: 0.45;
 }
 
+/* Cinematic Movie Atmosphere Styles */
+.cinema-glow {
+  box-shadow: 0 0 50px -10px rgba(58, 70, 225, 0.35);
+}
+
+.radar-sweep-beam {
+  background: conic-gradient(from 0deg at 50% 50%, rgba(255, 226, 122, 0) 0deg, rgba(255, 226, 122, 0.3) 60deg, transparent 65deg);
+  animation: radar-spin 4s linear infinite;
+}
+
+@keyframes radar-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.scanline-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0),
+    rgba(255,255,255,0) 50%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.2)
+  );
+  background-size: 100% 4px;
+}
+
 /* Respect user's motion preference */
 @media (prefers-reduced-motion: reduce) {
   .reveal,
   .reveal-fade,
   .animate-float,
   .animate-float-reverse,
-  .animate-glow {
+  .animate-glow,
+  .radar-sweep-beam {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;

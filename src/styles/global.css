@@ -234,33 +234,31 @@ details[open] summary svg {
   background-size: 100% 4px;
 }
 
-/* Stacking Cards & Movie Reel System */
+/* Stacking Cards & Movie Reel System (Light Mode Luxury) */
 .stacked-card {
   position: sticky;
-  top: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-top-left-radius: 2.25rem;
-  border-top-right-radius: 2.25rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: 0 -30px 70px -10px rgba(0, 0, 0, 0.95);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, filter 0.4s ease;
+  top: 5rem;
+  margin-bottom: 4rem;
+  border-radius: 2rem;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow: 0 20px 50px -10px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.04);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
   will-change: transform, opacity;
 }
 
 @media (min-width: 640px) {
   .stacked-card {
-    border-top-left-radius: 3.25rem;
-    border-top-right-radius: 3.25rem;
+    top: 5.5rem;
+    margin-bottom: 5rem;
+    border-radius: 2.5rem;
   }
 }
 
 .stacked-card.is-receding {
-  transform: scale(0.96) translateY(-15px);
-  opacity: 0.3;
-  filter: blur(2px);
+  transform: scale(0.97) translateY(-14px);
+  opacity: 0.65;
+  filter: blur(0.5px);
 }
 
 .film-hud-dot {
@@ -268,9 +266,14 @@ details[open] summary svg {
 }
 
 .film-hud-dot.is-active {
-  background-color: #3B82F6;
-  box-shadow: 0 0 14px rgba(59, 130, 246, 0.9);
+  background-color: #2563EB;
+  box-shadow: 0 0 12px rgba(37, 99, 235, 0.5);
   width: 2rem;
+}
+
+.radar-sweep-beam-light {
+  background: conic-gradient(from 0deg at 50% 50%, rgba(217, 119, 6, 0) 0deg, rgba(217, 119, 6, 0.18) 60deg, transparent 65deg);
+  animation: radar-spin 4s linear infinite;
 }
 
 /* Respect user's motion preference */

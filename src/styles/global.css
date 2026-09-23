@@ -234,31 +234,28 @@ details[open] summary svg {
   background-size: 100% 4px;
 }
 
-/* Stacking Cards & Movie Reel System (Light Mode Luxury) */
-.stacked-card {
+/* Stacking Screens System (Full-Screen Overlapping Wipes) */
+.stack-screen {
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
   position: sticky;
-  top: 5rem;
-  margin-bottom: 4rem;
-  border-radius: 2rem;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: #FFFFFF;
-  border: 1px solid rgba(226, 232, 240, 0.95);
-  box-shadow: 0 20px 50px -10px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.04);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
+  border-top: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 -25px 50px -10px rgba(15, 23, 42, 0.08);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, filter 0.4s ease;
   will-change: transform, opacity;
+  overflow: hidden;
 }
 
-@media (min-width: 640px) {
-  .stacked-card {
-    top: 5.5rem;
-    margin-bottom: 5rem;
-    border-radius: 2.5rem;
-  }
-}
-
-.stacked-card.is-receding {
-  transform: scale(0.97) translateY(-14px);
-  opacity: 0.65;
-  filter: blur(0.5px);
+.stack-screen.is-receding {
+  transform: scale(0.97) translateY(-16px);
+  opacity: 0.55;
+  filter: blur(1px);
 }
 
 .film-hud-dot {

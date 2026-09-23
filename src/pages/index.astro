@@ -9,6 +9,30 @@ import contractorImg from '../assets/contractor-report.png';
 import reportsImg from '../assets/reports-overview.png';
 import adminDashboardImg from '../assets/admin-dashboard.png';
 import storiesImg from '../assets/stories-site-updates.png';
+
+import {
+  ArrowRight,
+  ArrowDown,
+  Check,
+  Clock,
+  AlertTriangle,
+  TrendingUp,
+  ShieldCheck,
+  Layers,
+  DollarSign,
+  PhoneCall,
+  MessageSquare,
+  Users,
+  Truck,
+  Lock,
+  FileSpreadsheet,
+  HardHat,
+  Wallet,
+  Building,
+  CheckCircle2,
+  BarChart3,
+  FileCheck
+} from 'lucide-astro';
 ---
 
 <Layout
@@ -45,14 +69,14 @@ import storiesImg from '../assets/stories-site-updates.png';
         <!-- Left: Narrative -->
         <div class="lg:col-span-7 space-y-6 text-left">
           <div class="story-fade-in inline-flex items-center gap-2 rounded-full border border-blue/20 bg-blue-soft px-3.5 py-1 text-xs font-semibold text-blue">
-            <span class="h-2 w-2 rounded-full bg-blue animate-pulse"></span>
+            <Layers class="w-3.5 h-3.5 text-blue" />
             <span>A SINGLE HUB FOR EVERY SITE</span>
           </div>
 
           <h1 class="story-fade-in text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-[1.08]">
             Stop running ₹50-Crore sites on <br />
             <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue via-indigo-600 to-amber-600">
-              WhatsApp & pocket diaries.
+              scattered chats & pocket diaries.
             </span>
           </h1>
 
@@ -67,16 +91,14 @@ import storiesImg from '../assets/stories-site-updates.png';
               class="inline-flex items-center justify-center rounded-xl bg-blue hover:bg-blue-hover text-white px-8 py-4 text-base font-bold shadow-[0_4px_14px_rgba(58,70,225,0.35)] hover:shadow-[0_6px_20px_rgba(58,70,225,0.45)] transition-all active:scale-95 group focus-visible:outline-none"
             >
               <span>Take Command — Book Demo</span>
-              <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-              </svg>
+              <ArrowRight class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
               href="#act-2"
               class="inline-flex items-center justify-center rounded-xl bg-white hover:bg-slate-50 border border-slate-200/90 shadow-xs px-6 py-4 text-sm font-semibold text-slate-700 transition-all gap-2"
             >
               <span>Inspect The 4 Financial Leaks</span>
-              <span class="animate-bounce">↓</span>
+              <ArrowDown class="w-4 h-4 text-slate-500 animate-bounce" />
             </a>
           </div>
 
@@ -115,7 +137,9 @@ import storiesImg from '../assets/stories-site-updates.png';
             <!-- Floating Telemetry Overlay Badges -->
             <div class="absolute -top-3 -left-4 sm:-left-6 rounded-2xl border border-slate-200 bg-white/95 p-3.5 shadow-xl backdrop-blur-md max-w-[210px] hidden sm:block">
               <div class="flex items-center gap-2.5">
-                <span class="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold">✓</span>
+                <span class="flex h-7 w-7 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
+                  <Check class="w-4 h-4" />
+                </span>
                 <div>
                   <span class="text-[10px] uppercase font-mono tracking-wider text-slate-500 block">Verified Funds</span>
                   <span class="text-xs font-black text-slate-900 block">₹62,00,000 Locked</span>
@@ -162,8 +186,9 @@ import storiesImg from '../assets/stories-site-updates.png';
           onclick="inspectEvidence(1)"
         >
           <div class="flex items-center justify-between">
-            <span class="text-[11px] font-mono font-bold uppercase text-red-700 bg-red-100 px-2.5 py-0.5 rounded-md">
-              Evidence #01
+            <span class="text-[11px] font-mono font-bold uppercase text-red-700 bg-red-100 px-2.5 py-0.5 rounded-md flex items-center gap-1">
+              <Users class="w-3 h-3" />
+              <span>Evidence #01</span>
             </span>
             <span class="text-xs font-mono font-bold text-red-600">-₹40,000 / mo</span>
           </div>
@@ -175,7 +200,7 @@ import storiesImg from '../assets/stories-site-updates.png';
           </p>
           <div class="pt-2 border-t border-slate-100 text-xs font-bold text-blue flex items-center justify-between">
             <span>Inspect Brift Fix</span>
-            <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+            <ArrowRight class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
           </div>
         </div>
 
@@ -185,8 +210,9 @@ import storiesImg from '../assets/stories-site-updates.png';
           onclick="inspectEvidence(2)"
         >
           <div class="flex items-center justify-between">
-            <span class="text-[11px] font-mono font-bold uppercase text-red-700 bg-red-100 px-2.5 py-0.5 rounded-md">
-              Evidence #02
+            <span class="text-[11px] font-mono font-bold uppercase text-red-700 bg-red-100 px-2.5 py-0.5 rounded-md flex items-center gap-1">
+              <Truck class="w-3 h-3" />
+              <span>Evidence #02</span>
             </span>
             <span class="text-xs font-mono font-bold text-red-600">-₹80,000 / mo</span>
           </div>
@@ -198,7 +224,7 @@ import storiesImg from '../assets/stories-site-updates.png';
           </p>
           <div class="pt-2 border-t border-slate-100 text-xs font-bold text-blue flex items-center justify-between">
             <span>Inspect Brift Fix</span>
-            <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+            <ArrowRight class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
           </div>
         </div>
 
@@ -208,8 +234,9 @@ import storiesImg from '../assets/stories-site-updates.png';
           onclick="inspectEvidence(3)"
         >
           <div class="flex items-center justify-between">
-            <span class="text-[11px] font-mono font-bold uppercase text-red-700 bg-red-100 px-2.5 py-0.5 rounded-md">
-              Evidence #03
+            <span class="text-[11px] font-mono font-bold uppercase text-red-700 bg-red-100 px-2.5 py-0.5 rounded-md flex items-center gap-1">
+              <Wallet class="w-3 h-3" />
+              <span>Evidence #03</span>
             </span>
             <span class="text-xs font-mono font-bold text-red-600">-₹70,000 / mo</span>
           </div>
@@ -221,7 +248,7 @@ import storiesImg from '../assets/stories-site-updates.png';
           </p>
           <div class="pt-2 border-t border-slate-100 text-xs font-bold text-blue flex items-center justify-between">
             <span>Inspect Brift Fix</span>
-            <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+            <ArrowRight class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
           </div>
         </div>
 
@@ -231,8 +258,9 @@ import storiesImg from '../assets/stories-site-updates.png';
           onclick="inspectEvidence(4)"
         >
           <div class="flex items-center justify-between">
-            <span class="text-[11px] font-mono font-bold uppercase text-red-700 bg-red-100 px-2.5 py-0.5 rounded-md">
-              Evidence #04
+            <span class="text-[11px] font-mono font-bold uppercase text-red-700 bg-red-100 px-2.5 py-0.5 rounded-md flex items-center gap-1">
+              <AlertTriangle class="w-3 h-3" />
+              <span>Evidence #04</span>
             </span>
             <span class="text-xs font-mono font-bold text-red-600">-₹50,000 / mo</span>
           </div>
@@ -244,7 +272,7 @@ import storiesImg from '../assets/stories-site-updates.png';
           </p>
           <div class="pt-2 border-t border-slate-100 text-xs font-bold text-blue flex items-center justify-between">
             <span>Inspect Brift Fix</span>
-            <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+            <ArrowRight class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
           </div>
         </div>
       </div>
@@ -253,13 +281,14 @@ import storiesImg from '../assets/stories-site-updates.png';
       <div id="forensic-spotlight" class="story-scale-up mt-8 rounded-3xl border border-blue/30 bg-blue-soft/50 p-6 sm:p-8 shadow-sm">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-blue/20 pb-4 mb-4">
           <div class="flex items-center gap-2.5">
-            <span class="h-3 w-3 rounded-full bg-blue animate-pulse"></span>
+            <ShieldCheck class="w-5 h-5 text-blue" />
             <span class="text-xs font-mono font-bold uppercase tracking-wider text-blue" id="spotlight-title">
               CASE FILE #01 // GHOST LABOR RESOLUTION
             </span>
           </div>
-          <span class="text-xs font-bold text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">
-            Status: Fully Plugged by Brift
+          <span class="text-xs font-bold text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full flex items-center gap-1">
+            <Check class="w-3.5 h-3.5 text-emerald-700" />
+            <span>Status: Fully Plugged by Brift</span>
           </span>
         </div>
         <p class="text-sm sm:text-base text-slate-700 leading-relaxed" id="spotlight-desc">
@@ -272,7 +301,7 @@ import storiesImg from '../assets/stories-site-updates.png';
     <!-- ACT 03 // 24 HOURS ON SITE (TIMELINE REEL) -->
     <!-- ========================================== -->
     <section id="act-3" class="relative">
-      <div class="story-fade-in flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 border-b border-slate-200/80 pb-6">
+      <div class="story-fade-in flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 border-b border-slate-200/80 pb-6">
         <div class="space-y-2 max-w-2xl">
           <span class="inline-block text-xs font-bold font-mono uppercase tracking-wider text-amber-800 bg-amber-100 border border-amber-300 px-3.5 py-1 rounded-full">
             ACT 03 // 24-HOUR SITE STORY
@@ -285,15 +314,17 @@ import storiesImg from '../assets/stories-site-updates.png';
           </p>
         </div>
 
-        <button
-          id="movie-autoplay-btn"
-          type="button"
-          class="inline-flex items-center gap-2 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 px-5 py-3 text-xs font-mono font-bold shadow-xs transition-all cursor-pointer active:scale-95"
-          onclick="toggleMovieAutoPlay()"
-        >
-          <span id="play-icon">▶</span>
-          <span id="play-text">Auto-Play Day Story</span>
-        </button>
+        <!-- Always-On Auto-Playing Time Indicator -->
+        <div class="flex flex-col items-start md:items-end gap-1.5">
+          <div class="inline-flex items-center gap-2 rounded-xl bg-slate-100 border border-slate-200 px-4 py-2 text-xs font-mono font-bold text-slate-700 shadow-xs">
+            <Clock class="w-3.5 h-3.5 text-amber-600 animate-spin" style="animation-duration: 4s;" />
+            <span>NEXT SCENE IN <strong id="reel-countdown" class="text-amber-700 font-black">4s</strong></span>
+          </div>
+          <!-- Playing Progress Bar Line -->
+          <div class="w-44 h-1.5 bg-slate-200 rounded-full overflow-hidden">
+            <div id="reel-progress-fill" class="h-full bg-amber-500 rounded-full transition-all duration-100 ease-linear" style="width: 0%;"></div>
+          </div>
+        </div>
       </div>
 
       <!-- Theater Stage -->
@@ -303,35 +334,47 @@ import storiesImg from '../assets/stories-site-updates.png';
           <div class="grid grid-cols-2 gap-2.5" id="movie-scene-buttons">
             <button
               type="button"
-              class="movie-tab px-4 py-3 rounded-xl text-xs font-bold border-2 border-amber-400 bg-amber-400 text-slate-950 text-left transition-all cursor-pointer font-mono shadow-xs"
+              class="movie-tab px-4 py-3 rounded-xl text-xs font-bold border-2 border-amber-400 bg-amber-400 text-slate-950 text-left transition-all cursor-pointer font-mono shadow-xs relative overflow-hidden"
               data-scene="1"
               onclick="showMovieScene(1)"
             >
-              07:00 AM • Gate Muster
+              <div class="flex items-center gap-1.5">
+                <Clock class="w-3 h-3 text-slate-900" />
+                <span>07:00 AM • Gate Muster</span>
+              </div>
             </button>
             <button
               type="button"
-              class="movie-tab px-4 py-3 rounded-xl text-xs font-bold border border-slate-200 bg-white text-slate-700 text-left hover:border-amber-400 transition-all cursor-pointer font-mono"
+              class="movie-tab px-4 py-3 rounded-xl text-xs font-bold border border-slate-200 bg-white text-slate-700 text-left hover:border-amber-400 transition-all cursor-pointer font-mono relative overflow-hidden"
               data-scene="2"
               onclick="showMovieScene(2)"
             >
-              11:30 AM • Cement Bay
+              <div class="flex items-center gap-1.5">
+                <Truck class="w-3 h-3 text-slate-500" />
+                <span>11:30 AM • Cement Bay</span>
+              </div>
             </button>
             <button
               type="button"
-              class="movie-tab px-4 py-3 rounded-xl text-xs font-bold border border-slate-200 bg-white text-slate-700 text-left hover:border-amber-400 transition-all cursor-pointer font-mono"
+              class="movie-tab px-4 py-3 rounded-xl text-xs font-bold border border-slate-200 bg-white text-slate-700 text-left hover:border-amber-400 transition-all cursor-pointer font-mono relative overflow-hidden"
               data-scene="3"
               onclick="showMovieScene(3)"
             >
-              03:15 PM • Site Advances
+              <div class="flex items-center gap-1.5">
+                <Wallet class="w-3 h-3 text-slate-500" />
+                <span>03:15 PM • Site Advances</span>
+              </div>
             </button>
             <button
               type="button"
-              class="movie-tab px-4 py-3 rounded-xl text-xs font-bold border border-slate-200 bg-white text-slate-700 text-left hover:border-amber-400 transition-all cursor-pointer font-mono"
+              class="movie-tab px-4 py-3 rounded-xl text-xs font-bold border border-slate-200 bg-white text-slate-700 text-left hover:border-amber-400 transition-all cursor-pointer font-mono relative overflow-hidden"
               data-scene="4"
               onclick="showMovieScene(4)"
             >
-              07:30 PM • Owner Screen
+              <div class="flex items-center gap-1.5">
+                <BarChart3 class="w-3 h-3 text-slate-500" />
+                <span>07:30 PM • Owner Screen</span>
+              </div>
             </button>
           </div>
 
@@ -352,7 +395,10 @@ import storiesImg from '../assets/stories-site-updates.png';
 
             <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
               <span class="text-slate-500">Leak Prevention Status:</span>
-              <span class="font-bold text-emerald-700" id="scene-leak-status">✓ Zero Ghost Labor Paid</span>
+              <span class="font-bold text-emerald-700 flex items-center gap-1" id="scene-leak-status">
+                <CheckCircle2 class="w-3.5 h-3.5 text-emerald-600" />
+                <span>Zero Ghost Labor Paid</span>
+              </span>
             </div>
           </div>
         </div>
@@ -410,12 +456,124 @@ import storiesImg from '../assets/stories-site-updates.png';
     </section>
 
     <!-- ========================================== -->
-    <!-- ACT 04 // THE OWNER'S COCKPIT (CONSOLE)    -->
+    <!-- ACT 04 // THE FULL-PICTURE COMMAND CENTER -->
+    <!-- (FEATURING REPORTS-OVERVIEW.PNG)          -->
     <!-- ========================================== -->
     <section id="act-4" class="relative">
+      <div class="story-fade-in text-center max-w-4xl mx-auto mb-12 space-y-4">
+        <span class="inline-block text-xs font-bold font-mono uppercase tracking-wider text-indigo-700 bg-indigo-50 border border-indigo-200 px-4 py-1.5 rounded-full">
+          ACT 04 // THE MASTER PANORAMIC AUDIT
+        </span>
+        <h2 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-tight">
+          Every site. Every rupee. Every milestone. <br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue via-indigo-600 to-emerald-600">
+            One complete executive screen.
+          </span>
+        </h2>
+        <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          Stop assembling scattered figures from 14 Excel sheets. The Brift Master Overview consolidates live monthly cash flow, 7 automated audit reports, and multi-project stage completions onto a single pane of glass.
+        </p>
+      </div>
+
+      <!-- Panoramic Screen Showcase Frame -->
+      <div class="story-scale-up rounded-3xl border border-slate-300/80 bg-slate-900/5 p-3 sm:p-5 shadow-2xl backdrop-blur-sm">
+        <!-- Browser Window Chrome Top Bar -->
+        <div class="flex items-center justify-between px-4 py-3 bg-white border border-slate-200/90 rounded-2xl mb-3 shadow-xs">
+          <div class="flex items-center gap-2">
+            <span class="h-3 w-3 rounded-full bg-red-400"></span>
+            <span class="h-3 w-3 rounded-full bg-amber-400"></span>
+            <span class="h-3 w-3 rounded-full bg-emerald-400"></span>
+            <span class="ml-3 text-xs font-mono text-slate-500 hidden sm:inline-block">app.brift.in/master-reports-overview</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">
+              <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span>100% RECONCILED</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Full Panoramic Image Display -->
+        <div class="relative rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-lg group">
+          <Image
+            src={reportsImg}
+            alt="Brift Master Reports Overview displaying complete financials, stage progress, and project rollups"
+            class="w-full h-auto object-cover max-h-[720px] transition-transform duration-500 group-hover:scale-[1.01]"
+            loading="lazy"
+            format="webp"
+          />
+
+          <!-- Floating Ambient Callout 1 (Top Left) -->
+          <div class="absolute top-4 left-4 rounded-xl border border-slate-200 bg-white/95 p-3 shadow-md backdrop-blur-md hidden md:flex items-center gap-2.5 max-w-xs">
+            <DollarSign class="w-4 h-4 text-emerald-600 shrink-0" />
+            <div>
+              <span class="text-[10px] font-mono uppercase text-slate-500 block">Consolidated Cash Pulse</span>
+              <span class="text-xs font-bold text-slate-900 block">Live Monthly Inflow vs Site Burn</span>
+            </div>
+          </div>
+
+          <!-- Floating Ambient Callout 2 (Bottom Right) -->
+          <div class="absolute bottom-4 right-4 rounded-xl border border-slate-200 bg-white/95 p-3 shadow-md backdrop-blur-md hidden md:flex items-center gap-2.5 max-w-xs">
+            <FileSpreadsheet class="w-4 h-4 text-blue shrink-0" />
+            <div>
+              <span class="text-[10px] font-mono uppercase text-slate-500 block">One-Click Exports</span>
+              <span class="text-xs font-bold text-slate-900 block">7 Instant PDF & Excel Financial Registers</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Pillars Breakdown of the Master Overview -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 pt-8">
+        <div class="rounded-2xl border border-slate-200 bg-white p-5 space-y-2 shadow-xs hover:border-blue transition-colors">
+          <div class="flex items-center gap-2 text-blue">
+            <TrendingUp class="w-4 h-4" />
+            <h4 class="text-sm font-bold text-slate-900">Money In vs Money Out</h4>
+          </div>
+          <p class="text-xs text-slate-500 leading-relaxed">
+            Consolidated monthly financial curve tracking total incoming client stage disbursements against actual vendor bills.
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 bg-white p-5 space-y-2 shadow-xs hover:border-blue transition-colors">
+          <div class="flex items-center gap-2 text-emerald-600">
+            <FileCheck class="w-4 h-4" />
+            <h4 class="text-sm font-bold text-slate-900">7 Built-in Audit Reports</h4>
+          </div>
+          <p class="text-xs text-slate-500 leading-relaxed">
+            Instant export of Annual Financials, Payroll, Procurement, Contractor Advances, Capital & Debt, and Client Statements.
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 bg-white p-5 space-y-2 shadow-xs hover:border-blue transition-colors">
+          <div class="flex items-center gap-2 text-amber-600">
+            <Building class="w-4 h-4" />
+            <h4 class="text-sm font-bold text-slate-900">10-Stage Milestone Tracking</h4>
+          </div>
+          <p class="text-xs text-slate-500 leading-relaxed">
+            Know exactly what stage each active villa or commercial slab is at, backed by 30-day labor presence and site updates.
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 bg-white p-5 space-y-2 shadow-xs hover:border-blue transition-colors">
+          <div class="flex items-center gap-2 text-indigo-600">
+            <Wallet class="w-4 h-4" />
+            <h4 class="text-sm font-bold text-slate-900">Receivables & Debt Control</h4>
+          </div>
+          <p class="text-xs text-slate-500 leading-relaxed">
+            Immediate visibility into client overdue milestones, pending contractor advances, and liquid operational bank balances.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- ACT 05 // THE OWNER'S COCKPIT (CONSOLE)    -->
+    <!-- ========================================== -->
+    <section id="act-5" class="relative">
       <div class="story-fade-in text-center max-w-3xl mx-auto mb-10 space-y-3">
         <span class="inline-block text-xs font-bold font-mono uppercase tracking-wider text-blue bg-blue-soft px-3.5 py-1 rounded-full">
-          ACT 04 // APPLICATION SHOWCASE
+          ACT 05 // DEEP-DIVE CHANNELS
         </span>
         <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-slate-900">
           Five operational channels. One unified cockpit.
@@ -424,47 +582,52 @@ import storiesImg from '../assets/stories-site-updates.png';
           Click any channel to test-drive how Brift displays your live finances, inventory, and field progress without picking up the phone:
         </p>
 
-        <!-- Channel Selectors -->
+        <!-- Channel Selectors with Lucide Icons -->
         <div class="pt-4 flex flex-wrap items-center justify-center gap-2.5">
           <button
             type="button"
-            class="cockpit-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold border-2 border-blue bg-blue text-white shadow-xs transition-all cursor-pointer"
+            class="cockpit-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border-2 border-blue bg-blue text-white shadow-xs transition-all cursor-pointer inline-flex items-center gap-2"
             data-channel="money"
             onclick="switchCockpit('money')"
           >
-            💰 Money Stream
+            <Wallet class="w-4 h-4" />
+            <span>Money Stream</span>
           </button>
           <button
             type="button"
-            class="cockpit-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border border-slate-200 bg-white text-slate-700 hover:border-blue transition-all cursor-pointer"
+            class="cockpit-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold border border-slate-200 bg-white text-slate-700 hover:border-blue transition-all cursor-pointer inline-flex items-center gap-2"
             data-channel="materials"
             onclick="switchCockpit('materials')"
           >
-            📦 Cement & Steel
+            <Truck class="w-4 h-4" />
+            <span>Cement & Steel</span>
           </button>
           <button
             type="button"
-            class="cockpit-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border border-slate-200 bg-white text-slate-700 hover:border-blue transition-all cursor-pointer"
+            class="cockpit-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold border border-slate-200 bg-white text-slate-700 hover:border-blue transition-all cursor-pointer inline-flex items-center gap-2"
             data-channel="workforce"
             onclick="switchCockpit('workforce')"
           >
-            👷 Labor & Contractors
+            <HardHat class="w-4 h-4" />
+            <span>Labor & Contractors</span>
           </button>
           <button
             type="button"
-            class="cockpit-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border border-slate-200 bg-white text-slate-700 hover:border-blue transition-all cursor-pointer"
+            class="cockpit-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold border border-slate-200 bg-white text-slate-700 hover:border-blue transition-all cursor-pointer inline-flex items-center gap-2"
             data-channel="reports"
             onclick="switchCockpit('reports')"
           >
-            📊 Daily Progress Reports
+            <FileSpreadsheet class="w-4 h-4" />
+            <span>Daily Progress Reports</span>
           </button>
           <button
             type="button"
-            class="cockpit-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border border-slate-200 bg-white text-slate-700 hover:border-blue transition-all cursor-pointer"
+            class="cockpit-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold border border-slate-200 bg-white text-slate-700 hover:border-blue transition-all cursor-pointer inline-flex items-center gap-2"
             data-channel="roles"
             onclick="switchCockpit('roles')"
           >
-            🔐 Role Security
+            <Lock class="w-4 h-4" />
+            <span>Role Security</span>
           </button>
         </div>
       </div>
@@ -491,11 +654,11 @@ import storiesImg from '../assets/stories-site-updates.png';
             </p>
             <div class="space-y-2 pt-2 text-xs sm:text-sm text-slate-600">
               <div class="flex items-center gap-2.5">
-                <span class="text-emerald-600 font-bold">✓</span>
+                <Check class="w-4 h-4 text-emerald-600 font-bold" />
                 <span>Instant contractor advance balance tracking</span>
               </div>
               <div class="flex items-center gap-2.5">
-                <span class="text-emerald-600 font-bold">✓</span>
+                <Check class="w-4 h-4 text-emerald-600 font-bold" />
                 <span>Vendor statement matching with challan photos</span>
               </div>
             </div>
@@ -522,11 +685,11 @@ import storiesImg from '../assets/stories-site-updates.png';
             </p>
             <div class="space-y-2 pt-2 text-xs sm:text-sm text-slate-600">
               <div class="flex items-center gap-2.5">
-                <span class="text-emerald-600 font-bold">✓</span>
+                <Check class="w-4 h-4 text-emerald-600 font-bold" />
                 <span>Automated alerts on low steel rebar or cement stock</span>
               </div>
               <div class="flex items-center gap-2.5">
-                <span class="text-emerald-600 font-bold">✓</span>
+                <Check class="w-4 h-4 text-emerald-600 font-bold" />
                 <span>Eliminates 18% emergency retail markups</span>
               </div>
             </div>
@@ -553,11 +716,11 @@ import storiesImg from '../assets/stories-site-updates.png';
             </p>
             <div class="space-y-2 pt-2 text-xs sm:text-sm text-slate-600">
               <div class="flex items-center gap-2.5">
-                <span class="text-emerald-600 font-bold">✓</span>
+                <Check class="w-4 h-4 text-emerald-600 font-bold" />
                 <span>Daily attendance auto-linked to trade rates</span>
               </div>
               <div class="flex items-center gap-2.5">
-                <span class="text-emerald-600 font-bold">✓</span>
+                <Check class="w-4 h-4 text-emerald-600 font-bold" />
                 <span>No cash advance disputes at final handoff</span>
               </div>
             </div>
@@ -584,11 +747,11 @@ import storiesImg from '../assets/stories-site-updates.png';
             </p>
             <div class="space-y-2 pt-2 text-xs sm:text-sm text-slate-600">
               <div class="flex items-center gap-2.5">
-                <span class="text-emerald-600 font-bold">✓</span>
+                <Check class="w-4 h-4 text-emerald-600 font-bold" />
                 <span>Automated WhatsApp evening report generation</span>
               </div>
               <div class="flex items-center gap-2.5">
-                <span class="text-emerald-600 font-bold">✓</span>
+                <Check class="w-4 h-4 text-emerald-600 font-bold" />
                 <span>High-resolution visual inspection archives</span>
               </div>
             </div>
@@ -615,11 +778,11 @@ import storiesImg from '../assets/stories-site-updates.png';
             </p>
             <div class="space-y-2 pt-2 text-xs sm:text-sm text-slate-600">
               <div class="flex items-center gap-2.5">
-                <span class="text-emerald-600 font-bold">✓</span>
+                <Check class="w-4 h-4 text-emerald-600 font-bold" />
                 <span>Device-level biometric & PIN authentication</span>
               </div>
               <div class="flex items-center gap-2.5">
-                <span class="text-emerald-600 font-bold">✓</span>
+                <Check class="w-4 h-4 text-emerald-600 font-bold" />
                 <span>Instant access revocation for departed staff</span>
               </div>
             </div>
@@ -629,12 +792,12 @@ import storiesImg from '../assets/stories-site-updates.png';
     </section>
 
     <!-- ========================================== -->
-    <!-- ACT 05 // THE PROFIT LOSS RADAR           -->
+    <!-- ACT 06 // THE PROFIT LOSS RADAR           -->
     <!-- ========================================== -->
-    <section id="act-5" class="relative">
+    <section id="act-6" class="relative">
       <div class="story-fade-in text-center max-w-3xl mx-auto mb-10 space-y-3">
         <span class="inline-block text-xs font-bold font-mono uppercase tracking-wider text-amber-800 bg-amber-100 border border-amber-300 px-3.5 py-1 rounded-full">
-          ACT 05 // FINANCIAL LOSS RADAR
+          ACT 06 // FINANCIAL LOSS RADAR
         </span>
         <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-slate-900">
           Calculate your firm's hidden bleed by site count.
@@ -745,21 +908,24 @@ import storiesImg from '../assets/stories-site-updates.png';
 
           <div class="pt-1 flex items-center justify-between text-xs sm:text-sm text-slate-600">
             <span>Brift Deployment Protection:</span>
-            <span class="text-emerald-700 font-bold">✓ 100% Recaptured From Day 1</span>
+            <span class="text-emerald-700 font-bold flex items-center gap-1.5">
+              <CheckCircle2 class="w-4 h-4 text-emerald-600" />
+              <span>100% Recaptured From Day 1</span>
+            </span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ========================================== -->
-    <!-- ACT 06 // TAKE COMMAND (HERITAGE & DEMO)   -->
+    <!-- ACT 07 // TAKE COMMAND (HERITAGE & DEMO)   -->
     <!-- ========================================== -->
-    <section id="act-6" class="relative">
+    <section id="act-7" class="relative">
       <div class="story-fade-in grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         <!-- Left: The Origin Story (SIMAK DNA) -->
         <div class="lg:col-span-5 space-y-5 text-left">
           <span class="inline-block text-xs font-mono font-bold uppercase tracking-wider text-amber-800 bg-amber-100 border border-amber-300 px-3.5 py-1 rounded-full">
-            ACT 06 // PROVEN FIELD ORIGIN
+            ACT 07 // PROVEN FIELD ORIGIN
           </span>
 
           <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-slate-900 leading-tight">
@@ -772,15 +938,15 @@ import storiesImg from '../assets/stories-site-updates.png';
 
           <div class="rounded-2xl border border-slate-200 bg-white p-5 space-y-2.5 shadow-xs">
             <div class="flex items-center gap-2.5">
-              <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+              <CheckCircle2 class="w-4 h-4 text-emerald-600" />
               <span class="text-sm font-bold text-slate-900">Zero complex software training.</span>
             </div>
-            <p class="text-xs text-slate-500 leading-relaxed pl-4">
+            <p class="text-xs text-slate-500 leading-relaxed pl-6">
               Your site team is logging live receipts within 48 hours of onboarding.
             </p>
           </div>
 
-          <!-- Direct Hotline Connection -->
+          <!-- Direct Official Hotline Connection -->
           <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
             <a
               href="https://wa.me/919037532036?text=Hi%20Brift%20team,%20I%20want%20to%20see%20a%20live%20walkthrough%20for%20my%20construction%20company"
@@ -788,13 +954,15 @@ import storiesImg from '../assets/stories-site-updates.png';
               rel="noopener noreferrer"
               class="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-3 text-xs sm:text-sm font-bold shadow-sm transition-all active:scale-95"
             >
-              <span>💬 WhatsApp Founders Directly</span>
+              <MessageSquare class="w-4 h-4" />
+              <span>Chat on Official WhatsApp</span>
             </a>
             <a
               href="tel:+919037532036"
               class="inline-flex items-center justify-center gap-2 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 px-5 py-3 text-xs sm:text-sm font-mono font-semibold shadow-xs transition-all"
             >
-              <span>📞 +91 9037532036</span>
+              <PhoneCall class="w-4 h-4 text-slate-600" />
+              <span>+91 9037532036</span>
             </a>
           </div>
         </div>
@@ -807,8 +975,9 @@ import storiesImg from '../assets/stories-site-updates.png';
                 <span class="text-xs font-mono font-bold uppercase tracking-wider text-blue block">PRIVATE SCREENING TICKET</span>
                 <h3 class="text-xl sm:text-2xl font-black text-slate-900">Book Your 1-on-1 Walkthrough</h3>
               </div>
-              <span class="text-[10px] font-mono text-emerald-800 bg-emerald-100 border border-emerald-300 px-3 py-1 rounded-full">
-                FREE 1-ON-1 DEMO
+              <span class="text-[10px] font-mono text-emerald-800 bg-emerald-100 border border-emerald-300 px-3 py-1 rounded-full flex items-center gap-1">
+                <Check class="w-3 h-3 text-emerald-700" />
+                <span>FREE 1-ON-1 DEMO</span>
               </span>
             </div>
 
@@ -827,7 +996,7 @@ import storiesImg from '../assets/stories-site-updates.png';
                 </div>
 
                 <div>
-                  <label for="demo-phone" class="block text-xs font-mono text-slate-600 mb-1">WhatsApp / Phone *</label>
+                  <label for="demo-phone" class="block text-xs font-mono text-slate-600 mb-1">Official WhatsApp / Phone *</label>
                   <input
                     type="tel"
                     id="demo-phone"
@@ -876,24 +1045,25 @@ import storiesImg from '../assets/stories-site-updates.png';
 
               <button
                 type="submit"
-                class="w-full rounded-xl bg-blue hover:bg-blue-hover text-white font-bold text-sm py-4 shadow-md transition-all cursor-pointer active:scale-98"
+                class="w-full rounded-xl bg-blue hover:bg-blue-hover text-white font-bold text-sm py-4 shadow-md transition-all cursor-pointer active:scale-98 flex items-center justify-center gap-2"
               >
-                Reserve My Walkthrough Demo &rarr;
+                <span>Reserve My Walkthrough Demo</span>
+                <ArrowRight class="w-4 h-4" />
               </button>
 
               <p class="text-center text-xs text-slate-500 pt-1">
-                100% confidential. No spam. You'll speak directly with our core engineering founders.
+                100% confidential. No spam. Direct consultation with our product operations team.
               </p>
             </form>
 
             <!-- Success State -->
             <div id="demo-success-box" class="hidden text-center py-8 space-y-4">
-              <div class="inline-flex h-14 w-14 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 text-2xl font-bold">
-                ✓
+              <div class="inline-flex h-14 w-14 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
+                <CheckCircle2 class="w-8 h-8" />
               </div>
               <h4 class="text-2xl font-black text-slate-900">Private Screening Reserved!</h4>
               <p class="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
-                Thank you! Our engineering founders will reach out to you via WhatsApp within 2 working hours to confirm your custom walkthrough session.
+                Thank you! Our official team will reach out to you via WhatsApp within 2 working hours to confirm your custom walkthrough session.
               </p>
               <a
                 href="https://wa.me/919037532036?text=Hi%20Brift%20team,%20I%20just%20submitted%20the%20demo%20form"
@@ -901,7 +1071,9 @@ import storiesImg from '../assets/stories-site-updates.png';
                 rel="noopener noreferrer"
                 class="inline-flex items-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-3 text-xs font-bold transition-all shadow-xs"
               >
-                Open WhatsApp Conversation Now &rarr;
+                <MessageSquare class="w-4 h-4" />
+                <span>Open Official WhatsApp Conversation Now</span>
+                <ArrowRight class="w-3.5 h-3.5" />
               </a>
             </div>
           </div>
@@ -920,37 +1092,42 @@ import storiesImg from '../assets/stories-site-updates.png';
         desc: "The Brift Closed-Loop: The site supervisor opens the app at the site gate. Even in a basement with 0 cellular signal, attendance is logged and timestamped with worker categorization (skilled/unskilled). The record locks permanently and syncs to central payroll the second the phone connects to signal. Zero paper registers, zero phantom workers."
       },
       2: {
-        title: "CASE FILE #02 // CEMENT INTAKE AUDIT",
-        desc: "The Brift Closed-Loop: The delivery truck arrives at the bay. The supervisor must photograph the printed delivery challan and bag stack directly in Brift before the intake voucher is generated. Central office verifies before accounting issues payment. Phantom shortfalls vanish."
+        title: "CASE FILE #02 // CEMENT CHALLAN RECONCILIATION",
+        desc: "The Brift Closed-Loop: The delivery driver hands over the physical challan. The supervisor snaps a verified high-resolution photo in Brift before the bags are stacked. The image is instantly tagged with location, vehicle plate, and quantity. It matches against the purchase order automatically. Billed bags always equal unloaded bags."
       },
       3: {
-        title: "CASE FILE #03 // CASH ADVANCE SETTLEMENT",
-        desc: "The Brift Closed-Loop: Cash advances require an instant digital timestamped entry in the contractor's ledger. When the final measurement bill is submitted, Brift automatically deducts all outstanding advances from the settlement. Zero forgotten diary advances."
+        title: "CASE FILE #03 // POCKET ADVANCE PLUG",
+        desc: "The Brift Closed-Loop: The supervisor logs an instant site petty advance with contractor name, timestamp, and purpose. The system logs it into the contractor ledger in real time. On Saturday billing, the advance is auto-deducted from the total measurement payout. Disputed advances drop to zero."
       },
       4: {
-        title: "CASE FILE #04 // INVENTORY BUFFER ALERTS",
-        desc: "The Brift Closed-Loop: Material run-rates are calculated daily. When steel or cement dips below 3 days of supply, automatic replenishment alerts are sent to bulk procurement with pre-negotiated volume pricing, eliminating costly local retail emergency markups."
+        title: "CASE FILE #04 // EMERGENCY RETAIL MARKUP SHIELD",
+        desc: "The Brift Closed-Loop: Site supervisors check live material thresholds in Brift. Central procurement receives low-stock threshold triggers 48 hours before materials run out on site. Bulk supplier orders arrive on schedule, eliminating frantic trips to retail hardware stores with 18% price markups."
       }
     };
 
     function inspectEvidence(id) {
       const data = evidenceData[id];
-      if (data) {
-        const titleEl = document.getElementById('spotlight-title');
-        const descEl = document.getElementById('spotlight-desc');
-        if (titleEl) titleEl.textContent = data.title;
-        if (descEl) descEl.innerHTML = '<strong class="text-slate-900">The Brift Closed-Loop: </strong>' + data.desc.replace('The Brift Closed-Loop: ', '');
+      if (!data) return;
+      const titleEl = document.getElementById('spotlight-title');
+      const descEl = document.getElementById('spotlight-desc');
+      if (titleEl && descEl) {
+        titleEl.textContent = data.title;
+        descEl.innerHTML = '<strong class="text-slate-900">The Brift Closed-Loop:</strong> ' + data.desc.replace('The Brift Closed-Loop: ', '');
+      }
+      const spotlight = document.getElementById('forensic-spotlight');
+      if (spotlight) {
+        spotlight.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
     }
 
-    // 2. 24-Hour Movie Scene Controller
+    // 2. 24-Hour Movie Reel Storyboard with Continuous Autoplay & Timer Countdown
     const movieScenes = {
       1: {
         timecode: "TIMECODE: 07:00:00 AM",
         location: "LOCATION: SITE GATE",
         headline: "Muster roll logged without network or ghost labor.",
         narration: "Thirty workers arrive at the gate. Even in a basement with zero cellular bars, the supervisor taps each worker in Brift. Attendance is locked to prevent week-end muster inflation.",
-        leak: "✓ Zero Ghost Labor Paid",
+        leak: "Zero Ghost Labor Paid",
         feed: "FEED // 01 • MUSTER SYNC"
       },
       2: {
@@ -958,7 +1135,7 @@ import storiesImg from '../assets/stories-site-updates.png';
         location: "LOCATION: DELIVERY BAY",
         headline: "200 bags of cement arrive. Delivery challan photographed.",
         narration: "A driver brings a delivery challan. The supervisor snaps a clear photo in Brift before unloading begins. Central office sees it instantly. No phantom bags billed.",
-        leak: "✓ Billed Bags = Unloaded Bags",
+        leak: "Billed Bags = Unloaded Bags",
         feed: "FEED // 02 • STOCK INTAKE"
       },
       3: {
@@ -966,7 +1143,7 @@ import storiesImg from '../assets/stories-site-updates.png';
         location: "LOCATION: SITE OFFICE",
         headline: "Subcontractor requests ₹35,000 advance. Automatically recorded.",
         narration: "The electrical contractor requests a cash advance. The site engineer enters it into Brift. It is instantly linked to the contractor's balance, eliminating disputed settlements.",
-        leak: "✓ 0 Disputed Advances",
+        leak: "0 Disputed Advances",
         feed: "FEED // 03 • CONTRACTOR LEDGER"
       },
       4: {
@@ -974,16 +1151,19 @@ import storiesImg from '../assets/stories-site-updates.png';
         location: "LOCATION: LIVING ROOM",
         headline: "The owner opens one screen. All sites reconciled.",
         narration: "No 45-minute interrogation calls. In under 5 minutes from your phone or desk, you see total funds in hand, verified spend vs budget, and daily photo progress trays.",
-        leak: "✓ Real-Time Company Margin",
+        leak: "Real-Time Company Margin",
         feed: "FEED // 04 • OWNER COCKPIT"
       }
     };
 
     let currentMovieScene = 1;
-    let movieAutoPlayInterval = null;
+    const SCENE_DURATION_MS = 4000;
+    let sceneStartTime = Date.now();
+    let movieTicker = null;
 
     function showMovieScene(sceneId) {
       currentMovieScene = sceneId;
+      sceneStartTime = Date.now();
       const data = movieScenes[sceneId];
       if (data) {
         const tc = document.getElementById('scene-timecode');
@@ -997,7 +1177,9 @@ import storiesImg from '../assets/stories-site-updates.png';
         if (loc) loc.textContent = data.location;
         if (hl) hl.textContent = data.headline;
         if (narr) narr.textContent = data.narration;
-        if (lk) lk.textContent = data.leak;
+        if (lk) {
+          lk.innerHTML = '<svg class="w-3.5 h-3.5 text-emerald-600 inline mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>' + data.leak + '</span>';
+        }
         if (pId) pId.textContent = data.feed;
       }
 
@@ -1010,32 +1192,42 @@ import storiesImg from '../assets/stories-site-updates.png';
       }
 
       document.querySelectorAll('.movie-tab').forEach(tab => {
-        if (parseInt(tab.getAttribute('data-scene') || '0', 10) === sceneId) {
-          tab.className = 'movie-tab px-4 py-3 rounded-xl text-xs font-bold border-2 border-amber-400 bg-amber-400 text-slate-950 text-left transition-all cursor-pointer font-mono shadow-xs';
+        const tabScene = parseInt(tab.getAttribute('data-scene') || '0', 10);
+        if (tabScene === sceneId) {
+          tab.classList.add('border-2', 'border-amber-400', 'bg-amber-400', 'text-slate-950', 'shadow-xs');
+          tab.classList.remove('border-slate-200', 'bg-white', 'text-slate-700');
         } else {
-          tab.className = 'movie-tab px-4 py-3 rounded-xl text-xs font-bold border border-slate-200 bg-white text-slate-700 text-left hover:border-amber-400 transition-all cursor-pointer font-mono';
+          tab.classList.remove('border-2', 'border-amber-400', 'bg-amber-400', 'text-slate-950', 'shadow-xs');
+          tab.classList.add('border', 'border-slate-200', 'bg-white', 'text-slate-700');
         }
       });
     }
 
-    function toggleMovieAutoPlay() {
-      const btnText = document.getElementById('play-text');
-      const btnIcon = document.getElementById('play-icon');
+    function initContinuousMovieAutoPlay() {
+      if (movieTicker) clearInterval(movieTicker);
+      sceneStartTime = Date.now();
 
-      if (movieAutoPlayInterval) {
-        clearInterval(movieAutoPlayInterval);
-        movieAutoPlayInterval = null;
-        if (btnText) btnText.textContent = "Auto-Play Day Story";
-        if (btnIcon) btnIcon.textContent = "▶";
-      } else {
-        if (btnText) btnText.textContent = "Pause (Playing...)";
-        if (btnIcon) btnIcon.textContent = "❚❚";
-        movieAutoPlayInterval = setInterval(() => {
-          let nextScene = currentMovieScene + 1;
-          if (nextScene > 4) nextScene = 1;
-          showMovieScene(nextScene);
-        }, 3500);
-      }
+      movieTicker = setInterval(() => {
+        const elapsed = Date.now() - sceneStartTime;
+        const remaining = Math.max(0, SCENE_DURATION_MS - elapsed);
+        const progressPct = Math.min(100, (elapsed / SCENE_DURATION_MS) * 100);
+
+        const countdownEl = document.getElementById('reel-countdown');
+        const fillEl = document.getElementById('reel-progress-fill');
+
+        if (countdownEl) {
+          countdownEl.textContent = Math.ceil(remaining / 1000) + 's';
+        }
+        if (fillEl) {
+          fillEl.style.width = progressPct + '%';
+        }
+
+        if (elapsed >= SCENE_DURATION_MS) {
+          let next = currentMovieScene + 1;
+          if (next > 4) next = 1;
+          showMovieScene(next);
+        }
+      }, 100);
     }
 
     // 3. Cockpit Channel Switcher
@@ -1046,129 +1238,118 @@ import storiesImg from '../assets/stories-site-updates.png';
 
       document.querySelectorAll('.cockpit-btn').forEach(btn => {
         if (btn.getAttribute('data-channel') === channelId) {
-          btn.className = 'cockpit-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold border-2 border-blue bg-blue text-white shadow-xs transition-all cursor-pointer';
+          btn.className = 'cockpit-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border-2 border-blue bg-blue text-white shadow-xs transition-all cursor-pointer inline-flex items-center gap-2';
         } else {
-          btn.className = 'cockpit-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border border-slate-200 bg-white text-slate-700 hover:border-blue transition-all cursor-pointer';
+          btn.className = 'cockpit-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold border border-slate-200 bg-white text-slate-700 hover:border-blue transition-all cursor-pointer inline-flex items-center gap-2';
         }
       });
     }
 
-    // 4. Financial Radar Scanner
-    function runRadarScan(numSites) {
+    // 4. Financial Loss Radar Calculator
+    const radarData = {
+      2: {
+        advances: "₹35,000 / mo",
+        muster: "₹20,000 / mo",
+        materials: "₹40,000 / mo",
+        retail: "₹25,000 / mo",
+        monthly: "₹1,20,000 / mo",
+        annual: "₹14.4 Lakhs / yr",
+        label: "2 Active Sites"
+      },
+      4: {
+        advances: "₹70,000 / mo",
+        muster: "₹40,000 / mo",
+        materials: "₹80,000 / mo",
+        retail: "₹50,000 / mo",
+        monthly: "₹2,40,000 / mo",
+        annual: "₹28.8 Lakhs / yr",
+        label: "4 Active Sites"
+      },
+      6: {
+        advances: "₹1,05,000 / mo",
+        muster: "₹60,000 / mo",
+        materials: "₹1,20,000 / mo",
+        retail: "₹75,000 / mo",
+        monthly: "₹3,60,000 / mo",
+        annual: "₹43.2 Lakhs / yr",
+        label: "6 Active Sites"
+      },
+      8: {
+        advances: "₹1,40,000 / mo",
+        muster: "₹80,000 / mo",
+        materials: "₹1,60,000 / mo",
+        retail: "₹1,00,000 / mo",
+        monthly: "₹4,80,000 / mo",
+        annual: "₹57.6 Lakhs / yr",
+        label: "8 Active Sites"
+      },
+      12: {
+        advances: "₹2,10,000 / mo",
+        muster: "₹1,20,000 / mo",
+        materials: "₹2,40,000 / mo",
+        retail: "₹1,50,000 / mo",
+        monthly: "₹7,20,000 / mo",
+        annual: "₹86.4 Lakhs / yr",
+        label: "12+ Multi-City Sites"
+      }
+    };
+
+    function runRadarScan(siteCount) {
+      const data = radarData[siteCount];
+      if (!data) return;
+
+      const adv = document.getElementById('radar-advances');
+      const mus = document.getElementById('radar-muster');
+      const mat = document.getElementById('radar-materials');
+      const ret = document.getElementById('radar-retail');
+      const mon = document.getElementById('radar-monthly-total');
+      const ann = document.getElementById('radar-annual-total');
+      const lbl = document.getElementById('radar-site-label');
+
+      if (adv) adv.textContent = data.advances;
+      if (mus) mus.textContent = data.muster;
+      if (mat) mat.textContent = data.materials;
+      if (ret) ret.textContent = data.retail;
+      if (mon) mon.textContent = data.monthly;
+      if (ann) ann.textContent = data.annual;
+      if (lbl) lbl.textContent = data.label;
+
       document.querySelectorAll('.radar-site-btn').forEach(btn => {
-        if (parseInt(btn.getAttribute('data-sites') || '0', 10) === numSites) {
+        if (parseInt(btn.getAttribute('data-sites') || '0', 10) === siteCount) {
           btn.className = 'radar-site-btn px-4 py-2 rounded-xl text-xs font-mono font-bold border-2 border-amber-400 bg-amber-400 text-slate-950 shadow-xs transition-all cursor-pointer';
         } else {
           btn.className = 'radar-site-btn px-4 py-2 rounded-xl text-xs font-mono font-bold border border-slate-200 bg-white text-slate-700 hover:border-amber-400 transition-all cursor-pointer';
         }
       });
-
-      const label = document.getElementById('radar-site-label');
-      if (label) label.textContent = numSites + ' Active Sites';
-
-      const adv = numSites * 17500;
-      const muster = numSites * 10000;
-      const mat = numSites * 20000;
-      const retail = numSites * 12500;
-      const monthlyTotal = adv + muster + mat + retail;
-      const annualTotal = monthlyTotal * 12;
-
-      const advEl = document.getElementById('radar-advances');
-      const musterEl = document.getElementById('radar-muster');
-      const matEl = document.getElementById('radar-materials');
-      const retEl = document.getElementById('radar-retail');
-      const monEl = document.getElementById('radar-monthly-total');
-      const annEl = document.getElementById('radar-annual-total');
-
-      if (advEl) advEl.textContent = '₹' + adv.toLocaleString('en-IN') + ' / mo';
-      if (musterEl) musterEl.textContent = '₹' + muster.toLocaleString('en-IN') + ' / mo';
-      if (matEl) matEl.textContent = '₹' + mat.toLocaleString('en-IN') + ' / mo';
-      if (retEl) retEl.textContent = '₹' + retail.toLocaleString('en-IN') + ' / mo';
-      if (monEl) monEl.textContent = '₹' + monthlyTotal.toLocaleString('en-IN') + ' / mo';
-      
-      const lakhs = (annualTotal / 100000).toFixed(1);
-      if (annEl) annEl.textContent = '₹' + lakhs + ' Lakhs / year';
     }
 
-    // 5. Jump to Screen Helper for Storyline
-    function jumpToScreen(screenId) {
-      const el = document.getElementById(screenId);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-
-    // 6. Fluid Staggered Micro-Reveal Engine (IntersectionObserver)
+    // 5. Scroll-Reveals Engine
     function initScrollRevealEngine() {
-      const revealElements = document.querySelectorAll('.story-fade-in, .story-fade-left, .story-fade-right, .story-scale-up');
-      
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-          }
-        });
-      }, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -40px 0px'
-      });
+      const revealElements = document.querySelectorAll(
+        '.story-fade-in, .story-fade-left, .story-fade-right, .story-scale-up'
+      );
 
-      revealElements.forEach(el => observer.observe(el));
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        },
+        {
+          rootMargin: '0px 0px -60px 0px',
+          threshold: 0.08
+        }
+      );
+
+      revealElements.forEach((el) => observer.observe(el));
     }
 
-    // 7. Active Act Indicator Tracker
-    const actTitles = {
-      'act-1': 'ACT 01 // THE REALITY CHECK',
-      'act-2': 'ACT 02 // CRIME SCENE LEAKS',
-      'act-3': 'ACT 03 // 24H FIELD STORY',
-      'act-4': 'ACT 04 // THE COCKPIT',
-      'act-5': 'ACT 05 // PROFIT RADAR',
-      'act-6': 'ACT 06 // TAKE COMMAND'
-    };
-
-    const actTimecodes = {
-      'act-1': '00:00:15',
-      'act-2': '00:01:20',
-      'act-3': '00:02:45',
-      'act-4': '00:04:10',
-      'act-5': '00:05:30',
-      'act-6': '00:07:00'
-    };
-
-    function initActObserver() {
-      const acts = ['act-1', 'act-2', 'act-3', 'act-4', 'act-5', 'act-6'].map(id => document.getElementById(id)).filter(Boolean);
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const id = entry.target.id;
-            const titleEl = document.getElementById('hud-scene-title');
-            const tcEl = document.getElementById('hud-timecode');
-            if (titleEl && actTitles[id]) titleEl.textContent = actTitles[id];
-            if (tcEl && actTimecodes[id]) tcEl.textContent = actTimecodes[id];
-
-            document.querySelectorAll('.film-hud-dot').forEach(dot => {
-              if (dot.getAttribute('data-target') === id.replace('act-', 'screen-')) {
-                dot.classList.add('is-active');
-              } else {
-                dot.classList.remove('is-active');
-              }
-            });
-          }
-        });
-      }, {
-        threshold: 0.25
-      });
-
-      acts.forEach(act => act && observer.observe(act));
-    }
-
-
-
-    // 9. Lead Demo Form Submission Simulation
+    // 6. Lead Demo Form Submission
     document.addEventListener('DOMContentLoaded', () => {
       initScrollRevealEngine();
-      initActObserver();
+      initContinuousMovieAutoPlay();
 
       const form = document.getElementById('lead-demo-form');
       const successBox = document.getElementById('demo-success-box');

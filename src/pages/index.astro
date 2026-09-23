@@ -1346,8 +1346,8 @@ import {
       revealElements.forEach((el) => observer.observe(el));
     }
 
-    // 6. Lead Demo Form Submission
-    document.addEventListener('DOMContentLoaded', () => {
+    // 6. Lead Demo Form Submission & Startup
+    function initializeApp() {
       initScrollRevealEngine();
       initContinuousMovieAutoPlay();
 
@@ -1360,6 +1360,12 @@ import {
           successBox.classList.remove('hidden');
         });
       }
-    });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initializeApp);
+    } else {
+      initializeApp();
+    }
   </script>
 </Layout>

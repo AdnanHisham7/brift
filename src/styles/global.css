@@ -240,48 +240,59 @@ details[open] summary svg {
 }
 
 /* Fluid Storytelling Micro-Animation Engine */
-.story-fade-in {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
-.story-fade-in.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.story-fade-left {
-  opacity: 0;
-  transform: translateX(-32px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
-.story-fade-left.is-visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.story-fade-right {
-  opacity: 0;
-  transform: translateX(32px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
-.story-fade-right.is-visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
+/* Crucial: Visible by default so sections are NEVER blank or empty */
+.story-fade-in,
+.story-fade-left,
+.story-fade-right,
 .story-scale-up {
-  opacity: 0;
-  transform: scale(0.95);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
-.story-scale-up.is-visible {
   opacity: 1;
-  transform: scale(1);
+  transform: none;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Optional progressive enhancement: animate when scrolled into view */
+.story-fade-in.is-hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.story-fade-in.is-visible,
+.story-fade-in.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.story-fade-left.is-hidden {
+  opacity: 0;
+  transform: translateX(-24px);
+}
+
+.story-fade-left.is-visible,
+.story-fade-left.visible {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.story-fade-right.is-hidden {
+  opacity: 0;
+  transform: translateX(24px);
+}
+
+.story-fade-right.is-visible,
+.story-fade-right.visible {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.story-scale-up.is-hidden {
+  opacity: 0;
+  transform: scale(0.97);
+}
+
+.story-scale-up.is-visible,
+.story-scale-up.visible {
+  opacity: 1 !important;
+  transform: scale(1) !important;
 }
 
 /* Data Line System */

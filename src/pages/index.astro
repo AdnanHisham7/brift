@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
-import { getCollection } from 'astro:content';
 
 import heroTransparentImg from '../assets/hero-phone-transparent.png';
 import spendImg from '../assets/spend-analytics.png';
@@ -12,9 +11,6 @@ import adminDashboardImg from '../assets/admin-dashboard.png';
 import storiesImg from '../assets/stories-site-updates.png';
 
 import CtaBanner from '../components/CtaBanner.astro';
-
-const pricingEntries = await getCollection('pricing');
-const sortedPlans = pricingEntries.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <Layout
@@ -697,81 +693,6 @@ const sortedPlans = pricingEntries.sort((a, b) => a.data.order - b.data.order);
     </div>
   </section>
 
-  <!-- 5. PRICING PREVIEW (ASCENDING STAIRCASE SUMMARY) -->
-  <section class="py-20 sm:py-28 border-b border-line bg-bg">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-14 space-y-3 reveal">
-        <span class="text-xs font-bold uppercase tracking-wider text-blue bg-blue-soft px-3 py-1 rounded-full">
-          TRANSPARENT INVESTMENT
-        </span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-ink">
-          Predictable pricing that scales with your sites.
-        </h2>
-        <p class="text-base text-muted">
-          All plans include the complete closed-loop operating system, offline mobile capability, role-based portals, and dedicated onboarding.
-        </p>
-      </div>
-
-      <!-- 3 Staircase Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-        {sortedPlans.map((plan) => {
-          const isDark = plan.data.isDark;
-          return (
-            <div
-              class:list={[
-                'rounded-card p-6 border flex flex-col justify-between shadow-xs reveal',
-                isDark ? 'bg-navy border-navy-line text-on-dark' : 'bg-white border-line text-ink',
-              ]}
-            >
-              <div class="space-y-3">
-                <div class="flex items-center justify-between">
-                  <span class:list={['text-xs font-bold px-2.5 py-0.5 rounded-full', isDark ? 'bg-navy-surface text-yellow' : 'bg-blue-soft text-blue']}>
-                    STEP {plan.data.step}
-                  </span>
-                  <span class:list={['text-xs font-medium', isDark ? 'text-on-dark-muted' : 'text-muted']}>
-                    {plan.data.monthlyPriceFormatted}
-                  </span>
-                </div>
-                <h3 class:list={['text-xl font-bold', isDark ? 'text-white' : 'text-ink']}>
-                  {plan.data.name}
-                </h3>
-                <div class="flex items-baseline gap-2">
-                  <span class:list={['text-3xl font-extrabold', isDark ? 'text-white' : 'text-ink']}>
-                    {plan.data.setupPriceFormatted}
-                  </span>
-                  <span class:list={['text-xs uppercase font-medium', isDark ? 'text-on-dark-muted' : 'text-muted']}>
-                    setup
-                  </span>
-                </div>
-                <p class:list={['text-xs leading-relaxed', isDark ? 'text-on-dark-muted' : 'text-muted']}>
-                  {plan.data.description}
-                </p>
-              </div>
-
-              <div class="mt-6 pt-4 border-t border-line/40">
-                <a
-                  href="/pricing"
-                  class:list={[
-                    'w-full flex items-center justify-center rounded-xl py-2.5 px-4 text-xs font-semibold transition-all',
-                    isDark ? 'bg-yellow text-ink hover:bg-yellow-subtle' : 'bg-blue text-white hover:bg-blue-hover',
-                  ]}
-                >
-                  View Staircase Comparison &rarr;
-                </a>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-
-      <div class="mt-8 text-center">
-        <a href="/pricing" class="inline-flex items-center gap-1.5 text-sm font-bold text-blue hover:underline">
-          <span>Compare full feature matrices & see how the staircase works &rarr;</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. FINAL BOOK A DEMO CALLOUT -->
+  <!-- 5. FINAL BOOK A DEMO CALLOUT -->
   <CtaBanner />
 </Layout>

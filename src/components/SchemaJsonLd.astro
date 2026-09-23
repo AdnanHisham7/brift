@@ -31,7 +31,7 @@ const localBusinessSchema = {
   url: siteUrl,
   telephone: '+919037532036',
   email: 'brift.official@gmail.com',
-  priceRange: '₹32,000 - ₹60,000',
+  priceRange: 'Custom Quote via Demo',
   address: {
     '@type': 'PostalAddress',
     addressCountry: 'IN',
@@ -55,32 +55,13 @@ const pricingSchema = {
   name: 'Brift Construction Operations OS',
   operatingSystem: 'Web, iOS, Android (PWA)',
   applicationCategory: 'BusinessApplication',
-  offers: [
-    {
-      '@type': 'Offer',
-      name: 'Core Plan',
-      price: '32000',
-      priceCurrency: 'INR',
-      description: 'Your operational core — purchases, stock, attendance, contractors, vendors and funds, built around how you work.',
-      url: `${siteUrl}/pricing`,
-    },
-    {
-      '@type': 'Offer',
-      name: 'Growth Plan',
-      price: '45000',
-      priceCurrency: 'INR',
-      description: 'Everything in Core, plus deeper reporting, document versions, e-signatures, and 24h site updates.',
-      url: `${siteUrl}/pricing`,
-    },
-    {
-      '@type': 'Offer',
-      name: 'Partner Plan',
-      price: '60000',
-      priceCurrency: 'INR',
-      description: 'Everything in Growth, plus company portfolio, public landing page, and enquiry lead inbox.',
-      url: `${siteUrl}/pricing`,
-    },
-  ],
+  offers: {
+    '@type': 'AggregateOffer',
+    priceCurrency: 'INR',
+    offerCount: '3',
+    description: 'Custom scoped plans based on active site count. Unlocked via live demo walkthrough.',
+    url: `${siteUrl}/book-a-demo`,
+  },
 };
 
 const faqSchema = faqItems.length > 0 ? {

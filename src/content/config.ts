@@ -1,22 +1,5 @@
 import { defineCollection, z } from 'astro:content';
 
-const pricingCollection = defineCollection({
-  type: 'data',
-  schema: z.object({
-    name: z.string(),
-    step: z.string(), // "01", "02", "03"
-    setupPrice: z.number(),
-    setupPriceFormatted: z.string(),
-    monthlyPrice: z.number(),
-    monthlyPriceFormatted: z.string(),
-    monthlyNote: z.string(),
-    tagline: z.string(),
-    description: z.string(),
-    features: z.array(z.string()),
-    isDark: z.boolean().default(false),
-    order: z.number(),
-  }),
-});
 
 const featuresCollection = defineCollection({
   type: 'data',
@@ -63,7 +46,6 @@ const blogCollection = defineCollection({
 });
 
 export const collections = {
-  pricing: pricingCollection,
   features: featuresCollection,
   faq: faqCollection,
   blog: blogCollection,

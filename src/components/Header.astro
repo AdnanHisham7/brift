@@ -120,16 +120,6 @@ const cleanPath = pathname.replace(/\/$/, '') || '/';
         </div>
       </div>
 
-      <!-- 3. Direct Pricing Link -->
-      <a
-        href="/pricing"
-        class:list={[
-          'text-sm font-medium transition-colors focus-visible:outline-none',
-          cleanPath === '/pricing' ? 'text-blue font-semibold' : 'text-ink-2 hover:text-blue',
-        ]}
-      >
-        Pricing
-      </a>
 
       <!-- 4. Direct About Link -->
       <a
@@ -209,7 +199,6 @@ const cleanPath = pathname.replace(/\/$/, '') || '/';
       </div>
 
       <div class="pt-2 border-t border-line space-y-3">
-        <a href="/pricing" class="mobile-nav-link text-base font-semibold text-ink-2 hover:text-blue block">Pricing</a>
         <a href="/about" class="mobile-nav-link text-base font-semibold text-ink-2 hover:text-blue block">About</a>
         <a
           href="/book-a-demo"

@@ -6,19 +6,22 @@ export interface Props {
 
 const { type = 'default', faqItems = [] } = Astro.props;
 
-const siteUrl = 'https://getbrift.com';
+const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, '') : 'https://getbrift.com';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const fullBaseUrl = `${siteUrl}${base}`;
 
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Brift',
-  url: siteUrl,
-  logo: `${siteUrl}/favicon.svg`,
+  url: fullBaseUrl,
+  logo: `${fullBaseUrl}/logo.png`,
+  image: `${fullBaseUrl}/og-image.png`,
   description: 'Construction-operations software platform replacing spreadsheets, WhatsApp groups and memory with one reliable hub.',
   telephone: '+919037532036',
   email: 'brift.official@gmail.com',
   sameAs: [
-    'https://www.getbrift.com',
+    'https://getbrift.com',
   ],
 };
 
@@ -26,9 +29,9 @@ const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
   name: 'Brift — Construction Operations Software',
-  image: `${siteUrl}/logo-icon.png`,
-  '@id': `${siteUrl}/#organization`,
-  url: siteUrl,
+  image: `${fullBaseUrl}/og-image.png`,
+  '@id': `${fullBaseUrl}/#organization`,
+  url: fullBaseUrl,
   telephone: '+919037532036',
   email: 'brift.official@gmail.com',
   priceRange: 'Custom Quote via Demo',
@@ -55,12 +58,13 @@ const pricingSchema = {
   name: 'Brift Construction Operations OS',
   operatingSystem: 'Web, iOS, Android (PWA)',
   applicationCategory: 'BusinessApplication',
+  image: `${fullBaseUrl}/og-image.png`,
   offers: {
     '@type': 'AggregateOffer',
     priceCurrency: 'INR',
     offerCount: '3',
     description: 'Custom scoped plans based on active site count. Unlocked via live demo walkthrough.',
-    url: `${siteUrl}/book-a-demo`,
+    url: `${fullBaseUrl}/#demo`,
   },
 };
 

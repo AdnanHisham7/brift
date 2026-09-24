@@ -1,6 +1,7 @@
 ---
 // Minimalist, world-class floating light capsule navbar: Brand on left, Book a Demo on right, auto-hides on scroll
-import { ArrowRight, Layers } from 'lucide-astro';
+import { ArrowRight } from 'lucide-astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <header
@@ -10,8 +11,8 @@ import { ArrowRight, Layers } from 'lucide-astro';
   <div class="rounded-full bg-white/92 backdrop-blur-xl border border-slate-200/80 shadow-[0_8px_30px_rgba(15,23,42,0.08)] px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between">
     <!-- Brand Logo & Name (Left) -->
     <a href="#" class="flex items-center gap-3 group focus-visible:outline-none" aria-label="Brift Homepage">
-      <div class="relative flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-xl bg-blue text-white shadow-[0_2px_10px_rgba(58,70,225,0.35)] transition-transform group-hover:scale-105">
-        <Layers class="h-4 w-4 sm:h-5 sm:w-5" />
+      <div class="relative flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-xl bg-blue text-white shadow-[0_2px_10px_rgba(58,70,225,0.35)] transition-transform group-hover:scale-105 p-1.5">
+        <img src={`${base}/logo.png`} alt="Brift Logo" class="h-full w-full object-contain" width="36" height="36" />
       </div>
       <div class="flex items-center gap-2">
         <span class="text-lg sm:text-xl font-extrabold tracking-tight text-slate-900 group-hover:text-blue transition-colors">BRIFT</span>

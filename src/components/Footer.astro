@@ -1,6 +1,7 @@
 ---
-import { Layers, Phone, Mail, ArrowRight } from 'lucide-astro';
+import { Phone, Mail, ArrowRight } from 'lucide-astro';
 const currentYear = new Date().getFullYear();
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <footer class="border-t border-slate-200/80 bg-white text-slate-600 mt-auto relative z-30">
@@ -9,8 +10,8 @@ const currentYear = new Date().getFullYear();
       <!-- Brand & Mission Column -->
       <div class="md:col-span-5 space-y-4">
         <a href="#" class="flex items-center gap-3 group" aria-label="Brift Homepage">
-          <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-blue text-white shadow-sm transition-transform group-hover:scale-105">
-            <Layers class="h-4 w-4" />
+          <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-blue text-white shadow-sm transition-transform group-hover:scale-105 p-1.5">
+            <img src={`${base}/logo.png`} alt="Brift Logo" class="h-full w-full object-contain" width="36" height="36" />
           </div>
           <div class="flex items-center gap-2">
             <span class="text-xl font-extrabold tracking-tight text-slate-900 group-hover:text-blue transition-colors">BRIFT</span>
@@ -92,9 +93,9 @@ const currentYear = new Date().getFullYear();
         &copy; {currentYear} Brift Technologies. Built for contractors and developers who refuse to lose money.
       </p>
       <div class="flex items-center gap-6">
-        <a href="/privacy-policy" class="hover:text-slate-900 transition-colors">Privacy Policy</a>
-        <a href="/terms" class="hover:text-slate-900 transition-colors">Terms of Service</a>
-        <a href="/sitemap-index.xml" class="hover:text-slate-900 transition-colors">Sitemap</a>
+        <a href={`${base}/privacy-policy`} class="hover:text-slate-900 transition-colors">Privacy Policy</a>
+        <a href={`${base}/terms`} class="hover:text-slate-900 transition-colors">Terms of Service</a>
+        <a href={`${base}/sitemap-index.xml`} class="hover:text-slate-900 transition-colors">Sitemap</a>
       </div>
     </div>
   </div>

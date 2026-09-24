@@ -10,19 +10,30 @@ export interface Props {
 const {
   title,
   description,
-  image = '/logo-icon.png',
+  image = '/og-image.png',
   canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
   noindex = false,
 } = Astro.props;
 
 const siteTitle = title.includes('Brift') ? title : `${title} | Brift — Construction Operations Software`;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const cleanImagePath = image.startsWith('/') ? image : `/${image}`;
+const ogImageUrl = new URL(`${base}${cleanImagePath}`, Astro.site).href;
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="icon" type="image/png" sizes="64x64" href="/favicon.png" />
+<meta name="theme-color" content="#3A46E1" />
+<meta name="msapplication-TileColor" content="#3A46E1" />
+
+<!-- Favicons & Touch Icons -->
+<link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+<link rel="icon" type="image/png" sizes="32x32" href={`${base}/favicon-32x32.png`} />
+<link rel="icon" type="image/png" sizes="64x64" href={`${base}/favicon.png`} />
+<link rel="apple-touch-icon" sizes="180x180" href={`${base}/apple-touch-icon.png`} />
+<link rel="manifest" href={`${base}/site.webmanifest`} />
+
 <link rel="canonical" href={canonicalURL} />
 <meta name="generator" content={Astro.generator} />
 
@@ -42,17 +53,20 @@ const siteTitle = title.includes('Brift') ? title : `${title} | Brift — Constr
   rel="stylesheet"
 />
 
-<!-- Open Graph / Facebook -->
+<!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={siteTitle} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image, Astro.site)} />
+<meta property="og:image" content={ogImageUrl} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:type" content="image/png" />
 <meta property="og:site_name" content="Brift" />
 
-<!-- Twitter -->
+<!-- Twitter / X -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={canonicalURL} />
 <meta property="twitter:title" content={siteTitle} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.site)} />
+<meta property="twitter:image" content={ogImageUrl} />

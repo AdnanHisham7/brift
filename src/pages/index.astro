@@ -45,36 +45,49 @@ import {
   <div class="fixed top-0 right-0 w-[600px] h-[600px] bg-blue-100/50 blur-3xl rounded-full pointer-events-none -z-10" aria-hidden="true"></div>
   <div class="fixed bottom-0 left-0 w-[600px] h-[600px] bg-amber-100/40 blur-3xl rounded-full pointer-events-none -z-10" aria-hidden="true"></div>
 
-  <!-- FLOATING CHAPTER PROGRESS RAIL (DESKTOP) -->
-  <aside aria-label="Story Acts Navigation" class="hidden xl:flex fixed right-5 top-1/2 -translate-y-1/2 z-30 flex-col items-end gap-3 bg-white/90 backdrop-blur-md px-3 py-4 rounded-2xl border border-slate-200/90 shadow-md">
-    <div class="text-[9px] font-mono font-bold tracking-widest text-slate-400 mb-1 uppercase px-1">STORY ACTS</div>
-    <a href="#act-1" data-act-nav="act-1" class="act-nav-item group flex items-center gap-2 text-[11px] font-mono text-slate-500 hover:text-blue transition-colors">
-      <span class="act-label hidden group-hover:inline-block font-semibold bg-slate-900 text-white px-2 py-0.5 rounded text-[10px] shadow-sm">01 // Reality Check</span>
-      <span class="act-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300 group-hover:scale-125"></span>
+  <!-- FLOATING CHAPTER PROGRESS RAIL (MINIMAL DOTS ONLY) -->
+  <aside aria-label="Story Acts Navigation" class="hidden xl:flex fixed right-6 top-1/2 -translate-y-1/2 z-40 flex-col items-end gap-3.5 pointer-events-auto">
+    <a href="#act-1" data-act-nav="act-1" class="act-nav-item group relative flex items-center justify-end py-1 focus:outline-none" aria-label="Act 01: Reality Check">
+      <span class="pointer-events-none absolute right-6 top-1/2 -translate-y-1/2 whitespace-nowrap rounded-lg bg-slate-900/90 backdrop-blur-sm px-2.5 py-1 text-[11px] font-mono font-semibold text-white shadow-lg opacity-0 translate-x-2 transition-all duration-200 ease-out group-hover:opacity-100 group-hover:translate-x-0">
+        01 // Reality Check
+      </span>
+      <span class="act-dot block w-2.5 h-2.5 rounded-full bg-slate-300 transition-all duration-300 group-hover:scale-125 group-hover:bg-blue"></span>
     </a>
-    <a href="#act-2" data-act-nav="act-2" class="act-nav-item group flex items-center gap-2 text-[11px] font-mono text-slate-500 hover:text-blue transition-colors">
-      <span class="act-label hidden group-hover:inline-block font-semibold bg-slate-900 text-white px-2 py-0.5 rounded text-[10px] shadow-sm">02 // Forensic Audit</span>
-      <span class="act-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300 group-hover:scale-125"></span>
+    <a href="#act-2" data-act-nav="act-2" class="act-nav-item group relative flex items-center justify-end py-1 focus:outline-none" aria-label="Act 02: Forensic Audit">
+      <span class="pointer-events-none absolute right-6 top-1/2 -translate-y-1/2 whitespace-nowrap rounded-lg bg-slate-900/90 backdrop-blur-sm px-2.5 py-1 text-[11px] font-mono font-semibold text-white shadow-lg opacity-0 translate-x-2 transition-all duration-200 ease-out group-hover:opacity-100 group-hover:translate-x-0">
+        02 // Forensic Audit
+      </span>
+      <span class="act-dot block w-2.5 h-2.5 rounded-full bg-slate-300 transition-all duration-300 group-hover:scale-125 group-hover:bg-blue"></span>
     </a>
-    <a href="#act-3" data-act-nav="act-3" class="act-nav-item group flex items-center gap-2 text-[11px] font-mono text-slate-500 hover:text-blue transition-colors">
-      <span class="act-label hidden group-hover:inline-block font-semibold bg-slate-900 text-white px-2 py-0.5 rounded text-[10px] shadow-sm">03 // 24-Hour Reel</span>
-      <span class="act-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300 group-hover:scale-125"></span>
+    <a href="#act-3" data-act-nav="act-3" class="act-nav-item group relative flex items-center justify-end py-1 focus:outline-none" aria-label="Act 03: 24-Hour Reel">
+      <span class="pointer-events-none absolute right-6 top-1/2 -translate-y-1/2 whitespace-nowrap rounded-lg bg-slate-900/90 backdrop-blur-sm px-2.5 py-1 text-[11px] font-mono font-semibold text-white shadow-lg opacity-0 translate-x-2 transition-all duration-200 ease-out group-hover:opacity-100 group-hover:translate-x-0">
+        03 // 24-Hour Reel
+      </span>
+      <span class="act-dot block w-2.5 h-2.5 rounded-full bg-slate-300 transition-all duration-300 group-hover:scale-125 group-hover:bg-blue"></span>
     </a>
-    <a href="#act-4" data-act-nav="act-4" class="act-nav-item group flex items-center gap-2 text-[11px] font-mono text-slate-500 hover:text-blue transition-colors">
-      <span class="act-label hidden group-hover:inline-block font-semibold bg-slate-900 text-white px-2 py-0.5 rounded text-[10px] shadow-sm">04 // Master Overview</span>
-      <span class="act-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300 group-hover:scale-125"></span>
+    <a href="#act-4" data-act-nav="act-4" class="act-nav-item group relative flex items-center justify-end py-1 focus:outline-none" aria-label="Act 04: Master Overview">
+      <span class="pointer-events-none absolute right-6 top-1/2 -translate-y-1/2 whitespace-nowrap rounded-lg bg-slate-900/90 backdrop-blur-sm px-2.5 py-1 text-[11px] font-mono font-semibold text-white shadow-lg opacity-0 translate-x-2 transition-all duration-200 ease-out group-hover:opacity-100 group-hover:translate-x-0">
+        04 // Master Overview
+      </span>
+      <span class="act-dot block w-2.5 h-2.5 rounded-full bg-slate-300 transition-all duration-300 group-hover:scale-125 group-hover:bg-blue"></span>
     </a>
-    <a href="#act-5" data-act-nav="act-5" class="act-nav-item group flex items-center gap-2 text-[11px] font-mono text-slate-500 hover:text-blue transition-colors">
-      <span class="act-label hidden group-hover:inline-block font-semibold bg-slate-900 text-white px-2 py-0.5 rounded text-[10px] shadow-sm">05 // Cockpit Channels</span>
-      <span class="act-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300 group-hover:scale-125"></span>
+    <a href="#act-5" data-act-nav="act-5" class="act-nav-item group relative flex items-center justify-end py-1 focus:outline-none" aria-label="Act 05: Cockpit Channels">
+      <span class="pointer-events-none absolute right-6 top-1/2 -translate-y-1/2 whitespace-nowrap rounded-lg bg-slate-900/90 backdrop-blur-sm px-2.5 py-1 text-[11px] font-mono font-semibold text-white shadow-lg opacity-0 translate-x-2 transition-all duration-200 ease-out group-hover:opacity-100 group-hover:translate-x-0">
+        05 // Cockpit Channels
+      </span>
+      <span class="act-dot block w-2.5 h-2.5 rounded-full bg-slate-300 transition-all duration-300 group-hover:scale-125 group-hover:bg-blue"></span>
     </a>
-    <a href="#act-6" data-act-nav="act-6" class="act-nav-item group flex items-center gap-2 text-[11px] font-mono text-slate-500 hover:text-blue transition-colors">
-      <span class="act-label hidden group-hover:inline-block font-semibold bg-slate-900 text-white px-2 py-0.5 rounded text-[10px] shadow-sm">06 // Profit Loss Radar</span>
-      <span class="act-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300 group-hover:scale-125"></span>
+    <a href="#act-6" data-act-nav="act-6" class="act-nav-item group relative flex items-center justify-end py-1 focus:outline-none" aria-label="Act 06: Profit Loss Radar">
+      <span class="pointer-events-none absolute right-6 top-1/2 -translate-y-1/2 whitespace-nowrap rounded-lg bg-slate-900/90 backdrop-blur-sm px-2.5 py-1 text-[11px] font-mono font-semibold text-white shadow-lg opacity-0 translate-x-2 transition-all duration-200 ease-out group-hover:opacity-100 group-hover:translate-x-0">
+        06 // Profit Loss Radar
+      </span>
+      <span class="act-dot block w-2.5 h-2.5 rounded-full bg-slate-300 transition-all duration-300 group-hover:scale-125 group-hover:bg-blue"></span>
     </a>
-    <a href="#act-7" data-act-nav="act-7" class="act-nav-item group flex items-center gap-2 text-[11px] font-mono text-slate-500 hover:text-blue transition-colors">
-      <span class="act-label hidden group-hover:inline-block font-semibold bg-slate-900 text-white px-2 py-0.5 rounded text-[10px] shadow-sm">07 // Take Command</span>
-      <span class="act-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300 group-hover:scale-125"></span>
+    <a href="#act-7" data-act-nav="act-7" class="act-nav-item group relative flex items-center justify-end py-1 focus:outline-none" aria-label="Act 07: Take Command">
+      <span class="pointer-events-none absolute right-6 top-1/2 -translate-y-1/2 whitespace-nowrap rounded-lg bg-slate-900/90 backdrop-blur-sm px-2.5 py-1 text-[11px] font-mono font-semibold text-white shadow-lg opacity-0 translate-x-2 transition-all duration-200 ease-out group-hover:opacity-100 group-hover:translate-x-0">
+        07 // Take Command
+      </span>
+      <span class="act-dot block w-2.5 h-2.5 rounded-full bg-slate-300 transition-all duration-300 group-hover:scale-125 group-hover:bg-blue"></span>
     </a>
   </aside>
 
@@ -1466,32 +1479,21 @@ import {
             navItems.forEach(item => {
               const itemAct = item.getAttribute('data-act-nav');
               const dot = item.querySelector('.act-dot');
-              const label = item.querySelector('.act-label');
               if (itemAct === currentId) {
-                item.classList.add('text-blue');
-                item.classList.remove('text-slate-500');
                 if (dot) {
-                  dot.className = 'act-dot w-2.5 h-2.5 rounded-full bg-blue ring-4 ring-blue-100 transition-all duration-300 scale-125';
-                }
-                if (label) {
-                  label.classList.remove('hidden');
+                  dot.className = 'act-dot block w-3 h-3 rounded-full bg-blue ring-4 ring-blue-200/90 shadow-sm scale-125 transition-all duration-300';
                 }
               } else {
-                item.classList.remove('text-blue');
-                item.classList.add('text-slate-500');
                 if (dot) {
-                  dot.className = 'act-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300';
-                }
-                if (label) {
-                  label.classList.add('hidden');
+                  dot.className = 'act-dot block w-2.5 h-2.5 rounded-full bg-slate-300 transition-all duration-300 group-hover:scale-125 group-hover:bg-blue';
                 }
               }
             });
           }
         });
       }, {
-        rootMargin: '-20% 0px -40% 0px',
-        threshold: 0.15
+        rootMargin: '-25% 0px -40% 0px',
+        threshold: 0.12
       });
 
       actSections.forEach(section => observer.observe(section));

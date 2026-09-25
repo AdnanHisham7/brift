@@ -62,65 +62,144 @@ async function generate() {
   console.log('Saved public/favicon.svg');
 
   // 5. Generate high-resolution 1200x630 OpenGraph / Twitter Social Card (og-image.png)
-  const ogLogoW = 340;
-  const ogLogoBuf = await sharp(trimmedBuf).resize({ width: ogLogoW }).png().toBuffer();
+  const srcAssetsDir = path.join(__dirname, '..', 'src', 'assets');
+  const phonePath = path.join(srcAssetsDir, 'hero-phone-transparent.png');
+  const ogLogoBuf = await sharp(trimmedBuf).resize(24, 24, { fit: 'inside' }).png().toBuffer();
   const ogLogoB64 = ogLogoBuf.toString('base64');
+  const phoneBuf = await sharp(phonePath).resize(560, 560, { fit: 'contain' }).png().toBuffer();
 
-  const ogSvg = Buffer.from(`<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  const ogSvg = `
+  <svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
     <defs>
-      <radialGradient id="glow1" cx="80%" cy="20%" r="60%">
-        <stop offset="0%" stop-color="#3A46E1" stop-opacity="0.45"/>
+      <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#FFFFFF"/>
+        <stop offset="60%" stop-color="#F8FAFC"/>
+        <stop offset="100%" stop-color="#EEF2F6"/>
+      </linearGradient>
+      <radialGradient id="topGlow" cx="85%" cy="15%" r="55%">
+        <stop offset="0%" stop-color="#3A46E1" stop-opacity="0.14"/>
         <stop offset="100%" stop-color="#3A46E1" stop-opacity="0"/>
       </radialGradient>
-      <radialGradient id="glow2" cx="20%" cy="80%" r="50%">
-        <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.2"/>
-        <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
+      <radialGradient id="bottomGlow" cx="15%" cy="85%" r="50%">
+        <stop offset="0%" stop-color="#6366F1" stop-opacity="0.10"/>
+        <stop offset="100%" stop-color="#6366F1" stop-opacity="0"/>
       </radialGradient>
-      <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <pattern id="gridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#3A46E1" stroke-width="1" stroke-opacity="0.045"/>
+      </pattern>
+      <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+        <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0F172A" flood-opacity="0.08"/>
+      </filter>
+      <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
         <stop offset="0%" stop-color="#3A46E1"/>
-        <stop offset="100%" stop-color="#6366F1"/>
+        <stop offset="50%" stop-color="#4F46E5"/>
+        <stop offset="100%" stop-color="#D97706"/>
+      </linearGradient>
+      <linearGradient id="blueBoxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#3A46E1"/>
+        <stop offset="100%" stop-color="#2D37BA"/>
       </linearGradient>
     </defs>
-    
-    <rect width="1200" height="630" fill="#0E1116"/>
-    <rect width="1200" height="630" fill="url(#glow1)"/>
-    <rect width="1200" height="630" fill="url(#glow2)"/>
-    
-    <!-- Top Pill Badge -->
-    <rect x="80" y="80" width="280" height="36" rx="18" fill="#1E2433" stroke="#3A46E1" stroke-width="1.5"/>
-    <circle cx="102" cy="98" r="5" fill="#10B981"/>
-    <text x="118" y="103" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" fill="#A5B4FC" letter-spacing="1.5">CONSTRUCTION OPERATIONS OS</text>
-    
-    <!-- Main Headline -->
-    <text x="80" y="280" font-family="system-ui, -apple-system, sans-serif" font-size="52" font-weight="900" fill="#FFFFFF" letter-spacing="-1.5">
-      A Single Hub for Every Site.
-    </text>
-    
-    <text x="80" y="345" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="400" fill="#94A3B8">
-      Replaces scattered WhatsApps and pocket diaries with live finances,
-    </text>
-    <text x="80" y="380" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="400" fill="#94A3B8">
-      daily photo updates, and automated leakage prevention.
-    </text>
+    <rect width="1200" height="630" fill="url(#bgGrad)"/>
+    <rect width="1200" height="630" fill="url(#gridPattern)"/>
+    <rect width="1200" height="630" fill="url(#topGlow)"/>
+    <rect width="1200" height="630" fill="url(#bottomGlow)"/>
+    <rect x="0" y="0" width="1200" height="5" fill="url(#textGrad)"/>
+    <g transform="translate(70, 52)">
+      <rect width="215" height="46" rx="23" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" filter="url(#cardShadow)"/>
+      <rect x="6" y="6" width="34" height="34" rx="10" fill="url(#blueBoxGrad)"/>
+      <image href="data:image/png;base64,${ogLogoB64}" x="11" y="11" width="24" height="24"/>
+      <text x="50" y="29" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="900" fill="#0F172A" letter-spacing="-0.5">BRIFT</text>
+      <rect x="116" y="14" width="86" height="18" rx="9" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
+      <circle cx="126" cy="23" r="3.5" fill="#10B981"/>
+      <text x="134" y="26.5" font-family="system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#475569" letter-spacing="0.5">CON-OPS</text>
+    </g>
+    <g transform="translate(300, 57)">
+      <rect width="230" height="36" rx="18" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.2"/>
+      <text x="115" y="23" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#3A46E1" text-anchor="middle" letter-spacing="1">A SINGLE HUB FOR EVERY SITE</text>
+    </g>
+    <g transform="translate(70, 160)">
+      <text x="0" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="44" font-weight="900" fill="#0F172A" letter-spacing="-1.2">Stop running your sites on</text>
+      <text x="0" y="56" font-family="system-ui, -apple-system, sans-serif" font-size="44" font-weight="900" fill="url(#textGrad)" letter-spacing="-1.2">scattered chats &amp; diaries.</text>
+    </g>
+    <g transform="translate(70, 290)">
+      <text x="0" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="500" fill="#475569" letter-spacing="-0.2">A live operating system for construction firms ready to replace</text>
+      <text x="0" y="28" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="500" fill="#475569" letter-spacing="-0.2">spreadsheets and guesswork with one reliable hub.</text>
+    </g>
+    <g transform="translate(70, 375)">
+      <g transform="translate(0, 0)">
+        <rect width="185" height="42" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" filter="url(#cardShadow)"/>
+        <circle cx="21" cy="21" r="9" fill="#DCFCE7"/>
+        <path d="M 17 21 L 20 24 L 26 18" stroke="#15803D" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="38" y="26" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#1E293B">100% Offline Sync</text>
+      </g>
+      <g transform="translate(198, 0)">
+        <rect width="195" height="42" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" filter="url(#cardShadow)"/>
+        <circle cx="21" cy="21" r="9" fill="#DCFCE7"/>
+        <path d="M 17 21 L 20 24 L 26 18" stroke="#15803D" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="38" y="26" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#1E293B">Zero Phantom Labor</text>
+      </g>
+    </g>
+    <g transform="translate(70, 432)">
+      <g transform="translate(0, 0)">
+        <rect width="215" height="42" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" filter="url(#cardShadow)"/>
+        <circle cx="21" cy="21" r="9" fill="#EFF6FF"/>
+        <path d="M 17 21 L 20 24 L 26 18" stroke="#3A46E1" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="38" y="26" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#1E293B">Locked Cash Advances</text>
+      </g>
+      <g transform="translate(228, 0)">
+        <rect width="165" height="42" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" filter="url(#cardShadow)"/>
+        <circle cx="21" cy="21" r="9" fill="#FEF3C7"/>
+        <path d="M 17 21 L 20 24 L 26 18" stroke="#B45309" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="38" y="26" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#1E293B">7 Instant Reports</text>
+      </g>
+    </g>
+    <g transform="translate(70, 545)">
+      <circle cx="6" cy="6" r="4" fill="#3A46E1"/>
+      <text x="18" y="10" font-family="system-ui, sans-serif" font-size="13.5" font-weight="700" fill="#0F172A">Official Con-Ops OS for Multi-Site Contractors</text>
+      <text x="375" y="10" font-family="system-ui, sans-serif" font-size="13" font-weight="500" fill="#64748B">•  getbrift.com</text>
+    </g>
+    <circle cx="920" cy="315" r="230" fill="#3A46E1" fill-opacity="0.12"/>
+  </svg>
+  `;
 
-    <!-- Bottom Feature Badges -->
-    <rect x="80" y="470" width="200" height="44" rx="12" fill="#1E2433" stroke="#334155" stroke-width="1"/>
-    <text x="100" y="498" font-family="system-ui, sans-serif" font-size="15" font-weight="700" fill="#E2E8F0">100% Offline Sync</text>
+  const overlaySvg = `
+  <svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="floatShadow" x="-30%" y="-30%" width="160%" height="160%">
+        <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#0F172A" flood-opacity="0.16"/>
+      </filter>
+    </defs>
+    <g transform="translate(630, 130)" filter="url(#floatShadow)">
+      <rect width="210" height="66" rx="18" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2"/>
+      <circle cx="34" cy="33" r="15" fill="#DCFCE7"/>
+      <path d="M 28 33 L 32 37 L 40 29" stroke="#16A34A" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="58" y="28" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#64748B" letter-spacing="0.5">VERIFIED FUNDS</text>
+      <text x="58" y="48" font-family="system-ui, sans-serif" font-size="14.5" font-weight="900" fill="#0F172A">₹62,00,000 Locked</text>
+    </g>
+    <g transform="translate(930, 470)" filter="url(#floatShadow)">
+      <rect width="210" height="66" rx="18" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2"/>
+      <circle cx="34" cy="33" r="14" fill="#FEF3C7"/>
+      <circle cx="34" cy="33" r="6" fill="#D97706"/>
+      <text x="58" y="28" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#B45309" letter-spacing="0.5">BASEMENT 0 BARS</text>
+      <text x="58" y="48" font-family="system-ui, sans-serif" font-size="14.5" font-weight="900" fill="#0F172A">30 Workers Synced</text>
+    </g>
+  </svg>
+  `;
 
-    <rect x="300" y="470" width="220" height="44" rx="12" fill="#1E2433" stroke="#334155" stroke-width="1"/>
-    <text x="320" y="498" font-family="system-ui, sans-serif" font-size="15" font-weight="700" fill="#E2E8F0">Zero Unverified Cash</text>
+  const baseOgImg = await sharp(Buffer.from(ogSvg)).png().toBuffer();
+  const overlayOgBuf = await sharp(Buffer.from(overlaySvg)).png().toBuffer();
 
-    <rect x="540" y="470" width="210" height="44" rx="12" fill="#1E2433" stroke="#334155" stroke-width="1"/>
-    <text x="560" y="498" font-family="system-ui, sans-serif" font-size="15" font-weight="700" fill="#E2E8F0">7 Instant Reports</text>
+  const finalOgCard = await sharp(baseOgImg)
+    .composite([
+      { input: phoneBuf, left: 670, top: 35 },
+      { input: overlayOgBuf, left: 0, top: 0 }
+    ])
+    .png()
+    .toBuffer();
 
-    <!-- Right Brand Card -->
-    <rect x="820" y="160" width="300" height="300" rx="36" fill="url(#badgeGrad)"/>
-    <image href="data:image/png;base64,${ogLogoB64}" x="855" y="240" width="230" height="140" preserveAspectRatio="xMidYMid meet"/>
-    <text x="970" y="405" font-family="system-ui, sans-serif" font-size="22" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="3">BRIFT</text>
-  </svg>`);
-
-  await sharp(ogSvg).png().toFile(path.join(publicDir, 'og-image.png'));
-  console.log('Saved public/og-image.png (1200x630 social card)');
+  fs.writeFileSync(path.join(publicDir, 'og-image.png'), finalOgCard);
+  console.log('Saved public/og-image.png (1200x630 studio card)');
 
   // 6. Generate site.webmanifest
   const webmanifest = {

@@ -8,14 +8,14 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   id="main-header"
   class="fixed top-3 sm:top-5 left-1/2 -translate-x-1/2 z-50 w-[94%] max-w-5xl transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]"
 >
-  <div class="rounded-full bg-white/92 backdrop-blur-xl border border-slate-200/80 shadow-[0_8px_30px_rgba(15,23,42,0.08)] px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between">
+  <div class="rounded-full bg-white/92 backdrop-blur-xl border border-slate-200/80 shadow-[0_8px_30px_rgba(15,23,42,0.08)] px-3.5 sm:px-6 py-2 sm:py-2.5 flex items-center justify-between">
     <!-- Brand Logo & Name (Left) -->
-    <a href="#" class="flex items-center gap-3 group focus-visible:outline-none" aria-label="Brift Homepage">
-      <div class="relative flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-xl bg-blue text-white shadow-[0_2px_10px_rgba(58,70,225,0.35)] transition-transform group-hover:scale-105 p-1.5">
+    <a href="#" class="flex items-center gap-2.5 sm:gap-3 group focus-visible:outline-none" aria-label="Brift Homepage">
+      <div class="relative flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-xl bg-blue text-white shadow-[0_2px_10px_rgba(58,70,225,0.35)] transition-transform group-hover:scale-105 p-1.5 shrink-0">
         <img src={`${base}/logo.png`} alt="Brift Logo" class="h-full w-full object-contain" width="36" height="36" />
       </div>
       <div class="flex items-center gap-2">
-        <span class="text-lg sm:text-xl font-extrabold tracking-tight text-slate-900 group-hover:text-blue transition-colors">BRIFT</span>
+        <span class="text-base sm:text-xl font-extrabold tracking-tight text-slate-900 group-hover:text-blue transition-colors">BRIFT</span>
         <span class="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold tracking-wider bg-slate-100 border border-slate-200/70 text-slate-600">
           <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
           <span>CON-OPS</span>
@@ -27,7 +27,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <div class="flex items-center">
       <a
         href="#demo"
-        class="relative inline-flex items-center justify-center rounded-full bg-blue hover:bg-blue-hover text-white text-xs sm:text-sm font-semibold px-5 sm:px-6 py-2 sm:py-2.5 shadow-[0_4px_14px_rgba(58,70,225,0.3)] hover:shadow-[0_6px_20px_rgba(58,70,225,0.4)] transition-all duration-200 active:scale-95 group focus-visible:outline-none"
+        class="relative inline-flex items-center justify-center rounded-full bg-blue hover:bg-blue-hover text-white text-xs sm:text-sm font-semibold px-4 sm:px-6 py-1.5 sm:py-2.5 shadow-[0_4px_14px_rgba(58,70,225,0.3)] hover:shadow-[0_6px_20px_rgba(58,70,225,0.4)] transition-all duration-200 active:scale-95 group focus-visible:outline-none whitespace-nowrap"
       >
         <span>Book a Demo</span>
         <ArrowRight class="w-3.5 h-3.5 ml-1.5 group-hover:translate-x-0.5 transition-transform" />

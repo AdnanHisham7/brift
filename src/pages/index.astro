@@ -93,22 +93,22 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   </aside>
 
   <!-- MAIN SCROLLING STORYLINE -->
-  <div class="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 pb-20 space-y-28 sm:space-y-36">
+  <div class="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-28 pb-16 sm:pb-20 space-y-16 sm:space-y-28 lg:space-y-36">
 
     <!-- ========================================== -->
     <!-- ACT 01 // THE REALITY CHECK (HERO)        -->
     <!-- ========================================== -->
-    <section id="act-1" class="relative pt-6 sm:pt-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+    <section id="act-1" class="relative pt-4 sm:pt-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
         <!-- Left: Narrative -->
-        <div class="lg:col-span-7 space-y-6 text-left">
+        <div class="lg:col-span-7 space-y-5 sm:space-y-6 text-left">
           <div data-motion="fade-up" data-delay="100" class="inline-flex items-center gap-2 rounded-full border border-blue/20 bg-blue-soft px-3.5 py-1 text-xs font-semibold text-blue">
             <img src={`${base}/logo-blue.png`} alt="Brift Logo" class="w-3.5 h-3.5 object-contain" width="14" height="14" />
             <span>A SINGLE HUB FOR EVERY SITE</span>
           </div>
 
-          <h1 data-motion="fade-up" data-delay="150" class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-[1.08]">
-            Stop running your construction sites on <br />
+          <h1 data-motion="fade-up" data-delay="150" class="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-[1.12] sm:leading-[1.08]">
+            Stop running your construction sites on <br class="hidden sm:inline" />
             <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue via-indigo-600 to-amber-600">
               scattered chats & pocket diaries.
             </span>
@@ -119,17 +119,17 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           </p>
 
           <!-- Primary Actions -->
-          <div data-motion="fade-up" data-delay="250" class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+          <div data-motion="fade-up" data-delay="250" class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
             <a
               href="#demo"
-              class="inline-flex items-center justify-center rounded-xl bg-blue hover:bg-blue-hover text-white px-8 py-4 text-base font-bold shadow-[0_4px_14px_rgba(58,70,225,0.35)] hover:shadow-[0_6px_20px_rgba(58,70,225,0.45)] transition-all active:scale-95 group focus-visible:outline-none"
+              class="inline-flex items-center justify-center rounded-xl bg-blue hover:bg-blue-hover text-white px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-bold shadow-[0_4px_14px_rgba(58,70,225,0.35)] hover:shadow-[0_6px_20px_rgba(58,70,225,0.45)] transition-all active:scale-95 group focus-visible:outline-none"
             >
               <span>Take Command — Book Demo</span>
               <ArrowRight class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
               href="#act-2"
-              class="inline-flex items-center justify-center rounded-xl bg-white hover:bg-slate-50 border border-slate-200/90 shadow-xs px-6 py-4 text-sm font-semibold text-slate-700 transition-all gap-2"
+              class="inline-flex items-center justify-center rounded-xl bg-white hover:bg-slate-50 border border-slate-200/90 shadow-xs px-5 sm:px-6 py-3.5 sm:py-4 text-xs sm:text-sm font-semibold text-slate-700 transition-all gap-2"
             >
               <span>Inspect The 4 Financial Leaks</span>
               <ArrowDown class="w-4 h-4 text-slate-500 animate-bounce" />
@@ -137,25 +137,25 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           </div>
 
           <!-- Live Telemetry Badges -->
-          <div class="pt-4 grid grid-cols-3 gap-3 max-w-xl">
-            <div data-motion="fade-up" data-delay="300" class="motion-card-hover rounded-2xl border border-slate-200/80 bg-white p-4 shadow-xs">
-              <span data-counter="29.5" data-format="lakh" class="text-xl sm:text-2xl font-black text-slate-900 block leading-tight">~₹29.5L</span>
-              <span class="text-xs text-slate-500 block leading-snug">Monthly volume per firm</span>
+          <div class="pt-2 sm:pt-4 grid grid-cols-3 gap-2 sm:gap-3 max-w-xl">
+            <div data-motion="fade-up" data-delay="300" class="motion-card-hover rounded-2xl border border-slate-200/80 bg-white p-2.5 sm:p-4 shadow-xs">
+              <span data-counter="29.5" data-format="lakh" class="text-base sm:text-2xl font-black text-slate-900 block leading-tight">~₹29.5L</span>
+              <span class="text-[10px] sm:text-xs text-slate-500 block leading-tight mt-0.5">Monthly volume</span>
             </div>
-            <div data-motion="fade-up" data-delay="350" class="motion-card-hover rounded-2xl border border-slate-200/80 bg-white p-4 shadow-xs">
-              <span data-counter="100" data-format="percent" class="text-xl sm:text-2xl font-black text-emerald-600 block leading-tight">100%</span>
-              <span class="text-xs text-slate-500 block leading-snug">Offline basement sync</span>
+            <div data-motion="fade-up" data-delay="350" class="motion-card-hover rounded-2xl border border-slate-200/80 bg-white p-2.5 sm:p-4 shadow-xs">
+              <span data-counter="100" data-format="percent" class="text-base sm:text-2xl font-black text-emerald-600 block leading-tight">100%</span>
+              <span class="text-[10px] sm:text-xs text-slate-500 block leading-tight mt-0.5">Offline sync</span>
             </div>
-            <div data-motion="fade-up" data-delay="400" class="motion-card-hover rounded-2xl border border-slate-200/80 bg-white p-4 shadow-xs">
-              <span class="text-xl sm:text-2xl font-black text-amber-600 block leading-tight">0 Leaks</span>
-              <span class="text-xs text-slate-500 block leading-snug">Zero unverified cash</span>
+            <div data-motion="fade-up" data-delay="400" class="motion-card-hover rounded-2xl border border-slate-200/80 bg-white p-2.5 sm:p-4 shadow-xs">
+              <span class="text-base sm:text-2xl font-black text-amber-600 block leading-tight">0 Leaks</span>
+              <span class="text-[10px] sm:text-xs text-slate-500 block leading-tight mt-0.5">Zero unverified</span>
             </div>
           </div>
         </div>
 
         <!-- Right: 3D Floating Terminal -->
-        <div class="lg:col-span-5 relative flex justify-center perspective-container">
-          <div data-motion="zoom-in" data-delay="200" class="relative w-full max-w-[340px] sm:max-w-[380px] lg:max-w-[420px] animate-float">
+        <div class="lg:col-span-5 relative flex justify-center perspective-container pt-4 lg:pt-0">
+          <div data-motion="zoom-in" data-delay="200" class="relative w-full max-w-[280px] xs:max-w-[320px] sm:max-w-[380px] lg:max-w-[420px] animate-float">
             <!-- Ambient halo -->
             <div class="absolute inset-4 bg-gradient-to-tr from-blue/20 via-indigo-200 to-amber-200 blur-3xl rounded-full -z-10" aria-hidden="true"></div>
 
@@ -169,24 +169,24 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             />
 
             <!-- Floating Telemetry Overlay Badges -->
-            <div data-motion="fade-left" data-delay="450" class="absolute -top-3 -left-4 sm:-left-6 rounded-2xl border border-slate-200 bg-white/95 p-3.5 shadow-xl backdrop-blur-md max-w-[210px] hidden sm:block">
-              <div class="flex items-center gap-2.5">
-                <span class="flex h-7 w-7 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
-                  <Check class="w-4 h-4" />
+            <div data-motion="fade-left" data-delay="450" class="absolute -top-3 -left-3 sm:-left-6 rounded-2xl border border-slate-200 bg-white/95 p-2.5 sm:p-3.5 shadow-xl backdrop-blur-md max-w-[180px] sm:max-w-[210px] hidden sm:block">
+              <div class="flex items-center gap-2 sm:gap-2.5">
+                <span class="flex h-6 w-6 sm:h-7 sm:w-7 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
+                  <Check class="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </span>
                 <div>
-                  <span class="text-[10px] uppercase font-mono tracking-wider text-slate-500 block">Verified Funds</span>
-                  <span class="text-xs font-black text-slate-900 block">₹62,00,000 Locked</span>
+                  <span class="text-[9px] sm:text-[10px] uppercase font-mono tracking-wider text-slate-500 block">Verified Funds</span>
+                  <span class="text-[11px] sm:text-xs font-black text-slate-900 block">₹62,00,000 Locked</span>
                 </div>
               </div>
             </div>
 
-            <div data-motion="fade-right" data-delay="550" class="absolute -bottom-4 -right-4 sm:-right-6 rounded-2xl border border-slate-200 bg-white/95 p-3.5 shadow-xl backdrop-blur-md max-w-[220px]">
-              <div class="flex items-center gap-2.5">
-                <div class="h-2.5 w-2.5 rounded-full bg-emerald-500 animate-ping"></div>
+            <div data-motion="fade-right" data-delay="550" class="absolute -bottom-3 right-0 sm:-bottom-4 sm:-right-6 rounded-2xl border border-slate-200 bg-white/95 p-2.5 sm:p-3.5 shadow-xl backdrop-blur-md max-w-[190px] sm:max-w-[220px]">
+              <div class="flex items-center gap-2 sm:gap-2.5">
+                <div class="h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-emerald-500 animate-ping"></div>
                 <div>
-                  <span class="text-[10px] uppercase font-mono tracking-wider text-amber-700 block">Basement 0 Bars</span>
-                  <span class="text-xs font-bold text-slate-900 block">30 Workers Synced</span>
+                  <span class="text-[9px] sm:text-[10px] uppercase font-mono tracking-wider text-amber-700 block">Basement 0 Bars</span>
+                  <span class="text-[11px] sm:text-xs font-bold text-slate-900 block">30 Workers Synced</span>
                 </div>
               </div>
             </div>
@@ -200,25 +200,25 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <!-- ========================================== -->
     <section id="act-2" class="relative">
       <!-- Section Header -->
-      <div data-motion="fade-up" class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+      <div data-motion="fade-up" class="text-center max-w-3xl mx-auto mb-8 sm:mb-14 space-y-3">
         <span class="inline-block text-xs font-bold font-mono uppercase tracking-wider text-red-700 bg-red-50 border border-red-200 px-3.5 py-1 rounded-full">
           ACT 02 // FORENSIC AUDIT
         </span>
-        <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-slate-900">
+        <h2 class="text-2xl xs:text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
           Where does ₹2.4 Lakhs quietly vanish every single month?
         </h2>
-        <p class="text-base text-slate-600">
+        <p class="text-sm sm:text-base text-slate-600">
           Click on any evidence file below to inspect how manual paper records create silent financial bleeding across your sites:
         </p>
       </div>
 
       <!-- 4 Forensic Evidence Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         <!-- Evidence 1 -->
         <div
           data-motion="fade-up"
           data-delay="100"
-          class="motion-card-hover rounded-2xl border-2 border-slate-200 bg-white p-6 hover:border-red-500 hover:shadow-xl transition-all duration-300 cursor-pointer group space-y-3"
+          class="motion-card-hover rounded-2xl border-2 border-slate-200 bg-white p-5 sm:p-6 hover:border-red-500 hover:shadow-xl transition-all duration-300 cursor-pointer group space-y-3"
           onclick="inspectEvidence(1)"
         >
           <div class="flex items-center justify-between">
@@ -228,7 +228,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             </span>
             <span class="text-xs font-mono font-bold text-red-600">-₹40,000 / mo</span>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 group-hover:text-red-600 transition-colors">
+          <h3 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-red-600 transition-colors">
             The Ghost Labor Register
           </h3>
           <p class="text-xs text-slate-500 leading-relaxed">
@@ -244,7 +244,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         <div
           data-motion="fade-up"
           data-delay="200"
-          class="motion-card-hover rounded-2xl border-2 border-slate-200 bg-white p-6 hover:border-red-500 hover:shadow-xl transition-all duration-300 cursor-pointer group space-y-3"
+          class="motion-card-hover rounded-2xl border-2 border-slate-200 bg-white p-5 sm:p-6 hover:border-red-500 hover:shadow-xl transition-all duration-300 cursor-pointer group space-y-3"
           onclick="inspectEvidence(2)"
         >
           <div class="flex items-center justify-between">
@@ -254,7 +254,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             </span>
             <span class="text-xs font-mono font-bold text-red-600">-₹80,000 / mo</span>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 group-hover:text-red-600 transition-colors">
+          <h3 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-red-600 transition-colors">
             The Vanishing Cement Challan
           </h3>
           <p class="text-xs text-slate-500 leading-relaxed">
@@ -270,7 +270,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         <div
           data-motion="fade-up"
           data-delay="300"
-          class="motion-card-hover rounded-2xl border-2 border-slate-200 bg-white p-6 hover:border-red-500 hover:shadow-xl transition-all duration-300 cursor-pointer group space-y-3"
+          class="motion-card-hover rounded-2xl border-2 border-slate-200 bg-white p-5 sm:p-6 hover:border-red-500 hover:shadow-xl transition-all duration-300 cursor-pointer group space-y-3"
           onclick="inspectEvidence(3)"
         >
           <div class="flex items-center justify-between">
@@ -280,7 +280,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             </span>
             <span class="text-xs font-mono font-bold text-red-600">-₹70,000 / mo</span>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 group-hover:text-red-600 transition-colors">
+          <h3 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-red-600 transition-colors">
             The Pocket Diary Advance
           </h3>
           <p class="text-xs text-slate-500 leading-relaxed">
@@ -296,7 +296,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         <div
           data-motion="fade-up"
           data-delay="400"
-          class="motion-card-hover rounded-2xl border-2 border-slate-200 bg-white p-6 hover:border-red-500 hover:shadow-xl transition-all duration-300 cursor-pointer group space-y-3"
+          class="motion-card-hover rounded-2xl border-2 border-slate-200 bg-white p-5 sm:p-6 hover:border-red-500 hover:shadow-xl transition-all duration-300 cursor-pointer group space-y-3"
           onclick="inspectEvidence(4)"
         >
           <div class="flex items-center justify-between">
@@ -306,7 +306,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             </span>
             <span class="text-xs font-mono font-bold text-red-600">-₹50,000 / mo</span>
           </div>
-          <h3 class="text-lg font-bold text-slate-900 group-hover:text-red-600 transition-colors">
+          <h3 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-red-600 transition-colors">
             Emergency Retail Markups
           </h3>
           <p class="text-xs text-slate-500 leading-relaxed">
@@ -320,20 +320,20 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       </div>
 
       <!-- Dynamic Forensic Spotlight Box -->
-      <div data-motion="zoom-in" data-delay="150" id="forensic-spotlight" class="mt-8 rounded-3xl border border-blue/30 bg-blue-soft/50 p-6 sm:p-8 shadow-sm">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-blue/20 pb-4 mb-4">
-          <div class="flex items-center gap-2.5">
-            <ShieldCheck class="w-5 h-5 text-blue" />
-            <span class="text-xs font-mono font-bold uppercase tracking-wider text-blue" id="spotlight-title">
+      <div data-motion="zoom-in" data-delay="150" id="forensic-spotlight" class="mt-6 sm:mt-8 rounded-2xl sm:rounded-3xl border border-blue/30 bg-blue-soft/50 p-4 sm:p-8 shadow-sm">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-blue/20 pb-3 sm:pb-4 mb-3 sm:mb-4">
+          <div class="flex items-center gap-2 sm:gap-2.5">
+            <ShieldCheck class="w-4 h-4 sm:w-5 sm:h-5 text-blue shrink-0" />
+            <span class="text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider text-blue" id="spotlight-title">
               CASE FILE #01 // GHOST LABOR RESOLUTION
             </span>
           </div>
-          <span class="text-xs font-bold text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full flex items-center gap-1">
-            <Check class="w-3.5 h-3.5 text-emerald-700" />
+          <span class="text-[11px] sm:text-xs font-bold text-emerald-800 bg-emerald-100 px-2.5 sm:px-3 py-1 rounded-full flex items-center gap-1 self-start sm:self-auto">
+            <Check class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-emerald-700" />
             <span>Status: Fully Plugged by Brift</span>
           </span>
         </div>
-        <p class="text-sm sm:text-base text-slate-700 leading-relaxed" id="spotlight-desc">
+        <p class="text-xs sm:text-base text-slate-700 leading-relaxed" id="spotlight-desc">
           <strong class="text-slate-900">The Brift Closed-Loop:</strong> The site supervisor opens the app at the site gate. Even in a basement with 0 cellular signal, attendance is logged and timestamped with worker categorization (skilled/unskilled). The record locks permanently and syncs to central payroll the second the phone connects to signal. Zero paper registers, zero phantom workers.
         </p>
       </div>
@@ -343,102 +343,102 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <!-- ACT 03 // 24 HOURS ON SITE (TIMELINE REEL) -->
     <!-- ========================================== -->
     <section id="act-3" class="relative">
-      <div data-motion="fade-up" class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 border-b border-slate-200/80 pb-6">
+      <div data-motion="fade-up" class="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 mb-6 sm:mb-8 border-b border-slate-200/80 pb-5 sm:pb-6">
         <div class="space-y-2 max-w-2xl">
           <span class="inline-block text-xs font-bold font-mono uppercase tracking-wider text-amber-800 bg-amber-100 border border-amber-300 px-3.5 py-1 rounded-full">
             ACT 03 // 24-HOUR SITE STORY
           </span>
-          <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-slate-900">
+          <h2 class="text-2xl xs:text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
             Watch a day on your sites unfold.
           </h2>
-          <p class="text-base text-slate-600">
+          <p class="text-sm sm:text-base text-slate-600">
             See how chaotic phone calls and unverified receipts transform into automated, synchronized records:
           </p>
         </div>
 
         <!-- Always-On Auto-Playing Time Indicator -->
-        <div class="flex flex-col items-start md:items-end gap-1.5">
-          <div class="inline-flex items-center gap-2 rounded-xl bg-slate-100 border border-slate-200 px-4 py-2 text-xs font-mono font-bold text-slate-700 shadow-xs">
+        <div class="flex flex-col items-start md:items-end gap-1.5 self-start md:self-auto">
+          <div class="inline-flex items-center gap-2 rounded-xl bg-slate-100 border border-slate-200 px-3.5 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs font-mono font-bold text-slate-700 shadow-xs">
             <Clock class="w-3.5 h-3.5 text-amber-600 animate-spin" style="animation-duration: 4s;" />
             <span>NEXT SCENE IN <strong id="reel-countdown" class="text-amber-700 font-black">4s</strong></span>
           </div>
           <!-- Playing Progress Bar Line -->
-          <div class="w-44 h-1.5 bg-slate-200 rounded-full overflow-hidden">
+          <div class="w-36 sm:w-44 h-1.5 bg-slate-200 rounded-full overflow-hidden">
             <div id="reel-progress-fill" class="h-full bg-amber-500 rounded-full transition-all duration-100 ease-linear" style="width: 0%;"></div>
           </div>
         </div>
       </div>
 
       <!-- Theater Stage -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
         <!-- Storyboard Controls -->
-        <div data-motion="fade-left" data-delay="150" class="lg:col-span-5 space-y-6">
-          <div class="grid grid-cols-2 gap-2.5" id="movie-scene-buttons">
+        <div data-motion="fade-left" data-delay="150" class="lg:col-span-5 space-y-4 sm:space-y-6">
+          <div class="grid grid-cols-2 gap-2 sm:gap-2.5" id="movie-scene-buttons">
             <button
               type="button"
-              class="movie-tab px-4 py-3 rounded-xl text-xs font-bold border-2 border-amber-400 bg-amber-400 text-slate-950 text-left transition-all cursor-pointer font-mono shadow-xs relative overflow-hidden"
+              class="movie-tab px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl text-[11px] sm:text-xs font-bold border-2 border-amber-400 bg-amber-400 text-slate-950 text-left transition-all cursor-pointer font-mono shadow-xs relative overflow-hidden"
               data-scene="1"
               onclick="showMovieScene(1)"
             >
-              <div class="flex items-center gap-1.5">
-                <Clock class="w-3 h-3 text-slate-900" />
-                <span>07:00 AM • Gate Muster</span>
+              <div class="flex items-center gap-1.5 truncate">
+                <Clock class="w-3 h-3 text-slate-900 shrink-0" />
+                <span class="truncate">07:00 AM • Muster</span>
               </div>
             </button>
             <button
               type="button"
-              class="movie-tab px-4 py-3 rounded-xl text-xs font-bold border border-slate-200 bg-white text-slate-700 text-left hover:border-amber-400 transition-all cursor-pointer font-mono relative overflow-hidden"
+              class="movie-tab px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl text-[11px] sm:text-xs font-bold border border-slate-200 bg-white text-slate-700 text-left hover:border-amber-400 transition-all cursor-pointer font-mono relative overflow-hidden"
               data-scene="2"
               onclick="showMovieScene(2)"
             >
-              <div class="flex items-center gap-1.5">
-                <Truck class="w-3 h-3 text-slate-500" />
-                <span>11:30 AM • Cement Bay</span>
+              <div class="flex items-center gap-1.5 truncate">
+                <Truck class="w-3 h-3 text-slate-500 shrink-0" />
+                <span class="truncate">11:30 AM • Inflow</span>
               </div>
             </button>
             <button
               type="button"
-              class="movie-tab px-4 py-3 rounded-xl text-xs font-bold border border-slate-200 bg-white text-slate-700 text-left hover:border-amber-400 transition-all cursor-pointer font-mono relative overflow-hidden"
+              class="movie-tab px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl text-[11px] sm:text-xs font-bold border border-slate-200 bg-white text-slate-700 text-left hover:border-amber-400 transition-all cursor-pointer font-mono relative overflow-hidden"
               data-scene="3"
               onclick="showMovieScene(3)"
             >
-              <div class="flex items-center gap-1.5">
-                <Wallet class="w-3 h-3 text-slate-500" />
-                <span>03:15 PM • Site Advances</span>
+              <div class="flex items-center gap-1.5 truncate">
+                <Wallet class="w-3 h-3 text-slate-500 shrink-0" />
+                <span class="truncate">03:15 PM • Advances</span>
               </div>
             </button>
             <button
               type="button"
-              class="movie-tab px-4 py-3 rounded-xl text-xs font-bold border border-slate-200 bg-white text-slate-700 text-left hover:border-amber-400 transition-all cursor-pointer font-mono relative overflow-hidden"
+              class="movie-tab px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl text-[11px] sm:text-xs font-bold border border-slate-200 bg-white text-slate-700 text-left hover:border-amber-400 transition-all cursor-pointer font-mono relative overflow-hidden"
               data-scene="4"
               onclick="showMovieScene(4)"
             >
-              <div class="flex items-center gap-1.5">
-                <BarChart3 class="w-3 h-3 text-slate-500" />
-                <span>07:30 PM • Owner Screen</span>
+              <div class="flex items-center gap-1.5 truncate">
+                <BarChart3 class="w-3 h-3 text-slate-500 shrink-0" />
+                <span class="truncate">07:30 PM • Owner</span>
               </div>
             </button>
           </div>
 
           <!-- Screenplay Narration -->
-          <div class="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 space-y-4 shadow-sm">
-            <div class="flex items-center justify-between text-xs font-mono text-amber-800 border-b border-slate-100 pb-3">
+          <div class="rounded-2xl sm:rounded-3xl border border-slate-200 bg-white p-5 sm:p-8 space-y-3 sm:space-y-4 shadow-sm">
+            <div class="flex items-center justify-between text-[11px] sm:text-xs font-mono text-amber-800 border-b border-slate-100 pb-2.5 sm:pb-3">
               <span id="scene-timecode">TIMECODE: 07:00:00 AM</span>
               <span id="scene-location">LOCATION: SITE GATE</span>
             </div>
 
-            <h3 class="text-xl sm:text-2xl font-bold text-slate-900 leading-tight" id="scene-headline">
+            <h3 class="text-lg sm:text-2xl font-bold text-slate-900 leading-snug sm:leading-tight" id="scene-headline">
               Muster roll logged without network or ghost labor.
             </h3>
 
-            <p class="text-sm text-slate-600 leading-relaxed" id="scene-narration">
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed" id="scene-narration">
               Thirty workers arrive at the gate. Even in a basement with zero cellular bars, the supervisor taps each worker in Brift. Attendance is locked to prevent week-end muster inflation.
             </p>
 
-            <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+            <div class="pt-2 sm:pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] sm:text-xs">
               <span class="text-slate-500">Leak Prevention Status:</span>
               <span class="font-bold text-emerald-700 flex items-center gap-1" id="scene-leak-status">
-                <CheckCircle2 class="w-3.5 h-3.5 text-emerald-600" />
+                <CheckCircle2 class="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                 <span>Zero Ghost Labor Paid</span>
               </span>
             </div>
@@ -447,8 +447,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
         <!-- Projector Screen Frame -->
         <div data-motion="fade-right" data-delay="250" class="lg:col-span-7">
-          <div class="rounded-3xl border border-slate-200/90 bg-slate-100 p-3 sm:p-4 shadow-md relative overflow-hidden">
-            <div class="flex items-center justify-between px-3 py-2 border-b border-slate-200 text-xs font-mono text-slate-500 mb-3 bg-white/80 rounded-xl">
+          <div class="rounded-2xl sm:rounded-3xl border border-slate-200/90 bg-slate-100 p-2 sm:p-4 shadow-md relative overflow-hidden">
+            <div class="flex items-center justify-between px-3 py-2 border-b border-slate-200 text-[11px] sm:text-xs font-mono text-slate-500 mb-2.5 sm:mb-3 bg-white/80 rounded-xl">
               <span class="flex items-center gap-2">
                 <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
                 <span class="text-slate-700 font-semibold">LIVE REEL FEED</span>
@@ -461,7 +461,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
               <Image
                 src={storiesImg}
                 alt="Site attendance and daily photo update feed"
-                class="w-full h-auto rounded-2xl border border-slate-200 shadow-sm object-cover max-h-[460px]"
+                class="w-full h-auto rounded-xl sm:rounded-2xl border border-slate-200 shadow-sm object-cover max-h-[320px] sm:max-h-[460px]"
                 format="webp"
               />
             </div>
@@ -470,7 +470,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
               <Image
                 src={materialsImg}
                 alt="Materials stock ledger and delivery intake"
-                class="w-full h-auto rounded-2xl border border-slate-200 shadow-sm object-cover max-h-[460px]"
+                class="w-full h-auto rounded-xl sm:rounded-2xl border border-slate-200 shadow-sm object-cover max-h-[320px] sm:max-h-[460px]"
                 format="webp"
               />
             </div>
@@ -479,7 +479,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
               <Image
                 src={contractorImg}
                 alt="Contractor ledger and advance settlement"
-                class="w-full h-auto rounded-2xl border border-slate-200 shadow-sm object-cover max-h-[460px]"
+                class="w-full h-auto rounded-xl sm:rounded-2xl border border-slate-200 shadow-sm object-cover max-h-[320px] sm:max-h-[460px]"
                 format="webp"
               />
             </div>
@@ -488,7 +488,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
               <Image
                 src={spendImg}
                 alt="Owner executive overview showing live funds"
-                class="w-full h-auto rounded-2xl border border-slate-200 shadow-sm object-cover max-h-[460px]"
+                class="w-full h-auto rounded-xl sm:rounded-2xl border border-slate-200 shadow-sm object-cover max-h-[320px] sm:max-h-[460px]"
                 format="webp"
               />
             </div>
@@ -502,33 +502,33 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <!-- (FEATURING REPORTS-OVERVIEW.PNG)          -->
     <!-- ========================================== -->
     <section id="act-4" class="relative">
-      <div data-motion="fade-up" class="text-center max-w-4xl mx-auto mb-12 space-y-4">
-        <span class="inline-block text-xs font-bold font-mono uppercase tracking-wider text-indigo-700 bg-indigo-50 border border-indigo-200 px-4 py-1.5 rounded-full">
+      <div data-motion="fade-up" class="text-center max-w-4xl mx-auto mb-8 sm:mb-12 space-y-3 sm:space-y-4">
+        <span class="inline-block text-xs font-bold font-mono uppercase tracking-wider text-indigo-700 bg-indigo-50 border border-indigo-200 px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full">
           ACT 04 // THE MASTER PANORAMIC AUDIT
         </span>
-        <h2 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-tight">
-          Every site. Every rupee. Every milestone. <br />
+        <h2 class="text-2xl xs:text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-tight">
+          Every site. Every rupee. Every milestone. <br class="hidden sm:inline" />
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue via-indigo-600 to-emerald-600">
             One complete executive screen.
           </span>
         </h2>
-        <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        <p class="text-sm sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
           Stop assembling scattered figures from 14 Excel sheets. The Brift Master Overview consolidates live monthly cash flow, 7 automated audit reports, and multi-project stage completions onto a single pane of glass.
         </p>
       </div>
 
       <!-- Panoramic Screen Showcase Frame -->
-      <div data-motion="zoom-in" data-delay="150" class="rounded-3xl border border-slate-300/80 bg-slate-900/5 p-3 sm:p-5 shadow-2xl backdrop-blur-sm">
+      <div data-motion="zoom-in" data-delay="150" class="rounded-2xl sm:rounded-3xl border border-slate-300/80 bg-slate-900/5 p-2 sm:p-5 shadow-2xl backdrop-blur-sm">
         <!-- Browser Window Chrome Top Bar -->
-        <div class="flex items-center justify-between px-4 py-3 bg-white border border-slate-200/90 rounded-2xl mb-3 shadow-xs">
-          <div class="flex items-center gap-2">
-            <span class="h-3 w-3 rounded-full bg-red-400"></span>
-            <span class="h-3 w-3 rounded-full bg-amber-400"></span>
-            <span class="h-3 w-3 rounded-full bg-emerald-400"></span>
-            <span class="ml-3 text-xs font-mono text-slate-500 hidden sm:inline-block">app.brift.in/master-reports-overview</span>
+        <div class="flex items-center justify-between px-3 sm:px-4 py-2 sm:py-3 bg-white border border-slate-200/90 rounded-xl sm:rounded-2xl mb-2.5 sm:mb-3 shadow-xs">
+          <div class="flex items-center gap-1.5 sm:gap-2">
+            <span class="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-red-400"></span>
+            <span class="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-amber-400"></span>
+            <span class="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-emerald-400"></span>
+            <span class="ml-2 sm:ml-3 text-[11px] sm:text-xs font-mono text-slate-500 hidden sm:inline-block">app.brift.in/master-reports-overview</span>
           </div>
-          <div class="flex items-center gap-3">
-            <span class="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">
+          <div class="flex items-center gap-2 sm:gap-3">
+            <span class="inline-flex items-center gap-1.5 text-[10px] sm:text-xs font-mono font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full">
               <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
               <span>100% RECONCILED</span>
             </span>
@@ -536,11 +536,11 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         </div>
 
         <!-- Full Panoramic Image Display -->
-        <div class="relative rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-lg group">
+        <div class="relative rounded-xl sm:rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-lg group">
           <Image
             src={reportsImg}
             alt="Brift Master Reports Overview displaying complete financials, stage progress, and project rollups"
-            class="w-full h-auto object-cover max-h-[720px] transition-transform duration-500 group-hover:scale-[1.01]"
+            class="w-full h-auto object-cover max-h-[360px] sm:max-h-[720px] transition-transform duration-500 group-hover:scale-[1.01]"
             loading="lazy"
             format="webp"
           />
@@ -566,8 +566,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       </div>
 
       <!-- 4 Pillars Breakdown of the Master Overview -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 pt-8">
-        <div data-motion="fade-up" data-delay="100" class="motion-card-hover rounded-2xl border border-slate-200 bg-white p-5 space-y-2 shadow-xs hover:border-blue transition-colors">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 pt-6 sm:pt-8">
+        <div data-motion="fade-up" data-delay="100" class="motion-card-hover rounded-xl sm:rounded-2xl border border-slate-200 bg-white p-4 sm:p-5 space-y-2 shadow-xs hover:border-blue transition-colors">
           <div class="flex items-center gap-2 text-blue">
             <TrendingUp class="w-4 h-4" />
             <h4 class="text-sm font-bold text-slate-900">Money In vs Money Out</h4>
@@ -577,7 +577,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           </p>
         </div>
 
-        <div data-motion="fade-up" data-delay="200" class="motion-card-hover rounded-2xl border border-slate-200 bg-white p-5 space-y-2 shadow-xs hover:border-blue transition-colors">
+        <div data-motion="fade-up" data-delay="200" class="motion-card-hover rounded-xl sm:rounded-2xl border border-slate-200 bg-white p-4 sm:p-5 space-y-2 shadow-xs hover:border-blue transition-colors">
           <div class="flex items-center gap-2 text-emerald-600">
             <FileCheck class="w-4 h-4" />
             <h4 class="text-sm font-bold text-slate-900">7 Built-in Audit Reports</h4>
@@ -587,7 +587,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           </p>
         </div>
 
-        <div data-motion="fade-up" data-delay="300" class="motion-card-hover rounded-2xl border border-slate-200 bg-white p-5 space-y-2 shadow-xs hover:border-blue transition-colors">
+        <div data-motion="fade-up" data-delay="300" class="motion-card-hover rounded-xl sm:rounded-2xl border border-slate-200 bg-white p-4 sm:p-5 space-y-2 shadow-xs hover:border-blue transition-colors">
           <div class="flex items-center gap-2 text-amber-600">
             <Building class="w-4 h-4" />
             <h4 class="text-sm font-bold text-slate-900">10-Stage Milestone Tracking</h4>
@@ -597,7 +597,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           </p>
         </div>
 
-        <div data-motion="fade-up" data-delay="400" class="motion-card-hover rounded-2xl border border-slate-200 bg-white p-5 space-y-2 shadow-xs hover:border-blue transition-colors">
+        <div data-motion="fade-up" data-delay="400" class="motion-card-hover rounded-xl sm:rounded-2xl border border-slate-200 bg-white p-4 sm:p-5 space-y-2 shadow-xs hover:border-blue transition-colors">
           <div class="flex items-center gap-2 text-indigo-600">
             <Wallet class="w-4 h-4" />
             <h4 class="text-sm font-bold text-slate-900">Receivables & Debt Control</h4>
@@ -613,94 +613,94 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <!-- ACT 05 // THE OWNER'S COCKPIT (CONSOLE)    -->
     <!-- ========================================== -->
     <section id="act-5" class="relative">
-      <div data-motion="fade-up" class="text-center max-w-3xl mx-auto mb-10 space-y-3">
+      <div data-motion="fade-up" class="text-center max-w-3xl mx-auto mb-8 sm:mb-10 space-y-3">
         <span class="inline-block text-xs font-bold font-mono uppercase tracking-wider text-blue bg-blue-soft px-3.5 py-1 rounded-full">
           ACT 05 // DEEP-DIVE CHANNELS
         </span>
-        <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-slate-900">
+        <h2 class="text-2xl xs:text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
           Five operational channels. One unified cockpit.
         </h2>
-        <p class="text-base text-slate-600">
+        <p class="text-sm sm:text-base text-slate-600">
           Click any channel to test-drive how Brift displays your live finances, inventory, and field progress without picking up the phone:
         </p>
 
         <!-- Channel Selectors with Lucide Icons -->
-        <div data-motion="fade-up" data-delay="100" class="pt-4 flex flex-wrap items-center justify-center gap-2.5">
+        <div data-motion="fade-up" data-delay="100" class="pt-3 sm:pt-4 flex flex-wrap items-center justify-center gap-1.5 sm:gap-2.5">
           <button
             type="button"
-            class="cockpit-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border-2 border-blue bg-blue text-white shadow-xs transition-all cursor-pointer inline-flex items-center gap-2"
+            class="cockpit-btn px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold border-2 border-blue bg-blue text-white shadow-xs transition-all cursor-pointer inline-flex items-center gap-1.5 sm:gap-2"
             data-channel="money"
             onclick="switchCockpit('money')"
           >
-            <Wallet class="w-4 h-4" />
+            <Wallet class="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             <span>Money Stream</span>
           </button>
           <button
             type="button"
-            class="cockpit-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold border border-slate-200 bg-white text-slate-700 hover:border-blue transition-all cursor-pointer inline-flex items-center gap-2"
+            class="cockpit-btn px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold border border-slate-200 bg-white text-slate-700 hover:border-blue transition-all cursor-pointer inline-flex items-center gap-1.5 sm:gap-2"
             data-channel="materials"
             onclick="switchCockpit('materials')"
           >
-            <Truck class="w-4 h-4" />
+            <Truck class="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             <span>Cement & Steel</span>
           </button>
           <button
             type="button"
-            class="cockpit-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold border border-slate-200 bg-white text-slate-700 hover:border-blue transition-all cursor-pointer inline-flex items-center gap-2"
+            class="cockpit-btn px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold border border-slate-200 bg-white text-slate-700 hover:border-blue transition-all cursor-pointer inline-flex items-center gap-1.5 sm:gap-2"
             data-channel="workforce"
             onclick="switchCockpit('workforce')"
           >
-            <HardHat class="w-4 h-4" />
+            <HardHat class="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             <span>Labor & Contractors</span>
           </button>
           <button
             type="button"
-            class="cockpit-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold border border-slate-200 bg-white text-slate-700 hover:border-blue transition-all cursor-pointer inline-flex items-center gap-2"
+            class="cockpit-btn px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold border border-slate-200 bg-white text-slate-700 hover:border-blue transition-all cursor-pointer inline-flex items-center gap-1.5 sm:gap-2"
             data-channel="reports"
             onclick="switchCockpit('reports')"
           >
-            <FileSpreadsheet class="w-4 h-4" />
-            <span>Daily Progress Reports</span>
+            <FileSpreadsheet class="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+            <span>Daily Reports</span>
           </button>
           <button
             type="button"
-            class="cockpit-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold border border-slate-200 bg-white text-slate-700 hover:border-blue transition-all cursor-pointer inline-flex items-center gap-2"
+            class="cockpit-btn px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold border border-slate-200 bg-white text-slate-700 hover:border-blue transition-all cursor-pointer inline-flex items-center gap-1.5 sm:gap-2"
             data-channel="roles"
             onclick="switchCockpit('roles')"
           >
-            <Lock class="w-4 h-4" />
+            <Lock class="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             <span>Role Security</span>
           </button>
         </div>
       </div>
 
       <!-- Cockpit Display Frame -->
-      <div data-motion="zoom-in" data-delay="200" class="rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-8 shadow-lg">
+      <div data-motion="zoom-in" data-delay="200" class="rounded-2xl sm:rounded-3xl border border-slate-200/90 bg-white p-4 sm:p-8 shadow-lg">
         <!-- Channel 1: Money -->
-        <div id="cockpit-panel-money" class="cockpit-panel grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div id="cockpit-panel-money" class="cockpit-panel grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
           <div class="lg:col-span-7">
             <Image
               src={spendImg}
               alt="Brift Spend Analytics and Cash Flow Cockpit"
-              class="w-full h-auto rounded-2xl border border-slate-200 shadow-sm object-cover max-h-[440px]"
+              class="w-full h-auto rounded-xl sm:rounded-2xl border border-slate-200 shadow-sm object-cover max-h-[340px] sm:max-h-[440px]"
               format="webp"
             />
           </div>
-          <div class="lg:col-span-5 space-y-4 text-left">
-            <span class="text-xs font-mono font-bold uppercase tracking-wider text-blue">CHANNEL 01 // CASH RECONCILIATION</span>
-            <h3 class="text-2xl font-bold text-slate-900 leading-tight">
+          <div class="lg:col-span-5 space-y-3 sm:space-y-4 text-left">
+            <span class="text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider text-blue">CHANNEL 01 // CASH RECONCILIATION</span>
+            <h3 class="text-xl sm:text-2xl font-bold text-slate-900 leading-snug sm:leading-tight">
               Every rupee verified against live site delivery.
             </h3>
-            <p class="text-sm text-slate-600 leading-relaxed">
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
               Know your exact burn rate per square foot in real time. Compare budget allocation vs actual vendor settlements without waiting for monthly accountant spreadsheets.
             </p>
-            <div class="space-y-2 pt-2 text-xs sm:text-sm text-slate-600">
-              <div class="flex items-center gap-2.5">
-                <Check class="w-4 h-4 text-emerald-600 font-bold" />
+            <div class="space-y-2 pt-1 sm:pt-2 text-xs sm:text-sm text-slate-600">
+              <div class="flex items-center gap-2 sm:gap-2.5">
+                <Check class="w-4 h-4 text-emerald-600 font-bold shrink-0" />
                 <span>Instant contractor advance balance tracking</span>
               </div>
-              <div class="flex items-center gap-2.5">
-                <Check class="w-4 h-4 text-emerald-600 font-bold" />
+              <div class="flex items-center gap-2 sm:gap-2.5">
+                <Check class="w-4 h-4 text-emerald-600 font-bold shrink-0" />
                 <span>Vendor statement matching with challan photos</span>
               </div>
             </div>
@@ -708,30 +708,30 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         </div>
 
         <!-- Channel 2: Materials -->
-        <div id="cockpit-panel-materials" class="cockpit-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div id="cockpit-panel-materials" class="cockpit-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
           <div class="lg:col-span-7">
             <Image
               src={materialsImg}
               alt="Brift Materials Inventory and Stock Intake"
-              class="w-full h-auto rounded-2xl border border-slate-200 shadow-sm object-cover max-h-[440px]"
+              class="w-full h-auto rounded-xl sm:rounded-2xl border border-slate-200 shadow-sm object-cover max-h-[340px] sm:max-h-[440px]"
               format="webp"
             />
           </div>
-          <div class="lg:col-span-5 space-y-4 text-left">
-            <span class="text-xs font-mono font-bold uppercase tracking-wider text-blue">CHANNEL 02 // INVENTORY & POs</span>
-            <h3 class="text-2xl font-bold text-slate-900 leading-tight">
+          <div class="lg:col-span-5 space-y-3 sm:space-y-4 text-left">
+            <span class="text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider text-blue">CHANNEL 02 // INVENTORY & POs</span>
+            <h3 class="text-xl sm:text-2xl font-bold text-slate-900 leading-snug sm:leading-tight">
               No cement bag unloads without photographic intake.
             </h3>
-            <p class="text-sm text-slate-600 leading-relaxed">
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
               Supervisors photograph physical delivery challans on arrival. Stock counts update automatically across central inventory, blocking duplicate billing.
             </p>
-            <div class="space-y-2 pt-2 text-xs sm:text-sm text-slate-600">
-              <div class="flex items-center gap-2.5">
-                <Check class="w-4 h-4 text-emerald-600 font-bold" />
+            <div class="space-y-2 pt-1 sm:pt-2 text-xs sm:text-sm text-slate-600">
+              <div class="flex items-center gap-2 sm:gap-2.5">
+                <Check class="w-4 h-4 text-emerald-600 font-bold shrink-0" />
                 <span>Automated alerts on low steel rebar or cement stock</span>
               </div>
-              <div class="flex items-center gap-2.5">
-                <Check class="w-4 h-4 text-emerald-600 font-bold" />
+              <div class="flex items-center gap-2 sm:gap-2.5">
+                <Check class="w-4 h-4 text-emerald-600 font-bold shrink-0" />
                 <span>Eliminates 18% emergency retail markups</span>
               </div>
             </div>
@@ -739,30 +739,30 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         </div>
 
         <!-- Channel 3: Workforce -->
-        <div id="cockpit-panel-workforce" class="cockpit-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div id="cockpit-panel-workforce" class="cockpit-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
           <div class="lg:col-span-7">
             <Image
               src={contractorImg}
               alt="Brift Contractor Management and Labor Payouts"
-              class="w-full h-auto rounded-2xl border border-slate-200 shadow-sm object-cover max-h-[440px]"
+              class="w-full h-auto rounded-xl sm:rounded-2xl border border-slate-200 shadow-sm object-cover max-h-[340px] sm:max-h-[440px]"
               format="webp"
             />
           </div>
-          <div class="lg:col-span-5 space-y-4 text-left">
-            <span class="text-xs font-mono font-bold uppercase tracking-wider text-blue">CHANNEL 03 // LABOR & CONTRACTORS</span>
-            <h3 class="text-2xl font-bold text-slate-900 leading-tight">
+          <div class="lg:col-span-5 space-y-3 sm:space-y-4 text-left">
+            <span class="text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider text-blue">CHANNEL 03 // LABOR & CONTRACTORS</span>
+            <h3 class="text-xl sm:text-2xl font-bold text-slate-900 leading-snug sm:leading-tight">
               Saturday payroll computed in 3 minutes, not 4 hours.
             </h3>
-            <p class="text-sm text-slate-600 leading-relaxed">
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
               Automatic deduplication of advances from final measurement bills. Subcontractor disputes drop to zero because both sides see the same timestamped log.
             </p>
-            <div class="space-y-2 pt-2 text-xs sm:text-sm text-slate-600">
-              <div class="flex items-center gap-2.5">
-                <Check class="w-4 h-4 text-emerald-600 font-bold" />
+            <div class="space-y-2 pt-1 sm:pt-2 text-xs sm:text-sm text-slate-600">
+              <div class="flex items-center gap-2 sm:gap-2.5">
+                <Check class="w-4 h-4 text-emerald-600 font-bold shrink-0" />
                 <span>Daily attendance auto-linked to trade rates</span>
               </div>
-              <div class="flex items-center gap-2.5">
-                <Check class="w-4 h-4 text-emerald-600 font-bold" />
+              <div class="flex items-center gap-2 sm:gap-2.5">
+                <Check class="w-4 h-4 text-emerald-600 font-bold shrink-0" />
                 <span>No cash advance disputes at final handoff</span>
               </div>
             </div>
@@ -770,30 +770,30 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         </div>
 
         <!-- Channel 4: Reports -->
-        <div id="cockpit-panel-reports" class="cockpit-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div id="cockpit-panel-reports" class="cockpit-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
           <div class="lg:col-span-7">
             <Image
               src={reportsImg}
               alt="Brift Daily Site Reports and Milestone Progress"
-              class="w-full h-auto rounded-2xl border border-slate-200 shadow-sm object-cover max-h-[440px]"
+              class="w-full h-auto rounded-xl sm:rounded-2xl border border-slate-200 shadow-sm object-cover max-h-[340px] sm:max-h-[440px]"
               format="webp"
             />
           </div>
-          <div class="lg:col-span-5 space-y-4 text-left">
-            <span class="text-xs font-mono font-bold uppercase tracking-wider text-blue">CHANNEL 04 // EXECUTIVE INTELLIGENCE</span>
-            <h3 class="text-2xl font-bold text-slate-900 leading-tight">
+          <div class="lg:col-span-5 space-y-3 sm:space-y-4 text-left">
+            <span class="text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider text-blue">CHANNEL 04 // EXECUTIVE INTELLIGENCE</span>
+            <h3 class="text-xl sm:text-2xl font-bold text-slate-900 leading-snug sm:leading-tight">
               One-tap PDF report ready for banking & clients.
             </h3>
-            <p class="text-sm text-slate-600 leading-relaxed">
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
               Export audited site summaries for joint-venture partners, banks, and clients with verified photo progress timestamps and financial milestones.
             </p>
-            <div class="space-y-2 pt-2 text-xs sm:text-sm text-slate-600">
-              <div class="flex items-center gap-2.5">
-                <Check class="w-4 h-4 text-emerald-600 font-bold" />
+            <div class="space-y-2 pt-1 sm:pt-2 text-xs sm:text-sm text-slate-600">
+              <div class="flex items-center gap-2 sm:gap-2.5">
+                <Check class="w-4 h-4 text-emerald-600 font-bold shrink-0" />
                 <span>Automated WhatsApp evening report generation</span>
               </div>
-              <div class="flex items-center gap-2.5">
-                <Check class="w-4 h-4 text-emerald-600 font-bold" />
+              <div class="flex items-center gap-2 sm:gap-2.5">
+                <Check class="w-4 h-4 text-emerald-600 font-bold shrink-0" />
                 <span>High-resolution visual inspection archives</span>
               </div>
             </div>
@@ -801,30 +801,30 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         </div>
 
         <!-- Channel 5: Roles -->
-        <div id="cockpit-panel-roles" class="cockpit-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div id="cockpit-panel-roles" class="cockpit-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
           <div class="lg:col-span-7">
             <Image
               src={adminDashboardImg}
               alt="Brift Multi-Role Security and Permission Console"
-              class="w-full h-auto rounded-2xl border border-slate-200 shadow-sm object-cover max-h-[440px]"
+              class="w-full h-auto rounded-xl sm:rounded-2xl border border-slate-200 shadow-sm object-cover max-h-[340px] sm:max-h-[440px]"
               format="webp"
             />
           </div>
-          <div class="lg:col-span-5 space-y-4 text-left">
-            <span class="text-xs font-mono font-bold uppercase tracking-wider text-blue">CHANNEL 05 // ROLE PERMISSIONS</span>
-            <h3 class="text-2xl font-bold text-slate-900 leading-tight">
+          <div class="lg:col-span-5 space-y-3 sm:space-y-4 text-left">
+            <span class="text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider text-blue">CHANNEL 05 // ROLE PERMISSIONS</span>
+            <h3 class="text-xl sm:text-2xl font-bold text-slate-900 leading-snug sm:leading-tight">
               Site supervisors see tasks. Only owners see profits.
             </h3>
-            <p class="text-sm text-slate-600 leading-relaxed">
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
               Granular multi-tenant permission controls. Ensure field staff never view company margins or confidential vendor pricing agreements.
             </p>
-            <div class="space-y-2 pt-2 text-xs sm:text-sm text-slate-600">
-              <div class="flex items-center gap-2.5">
-                <Check class="w-4 h-4 text-emerald-600 font-bold" />
+            <div class="space-y-2 pt-1 sm:pt-2 text-xs sm:text-sm text-slate-600">
+              <div class="flex items-center gap-2 sm:gap-2.5">
+                <Check class="w-4 h-4 text-emerald-600 font-bold shrink-0" />
                 <span>Device-level biometric & PIN authentication</span>
               </div>
-              <div class="flex items-center gap-2.5">
-                <Check class="w-4 h-4 text-emerald-600 font-bold" />
+              <div class="flex items-center gap-2 sm:gap-2.5">
+                <Check class="w-4 h-4 text-emerald-600 font-bold shrink-0" />
                 <span>Instant access revocation for departed staff</span>
               </div>
             </div>
@@ -837,22 +837,22 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <!-- ACT 06 // THE PROFIT LOSS RADAR           -->
     <!-- ========================================== -->
     <section id="act-6" class="relative">
-      <div data-motion="fade-up" class="text-center max-w-3xl mx-auto mb-10 space-y-3">
+      <div data-motion="fade-up" class="text-center max-w-3xl mx-auto mb-8 sm:mb-10 space-y-3">
         <span class="inline-block text-xs font-bold font-mono uppercase tracking-wider text-amber-800 bg-amber-100 border border-amber-300 px-3.5 py-1 rounded-full">
           ACT 06 // FINANCIAL LOSS RADAR
         </span>
-        <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-slate-900">
+        <h2 class="text-2xl xs:text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
           Calculate your firm's hidden bleed by site count.
         </h2>
-        <p class="text-base text-slate-600">
+        <p class="text-sm sm:text-base text-slate-600">
           Select your active construction project volume to simulate unmonitored profit leaks:
         </p>
 
         <!-- Interactive Site Buttons -->
-        <div data-motion="fade-up" data-delay="100" class="pt-3 flex flex-wrap items-center justify-center gap-2.5">
+        <div data-motion="fade-up" data-delay="100" class="pt-2 sm:pt-3 flex flex-wrap items-center justify-center gap-1.5 sm:gap-2.5">
           <button
             type="button"
-            class="radar-site-btn px-4 py-2 rounded-xl text-xs font-mono font-bold border border-slate-200 bg-white text-slate-700 hover:border-amber-400 transition-all cursor-pointer"
+            class="radar-site-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs font-mono font-bold border border-slate-200 bg-white text-slate-700 hover:border-amber-400 transition-all cursor-pointer"
             data-sites="2"
             onclick="runRadarScan(2)"
           >
@@ -860,7 +860,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           </button>
           <button
             type="button"
-            class="radar-site-btn px-4 py-2 rounded-xl text-xs font-mono font-bold border-2 border-amber-400 bg-amber-400 text-slate-950 shadow-xs transition-all cursor-pointer"
+            class="radar-site-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs font-mono font-bold border-2 border-amber-400 bg-amber-400 text-slate-950 shadow-xs transition-all cursor-pointer"
             data-sites="4"
             onclick="runRadarScan(4)"
           >
@@ -868,7 +868,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           </button>
           <button
             type="button"
-            class="radar-site-btn px-4 py-2 rounded-xl text-xs font-mono font-bold border border-slate-200 bg-white text-slate-700 hover:border-amber-400 transition-all cursor-pointer"
+            class="radar-site-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs font-mono font-bold border border-slate-200 bg-white text-slate-700 hover:border-amber-400 transition-all cursor-pointer"
             data-sites="6"
             onclick="runRadarScan(6)"
           >
@@ -876,7 +876,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           </button>
           <button
             type="button"
-            class="radar-site-btn px-4 py-2 rounded-xl text-xs font-mono font-bold border border-slate-200 bg-white text-slate-700 hover:border-amber-400 transition-all cursor-pointer"
+            class="radar-site-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs font-mono font-bold border border-slate-200 bg-white text-slate-700 hover:border-amber-400 transition-all cursor-pointer"
             data-sites="8"
             onclick="runRadarScan(8)"
           >
@@ -884,7 +884,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           </button>
           <button
             type="button"
-            class="radar-site-btn px-4 py-2 rounded-xl text-xs font-mono font-bold border border-slate-200 bg-white text-slate-700 hover:border-amber-400 transition-all cursor-pointer"
+            class="radar-site-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs font-mono font-bold border border-slate-200 bg-white text-slate-700 hover:border-amber-400 transition-all cursor-pointer"
             data-sites="12"
             onclick="runRadarScan(12)"
           >
@@ -894,57 +894,57 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       </div>
 
       <!-- Radar Display Console -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center rounded-3xl border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center rounded-2xl sm:rounded-3xl border border-slate-200 bg-white p-4 sm:p-10 shadow-sm">
         <!-- Visual Radar Animation -->
         <div data-motion="fade-left" data-delay="200" class="lg:col-span-5 flex justify-center">
-          <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full border border-amber-300 bg-amber-50/40 flex items-center justify-center overflow-hidden shadow-inner">
+          <div class="relative w-48 h-48 xs:w-56 xs:h-56 sm:w-80 sm:h-80 rounded-full border border-amber-300 bg-amber-50/40 flex items-center justify-center overflow-hidden shadow-inner">
             <div class="absolute inset-0 radar-sweep-beam-light rounded-full pointer-events-none"></div>
 
-            <div class="absolute inset-8 rounded-full border border-amber-200"></div>
-            <div class="absolute inset-20 rounded-full border border-amber-200"></div>
-            <div class="absolute inset-32 rounded-full border border-amber-200"></div>
+            <div class="absolute inset-6 sm:inset-8 rounded-full border border-amber-200"></div>
+            <div class="absolute inset-14 sm:inset-20 rounded-full border border-amber-200"></div>
+            <div class="absolute inset-22 sm:inset-32 rounded-full border border-amber-200"></div>
 
             <div class="absolute inset-x-0 top-1/2 h-[1px] bg-amber-200"></div>
             <div class="absolute inset-y-0 left-1/2 w-[1px] bg-amber-200"></div>
 
             <div class="relative z-10 text-center space-y-1">
-              <span class="inline-block h-3.5 w-3.5 rounded-full bg-amber-500 animate-ping"></span>
-              <span class="text-sm font-mono font-bold text-amber-900 block" id="radar-site-label">4 Active Sites</span>
-              <span class="text-[10px] font-mono text-slate-500 block">SECTOR SCANNING</span>
+              <span class="inline-block h-3 w-3 sm:h-3.5 sm:w-3.5 rounded-full bg-amber-500 animate-ping"></span>
+              <span class="text-xs sm:text-sm font-mono font-bold text-amber-900 block" id="radar-site-label">4 Active Sites</span>
+              <span class="text-[9px] sm:text-[10px] font-mono text-slate-500 block">SECTOR SCANNING</span>
             </div>
           </div>
         </div>
 
         <!-- Radar Financial Tally Box -->
-        <div data-motion="fade-right" data-delay="300" class="lg:col-span-7 space-y-4">
-          <div class="grid grid-cols-2 gap-3 text-xs sm:text-sm">
-            <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/80">
-              <span class="text-slate-500 block mb-1 text-xs">Unrecorded Advances</span>
-              <span class="text-base sm:text-lg font-bold text-red-600" id="radar-advances">₹70,000 / mo</span>
+        <div data-motion="fade-right" data-delay="300" class="lg:col-span-7 space-y-3 sm:space-y-4">
+          <div class="grid grid-cols-2 gap-2 sm:gap-3 text-xs sm:text-sm">
+            <div class="p-3 sm:p-4 rounded-xl border border-slate-200 bg-slate-50/80">
+              <span class="text-slate-500 block mb-0.5 sm:mb-1 text-[11px] sm:text-xs">Unrecorded Advances</span>
+              <span class="text-sm sm:text-lg font-bold text-red-600" id="radar-advances">₹70,000 / mo</span>
             </div>
-            <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/80">
-              <span class="text-slate-500 block mb-1 text-xs">Ghost Labor Inflation</span>
-              <span class="text-base sm:text-lg font-bold text-red-600" id="radar-muster">₹40,000 / mo</span>
+            <div class="p-3 sm:p-4 rounded-xl border border-slate-200 bg-slate-50/80">
+              <span class="text-slate-500 block mb-0.5 sm:mb-1 text-[11px] sm:text-xs">Ghost Labor Inflation</span>
+              <span class="text-sm sm:text-lg font-bold text-red-600" id="radar-muster">₹40,000 / mo</span>
             </div>
-            <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/80">
-              <span class="text-slate-500 block mb-1 text-xs">Uncounted Cement Bags</span>
-              <span class="text-base sm:text-lg font-bold text-red-600" id="radar-materials">₹80,000 / mo</span>
+            <div class="p-3 sm:p-4 rounded-xl border border-slate-200 bg-slate-50/80">
+              <span class="text-slate-500 block mb-0.5 sm:mb-1 text-[11px] sm:text-xs">Uncounted Cement Bags</span>
+              <span class="text-sm sm:text-lg font-bold text-red-600" id="radar-materials">₹80,000 / mo</span>
             </div>
-            <div class="p-4 rounded-xl border border-slate-200 bg-slate-50/80">
-              <span class="text-slate-500 block mb-1 text-xs">Emergency Markups</span>
-              <span class="text-base sm:text-lg font-bold text-red-600" id="radar-retail">₹50,000 / mo</span>
+            <div class="p-3 sm:p-4 rounded-xl border border-slate-200 bg-slate-50/80">
+              <span class="text-slate-500 block mb-0.5 sm:mb-1 text-[11px] sm:text-xs">Emergency Markups</span>
+              <span class="text-sm sm:text-lg font-bold text-red-600" id="radar-retail">₹50,000 / mo</span>
             </div>
           </div>
 
           <!-- Grand Bleed Tally Banner -->
-          <div class="rounded-2xl border border-red-200 bg-red-50 p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <div class="rounded-xl sm:rounded-2xl border border-red-200 bg-red-50 p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <div>
-              <span class="text-[11px] font-mono font-bold text-red-800 uppercase tracking-wider block">Estimated Monthly Bleed</span>
-              <span class="text-2xl sm:text-3xl font-black text-slate-900" id="radar-monthly-total">₹2,40,000 / mo</span>
+              <span class="text-[10px] sm:text-[11px] font-mono font-bold text-red-800 uppercase tracking-wider block">Estimated Monthly Bleed</span>
+              <span class="text-xl sm:text-3xl font-black text-slate-900" id="radar-monthly-total">₹2,40,000 / mo</span>
             </div>
             <div class="sm:text-right">
-              <span class="text-[11px] font-mono font-bold text-red-800 uppercase tracking-wider block">Annual Drain on Profits</span>
-              <span class="text-xl sm:text-2xl font-black text-red-600" id="radar-annual-total">₹28.8 Lakhs / year</span>
+              <span class="text-[10px] sm:text-[11px] font-mono font-bold text-red-800 uppercase tracking-wider block">Annual Drain on Profits</span>
+              <span class="text-base sm:text-2xl font-black text-red-600" id="radar-annual-total">₹28.8 Lakhs / year</span>
             </div>
           </div>
 
@@ -963,25 +963,25 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <!-- ACT 07 // TAKE COMMAND (HERITAGE & DEMO)   -->
     <!-- ========================================== -->
     <section id="act-7" class="relative">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         <!-- Left: The Origin Story (SIMAK DNA) -->
-        <div data-motion="fade-left" data-delay="150" class="lg:col-span-5 space-y-5 text-left">
+        <div data-motion="fade-left" data-delay="150" class="lg:col-span-5 space-y-4 sm:space-y-5 text-left">
           <span class="inline-block text-xs font-mono font-bold uppercase tracking-wider text-amber-800 bg-amber-100 border border-amber-300 px-3.5 py-1 rounded-full">
             ACT 07 // PROVEN FIELD ORIGIN
           </span>
 
-          <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-slate-900 leading-tight">
+          <h2 class="text-2xl xs:text-3xl sm:text-4xl font-black tracking-tight text-slate-900 leading-tight">
             Built not in a glass tower, but on active construction slabs.
           </h2>
 
-          <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+          <p class="text-xs sm:text-base text-slate-600 leading-relaxed">
             Brift was incubated inside SIMAK Builders across active residential and commercial sites — from independent villas to multi-unit developments. Every screen was battle-tested with supervisors who speak Hindi, Tamil, and Malayalam in basements with zero cellular bars.
           </p>
 
-          <div class="rounded-2xl border border-slate-200 bg-white p-5 space-y-2.5 shadow-xs">
-            <div class="flex items-center gap-2.5">
-              <CheckCircle2 class="w-4 h-4 text-emerald-600" />
-              <span class="text-sm font-bold text-slate-900">Zero complex software training.</span>
+          <div class="rounded-xl sm:rounded-2xl border border-slate-200 bg-white p-4 sm:p-5 space-y-2 sm:space-y-2.5 shadow-xs">
+            <div class="flex items-center gap-2 sm:gap-2.5">
+              <CheckCircle2 class="w-4 h-4 text-emerald-600 shrink-0" />
+              <span class="text-xs sm:text-sm font-bold text-slate-900">Zero complex software training.</span>
             </div>
             <p class="text-xs text-slate-500 leading-relaxed pl-6">
               Your site team is logging live receipts within 48 hours of onboarding.
@@ -989,7 +989,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           </div>
 
           <!-- Direct Official Hotline Connection -->
-          <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+          <div class="pt-1 sm:pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3">
             <a
               href="https://wa.me/919037532036?text=Hi%20Brift%20team,%20I%20want%20to%20see%20a%20live%20walkthrough%20for%20my%20construction%20company"
               target="_blank"
@@ -1011,21 +1011,21 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
         <!-- Right: Demo Booking Card -->
         <div id="demo" data-motion="fade-right" data-delay="250" class="lg:col-span-7">
-          <div class="rounded-3xl border-2 border-blue/30 bg-white p-6 sm:p-9 shadow-xl relative overflow-hidden">
-            <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-6">
+          <div class="rounded-2xl sm:rounded-3xl border-2 border-blue/30 bg-white p-4 sm:p-9 shadow-xl relative overflow-hidden">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-200 pb-3 sm:pb-4 mb-4 sm:mb-6 gap-2 sm:gap-0">
               <div>
-                <span class="text-xs font-mono font-bold uppercase tracking-wider text-blue block">PRIVATE SCREENING TICKET</span>
+                <span class="text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider text-blue block">PRIVATE SCREENING TICKET</span>
                 <h3 class="text-xl sm:text-2xl font-black text-slate-900">Book Your 1-on-1 Walkthrough</h3>
               </div>
-              <span class="text-[10px] font-mono text-emerald-800 bg-emerald-100 border border-emerald-300 px-3 py-1 rounded-full flex items-center gap-1">
+              <span class="text-[10px] font-mono text-emerald-800 bg-emerald-100 border border-emerald-300 px-2.5 sm:px-3 py-1 rounded-full flex items-center gap-1 self-start sm:self-auto">
                 <Check class="w-3 h-3 text-emerald-700" />
                 <span>FREE 1-ON-1 DEMO</span>
               </span>
             </div>
 
             <!-- Booking Form -->
-            <form id="lead-demo-form" class="space-y-4">
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <form id="lead-demo-form" class="space-y-3.5 sm:space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div>
                   <label for="demo-name" class="block text-xs font-mono text-slate-600 mb-1">Full Name *</label>
                   <input
@@ -1033,7 +1033,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                     id="demo-name"
                     required
                     placeholder="e.g. Rajesh Kumar"
-                    class="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:border-blue focus:bg-white focus:outline-none transition-colors"
+                    class="w-full rounded-xl border border-slate-300 bg-slate-50 px-3.5 py-2.5 sm:px-4 sm:py-3 text-sm text-slate-900 placeholder-slate-400 focus:border-blue focus:bg-white focus:outline-none transition-colors"
                   />
                 </div>
 
@@ -1044,12 +1044,12 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                     id="demo-phone"
                     required
                     placeholder="+91 98765 43210"
-                    class="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:border-blue focus:bg-white focus:outline-none transition-colors"
+                    class="w-full rounded-xl border border-slate-300 bg-slate-50 px-3.5 py-2.5 sm:px-4 sm:py-3 text-sm text-slate-900 placeholder-slate-400 focus:border-blue focus:bg-white focus:outline-none transition-colors"
                   />
                 </div>
               </div>
 
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <div>
                   <label for="demo-company" class="block text-xs font-mono text-slate-600 mb-1">Company / Firm Name *</label>
                   <input
@@ -1057,7 +1057,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                     id="demo-company"
                     required
                     placeholder="e.g. Apex Builders"
-                    class="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:border-blue focus:bg-white focus:outline-none transition-colors"
+                    class="w-full rounded-xl border border-slate-300 bg-slate-50 px-3.5 py-2.5 sm:px-4 sm:py-3 text-sm text-slate-900 placeholder-slate-400 focus:border-blue focus:bg-white focus:outline-none transition-colors"
                   />
                 </div>
 
@@ -1066,7 +1066,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                   <select
                     id="demo-sites"
                     required
-                    class="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 focus:border-blue focus:bg-white focus:outline-none transition-colors"
+                    class="w-full rounded-xl border border-slate-300 bg-slate-50 px-3.5 py-2.5 sm:px-4 sm:py-3 text-sm text-slate-900 focus:border-blue focus:bg-white focus:outline-none transition-colors"
                   >
                     <option value="1-2">1 to 2 Active Sites</option>
                     <option value="3-5" selected>3 to 5 Active Sites</option>
@@ -1081,13 +1081,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                 <input
                   type="datetime-local"
                   id="demo-date"
-                  class="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:border-blue focus:bg-white focus:outline-none transition-colors"
+                  class="w-full rounded-xl border border-slate-300 bg-slate-50 px-3.5 py-2.5 sm:px-4 sm:py-3 text-sm text-slate-900 placeholder-slate-400 focus:border-blue focus:bg-white focus:outline-none transition-colors"
                 />
               </div>
 
               <button
                 type="submit"
-                class="w-full rounded-xl bg-blue hover:bg-blue-hover text-white font-bold text-sm py-4 shadow-md transition-all cursor-pointer active:scale-98 flex items-center justify-center gap-2"
+                class="w-full rounded-xl bg-blue hover:bg-blue-hover text-white font-bold text-sm py-3.5 sm:py-4 shadow-md transition-all cursor-pointer active:scale-98 flex items-center justify-center gap-2"
               >
                 <span>Reserve My Walkthrough Demo</span>
                 <ArrowRight class="w-4 h-4" />
@@ -1099,19 +1099,19 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             </form>
 
             <!-- Success State -->
-            <div id="demo-success-box" class="hidden text-center py-8 space-y-4">
-              <div class="inline-flex h-14 w-14 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
-                <CheckCircle2 class="w-8 h-8" />
+            <div id="demo-success-box" class="hidden text-center py-6 sm:py-8 space-y-3 sm:space-y-4">
+              <div class="inline-flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
+                <CheckCircle2 class="w-7 h-7 sm:w-8 sm:h-8" />
               </div>
-              <h4 class="text-2xl font-black text-slate-900">Private Screening Reserved!</h4>
-              <p class="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
+              <h4 class="text-xl sm:text-2xl font-black text-slate-900">Private Screening Reserved!</h4>
+              <p class="text-xs sm:text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
                 Thank you! Our official team will reach out to you via WhatsApp within 2 working hours to confirm your custom walkthrough session.
               </p>
               <a
                 href="https://wa.me/919037532036?text=Hi%20Brift%20team,%20I%20just%20submitted%20the%20demo%20form"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-3 text-xs font-bold transition-all shadow-xs"
+                class="inline-flex items-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white px-5 sm:px-6 py-2.5 sm:py-3 text-xs font-bold transition-all shadow-xs"
               >
                 <MessageSquare class="w-4 h-4" />
                 <span>Open Official WhatsApp Conversation Now</span>

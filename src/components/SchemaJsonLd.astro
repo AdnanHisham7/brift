@@ -6,7 +6,7 @@ export interface Props {
 
 const { type = 'default', faqItems = [] } = Astro.props;
 
-const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, '') : 'https://getbrift.com';
+const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, '') : 'https://brift.online';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const fullBaseUrl = `${siteUrl}${base}`;
 
@@ -21,7 +21,7 @@ const organizationSchema = {
   telephone: '+919037532036',
   email: 'brift.official@gmail.com',
   sameAs: [
-    'https://getbrift.com',
+    'https://brift.online',
   ],
 };
 

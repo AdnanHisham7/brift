@@ -2,12 +2,10 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 
-const isGithubPages = process.env.GITHUB_PAGES === 'true' || process.env.CI === 'true';
-
 // https://astro.build/config
 export default defineConfig({
-  site: isGithubPages ? 'https://adnanhisham7.github.io' : 'https://getbrift.com',
-  base: isGithubPages ? '/brift' : '/',
+  site: 'https://brift.online',
+  base: '/',
   output: 'static',
   trailingSlash: 'never',
   integrations: [

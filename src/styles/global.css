@@ -331,6 +331,55 @@ details[open] summary svg {
   animation: radar-spin 4s linear infinite;
 }
 
+/* Sticky Stage & Scroll Choreography */
+.sticky-stage-track {
+  position: relative;
+}
+
+.sticky-stage-display {
+  position: sticky;
+  top: 5.5rem;
+  perspective: 1200px;
+}
+
+.stage-screen-slide {
+  position: absolute;
+  inset: 0;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.stage-screen-slide.is-inactive {
+  opacity: 0;
+  transform: scale(0.95) translateY(18px);
+  pointer-events: none;
+}
+
+.stage-screen-slide.is-active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  pointer-events: auto;
+}
+
+/* Sliced Physics Badge Layers */
+.physics-badge-layer {
+  position: absolute;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+  will-change: transform, opacity;
+}
+
+/* Timeline Step Tracker */
+.story-step-indicator {
+  transition: all 0.35s ease;
+}
+
+.story-step-indicator.active-step {
+  border-color: #3A46E1;
+  background-color: #3A46E1;
+  color: #ffffff;
+  box-shadow: 0 0 14px rgba(58, 70, 225, 0.4);
+}
+
 /* Respect user's motion preference */
 @media (prefers-reduced-motion: reduce) {
   .reveal,
@@ -338,10 +387,13 @@ details[open] summary svg {
   .animate-float,
   .animate-float-reverse,
   .animate-glow,
-  .radar-sweep-beam {
+  .radar-sweep-beam,
+  .stage-screen-slide,
+  .physics-badge-layer {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
     animation: none !important;
   }
 }
+

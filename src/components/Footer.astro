@@ -1,69 +1,63 @@
 ---
-import { Phone, Mail, ArrowRight } from 'lucide-astro';
+import { Phone, Mail, ArrowRight, MessageSquare } from 'lucide-astro';
 const currentYear = new Date().getFullYear();
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<footer class="border-t border-slate-200/80 bg-white text-slate-600 mt-auto relative z-30">
+<footer class="border-t border-slate-200 bg-white text-slate-600 mt-auto relative z-30">
   <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
     <div class="grid grid-cols-1 gap-8 md:grid-cols-12">
       <!-- Brand & Mission Column -->
-      <div class="md:col-span-5 space-y-4">
-        <a href="#" class="flex items-center gap-3 group" aria-label="Brift Homepage">
-          <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-blue text-white shadow-sm transition-transform group-hover:scale-105 p-1.5">
+      <div class="md:col-span-5 space-y-3.5">
+        <a href={`${base}/`} class="flex items-center gap-2.5 group" aria-label="Brift Homepage">
+          <div class="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-xl bg-blue text-white shadow-xs transition-transform group-hover:scale-105 p-1.5">
             <img src={`${base}/logo.png`} alt="Brift Logo" class="h-full w-full object-contain" width="36" height="36" />
           </div>
           <div class="flex items-center gap-2">
             <span class="text-xl font-extrabold tracking-tight text-slate-900 group-hover:text-blue transition-colors">BRIFT</span>
-            <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-slate-100 border border-slate-200/80 text-slate-700">
-              CON-OPS OS
+            <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-slate-100 border border-slate-200 text-slate-700">
+              CONSTRUCTION OS
             </span>
           </div>
         </a>
         <p class="text-sm font-semibold text-slate-900 max-w-sm">
-          A single hub for every construction site.
+          A single operational hub for every construction site.
         </p>
         <p class="text-xs sm:text-sm text-slate-500 max-w-sm leading-relaxed">
-          A live operating system for construction companies ready to replace spreadsheets, WhatsApp groups and guesswork — with one reliable view of every site, rupee and worker.
-        </p>
-        <p class="text-xs text-slate-400 pt-1 font-mono">
-          Bridges the gap between the site and the office.
+          The software platform for construction companies and general contractors. Replace scattered chats, lost paper slips, and delayed reports with real-time verification of workers, materials, and expenses.
         </p>
       </div>
 
-      <!-- Quick Navigation Anchors -->
+      <!-- Product Modules Navigation -->
       <div class="md:col-span-3 space-y-3">
-        <h3 class="text-xs font-mono uppercase tracking-wider text-slate-900 font-bold">Story Chapters</h3>
+        <h3 class="text-xs font-mono uppercase tracking-wider text-slate-900 font-bold">Platform Modules</h3>
         <ul class="space-y-2 text-sm">
           <li>
-            <a href="#act-1" class="text-slate-600 hover:text-blue transition-colors">Act 01: The Stakes</a>
+            <a href={`${base}/#features`} class="text-slate-600 hover:text-blue transition-colors">Daily Muster & Attendance</a>
           </li>
           <li>
-            <a href="#act-2" class="text-slate-600 hover:text-blue transition-colors">Act 02: Crime Scene Leaks</a>
+            <a href={`${base}/#features`} class="text-slate-600 hover:text-blue transition-colors">Materials & Challans</a>
           </li>
           <li>
-            <a href="#act-3" class="text-slate-600 hover:text-blue transition-colors">Act 03: 24h Field Story</a>
+            <a href={`${base}/#features`} class="text-slate-600 hover:text-blue transition-colors">Contractor Advances & Payouts</a>
           </li>
           <li>
-            <a href="#act-4" class="text-slate-600 hover:text-blue transition-colors">Act 04: The Master Overview</a>
+            <a href={`${base}/#overview`} class="text-slate-600 hover:text-blue transition-colors">Executive Cash Flow & Reports</a>
           </li>
           <li>
-            <a href="#act-5" class="text-slate-600 hover:text-blue transition-colors">Act 05: The Cockpit Console</a>
+            <a href={`${base}/#features`} class="text-slate-600 hover:text-blue transition-colors">Multi-Role Security</a>
           </li>
           <li>
-            <a href="#act-6" class="text-amber-700 font-medium hover:text-amber-800 transition-colors">Act 06: Profit Radar</a>
-          </li>
-          <li>
-            <a href={`${base}/book-demo`} class="text-slate-600 hover:text-blue transition-colors">Act 07: Book a Walkthrough</a>
+            <a href={`${base}/book-demo`} class="text-blue font-semibold hover:underline">Book a 1-on-1 Demo</a>
           </li>
         </ul>
       </div>
 
       <!-- Direct Contact & Trust -->
       <div class="md:col-span-4 space-y-3">
-        <h3 class="text-xs font-mono uppercase tracking-wider text-slate-900 font-bold">Official Hotline</h3>
-        <p class="text-xs text-slate-500">
-          Connect with the official Brift team to map our system to your live construction sites:
+        <h3 class="text-xs font-mono uppercase tracking-wider text-slate-900 font-bold">Contact & Support</h3>
+        <p class="text-xs text-slate-500 leading-relaxed">
+          Talk directly with our solutions team to understand how Brift fits your ongoing construction projects:
         </p>
         <ul class="space-y-2 text-sm text-slate-700 pt-1">
           <li class="flex items-center gap-2">
@@ -74,12 +68,16 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             <Mail class="h-4 w-4 text-blue shrink-0" />
             <a href="mailto:brift.official@gmail.com" class="hover:text-blue font-medium">brift.official@gmail.com</a>
           </li>
+          <li class="flex items-center gap-2">
+            <MessageSquare class="h-4 w-4 text-emerald-600 shrink-0" />
+            <a href="https://wa.me/919037532036" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-700 font-medium text-emerald-700">Official WhatsApp Hotline</a>
+          </li>
           <li class="pt-2">
             <a
               href={`${base}/book-demo`}
-              class="inline-flex items-center gap-1.5 justify-center rounded-xl bg-blue hover:bg-blue-hover py-2.5 px-5 text-xs font-bold text-white shadow-sm transition-all active:scale-95"
+              class="inline-flex items-center gap-1.5 justify-center rounded-xl bg-blue hover:bg-blue-hover py-2.5 px-4 text-xs font-bold text-white shadow-xs transition-all active:scale-95"
             >
-              <span>Reserve Private Demo</span>
+              <span>Schedule Live Demo</span>
               <ArrowRight class="w-3.5 h-3.5" />
             </a>
           </li>
@@ -88,9 +86,9 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     </div>
 
     <!-- Bottom Bar with Legal Links -->
-    <div class="mt-12 border-t border-slate-200/80 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+    <div class="mt-12 border-t border-slate-200 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
       <p>
-        &copy; {currentYear} Brift Technologies. Built for contractors and developers who refuse to lose money.
+        &copy; {currentYear} Brift Technologies. Built for professional construction builders and contractors.
       </p>
       <div class="flex items-center gap-6">
         <a href={`${base}/privacy-policy`} class="hover:text-slate-900 transition-colors">Privacy Policy</a>

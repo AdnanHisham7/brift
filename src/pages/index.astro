@@ -126,7 +126,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           <!-- Primary Actions -->
           <div data-motion="fade-up" data-delay="250" class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
             <a
-              href="#demo"
+              href={`${base}/book-demo`}
               class="inline-flex items-center justify-center rounded-xl bg-blue hover:bg-blue-hover text-white px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-bold shadow-[0_4px_14px_rgba(58,70,225,0.35)] hover:shadow-[0_6px_20px_rgba(58,70,225,0.45)] transition-all active:scale-95 group focus-visible:outline-none"
             >
               <span>Take Command — Book Demo</span>
@@ -1014,284 +1014,76 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           </div>
         </div>
 
-        <!-- Right: Demo Booking Card -->
+        <!-- Right: Demo Booking Pass / Invitation Card -->
         <div id="demo" data-motion="fade-right" data-delay="250" class="lg:col-span-7">
-          <div class="rounded-2xl sm:rounded-3xl border-2 border-blue/30 bg-white p-4 sm:p-8 shadow-xl relative overflow-hidden">
-            <!-- Header -->
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-200 pb-3 sm:pb-4 mb-4 sm:mb-6 gap-2 sm:gap-0">
+          <div class="rounded-2xl sm:rounded-3xl border-2 border-blue/20 bg-white p-6 sm:p-10 shadow-xl relative overflow-hidden space-y-6">
+            <!-- Header Badge -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-200 pb-4 gap-2 sm:gap-0">
               <div>
-                <span class="text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider text-blue block">PRIVATE SCREENING TICKET</span>
-                <h3 class="text-xl sm:text-2xl font-black text-slate-900">Schedule Your 1-on-1 Walkthrough</h3>
+                <span class="text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider text-blue block">ACT 07 // PRIVATE SCREENING TICKET</span>
+                <h3 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Book Your 1-on-1 Walkthrough</h3>
               </div>
-              <span class="text-[10px] font-mono text-emerald-800 bg-emerald-100 border border-emerald-300 px-2.5 sm:px-3 py-1 rounded-full flex items-center gap-1 self-start sm:self-auto font-semibold">
-                <Check class="w-3 h-3 text-emerald-700" />
+              <span class="text-[10px] font-mono text-emerald-800 bg-emerald-100 border border-emerald-300 px-3 py-1 rounded-full flex items-center gap-1.5 self-start sm:self-auto font-bold">
+                <Check class="w-3.5 h-3.5 text-emerald-700" />
                 <span>30-MIN LIVE DEMO</span>
               </span>
             </div>
 
-            <!-- Booking Form -->
-            <form id="lead-demo-form" class="space-y-4 sm:space-y-5">
-              
-              <!-- STEP 1: Interactive Calendar & Time Slot Picker -->
-              <div class="rounded-2xl border border-slate-200 bg-slate-50/70 p-3.5 sm:p-5 space-y-3.5">
-                <div class="flex items-center justify-between">
-                  <div class="flex items-center gap-2">
-                    <Calendar class="w-4 h-4 text-blue shrink-0" />
-                    <span class="text-xs font-mono font-bold text-slate-800 uppercase tracking-wide">1. Select Date & Time Slot</span>
-                  </div>
-                  <span class="text-[10px] font-mono text-slate-500 bg-white px-2 py-0.5 rounded border border-slate-200">IST (UTC+5:30)</span>
+            <!-- Description & Value Props -->
+            <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+              Experience the product directly. We will walk through your real site operations — purchases, daily attendance, contractor advances and owner reports — tailored to your active site count.
+            </p>
+
+            <div class="space-y-3 py-1">
+              <div class="flex items-start gap-3">
+                <div class="h-5 w-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
+                  <Check class="w-3 h-3" />
                 </div>
-
-                <!-- Calendar Widget Container -->
-                <div class="rounded-xl border border-slate-200 bg-white p-3 shadow-xs">
-                  <!-- Month Nav -->
-                  <div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-100">
-                    <span id="cal-month-title" class="text-xs sm:text-sm font-bold text-slate-900 capitalize">October 2026</span>
-                    <div class="flex items-center gap-1">
-                      <button
-                        type="button"
-                        id="cal-prev-month-btn"
-                        class="p-1.5 rounded-lg border border-slate-200 hover:bg-slate-50 text-slate-600 transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
-                        aria-label="Previous month"
-                      >
-                        <ChevronLeft class="w-3.5 h-3.5" />
-                      </button>
-                      <button
-                        type="button"
-                        id="cal-next-month-btn"
-                        class="p-1.5 rounded-lg border border-slate-200 hover:bg-slate-50 text-slate-600 transition-colors cursor-pointer"
-                        aria-label="Next month"
-                      >
-                        <ChevronRight class="w-3.5 h-3.5" />
-                      </button>
-                    </div>
-                  </div>
-
-                  <!-- Days of Week Header -->
-                  <div class="grid grid-cols-7 gap-1 text-center text-[11px] font-mono font-bold text-slate-400 mb-1">
-                    <span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span class="text-rose-400">Su</span>
-                  </div>
-
-                  <!-- Calendar Days Grid (Populated dynamically by JS) -->
-                  <div id="cal-days-grid" class="grid grid-cols-7 gap-1 text-center"></div>
-                </div>
-
-                <!-- Time Slots Grid -->
-                <div class="space-y-1.5 pt-1">
-                  <div class="flex items-center justify-between">
-                    <label class="block text-xs font-mono text-slate-700 font-semibold">Available Time Slots *</label>
-                    <span id="cal-selected-day-label" class="text-[11px] font-mono text-blue font-bold">Wed, Oct 7</span>
-                  </div>
-                  <div id="time-slots-grid" class="grid grid-cols-3 sm:grid-cols-6 gap-1.5 sm:gap-2"></div>
-                </div>
-
-                <!-- Selected Slot Summary Banner -->
-                <div id="slot-selection-summary" class="flex items-center justify-between rounded-xl bg-blue/10 border border-blue/20 px-3 py-2 text-xs text-blue-950">
-                  <div class="flex items-center gap-2 truncate">
-                    <Clock class="w-3.5 h-3.5 text-blue shrink-0" />
-                    <span class="truncate">Selected: <strong id="selected-slot-text">Wed, Oct 7, 2026 @ 11:30 AM IST</strong></span>
-                  </div>
-                  <span class="text-[10px] font-mono text-blue-800 bg-blue-100/80 px-2 py-0.5 rounded-full shrink-0">30 Mins</span>
-                </div>
-
-                <!-- Hidden inputs for form data -->
-                <input type="hidden" id="booking-date" name="scheduled_date" value="" required />
-                <input type="hidden" id="booking-time" name="scheduled_time" value="" required />
+                <span class="text-xs sm:text-sm text-slate-700"><strong>Live Screen Walkthrough:</strong> Direct review of the supervisor app and owner cockpit.</span>
               </div>
-
-              <!-- STEP 2: Lead Information -->
-              <div class="space-y-3.5">
-                <div class="flex items-center gap-2">
-                  <span class="text-xs font-mono font-bold text-slate-800 uppercase tracking-wide">2. Your Contact Details</span>
+              <div class="flex items-start gap-3">
+                <div class="h-5 w-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
+                  <Check class="w-3 h-3" />
                 </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                  <div>
-                    <label for="demo-name" class="block text-xs font-mono text-slate-600 mb-1">Full Name *</label>
-                    <input
-                      type="text"
-                      id="demo-name"
-                      name="name"
-                      required
-                      placeholder="e.g. Rajesh Kumar"
-                      class="w-full rounded-xl border border-slate-300 bg-slate-50 px-3.5 py-2.5 sm:px-4 sm:py-3 text-sm text-slate-900 placeholder-slate-400 focus:border-blue focus:bg-white focus:outline-none transition-colors"
-                    />
-                  </div>
-
-                  <div>
-                    <label for="demo-phone" class="block text-xs font-mono text-slate-600 mb-1">Official WhatsApp / Phone *</label>
-                    <input
-                      type="tel"
-                      id="demo-phone"
-                      name="phone"
-                      required
-                      placeholder="+91 98765 43210"
-                      class="w-full rounded-xl border border-slate-300 bg-slate-50 px-3.5 py-2.5 sm:px-4 sm:py-3 text-sm text-slate-900 placeholder-slate-400 focus:border-blue focus:bg-white focus:outline-none transition-colors"
-                    />
-                  </div>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                  <div>
-                    <label for="demo-email" class="block text-xs font-mono text-slate-600 mb-1">Work Email (for Calendar Invite) *</label>
-                    <input
-                      type="email"
-                      id="demo-email"
-                      name="email"
-                      required
-                      placeholder="rajesh@apexbuilders.com"
-                      class="w-full rounded-xl border border-slate-300 bg-slate-50 px-3.5 py-2.5 sm:px-4 sm:py-3 text-sm text-slate-900 placeholder-slate-400 focus:border-blue focus:bg-white focus:outline-none transition-colors"
-                    />
-                  </div>
-
-                  <div>
-                    <label for="demo-company" class="block text-xs font-mono text-slate-600 mb-1">Company / Firm Name *</label>
-                    <input
-                      type="text"
-                      id="demo-company"
-                      name="company"
-                      required
-                      placeholder="e.g. Apex Builders"
-                      class="w-full rounded-xl border border-slate-300 bg-slate-50 px-3.5 py-2.5 sm:px-4 sm:py-3 text-sm text-slate-900 placeholder-slate-400 focus:border-blue focus:bg-white focus:outline-none transition-colors"
-                    />
-                  </div>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                  <div>
-                    <label for="demo-sites" class="block text-xs font-mono text-slate-600 mb-1">Active Projects *</label>
-                    <select
-                      id="demo-sites"
-                      name="active_sites"
-                      required
-                      class="w-full rounded-xl border border-slate-300 bg-slate-50 px-3.5 py-2.5 sm:px-4 sm:py-3 text-sm text-slate-900 focus:border-blue focus:bg-white focus:outline-none transition-colors"
-                    >
-                      <option value="1-2">1 to 2 Active Sites</option>
-                      <option value="3-5" selected>3 to 5 Active Sites</option>
-                      <option value="6-10">6 to 10 Active Sites</option>
-                      <option value="10+">10+ Multi-City Projects</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label for="demo-message" class="block text-xs font-mono text-slate-600 mb-1">Primary Challenge <span class="text-slate-400 font-normal">(Optional)</span></label>
-                    <input
-                      type="text"
-                      id="demo-message"
-                      name="message"
-                      placeholder="e.g. Muster rolls, material bills, etc."
-                      class="w-full rounded-xl border border-slate-300 bg-slate-50 px-3.5 py-2.5 sm:px-4 sm:py-3 text-sm text-slate-900 placeholder-slate-400 focus:border-blue focus:bg-white focus:outline-none transition-colors"
-                    />
-                  </div>
-                </div>
+                <span class="text-xs sm:text-sm text-slate-700"><strong>Offline Sync Demo:</strong> See how muster rolls & receipts lock without cellular coverage.</span>
               </div>
+              <div class="flex items-start gap-3">
+                <div class="h-5 w-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
+                  <Check class="w-3 h-3" />
+                </div>
+                <span class="text-xs sm:text-sm text-slate-700"><strong>Customized Pricing:</strong> Transparent, site-scoped quote unlocked during your walkthrough.</span>
+              </div>
+            </div>
 
-              <!-- Error alert -->
-              <div id="demo-error-box" class="hidden rounded-xl border border-rose-200 bg-rose-50 p-3 text-xs text-rose-800"></div>
-
-              <!-- Submit CTA -->
-              <button
-                type="submit"
-                id="submit-demo-btn"
-                class="w-full rounded-xl bg-blue hover:bg-blue-hover text-white font-bold text-sm py-3.5 sm:py-4 shadow-md transition-all cursor-pointer active:scale-98 flex items-center justify-center gap-2 group"
+            <!-- Primary CTAs -->
+            <div class="space-y-3 pt-2">
+              <a
+                href={`${base}/book-demo`}
+                class="w-full inline-flex items-center justify-center gap-2.5 rounded-xl bg-blue hover:bg-blue-hover text-white font-bold text-sm sm:text-base py-4 px-6 shadow-md transition-all active:scale-98 group cursor-pointer"
               >
                 <Calendar class="w-4 h-4" />
-                <span id="submit-demo-btn-text">Confirm & Schedule Walkthrough</span>
-                <ArrowRight class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-              </button>
+                <span>Schedule Slot on Calendar</span>
+                <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
 
-              <div class="flex items-center justify-between text-[11px] text-slate-500 pt-1">
-                <span class="flex items-center gap-1">
-                  <Lock class="w-3 h-3 text-slate-400" />
-                  <span>100% Confidential</span>
-                </span>
-                <span>Immediate notification to brift.official@gmail.com</span>
-              </div>
-            </form>
+              <a
+                href="https://wa.me/919037532036?text=Hi%20Brift%20team,%20I%20want%20to%20see%20a%20live%20walkthrough%20for%20my%20construction%20company"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 font-semibold text-xs sm:text-sm py-3 px-5 transition-all"
+              >
+                <MessageSquare class="w-4 h-4 text-emerald-600" />
+                <span>Prefer instant chat? Connect on WhatsApp Hotline</span>
+              </a>
+            </div>
 
-            <!-- Success State -->
-            <div id="demo-success-box" class="hidden py-4 sm:py-6 space-y-4">
-              <div class="text-center space-y-2">
-                <div class="inline-flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
-                  <CheckCircle2 class="w-7 h-7 sm:w-8 sm:h-8" />
-                </div>
-                <h4 class="text-xl sm:text-2xl font-black text-slate-900">Walkthrough Session Scheduled!</h4>
-                <p class="text-xs sm:text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
-                  Your private demo slot has been booked and an instant notification was delivered to <strong>brift.official@gmail.com</strong>.
-                </p>
-              </div>
-
-              <!-- Booking Receipt Card -->
-              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4 sm:p-5 space-y-3 text-left">
-                <div class="flex items-center justify-between border-b border-slate-200 pb-2.5">
-                  <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-blue">APPOINTMENT TICKET</span>
-                  <span class="text-[10px] font-mono text-emerald-700 bg-emerald-100 border border-emerald-300 px-2 py-0.5 rounded font-bold">CONFIRMED</span>
-                </div>
-                
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
-                  <div>
-                    <span class="text-slate-500 block text-[11px] font-mono">Date & Time:</span>
-                    <strong id="conf-slot-time" class="text-slate-900">Wed, Oct 7, 2026 @ 11:30 AM IST</strong>
-                  </div>
-                  <div>
-                    <span class="text-slate-500 block text-[11px] font-mono">Session Format:</span>
-                    <strong class="text-slate-900">30 Min Live Product Screenplay</strong>
-                  </div>
-                  <div>
-                    <span class="text-slate-500 block text-[11px] font-mono">Attendee:</span>
-                    <span id="conf-attendee" class="text-slate-900 font-semibold">Rajesh Kumar • Apex Builders</span>
-                  </div>
-                  <div>
-                    <span class="text-slate-500 block text-[11px] font-mono">Contact / Email:</span>
-                    <span id="conf-phone" class="text-slate-900 font-mono font-semibold">+91 98765 43210</span>
-                  </div>
-                </div>
-
-                <div class="pt-2 border-t border-slate-200 flex items-center justify-between text-[11px] text-slate-600 font-mono">
-                  <span>Host: Adnan Hisham (Brift Ops)</span>
-                  <span class="text-emerald-700 font-semibold">✓ Dispatched to Gmail</span>
-                </div>
-              </div>
-
-              <!-- Calendar Action Buttons -->
-              <div class="space-y-2 pt-1">
-                <a
-                  id="btn-google-cal"
-                  href="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-blue hover:bg-blue-hover text-white py-3 px-4 text-xs font-bold transition-all shadow-xs"
-                >
-                  <Calendar class="w-4 h-4" />
-                  <span>Add to Google Calendar (Invites brift.official@gmail.com)</span>
-                </a>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  <button
-                    type="button"
-                    id="btn-download-ics"
-                    class="inline-flex items-center justify-center gap-2 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 py-2.5 px-3 text-xs font-semibold shadow-2xs transition-all cursor-pointer"
-                  >
-                    <Calendar class="w-3.5 h-3.5 text-slate-500" />
-                    <span>Download .ics (Outlook / Apple)</span>
-                  </button>
-
-                  <a
-                    id="btn-whatsapp-conf"
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white py-2.5 px-3 text-xs font-bold transition-all shadow-2xs"
-                  >
-                    <MessageSquare class="w-3.5 h-3.5" />
-                    <span>Confirm on WhatsApp</span>
-                  </a>
-                </div>
-              </div>
-
-              <p class="text-center text-[11px] text-slate-500 pt-1">
-                Need to reschedule? WhatsApp us directly at <span class="font-mono font-bold text-slate-700">+91 9037532036</span>.
-              </p>
+            <!-- Trust Footer -->
+            <div class="flex flex-wrap items-center justify-between text-[11px] text-slate-500 pt-2 border-t border-slate-100">
+              <span class="flex items-center gap-1.5">
+                <Lock class="w-3.5 h-3.5 text-slate-400" />
+                <span>100% Confidential • Zero Spam</span>
+              </span>
+              <span>Host: Adnan Hisham (Brift Ops Lead)</span>
             </div>
           </div>
         </div>
@@ -1662,344 +1454,12 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       actSections.forEach(section => observer.observe(section));
     }
 
-    // 8. Interactive Calendar Scheduler & Lead Demo Form
-    function initDemoCalendarScheduler() {
-      const form = document.getElementById('lead-demo-form');
-      const successBox = document.getElementById('demo-success-box');
-      const daysGrid = document.getElementById('cal-days-grid');
-      const monthTitle = document.getElementById('cal-month-title');
-      const prevMonthBtn = document.getElementById('cal-prev-month-btn');
-      const nextMonthBtn = document.getElementById('cal-next-month-btn');
-      const slotsGrid = document.getElementById('time-slots-grid');
-      const selectedDayLabel = document.getElementById('cal-selected-day-label');
-      const selectedSlotText = document.getElementById('selected-slot-text');
-      const bookingDateInput = document.getElementById('booking-date');
-      const bookingTimeInput = document.getElementById('booking-time');
-      const submitBtn = document.getElementById('submit-demo-btn');
-      const submitBtnText = document.getElementById('submit-demo-btn-text');
-      const errorBox = document.getElementById('demo-error-box');
-
-      if (!form || !daysGrid || !slotsGrid) return;
-
-      const timeSlots = [
-        '10:00 AM',
-        '11:30 AM',
-        '02:00 PM',
-        '03:30 PM',
-        '05:00 PM',
-        '06:30 PM'
-      ];
-
-      const today = new Date();
-      let browseYear = today.getFullYear();
-      let browseMonth = today.getMonth(); // 0-indexed
-
-      // Default selected date: tomorrow (or Monday if tomorrow is Sunday)
-      let selectedDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1);
-      if (selectedDate.getDay() === 0) {
-        selectedDate.setDate(selectedDate.getDate() + 1);
-      }
-      let selectedSlot = '11:30 AM';
-
-      const monthNames = [
-        'January', 'February', 'March', 'April', 'May', 'June',
-        'July', 'August', 'September', 'October', 'November', 'December'
-      ];
-      const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-
-      function formatDateDisplay(d) {
-        return dayNames[d.getDay()] + ', ' + monthNames[d.getMonth()].slice(0, 3) + ' ' + d.getDate() + ', ' + d.getFullYear();
-      }
-
-      function formatShortDate(d) {
-        return dayNames[d.getDay()] + ', ' + monthNames[d.getMonth()].slice(0, 3) + ' ' + d.getDate();
-      }
-
-      function updateSlotDisplay() {
-        if (selectedDayLabel) {
-          selectedDayLabel.textContent = formatShortDate(selectedDate);
-        }
-        if (selectedSlotText) {
-          selectedSlotText.textContent = formatShortDate(selectedDate) + ', ' + selectedDate.getFullYear() + ' @ ' + selectedSlot + ' IST';
-        }
-        if (bookingDateInput) {
-          const y = selectedDate.getFullYear();
-          const m = String(selectedDate.getMonth() + 1).padStart(2, '0');
-          const d = String(selectedDate.getDate()).padStart(2, '0');
-          bookingDateInput.value = y + '-' + m + '-' + d;
-        }
-        if (bookingTimeInput) {
-          bookingTimeInput.value = selectedSlot;
-        }
-      }
-
-      function renderSlots() {
-        slotsGrid.innerHTML = '';
-        timeSlots.forEach(function(slot) {
-          const btn = document.createElement('button');
-          btn.type = 'button';
-          const isSelected = slot === selectedSlot;
-          btn.className = 'slot-btn px-2 sm:px-3 py-2 rounded-xl text-xs font-mono font-bold transition-all cursor-pointer text-center ' +
-            (isSelected
-              ? 'border-2 border-blue bg-blue text-white shadow-xs'
-              : 'border border-slate-200 bg-white text-slate-700 hover:border-blue hover:text-blue');
-          btn.textContent = slot;
-          btn.onclick = function() {
-            selectedSlot = slot;
-            renderSlots();
-            updateSlotDisplay();
-          };
-          slotsGrid.appendChild(btn);
-        });
-      }
-
-      function renderCalendar() {
-        if (monthTitle) {
-          monthTitle.textContent = monthNames[browseMonth] + ' ' + browseYear;
-        }
-
-        const isCurrentMonth = browseYear === today.getFullYear() && browseMonth === today.getMonth();
-        if (prevMonthBtn) {
-          prevMonthBtn.disabled = isCurrentMonth;
-          prevMonthBtn.style.opacity = isCurrentMonth ? '0.3' : '1';
-        }
-
-        const maxDate = new Date(today.getFullYear(), today.getMonth() + 3, 1);
-        const isMaxMonth = browseYear === maxDate.getFullYear() && browseMonth === maxDate.getMonth();
-        if (nextMonthBtn) {
-          nextMonthBtn.disabled = isMaxMonth;
-          nextMonthBtn.style.opacity = isMaxMonth ? '0.3' : '1';
-        }
-
-        daysGrid.innerHTML = '';
-
-        const firstDayOfMonth = new Date(browseYear, browseMonth, 1);
-        let firstDayIndex = firstDayOfMonth.getDay() - 1;
-        if (firstDayIndex === -1) firstDayIndex = 6;
-
-        const totalDays = new Date(browseYear, browseMonth + 1, 0).getDate();
-
-        for (let i = 0; i < firstDayIndex; i++) {
-          const empty = document.createElement('div');
-          empty.className = 'h-8 sm:h-9';
-          daysGrid.appendChild(empty);
-        }
-
-        const todayMidnight = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-
-        for (let day = 1; day <= totalDays; day++) {
-          const cellDate = new Date(browseYear, browseMonth, day);
-          const cellDayOfWeek = cellDate.getDay();
-          const isPast = cellDate < todayMidnight;
-          const isSunday = cellDayOfWeek === 0;
-          const isSelected = cellDate.getFullYear() === selectedDate.getFullYear() &&
-                             cellDate.getMonth() === selectedDate.getMonth() &&
-                             cellDate.getDate() === selectedDate.getDate();
-          const isToday = cellDate.toDateString() === today.toDateString();
-
-          const btn = document.createElement('button');
-          btn.type = 'button';
-          btn.textContent = day;
-
-          if (isPast || isSunday) {
-            btn.disabled = true;
-            btn.className = 'h-8 sm:h-9 rounded-lg text-xs font-mono font-medium flex items-center justify-center cursor-not-allowed ' +
-              (isSunday ? 'text-rose-300/80 bg-rose-50/30' : 'text-slate-300');
-            if (isSunday) btn.title = 'Office closed on Sundays';
-          } else if (isSelected) {
-            btn.className = 'h-8 sm:h-9 rounded-lg sm:rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center bg-blue text-white shadow-md ring-2 ring-blue-300 cursor-pointer';
-          } else {
-            btn.className = 'h-8 sm:h-9 rounded-lg text-xs sm:text-sm font-semibold flex items-center justify-center transition-all cursor-pointer hover:bg-blue/10 hover:text-blue ' +
-              (isToday ? 'border border-blue/40 text-blue font-bold bg-blue/5' : 'text-slate-800 bg-slate-50/70 hover:bg-slate-100');
-            btn.onclick = (function(dObj) {
-              return function() {
-                selectedDate = dObj;
-                renderCalendar();
-                updateSlotDisplay();
-              };
-            })(cellDate);
-          }
-
-          daysGrid.appendChild(btn);
-        }
-      }
-
-      if (prevMonthBtn) {
-        prevMonthBtn.onclick = function() {
-          if (browseMonth === 0) {
-            browseMonth = 11;
-            browseYear--;
-          } else {
-            browseMonth--;
-          }
-          renderCalendar();
-        };
-      }
-
-      if (nextMonthBtn) {
-        nextMonthBtn.onclick = function() {
-          if (browseMonth === 11) {
-            browseMonth = 0;
-            browseYear++;
-          } else {
-            browseMonth++;
-          }
-          renderCalendar();
-        };
-      }
-
-      renderCalendar();
-      renderSlots();
-      updateSlotDisplay();
-
-      // Form Submit Handler
-      form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        if (errorBox) errorBox.classList.add('hidden');
-
-        const nameInput = document.getElementById('demo-name');
-        const phoneInput = document.getElementById('demo-phone');
-        const emailInput = document.getElementById('demo-email');
-        const companyInput = document.getElementById('demo-company');
-        const sitesInput = document.getElementById('demo-sites');
-        const messageInput = document.getElementById('demo-message');
-
-        const name = nameInput ? nameInput.value.trim() : '';
-        const phone = phoneInput ? phoneInput.value.trim() : '';
-        const email = emailInput ? emailInput.value.trim() : '';
-        const company = companyInput ? companyInput.value.trim() : '';
-        const sites = sitesInput ? sitesInput.value : '3-5';
-        const message = messageInput ? messageInput.value.trim() : '';
-
-        if (!name || !phone || !email || !company) {
-          if (errorBox) {
-            errorBox.textContent = 'Please fill out all required fields: Name, Phone, Email, and Company.';
-            errorBox.classList.remove('hidden');
-          }
-          return;
-        }
-
-        if (submitBtn) submitBtn.disabled = true;
-        if (submitBtnText) submitBtnText.textContent = 'Securing Slot & Sending Email Notification...';
-
-        const formattedDate = formatDateDisplay(selectedDate);
-
-        // Payload sent directly to brift.official@gmail.com via FormSubmit.co
-        const payload = {
-          _subject: '📅 New Walkthrough Demo Scheduled: ' + name + ' (' + company + ') - ' + formattedDate + ' @ ' + selectedSlot + ' IST',
-          _template: 'table',
-          _captcha: 'false',
-          _replyto: email,
-          'Lead Name': name,
-          'Company / Firm': company,
-          'Official WhatsApp / Phone': phone,
-          'Work Email': email,
-          'Active Construction Sites': sites,
-          'Scheduled Date': formattedDate,
-          'Scheduled Time Slot': selectedSlot + ' (IST)',
-          'Primary Headache / Notes': message || 'None provided',
-          'Notification Recipient': 'brift.official@gmail.com',
-          'Submission Timestamp': new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
-        };
-
-        try {
-          await fetch('https://formsubmit.co/ajax/brift.official@gmail.com', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'Accept': 'application/json'
-            },
-            body: JSON.stringify(payload)
-          });
-        } catch (err) {
-          console.warn('FormSubmit notification dispatch note:', err);
-        }
-
-        // Update Confirmed Pass details
-        const confSlotTime = document.getElementById('conf-slot-time');
-        const confAttendee = document.getElementById('conf-attendee');
-        const confPhone = document.getElementById('conf-phone');
-        if (confSlotTime) confSlotTime.textContent = formattedDate + ' @ ' + selectedSlot + ' IST';
-        if (confAttendee) confAttendee.textContent = name + ' • ' + company;
-        if (confPhone) confPhone.textContent = phone + ' (' + email + ')';
-
-        // 1. Google Calendar Link
-        const timeParts = selectedSlot.split(' ');
-        const hm = timeParts[0].split(':');
-        let h = parseInt(hm[0], 10);
-        const m = parseInt(hm[1], 10);
-        if (timeParts[1] === 'PM' && h < 12) h += 12;
-        if (timeParts[1] === 'AM' && h === 12) h = 0;
-
-        const startDt = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), selectedDate.getDate(), h, m, 0);
-        const endDt = new Date(startDt.getTime() + 30 * 60 * 1000);
-
-        function formatUTC(dt) {
-          return dt.toISOString().replace(/-|:|\.\d+/g, '');
-        }
-
-        const btnGoogle = document.getElementById('btn-google-cal');
-        if (btnGoogle) {
-          const calTitle = encodeURIComponent('Brift Construction OS Walkthrough (' + company + ')');
-          const calDetails = encodeURIComponent('1-on-1 private walkthrough of Brift Construction Operations OS with Adnan Hisham.\n\nAttendee: ' + name + ' (' + company + ')\nWhatsApp: ' + phone + '\nEmail: ' + email + '\nActive Sites: ' + sites + '\n\nHost: brift.official@gmail.com / +91 9037532036');
-          btnGoogle.href = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + calTitle + '&dates=' + formatUTC(startDt) + '/' + formatUTC(endDt) + '&details=' + calDetails + '&add=brift.official@gmail.com&location=Google+Meet+/+WhatsApp+Call';
-        }
-
-        // 2. Download .ics iCalendar file
-        const btnIcs = document.getElementById('btn-download-ics');
-        if (btnIcs) {
-          btnIcs.onclick = function() {
-            const icsContent = [
-              'BEGIN:VCALENDAR',
-              'VERSION:2.0',
-              'PRODID:-//Brift//Walkthrough Demo//EN',
-              'CALSCALE:GREGORIAN',
-              'METHOD:REQUEST',
-              'BEGIN:VEVENT',
-              'SUMMARY:Brift Construction OS Walkthrough - ' + company,
-              'DESCRIPTION:1-on-1 walkthrough demo for ' + name + ' (' + company + ') with Brift product team. Attendee phone: ' + phone,
-              'DTSTART:' + formatUTC(startDt),
-              'DTEND:' + formatUTC(endDt),
-              'STATUS:CONFIRMED',
-              'ORGANIZER;CN=Brift Operations:mailto:brift.official@gmail.com',
-              'ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;CN=' + name + ':mailto:' + email,
-              'END:VEVENT',
-              'END:VCALENDAR'
-            ].join('\r\n');
-
-            const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = 'brift-walkthrough-' + company.replace(/[^a-zA-Z0-9]/g, '-') + '.ics';
-            link.click();
-          };
-        }
-
-        // 3. Direct WhatsApp confirmation
-        const btnWa = document.getElementById('btn-whatsapp-conf');
-        if (btnWa) {
-          const waMsg = encodeURIComponent('Hi Brift team, I just scheduled a walkthrough session for ' + formattedDate + ' at ' + selectedSlot + ' IST.\n\nCompany: ' + company + '\nName: ' + name + '\nSites: ' + sites);
-          btnWa.href = 'https://wa.me/919037532036?text=' + waMsg;
-        }
-
-        // Show confirmation view
-        form.classList.add('hidden');
-        successBox.classList.remove('hidden');
-
-        const demoContainer = document.getElementById('demo');
-        if (demoContainer) {
-          demoContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-      });
-    }
-
-    // 9. Master Initialization
+    // 8. Master Initialization
     function initializeApp() {
       initMotionAnimations();
       initCounters();
       initStoryNavigator();
       initContinuousMovieAutoPlay();
-      initDemoCalendarScheduler();
     }
 
     if (document.readyState === 'loading') {

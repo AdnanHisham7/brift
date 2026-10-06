@@ -54,7 +54,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             <a href="#act-6" class="text-amber-700 font-medium hover:text-amber-800 transition-colors">Act 06: Profit Radar</a>
           </li>
           <li>
-            <a href="#demo" class="text-slate-600 hover:text-blue transition-colors">Act 07: Book a Walkthrough</a>
+            <a href={`${base}/book-demo`} class="text-slate-600 hover:text-blue transition-colors">Act 07: Book a Walkthrough</a>
           </li>
         </ul>
       </div>
@@ -76,7 +76,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           </li>
           <li class="pt-2">
             <a
-              href="#demo"
+              href={`${base}/book-demo`}
               class="inline-flex items-center gap-1.5 justify-center rounded-xl bg-blue hover:bg-blue-hover py-2.5 px-5 text-xs font-bold text-white shadow-sm transition-all active:scale-95"
             >
               <span>Reserve Private Demo</span>

@@ -49,6 +49,100 @@
   outline-offset: 2px;
 }
 
+/* Lenis Smooth Scroll Engine */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* 3D Hardware Canvas & Slicing Stage */
+.theater-3d-stage {
+  perspective: 1400px;
+  transform-style: preserve-3d;
+}
+
+.device-3d-canvas {
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: box-shadow 0.4s ease;
+}
+
+.device-sheen-layer {
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0) 35%,
+    rgba(255, 255, 255, 0.18) 48%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0.18) 52%,
+    rgba(255, 255, 255, 0) 65%,
+    transparent 100%
+  );
+  transform: translateZ(40px);
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+/* Sliced Z-Depth Physics Badges */
+.slice-z-front {
+  transform: translateZ(80px);
+  will-change: transform;
+}
+
+.slice-z-high {
+  transform: translateZ(110px);
+  will-change: transform;
+}
+
+.slice-z-mid {
+  transform: translateZ(50px);
+  will-change: transform;
+}
+
+/* Laser Scan Line for Challan OCR */
+.ocr-scan-beam {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, #3A46E1 50%, transparent 100%);
+  box-shadow: 0 0 12px 2px rgba(58, 70, 225, 0.7);
+  animation: scan-vertical 2.6s ease-in-out infinite alternate;
+}
+
+@keyframes scan-vertical {
+  0% { top: 8%; opacity: 0.2; }
+  20% { opacity: 0.9; }
+  80% { opacity: 0.9; }
+  100% { top: 92%; opacity: 0.2; }
+}
+
+/* Initial Load Fade Transition */
+.app-load-fade {
+  opacity: 0;
+  animation: initialPageFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes initialPageFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* Top Scroll Progress Bar */
 #scroll-progress-bar {
   position: fixed;

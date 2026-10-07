@@ -18,18 +18,47 @@ import {
   Mail,
   ChevronLeft,
   ChevronRight,
+  ChevronDown,
   Package,
   FileCheck2,
   PhoneCall
 } from 'lucide-astro';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const faqItems = [
+  {
+    question: "Does Brift work in basements or remote locations with zero cellular reception?",
+    answer: "Yes, 100%. Brift is engineered offline-first. Site supervisors can record morning attendance, snap material delivery challans, and log subcontractor cash advances completely offline. Everything is stored with cryptographic timestamps on the device and automatically syncs to your central office dashboard the instant connectivity resumes."
+  },
+  {
+    question: "Can non-technical site supervisors with basic smartphone skills use Brift easily?",
+    answer: "Absolutely. Brift was battle-tested on active slabs with SIMAK Builders. The supervisor interface uses simple visual cards, big tap buttons, photo uploads, and vernacular language support (Hindi, Malayalam, Tamil, English). Field supervisors learn the entire daily routine in under 15 minutes."
+  },
+  {
+    question: "How does Brift eliminate Saturday muster roll disputes and ghost workers?",
+    answer: "In traditional paper registers or WhatsApp groups, names are added retroactively or disputed every Saturday. Brift locks worker attendance at the site gate with timestamps and photo proof. Saturday wage settlements are auto-computed from locked daily records, eliminating duplicate headcounts and billing arguments entirely."
+  },
+  {
+    question: "How does delivery challan photo verification prevent supplier billing fraud?",
+    answer: "Before any truck unloads cement bags or steel rebars, the site supervisor photographs the physical delivery challan in Brift. Central procurement instantly matches quantities against approved purchase orders (POs) in real time. Duplicate bills, short deliveries, and rate inflation are flagged before cheques are issued."
+  },
+  {
+    question: "How fast can our company and active sites be onboarded?",
+    answer: "Within 48 hours. Our solutions team structures your project hierarchy, sets up contractor lists, and trains your site engineers. You start capturing verified operational data on day two without disrupting ongoing site work."
+  },
+  {
+    question: "Can we export audit reports for our Chartered Accountant (CA) or bank financing?",
+    answer: "Yes. Brift generates 7 master PDF audit registers with one click: Daily Muster Roll Summary, Material Stock & Challan Register, Subcontractor Advance & Settlement Ledger, and Project Cash Flow. All reports are formatted for immediate CA and banking compliance."
+  }
+];
 ---
 
 <Layout
   title="Brift — Construction Operations Platform Built for Owners"
   description="Replace scattered site chats and paper registers with one reliable system. Brift gives civil contractors and builders complete control over daily labor attendance, material delivery challans, subcontractor cash advances, and project cash flow."
   schemaType="home"
+  faqItems={faqItems}
 >
   <!-- Background Blueprint Accent -->
   <div class="fixed inset-0 blueprint-grid opacity-25 pointer-events-none -z-20" aria-hidden="true"></div>
@@ -148,73 +177,77 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           OPERATIONAL LEAKS
         </span>
         <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-ink leading-tight">
-          Where Money Silently Leaks on Construction Sites
+          Where Construction Profits Quietly Drain Every Month
         </h2>
-        <p class="text-sm sm:text-base text-muted">
-          Contractors lose 3% to 6% of project margins every month through manual logs and delayed reporting:
+        <p class="text-xs sm:text-base text-muted">
+          General contractors and builders lose 3% to 7% of total project revenue through these three cracks:
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
         
-        <!-- Leak 1 -->
-        <div data-motion="fade-up" data-delay="100" class="motion-card-hover rounded-2xl border border-line bg-white p-6 shadow-xs space-y-3">
+        <!-- Leak 1: Muster Roll Inflation -->
+        <div data-motion="fade-up" data-delay="100" class="rounded-2xl border border-line bg-white p-6 sm:p-7 shadow-xs hover:border-red-200 hover:shadow-md transition-all space-y-4">
           <div class="flex items-center justify-between">
-            <span class="text-xs font-mono font-bold uppercase text-ink bg-slate-100 px-2.5 py-0.5 rounded flex items-center gap-1.5">
-              <Users class="w-3.5 h-3.5 text-slate-600" />
-              <span>Leak 01</span>
+            <span class="h-10 w-10 rounded-xl bg-red-50 text-red-700 flex items-center justify-center font-bold font-mono text-sm">
+              01
             </span>
-            <span class="text-xs font-mono font-bold text-red-600">-₹40,000 / mo</span>
+            <span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-red-100 text-red-800">
+              -₹40,000/mo avg
+            </span>
           </div>
-          <h3 class="text-lg font-bold text-ink">Ghost Labor & Muster Inflation</h3>
+          <h3 class="text-lg sm:text-xl font-bold text-ink">Ghost Labor & Muster Inflation</h3>
           <p class="text-xs sm:text-sm text-muted leading-relaxed">
-            Attendance taken on paper notebooks or verbal calls allows extra unverified workers to be added to the Saturday tally before billing.
+            Attendance recorded in torn pocket diaries or WhatsApp groups hours after shift start. Ghost workers and disputed overtime add ₹30,000 to ₹50,000 unverified wages every Saturday payout.
           </p>
-          <div class="pt-2 border-t border-slate-100 text-xs text-blue font-semibold flex items-center gap-1.5">
-            <CheckCircle2 class="w-3.5 h-3.5 text-emerald-600" />
-            <span>Brift Fix: Offline locked gate muster roll</span>
+          <div class="pt-2 border-t border-line text-xs font-semibold text-blue flex items-center gap-1.5">
+            <Check class="w-3.5 h-3.5" />
+            <span>Solved by: Gate-locked photo muster</span>
           </div>
         </div>
 
-        <!-- Leak 2 -->
-        <div data-motion="fade-up" data-delay="200" class="motion-card-hover rounded-2xl border border-line bg-white p-6 shadow-xs space-y-3">
+        <!-- Leak 2: Material Challan Mismatches -->
+        <div data-motion="fade-up" data-delay="200" class="rounded-2xl border border-line bg-white p-6 sm:p-7 shadow-xs hover:border-red-200 hover:shadow-md transition-all space-y-4">
           <div class="flex items-center justify-between">
-            <span class="text-xs font-mono font-bold uppercase text-ink bg-slate-100 px-2.5 py-0.5 rounded flex items-center gap-1.5">
-              <Truck class="w-3.5 h-3.5 text-slate-600" />
-              <span>Leak 02</span>
+            <span class="h-10 w-10 rounded-xl bg-red-50 text-red-700 flex items-center justify-center font-bold font-mono text-sm">
+              02
             </span>
-            <span class="text-xs font-mono font-bold text-red-600">-₹80,000 / mo</span>
+            <span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-red-100 text-red-800">
+              -₹80,000/mo avg
+            </span>
           </div>
-          <h3 class="text-lg font-bold text-ink">Unverified Delivery Challans</h3>
+          <h3 class="text-lg sm:text-xl font-bold text-ink">Challans Missing at Final Invoicing</h3>
           <p class="text-xs sm:text-sm text-muted leading-relaxed">
-            Trucks arrive and slips are signed in pencil. Without photo proof of unloaded bags, contractors pay bills for materials never received on site.
+            Cement and steel arrive on site, delivery notes get stained or lost in supervisor pockets. Month-end vendor bills get paid based on vendor statements without matched delivery proof.
           </p>
-          <div class="pt-2 border-t border-slate-100 text-xs text-blue font-semibold flex items-center gap-1.5">
-            <CheckCircle2 class="w-3.5 h-3.5 text-emerald-600" />
-            <span>Brift Fix: Gate photo challan match against PO</span>
+          <div class="pt-2 border-t border-line text-xs font-semibold text-blue flex items-center gap-1.5">
+            <Check class="w-3.5 h-3.5" />
+            <span>Solved by: Immediate challan photo matching</span>
           </div>
         </div>
 
-        <!-- Leak 3 -->
-        <div data-motion="fade-up" data-delay="300" class="motion-card-hover rounded-2xl border border-line bg-white p-6 shadow-xs space-y-3">
+        <!-- Leak 3: Subcontractor Cash Advances -->
+        <div data-motion="fade-up" data-delay="300" class="rounded-2xl border border-line bg-white p-6 sm:p-7 shadow-xs hover:border-red-200 hover:shadow-md transition-all space-y-4">
           <div class="flex items-center justify-between">
-            <span class="text-xs font-mono font-bold uppercase text-ink bg-slate-100 px-2.5 py-0.5 rounded flex items-center gap-1.5">
-              <Wallet class="w-3.5 h-3.5 text-slate-600" />
-              <span>Leak 03</span>
+            <span class="h-10 w-10 rounded-xl bg-red-50 text-red-700 flex items-center justify-center font-bold font-mono text-sm">
+              03
             </span>
-            <span class="text-xs font-mono font-bold text-red-600">-₹70,000 / mo</span>
+            <span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-red-100 text-red-800">
+              -₹70,000/mo avg
+            </span>
           </div>
-          <h3 class="text-lg font-bold text-ink">Untracked Pocket Advances</h3>
+          <h3 class="text-lg sm:text-xl font-bold text-ink">Forgotten Cash Advance Deductions</h3>
           <p class="text-xs sm:text-sm text-muted leading-relaxed">
-            Site engineers hand out cash advances to subcontractors and record them in pocket diaries, leading to bitter disputes at final settlement.
+            Site engineers hand out ₹25,000 or ₹50,000 cash for urgent materials or subcontractor emergency wages. Forgotten notes mean advances are missed during stage running bills.
           </p>
-          <div class="pt-2 border-t border-slate-100 text-xs text-blue font-semibold flex items-center gap-1.5">
-            <CheckCircle2 class="w-3.5 h-3.5 text-emerald-600" />
-            <span>Brift Fix: Instant auto-deduct ledger on payouts</span>
+          <div class="pt-2 border-t border-line text-xs font-semibold text-blue flex items-center gap-1.5">
+            <Check class="w-3.5 h-3.5" />
+            <span>Solved by: Auto-deduct advance ledger</span>
           </div>
         </div>
 
       </div>
+
     </section>
 
     <!-- ========================================================================= -->
@@ -261,7 +294,15 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             </div>
             <!-- Mobile Fallback Image -->
             <div class="block lg:hidden pt-3">
-              <img src={`${base}/images/brift_muster_attendance.jpg`} alt="Muster Roll Log" class="w-full h-auto rounded-xl border border-line shadow-sm" />
+              <div class="rounded-xl border border-line overflow-hidden shadow-sm">
+                <img
+                  src={`${base}/images/brift_muster_attendance.jpg`}
+                  alt="Muster Roll Log at Site Gate"
+                  class="w-full h-auto object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
             </div>
           </div>
 
@@ -285,7 +326,15 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             </div>
             <!-- Mobile Fallback Image -->
             <div class="block lg:hidden pt-3">
-              <img src={`${base}/images/brift_material_challan.jpg`} alt="Material Challan Verification" class="w-full h-auto rounded-xl border border-line shadow-sm" />
+              <div class="rounded-xl border border-line overflow-hidden shadow-sm">
+                <img
+                  src={`${base}/images/brift_material_challan.jpg`}
+                  alt="Material Challan Verification"
+                  class="w-full h-auto object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
             </div>
           </div>
 
@@ -307,13 +356,17 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
               <CheckCircle2 class="w-4 h-4 text-emerald-600 shrink-0" />
               <span><strong>Result:</strong> Zero forgotten pocket diary advances. Both parties see the same audited record.</span>
             </div>
-            <!-- Mobile Fallback Card -->
-            <div class="block lg:hidden pt-3 p-4 rounded-xl border border-line bg-white shadow-sm space-y-2">
-              <div class="flex items-center justify-between text-xs">
-                <span class="font-bold text-ink">Subcontractor Electrical Settlement</span>
-                <span class="font-mono text-emerald-600 font-bold">Auto-Deducted</span>
+            <!-- Mobile Fallback Image (No Gaps) -->
+            <div class="block lg:hidden pt-3">
+              <div class="rounded-xl border border-line overflow-hidden shadow-sm bg-slate-900">
+                <img
+                  src={`${base}/images/brift_cash_advance.png`}
+                  alt="Subcontractor cash advance and auto-deduction settlement ledger in Brift"
+                  class="w-full h-auto object-cover object-top"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <div class="text-xs text-muted">Running Bill #04 • Advance ₹35,000 locked to measurement payment</div>
             </div>
           </div>
 
@@ -335,13 +388,17 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
               <CheckCircle2 class="w-4 h-4 text-emerald-600 shrink-0" />
               <span><strong>Result:</strong> Complete peace of mind and verified profit margins across all active sites.</span>
             </div>
-            <!-- Mobile Fallback Card -->
-            <div class="block lg:hidden pt-3 p-4 rounded-xl border border-line bg-white shadow-sm space-y-2">
-              <div class="flex items-center justify-between text-xs">
-                <span class="font-bold text-ink">Multi-Site Executive Overview</span>
-                <span class="font-mono text-blue font-bold">4 Sites Synced</span>
+            <!-- Mobile Fallback Image (No Gaps) -->
+            <div class="block lg:hidden pt-3">
+              <div class="rounded-xl border border-line overflow-hidden shadow-sm bg-slate-900">
+                <img
+                  src={`${base}/images/brift_admin_dashboard.png`}
+                  alt="Multi-Site Executive Overview Dashboard in Brift"
+                  class="w-full h-auto object-cover object-top"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <div class="text-xs text-muted">Company Funds: ₹28,50,000 • Receivables: ₹17,20,000</div>
             </div>
           </div>
 
@@ -375,6 +432,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                   src={`${base}/images/brift_muster_attendance.jpg`}
                   alt="Site attendance and daily photo update feed"
                   class="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <!-- Sliced Physics Badge Layer 1 -->
@@ -398,6 +457,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                   src={`${base}/images/brift_material_challan.jpg`}
                   alt="Materials stock ledger and delivery intake"
                   class="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <!-- Sliced Physics Badge Layer 2 -->
@@ -414,23 +475,16 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
               </div>
             </div>
 
-            <!-- Screen Slide 3: Cash Advances Auto-Deductions -->
+            <!-- Screen Slide 3: Cash Advances Auto-Deductions (Real UI Image - No Gap) -->
             <div id="stage-slide-3" class="stage-screen-slide is-inactive">
-              <div class="relative w-full h-[410px] rounded-xl overflow-hidden border border-line bg-slate-50 p-6 flex flex-col justify-between">
-                <div class="space-y-3">
-                  <div class="flex items-center justify-between border-b border-line pb-3">
-                    <span class="font-bold text-sm text-ink">Contractor Advance Ledger</span>
-                    <span class="font-mono text-xs font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">Auto-Deducted</span>
-                  </div>
-                  <div class="p-4 rounded-xl bg-white border border-line space-y-2">
-                    <div class="text-xs text-muted">Subcontractor: <strong>Apex Electricals</strong></div>
-                    <div class="text-sm font-bold text-ink">Cash Advance Requested: ₹35,000</div>
-                    <div class="text-xs text-emerald-700 font-mono">Deducted from Saturday Running Bill #04</div>
-                  </div>
-                </div>
-                <div class="p-3 rounded-lg bg-blue-soft border border-blue/20 text-xs text-blue font-semibold">
-                  ✓ Recorded with named supervisor timestamp
-                </div>
+              <div class="relative w-full h-[410px] rounded-xl overflow-hidden border border-line shadow-xs bg-slate-900">
+                <img
+                  src={`${base}/images/brift_cash_advance.png`}
+                  alt="Subcontractor cash advance and auto-deduction settlement ledger in Brift"
+                  class="w-full h-full object-cover object-top"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <!-- Sliced Physics Badge Layer 3 -->
               <div class="physics-badge-layer slice-z-high bottom-6 left-6 rounded-xl border border-white/95 bg-white/95 backdrop-blur-md p-3 shadow-xl">
@@ -446,28 +500,16 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
               </div>
             </div>
 
-            <!-- Screen Slide 4: Owner Executive Multi-Site Dashboard -->
+            <!-- Screen Slide 4: Owner Executive Multi-Site Dashboard (Real UI Image - No Gap) -->
             <div id="stage-slide-4" class="stage-screen-slide is-inactive">
-              <div class="relative w-full h-[410px] rounded-xl overflow-hidden border border-line bg-slate-50 p-6 flex flex-col justify-between">
-                <div class="space-y-3">
-                  <div class="flex items-center justify-between border-b border-line pb-3">
-                    <span class="font-bold text-sm text-ink">Multi-Site Executive Overview</span>
-                    <span class="font-mono text-xs font-bold text-blue bg-blue/10 px-2 py-0.5 rounded">4 Sites Active</span>
-                  </div>
-                  <div class="grid grid-cols-2 gap-3">
-                    <div class="p-3 rounded-xl bg-white border border-line">
-                      <span class="text-[10px] font-mono text-muted uppercase block">Company Funds</span>
-                      <strong class="text-lg font-black text-emerald-600 block">₹28,50,000</strong>
-                    </div>
-                    <div class="p-3 rounded-xl bg-white border border-line">
-                      <span class="text-[10px] font-mono text-muted uppercase block">To Be Received</span>
-                      <strong class="text-lg font-black text-blue block">₹17,20,000</strong>
-                    </div>
-                  </div>
-                </div>
-                <div class="p-3 rounded-lg bg-emerald-50 border border-emerald-200 text-xs text-emerald-900 font-semibold">
-                  ✓ 7 Master Audit Registers Reconciled in Real Time
-                </div>
+              <div class="relative w-full h-[410px] rounded-xl overflow-hidden border border-line shadow-xs bg-slate-900">
+                <img
+                  src={`${base}/images/brift_admin_dashboard.png`}
+                  alt="Multi-site executive owner dashboard and PDF audit reports in Brift"
+                  class="w-full h-full object-cover object-top"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <!-- Sliced Physics Badge Layer 4 -->
               <div class="physics-badge-layer slice-z-high bottom-6 left-6 rounded-xl border border-white/95 bg-white/95 backdrop-blur-md p-3 shadow-xl">
@@ -525,7 +567,49 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     </section>
 
     <!-- ========================================================================= -->
-    <!-- 5. DIRECT DEMO BOOKING (FRICTIONLESS CALENDAR SCHEDULER AT FINISH LINE)    -->
+    <!-- 5. FREQUENTLY ASKED QUESTIONS (BUYER OBJECTION REMOVAL & SEO SCHEMA)       -->
+    <!-- ========================================================================= -->
+    <section id="faq" class="relative">
+      <div data-motion="fade-up" class="text-center max-w-3xl mx-auto mb-10 sm:mb-14 space-y-2.5">
+        <span class="inline-block text-xs font-mono font-bold uppercase tracking-wider text-blue bg-blue/10 border border-blue/20 px-3.5 py-1 rounded-full">
+          CLARITY & ASSURANCE
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-ink leading-tight">
+          Questions Construction Owners Ask Before Switching
+        </h2>
+        <p class="text-xs sm:text-base text-muted">
+          Straightforward answers on offline capabilities, supervisor adoption, and site onboarding.
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto space-y-3.5">
+        {faqItems.map((item, idx) => (
+          <div data-motion="fade-up" data-delay={String((idx + 1) * 80)} class="faq-item rounded-2xl border border-line bg-white shadow-xs overflow-hidden transition-all duration-200 hover:border-blue/30">
+            <button
+              type="button"
+              class="faq-toggle w-full px-5 sm:px-7 py-4 sm:py-5 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none"
+              aria-expanded={idx === 0 ? "true" : "false"}
+              aria-controls={`faq-answer-${idx}`}
+            >
+              <span class="text-sm sm:text-base font-bold text-ink flex items-center gap-3">
+                <span class="text-xs font-mono font-bold text-blue shrink-0">0{idx + 1}.</span>
+                <span>{item.question}</span>
+              </span>
+              <ChevronDown class={`faq-icon w-4 h-4 text-muted transition-transform duration-300 shrink-0 ${idx === 0 ? 'rotate-180 text-blue' : ''}`} />
+            </button>
+            <div
+              id={`faq-answer-${idx}`}
+              class={`faq-content px-5 sm:px-7 pb-5 text-xs sm:text-sm text-muted leading-relaxed border-t border-line/60 pt-3 ${idx === 0 ? 'block' : 'hidden'}`}
+            >
+              {item.answer}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 6. HIGH-CONVERTING DEMO BOOKING (DUAL-PATH: WHATSAPP OR SMART CALENDAR)   -->
     <!-- ========================================================================= -->
     <section id="book-demo" class="relative pt-4">
       <div data-motion="fade-up" class="text-center max-w-3xl mx-auto mb-8 sm:mb-12 space-y-2.5">
@@ -536,357 +620,409 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           Ready to Stop Site Leaks? Book Your 1-on-1 Walkthrough
         </h2>
         <p class="text-sm sm:text-base text-muted leading-relaxed">
-          Select a date and time slot below. We will show you how Brift tracks daily muster rolls, vendor delivery challans, and cash advances live in the software — tailored to your active site count.
+          In 30 minutes, see how daily attendance, material challans, and contractor advances are locked live in the software. Choose whichever scheduling approach is most comfortable for you:
         </p>
       </div>
 
-      <!-- Main Booking Container (Embedded) -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start max-w-6xl mx-auto">
-        
-        <!-- Left: Walkthrough Notices & Trust (5 Cols) -->
-        <div data-motion="fade-right" data-delay="100" class="lg:col-span-5 space-y-5">
-          <div class="rounded-2xl border border-line bg-white p-6 shadow-xs space-y-5">
-            <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-muted">
-              What to Expect
-            </h3>
+      <!-- High-Impact Dual-Path Container -->
+      <div class="max-w-6xl mx-auto space-y-6">
 
-            <div class="space-y-4 text-xs sm:text-sm">
-              <div class="flex items-start gap-3">
-                <Clock class="w-4 h-4 text-blue shrink-0 mt-0.5" />
-                <div>
-                  <span class="font-bold text-ink block">30 Minutes Focused Session</span>
-                  <span class="text-muted text-xs">Direct walkthrough of the platform tailored to your project operations.</span>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-3">
-                <Calendar class="w-4 h-4 text-blue shrink-0 mt-0.5" />
-                <div>
-                  <span class="font-bold text-ink block">Google Meet Video Link</span>
-                  <span class="text-muted text-xs">A meeting invite and video link will be sent to your email immediately.</span>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-3">
-                <ShieldCheck class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                <div>
-                  <span class="font-bold text-ink block">Confidential & Zero Pressure</span>
-                  <span class="text-muted text-xs">No spam or aggressive sales follow-ups. Direct discussion with our solutions desk.</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="pt-4 border-t border-line space-y-2">
-              <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-muted block">
-                Key Areas Covered:
+        <!-- PATH A: INSTANT 1-CLICK WHATSAPP BOOKING (FASTEST • ZERO FORM FATIGUE) -->
+        <div data-motion="fade-up" class="rounded-2xl border-2 border-emerald-500/30 bg-emerald-50/50 p-5 sm:p-7 shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
+          <div class="space-y-1.5 text-left">
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-emerald-600 text-white">
+                ⚡ FASTEST OPTION • 30 SECONDS
               </span>
-              <ul class="space-y-1.5 text-xs sm:text-sm text-ink">
-                <li class="flex items-center gap-2">
-                  <CheckCircle2 class="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                  <span>Offline attendance & muster roll locking</span>
-                </li>
-                <li class="flex items-center gap-2">
-                  <CheckCircle2 class="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                  <span>Material delivery challan photo verification</span>
-                </li>
-                <li class="flex items-center gap-2">
-                  <CheckCircle2 class="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                  <span>Contractor advances & auto-deduction settlements</span>
-                </li>
-                <li class="flex items-center gap-2">
-                  <CheckCircle2 class="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                  <span>Live owner dashboard & multi-site reporting</span>
-                </li>
-              </ul>
+              <span class="text-xs text-emerald-900 font-semibold hidden sm:inline">Instant human confirmation</span>
             </div>
-          </div>
-
-          <!-- Immediate WhatsApp / Call Box -->
-          <div class="rounded-2xl border border-line bg-slate-50 p-5 text-xs text-ink space-y-2">
-            <span class="font-bold uppercase tracking-wider text-[11px] font-mono text-ink block">
-              Prefer instant scheduling?
-            </span>
-            <p class="text-muted text-xs">
-              Chat directly with our team on WhatsApp or call our desk:
+            <h3 class="text-lg sm:text-2xl font-bold text-ink">Prefer Booking Directly via WhatsApp?</h3>
+            <p class="text-xs sm:text-sm text-slate-600 max-w-2xl leading-relaxed">
+              Skip typing forms. Message our Solutions Desk on WhatsApp. We will immediately confirm your 30-minute Google Meet or phone walkthrough without any hassle.
             </p>
-            <div class="flex flex-wrap gap-2 pt-1">
-              <a
-                href="https://wa.me/919037532036?text=Hi%20Brift%20team,%20I%20would%20like%20to%20schedule%20a%20demo%20for%20my%20construction%20company"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 font-semibold transition-all shadow-xs"
-              >
-                <MessageSquare class="w-3.5 h-3.5" />
-                <span>WhatsApp: +91 9037532036</span>
-              </a>
-              <a
-                href="mailto:brift.official@gmail.com"
-                class="inline-flex items-center gap-1.5 rounded-lg bg-white border border-line text-ink hover:bg-slate-100 px-3 py-1.5 font-medium transition-all"
-              >
-                <Mail class="w-3.5 h-3.5 text-muted" />
-                <span>brift.official@gmail.com</span>
-              </a>
-            </div>
           </div>
+          <a
+            href="https://wa.me/919037532036?text=Hi%20Brift%20team,%20I%20would%20like%20to%20schedule%20a%2030-minute%20walkthrough%20of%20Brift%20for%20my%20construction%20company"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white px-6 sm:px-7 py-3.5 sm:py-4 text-xs sm:text-sm font-bold shadow-sm hover:shadow-md transition-all whitespace-nowrap shrink-0 group active:scale-98"
+          >
+            <MessageSquare class="w-4 h-4" />
+            <span>Book via WhatsApp Desk</span>
+            <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </a>
         </div>
 
-        <!-- Right: Interactive Scheduling Form (7 Cols) -->
-        <div data-motion="zoom-in" data-delay="150" class="lg:col-span-7">
-          <div class="rounded-2xl border border-line bg-white p-6 sm:p-8 shadow-sm relative">
-            
-            <div class="border-b border-line pb-3 mb-5 flex items-center justify-between">
-              <div>
-                <span class="text-[11px] font-mono font-semibold uppercase tracking-wider text-blue block">Direct Scheduling</span>
-                <h3 class="text-xl sm:text-2xl font-bold text-ink">Select Date & Time Slot</h3>
-              </div>
-              <span class="text-[10px] font-mono text-muted bg-slate-100 border border-line px-2.5 py-1 rounded-full font-medium">
-                IST (UTC+5:30)
-              </span>
-            </div>
+        <!-- PATH B: SMART-DEFAULT CALENDAR SCHEDULER -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start pt-2">
+          
+          <!-- Left: Walkthrough Notices & Trust (5 Cols) -->
+          <div data-motion="fade-right" data-delay="100" class="lg:col-span-5 space-y-5">
+            <div class="rounded-2xl border border-line bg-white p-6 shadow-xs space-y-5">
+              <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-muted">
+                What to Expect in Your Session
+              </h3>
 
-            <!-- Form -->
-            <form id="lead-demo-form" class="space-y-5">
-              
-              <!-- 1. CALENDAR & SLOTS -->
-              <div class="space-y-3.5">
-                <div class="flex items-center justify-between">
-                  <span class="text-xs font-mono font-bold text-ink uppercase tracking-wide flex items-center gap-1.5">
-                    <Calendar class="w-4 h-4 text-blue" />
-                    <span>1. Preferred Date</span>
-                  </span>
-                  <span id="cal-selected-day-label" class="text-xs font-mono text-blue font-bold"></span>
+              <div class="space-y-4 text-xs sm:text-sm">
+                <div class="flex items-start gap-3">
+                  <Clock class="w-4 h-4 text-blue shrink-0 mt-0.5" />
+                  <div>
+                    <span class="font-bold text-ink block">30 Minutes Focused Walkthrough</span>
+                    <span class="text-muted text-xs">Direct review of the software tailored to your active site count.</span>
+                  </div>
                 </div>
 
-                <!-- Month & Grid Widget -->
-                <div class="rounded-xl border border-line bg-slate-50/70 p-3 sm:p-4">
-                  <div class="flex items-center justify-between pb-2.5 mb-2 border-b border-line">
-                    <span id="cal-month-title" class="text-sm font-bold text-ink capitalize"></span>
-                    <div class="flex items-center gap-1">
-                      <button
-                        type="button"
-                        id="cal-prev-month-btn"
-                        class="p-1.5 rounded-lg border border-line bg-white hover:bg-slate-100 text-ink transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
-                        aria-label="Previous month"
-                      >
-                        <ChevronLeft class="w-4 h-4" />
-                      </button>
-                      <button
-                        type="button"
-                        id="cal-next-month-btn"
-                        class="p-1.5 rounded-lg border border-line bg-white hover:bg-slate-100 text-ink transition-colors cursor-pointer"
-                        aria-label="Next month"
-                      >
-                        <ChevronRight class="w-4 h-4" />
-                      </button>
+                <div class="flex items-start gap-3">
+                  <Calendar class="w-4 h-4 text-blue shrink-0 mt-0.5" />
+                  <div>
+                    <span class="font-bold text-ink block">Google Meet Video Link</span>
+                    <span class="text-muted text-xs">Immediate calendar invite and video link dispatched to your email.</span>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <ShieldCheck class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                  <div>
+                    <span class="font-bold text-ink block">Confidential & Zero Sales Pressure</span>
+                    <span class="text-muted text-xs">Direct technical discussion with our solutions desk. No aggressive sales spam.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pt-4 border-t border-line space-y-2">
+                <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-muted block">
+                  Key Systems You Will See Live:
+                </span>
+                <ul class="space-y-1.5 text-xs sm:text-sm text-ink">
+                  <li class="flex items-center gap-2">
+                    <CheckCircle2 class="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <span>Basement offline attendance & muster locking</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <CheckCircle2 class="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <span>Delivery challan photo matching against POs</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <CheckCircle2 class="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <span>Contractor cash advance auto-deduct ledger</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <CheckCircle2 class="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <span>Owner multi-site dashboard & 7 PDF audit logs</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Direct Desk Contact Card -->
+            <div class="rounded-2xl border border-line bg-slate-50 p-5 text-xs text-ink space-y-2.5">
+              <span class="font-bold uppercase tracking-wider text-[11px] font-mono text-ink block">
+                Have Quick Questions First?
+              </span>
+              <p class="text-muted text-xs">
+                Feel free to call or WhatsApp our engineering solutions desk directly:
+              </p>
+              <div class="flex flex-wrap gap-2 pt-1">
+                <a
+                  href="https://wa.me/919037532036"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 font-semibold transition-all shadow-xs"
+                >
+                  <MessageSquare class="w-3.5 h-3.5" />
+                  <span>WhatsApp: +91 9037532036</span>
+                </a>
+                <a
+                  href="mailto:brift.official@gmail.com"
+                  class="inline-flex items-center gap-1.5 rounded-lg bg-white border border-line text-ink hover:bg-slate-100 px-3 py-1.5 font-medium transition-all"
+                >
+                  <Mail class="w-3.5 h-3.5 text-muted" />
+                  <span>brift.official@gmail.com</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Scheduling Form (7 Cols) -->
+          <div data-motion="zoom-in" data-delay="150" class="lg:col-span-7">
+            <div class="rounded-2xl border border-line bg-white p-6 sm:p-8 shadow-sm relative">
+              
+              <div class="border-b border-line pb-3 mb-5 flex items-center justify-between">
+                <div>
+                  <span class="text-[11px] font-mono font-semibold uppercase tracking-wider text-blue block">Self-Serve Scheduler</span>
+                  <h3 class="text-xl sm:text-2xl font-bold text-ink">Select Date & Time Slot</h3>
+                </div>
+                <span class="text-[10px] font-mono text-muted bg-slate-100 border border-line px-2.5 py-1 rounded-full font-medium">
+                  IST (UTC+5:30)
+                </span>
+              </div>
+
+              <!-- Form -->
+              <form id="lead-demo-form" class="space-y-5">
+                
+                <!-- 1. CALENDAR & SLOTS (WITH SMART DEFAULT PRE-SELECTION) -->
+                <div class="space-y-3.5">
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs font-mono font-bold text-ink uppercase tracking-wide flex items-center gap-1.5">
+                      <Calendar class="w-4 h-4 text-blue" />
+                      <span>1. Preferred Date & Time</span>
+                    </span>
+                    <span id="cal-selected-day-label" class="text-xs font-mono text-blue font-bold"></span>
+                  </div>
+
+                  <!-- Slot Pre-Selected Banner -->
+                  <div id="slot-selection-summary" class="flex items-center justify-between rounded-xl bg-blue/10 border border-blue/20 px-3.5 py-2.5 text-xs text-blue-950">
+                    <div class="flex items-center gap-2 truncate">
+                      <CheckCircle2 class="w-4 h-4 text-blue shrink-0" />
+                      <span class="truncate">Reserved Slot: <strong id="selected-slot-text">Tomorrow @ 11:30 AM IST</strong></span>
+                    </div>
+                    <span class="text-[10px] font-mono text-blue-800 bg-blue-100 px-2 py-0.5 rounded font-bold shrink-0">30 MINS</span>
+                  </div>
+
+                  <!-- Month & Grid Widget -->
+                  <div class="rounded-xl border border-line bg-slate-50/70 p-3 sm:p-4">
+                    <div class="flex items-center justify-between pb-2.5 mb-2 border-b border-line">
+                      <span id="cal-month-title" class="text-sm font-bold text-ink capitalize"></span>
+                      <div class="flex items-center gap-1">
+                        <button
+                          type="button"
+                          id="cal-prev-month-btn"
+                          class="p-1.5 rounded-lg border border-line bg-white hover:bg-slate-100 text-ink transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+                          aria-label="Previous month"
+                        >
+                          <ChevronLeft class="w-4 h-4" />
+                        </button>
+                        <button
+                          type="button"
+                          id="cal-next-month-btn"
+                          class="p-1.5 rounded-lg border border-line bg-white hover:bg-slate-100 text-ink transition-colors cursor-pointer"
+                          aria-label="Next month"
+                        >
+                          <ChevronRight class="w-4 h-4" />
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- Days of Week Header -->
+                    <div class="grid grid-cols-7 gap-1 text-center text-[11px] font-mono font-semibold text-slate-400 mb-1">
+                      <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span class="text-rose-400">Sun</span>
+                    </div>
+
+                    <div id="cal-days-grid" class="grid grid-cols-7 gap-1 text-center"></div>
+                  </div>
+
+                  <!-- Time Slot Grid -->
+                  <div class="space-y-1.5 pt-1">
+                    <label class="block text-xs font-mono text-ink font-semibold">Time Slot (Tap to change) *</label>
+                    <div id="time-slots-grid" class="grid grid-cols-3 sm:grid-cols-6 gap-1.5"></div>
+                  </div>
+
+                  <input type="hidden" id="booking-date" name="scheduled_date" value="" required />
+                  <input type="hidden" id="booking-time" name="scheduled_time" value="" required />
+                </div>
+
+                <!-- 2. STREAMLINED ATTENDEE CONTACT DETAILS -->
+                <div class="space-y-3.5 pt-3 border-t border-line">
+                  <span class="text-xs font-mono font-bold text-ink uppercase tracking-wide flex items-center gap-1.5">
+                    <Building class="w-4 h-4 text-blue" />
+                    <span>2. Your Details</span>
+                  </span>
+
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                      <label for="demo-name" class="block text-xs font-medium text-ink mb-1">Full Name *</label>
+                      <input
+                        type="text"
+                        id="demo-name"
+                        name="name"
+                        required
+                        placeholder="e.g. Rajesh Kumar"
+                        class="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2 text-sm text-ink placeholder-slate-400 focus:border-blue focus:ring-1 focus:ring-blue focus:outline-none transition-colors"
+                      />
+                    </div>
+
+                    <div>
+                      <label for="demo-phone" class="block text-xs font-medium text-ink mb-1">WhatsApp / Phone *</label>
+                      <input
+                        type="tel"
+                        id="demo-phone"
+                        name="phone"
+                        required
+                        placeholder="+91 98765 43210"
+                        class="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2 text-sm text-ink placeholder-slate-400 focus:border-blue focus:ring-1 focus:ring-blue focus:outline-none transition-colors"
+                      />
                     </div>
                   </div>
 
-                  <!-- Days of Week Header -->
-                  <div class="grid grid-cols-7 gap-1 text-center text-[11px] font-mono font-semibold text-slate-400 mb-1">
-                    <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span class="text-rose-400">Sun</span>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                      <label for="demo-company" class="block text-xs font-medium text-ink mb-1">Company / Builder Name *</label>
+                      <input
+                        type="text"
+                        id="demo-company"
+                        name="company"
+                        required
+                        placeholder="e.g. Apex Builders & Contractors"
+                        class="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2 text-sm text-ink placeholder-slate-400 focus:border-blue focus:ring-1 focus:ring-blue focus:outline-none transition-colors"
+                      />
+                    </div>
+
+                    <div>
+                      <label for="demo-email" class="block text-xs font-medium text-ink mb-1">Work Email (for Google Meet invite) *</label>
+                      <input
+                        type="email"
+                        id="demo-email"
+                        name="email"
+                        required
+                        placeholder="rajesh@company.com"
+                        class="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2 text-sm text-ink placeholder-slate-400 focus:border-blue focus:ring-1 focus:ring-blue focus:outline-none transition-colors"
+                      />
+                    </div>
                   </div>
 
-                  <div id="cal-days-grid" class="grid grid-cols-7 gap-1 text-center"></div>
-                </div>
-
-                <!-- Time Slot Grid -->
-                <div class="space-y-1.5 pt-1">
-                  <label class="block text-xs font-mono text-ink font-semibold">2. Time Slot (30 Mins) *</label>
-                  <div id="time-slots-grid" class="grid grid-cols-3 sm:grid-cols-6 gap-1.5"></div>
-                </div>
-
-                <!-- Slot Summary Banner -->
-                <div id="slot-selection-summary" class="flex items-center justify-between rounded-xl bg-blue/10 border border-blue/20 px-3 py-2 text-xs text-blue-950">
-                  <div class="flex items-center gap-2 truncate">
-                    <Clock class="w-4 h-4 text-blue shrink-0" />
-                    <span class="truncate">Selected: <strong id="selected-slot-text"></strong></span>
-                  </div>
-                  <span class="text-[10px] font-mono text-blue-800 bg-blue-100 px-2 py-0.5 rounded font-bold shrink-0">30 MINS</span>
-                </div>
-
-                <input type="hidden" id="booking-date" name="scheduled_date" value="" required />
-                <input type="hidden" id="booking-time" name="scheduled_time" value="" required />
-              </div>
-
-              <!-- 2. ATTENDEE CONTACT DETAILS -->
-              <div class="space-y-3.5 pt-3 border-t border-line">
-                <span class="text-xs font-mono font-bold text-ink uppercase tracking-wide flex items-center gap-1.5">
-                  <Building class="w-4 h-4 text-blue" />
-                  <span>3. Your Information</span>
-                </span>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <div>
-                    <label for="demo-name" class="block text-xs font-medium text-ink mb-1">Full Name *</label>
-                    <input
-                      type="text"
-                      id="demo-name"
-                      name="name"
-                      required
-                      placeholder="e.g. Rajesh Kumar"
-                      class="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2 text-sm text-ink placeholder-slate-400 focus:border-blue focus:ring-1 focus:ring-blue focus:outline-none transition-colors"
-                    />
-                  </div>
-
-                  <div>
-                    <label for="demo-phone" class="block text-xs font-medium text-ink mb-1">WhatsApp / Phone *</label>
-                    <input
-                      type="tel"
-                      id="demo-phone"
-                      name="phone"
-                      required
-                      placeholder="+91 98765 43210"
-                      class="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2 text-sm text-ink placeholder-slate-400 focus:border-blue focus:ring-1 focus:ring-blue focus:outline-none transition-colors"
-                    />
-                  </div>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <div>
-                    <label for="demo-email" class="block text-xs font-medium text-ink mb-1">Work Email (for Google Meet) *</label>
-                    <input
-                      type="email"
-                      id="demo-email"
-                      name="email"
-                      required
-                      placeholder="name@company.com"
-                      class="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2 text-sm text-ink placeholder-slate-400 focus:border-blue focus:ring-1 focus:ring-blue focus:outline-none transition-colors"
-                    />
-                  </div>
-
-                  <div>
-                    <label for="demo-company" class="block text-xs font-medium text-ink mb-1">Company / Contractor Name *</label>
-                    <input
-                      type="text"
-                      id="demo-company"
-                      name="company"
-                      required
-                      placeholder="e.g. Apex Builders"
-                      class="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2 text-sm text-ink placeholder-slate-400 focus:border-blue focus:ring-1 focus:ring-blue focus:outline-none transition-colors"
-                    />
+                  <!-- 1-Click Active Projects Pills Selector -->
+                  <div class="space-y-1.5">
+                    <label class="block text-xs font-medium text-ink">Active Project Sites *</label>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="sites-pills-container">
+                      <button
+                        type="button"
+                        data-sites="1-2"
+                        class="sites-pill-btn py-2 px-3 text-xs font-medium rounded-lg border border-line bg-white text-ink hover:bg-slate-50 transition-all cursor-pointer text-center"
+                      >
+                        1–2 Sites
+                      </button>
+                      <button
+                        type="button"
+                        data-sites="3-5"
+                        class="sites-pill-btn is-active py-2 px-3 text-xs font-bold rounded-lg bg-blue text-white shadow-xs transition-all cursor-pointer text-center"
+                      >
+                        3–5 Sites
+                      </button>
+                      <button
+                        type="button"
+                        data-sites="6-10"
+                        class="sites-pill-btn py-2 px-3 text-xs font-medium rounded-lg border border-line bg-white text-ink hover:bg-slate-50 transition-all cursor-pointer text-center"
+                      >
+                        6–10 Sites
+                      </button>
+                      <button
+                        type="button"
+                        data-sites="10+"
+                        class="sites-pill-btn py-2 px-3 text-xs font-medium rounded-lg border border-line bg-white text-ink hover:bg-slate-50 transition-all cursor-pointer text-center"
+                      >
+                        10+ Multi-Site
+                      </button>
+                    </div>
+                    <input type="hidden" id="demo-sites" name="active_sites" value="3-5" />
                   </div>
                 </div>
 
-                <div>
-                  <label for="demo-sites" class="block text-xs font-medium text-ink mb-1">Active Projects Count *</label>
-                  <select
-                    id="demo-sites"
-                    name="active_sites"
-                    required
-                    class="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2 text-sm text-ink focus:border-blue focus:ring-1 focus:ring-blue focus:outline-none transition-colors"
-                  >
-                    <option value="1-2">1 to 2 Active Sites</option>
-                    <option value="3-5" selected>3 to 5 Active Sites</option>
-                    <option value="6-10">6 to 10 Active Sites</option>
-                    <option value="10+">10+ Multi-Site Projects</option>
-                  </select>
-                </div>
-              </div>
+                <!-- Error Alert -->
+                <div id="demo-error-box" class="hidden rounded-lg border border-rose-200 bg-rose-50 p-2.5 text-xs text-rose-800"></div>
 
-              <!-- Error Alert -->
-              <div id="demo-error-box" class="hidden rounded-lg border border-rose-200 bg-rose-50 p-2.5 text-xs text-rose-800"></div>
-
-              <!-- Submit Button -->
-              <div class="pt-1">
-                <button
-                  type="submit"
-                  id="submit-demo-btn"
-                  class="w-full rounded-xl bg-blue hover:bg-blue-hover text-white font-bold text-sm py-3.5 px-6 shadow-sm transition-all cursor-pointer active:scale-98 flex items-center justify-center gap-2 group"
-                >
-                  <Calendar class="w-4 h-4" />
-                  <span id="submit-demo-btn-text">Confirm Demo Booking</span>
-                  <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </div>
-
-              <div class="flex items-center justify-between text-[11px] text-muted pt-0.5">
-                <span>100% Confidential • Instant Google Meet Invite</span>
-                <span>Dispatched to brift.official@gmail.com</span>
-              </div>
-            </form>
-
-            <!-- Success State -->
-            <div id="demo-success-box" class="hidden py-6 space-y-5 text-center">
-              <div class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 mx-auto">
-                <CheckCircle2 class="w-7 h-7" />
-              </div>
-              <div class="space-y-1">
-                <h4 class="text-2xl font-bold text-ink">Demo Scheduled Successfully</h4>
-                <p class="text-xs sm:text-sm text-muted max-w-md mx-auto leading-relaxed">
-                  Your appointment slot has been confirmed and notification dispatched to <strong>brift.official@gmail.com</strong>.
-                </p>
-              </div>
-
-              <!-- Summary Card -->
-              <div class="rounded-xl border border-line bg-slate-50 p-4 space-y-3 text-left">
-                <div class="flex items-center justify-between border-b border-line pb-2">
-                  <span class="text-xs font-mono font-bold uppercase tracking-wider text-ink">Appointment Pass</span>
-                  <span class="text-[10px] font-mono text-emerald-800 bg-emerald-100 border border-emerald-300 px-2 py-0.5 rounded font-bold">
-                    CONFIRMED
-                  </span>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm">
-                  <div>
-                    <span class="text-muted block text-[11px]">Date & Time:</span>
-                    <strong id="conf-slot-time" class="text-ink"></strong>
-                  </div>
-                  <div>
-                    <span class="text-muted block text-[11px]">Format:</span>
-                    <strong class="text-ink">30-Min Google Meet</strong>
-                  </div>
-                  <div>
-                    <span class="text-muted block text-[11px]">Attendee:</span>
-                    <span id="conf-attendee" class="text-ink font-medium"></span>
-                  </div>
-                  <div>
-                    <span class="text-muted block text-[11px]">Contact:</span>
-                    <span id="conf-phone" class="text-ink font-mono"></span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Actions -->
-              <div class="space-y-2 pt-1">
-                <a
-                  id="btn-google-cal"
-                  href="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-blue hover:bg-blue-hover text-white py-3 px-4 text-xs sm:text-sm font-bold transition-all shadow-xs"
-                >
-                  <Calendar class="w-4 h-4" />
-                  <span>Add to Google Calendar</span>
-                </a>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <!-- Submit Button -->
+                <div class="pt-1">
                   <button
-                    type="button"
-                    id="btn-download-ics"
-                    class="inline-flex items-center justify-center gap-2 rounded-xl bg-white hover:bg-slate-50 text-ink border border-line py-2.5 px-3 text-xs font-semibold shadow-2xs transition-all cursor-pointer"
+                    type="submit"
+                    id="submit-demo-btn"
+                    class="w-full rounded-xl bg-blue hover:bg-blue-hover text-white font-bold text-sm py-3.5 px-6 shadow-sm transition-all cursor-pointer active:scale-98 flex items-center justify-center gap-2 group"
                   >
-                    <Calendar class="w-3.5 h-3.5 text-muted" />
-                    <span>Download .ics Calendar</span>
+                    <Calendar class="w-4 h-4" />
+                    <span id="submit-demo-btn-text">Confirm 30-Min Demo Booking</span>
+                    <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </button>
+                </div>
 
+                <div class="flex items-center justify-between text-[11px] text-muted pt-0.5">
+                  <span>100% Confidential • Instant Google Meet Link</span>
+                  <span>Notified to brift.official@gmail.com</span>
+                </div>
+              </form>
+
+              <!-- Success State -->
+              <div id="demo-success-box" class="hidden py-6 space-y-5 text-center">
+                <div class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 mx-auto">
+                  <CheckCircle2 class="w-7 h-7" />
+                </div>
+                <div class="space-y-1">
+                  <h4 class="text-2xl font-bold text-ink">Demo Scheduled Successfully</h4>
+                  <p class="text-xs sm:text-sm text-muted max-w-md mx-auto leading-relaxed">
+                    Your appointment slot has been confirmed and notification dispatched to <strong>brift.official@gmail.com</strong>.
+                  </p>
+                </div>
+
+                <!-- Summary Card -->
+                <div class="rounded-xl border border-line bg-slate-50 p-4 space-y-3 text-left">
+                  <div class="flex items-center justify-between border-b border-line pb-2">
+                    <span class="text-xs font-mono font-bold uppercase tracking-wider text-ink">Appointment Pass</span>
+                    <span class="text-[10px] font-mono text-emerald-800 bg-emerald-100 border border-emerald-300 px-2 py-0.5 rounded font-bold">
+                      CONFIRMED
+                    </span>
+                  </div>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm">
+                    <div>
+                      <span class="text-muted block text-[11px]">Date & Time:</span>
+                      <strong id="conf-slot-time" class="text-ink"></strong>
+                    </div>
+                    <div>
+                      <span class="text-muted block text-[11px]">Format:</span>
+                      <strong class="text-ink">30-Min Google Meet</strong>
+                    </div>
+                    <div>
+                      <span class="text-muted block text-[11px]">Attendee:</span>
+                      <span id="conf-attendee" class="text-ink font-medium"></span>
+                    </div>
+                    <div>
+                      <span class="text-muted block text-[11px]">Contact:</span>
+                      <span id="conf-phone" class="text-ink font-mono"></span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="space-y-2 pt-1">
                   <a
-                    id="btn-whatsapp-conf"
+                    id="btn-google-cal"
                     href="#"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white py-2.5 px-3 text-xs font-bold transition-all shadow-2xs"
+                    class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-blue hover:bg-blue-hover text-white py-3 px-4 text-xs sm:text-sm font-bold transition-all shadow-xs"
                   >
-                    <MessageSquare class="w-3.5 h-3.5" />
-                    <span>Confirm on WhatsApp</span>
+                    <Calendar class="w-4 h-4" />
+                    <span>Add to Google Calendar</span>
                   </a>
+
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <button
+                      type="button"
+                      id="btn-download-ics"
+                      class="inline-flex items-center justify-center gap-2 rounded-xl bg-white hover:bg-slate-50 text-ink border border-line py-2.5 px-3 text-xs font-semibold shadow-2xs transition-all cursor-pointer"
+                    >
+                      <Calendar class="w-3.5 h-3.5 text-muted" />
+                      <span>Download .ics Calendar</span>
+                    </button>
+
+                    <a
+                      id="btn-whatsapp-conf"
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white py-2.5 px-3 text-xs font-bold transition-all shadow-2xs"
+                    >
+                      <MessageSquare class="w-3.5 h-3.5" />
+                      <span>Confirm on WhatsApp</span>
+                    </a>
+                  </div>
                 </div>
+
+                <p class="text-center text-xs text-muted pt-1">
+                  Need to reschedule? WhatsApp us directly at <span class="font-medium text-ink">+91 9037532036</span>.
+                </p>
               </div>
 
-              <p class="text-center text-xs text-muted pt-1">
-                Need to reschedule? WhatsApp us directly at <span class="font-medium text-ink">+91 9037532036</span>.
-              </p>
             </div>
-
           </div>
+
         </div>
 
       </div>
@@ -894,7 +1030,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
   </div>
 
-  <!-- SCRIPT ENGINE: LENIS SMOOTH SCROLL, GSAP REVEALS & CALENDAR ENGINE -->
+  <!-- SCRIPT ENGINE: LENIS SMOOTH SCROLL, GSAP REVEALS, FAQ ACCORDION & CALENDAR ENGINE -->
   <script>
     import { gsap } from 'gsap';
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -1083,7 +1219,48 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       });
     }
 
-    // 5. INTERACTIVE CALENDAR & BOOKING SUBMISSION ENGINE
+    // 5. FAQ ACCORDION ENGINE
+    function initFaqAccordion() {
+      const items = document.querySelectorAll('.faq-item');
+      items.forEach((item) => {
+        const btn = item.querySelector('.faq-toggle') as HTMLButtonElement | null;
+        const content = item.querySelector('.faq-content') as HTMLElement | null;
+        const icon = item.querySelector('.faq-icon') as HTMLElement | null;
+
+        if (!btn || !content) return;
+
+        btn.addEventListener('click', () => {
+          const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+          // Close all items
+          items.forEach((other) => {
+            const otherBtn = other.querySelector('.faq-toggle');
+            const otherContent = other.querySelector('.faq-content');
+            const otherIcon = other.querySelector('.faq-icon');
+            if (otherBtn && otherContent) {
+              otherBtn.setAttribute('aria-expanded', 'false');
+              otherContent.classList.add('hidden');
+              otherContent.classList.remove('block');
+              if (otherIcon) {
+                otherIcon.classList.remove('rotate-180', 'text-blue');
+              }
+            }
+          });
+
+          // Toggle current
+          if (!isExpanded) {
+            btn.setAttribute('aria-expanded', 'true');
+            content.classList.remove('hidden');
+            content.classList.add('block');
+            if (icon) {
+              icon.classList.add('rotate-180', 'text-blue');
+            }
+          }
+        });
+      });
+    }
+
+    // 6. INTERACTIVE CALENDAR & SMART BOOKING ENGINE
     function initEmbeddedBookingCalendar() {
       const form = document.getElementById('lead-demo-form') as HTMLFormElement | null;
       const successBox = document.getElementById('demo-success-box');
@@ -1102,6 +1279,20 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
       if (!form || !daysGrid || !slotsGrid) return;
 
+      // Active sites pills selector setup
+      const sitesPills = document.querySelectorAll('.sites-pill-btn');
+      const hiddenSitesInput = document.getElementById('demo-sites') as HTMLInputElement | null;
+      sitesPills.forEach((pill) => {
+        pill.addEventListener('click', () => {
+          sitesPills.forEach((p) => {
+            p.className = 'sites-pill-btn py-2 px-3 text-xs font-medium rounded-lg border border-line bg-white text-ink hover:bg-slate-50 transition-all cursor-pointer text-center';
+          });
+          pill.className = 'sites-pill-btn is-active py-2 px-3 text-xs font-bold rounded-lg bg-blue text-white shadow-xs transition-all cursor-pointer text-center';
+          const val = pill.getAttribute('data-sites');
+          if (hiddenSitesInput && val) hiddenSitesInput.value = val;
+        });
+      });
+
       const timeSlots = [
         '10:00 AM',
         '11:30 AM',
@@ -1115,6 +1306,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       let browseYear = today.getFullYear();
       let browseMonth = today.getMonth();
 
+      // Smart default: Tomorrow at 11:30 AM IST (Skip Sunday)
       let selectedDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1);
       if (selectedDate.getDay() === 0) {
         selectedDate.setDate(selectedDate.getDate() + 1);
@@ -1273,7 +1465,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         const phone = (document.getElementById('demo-phone') as HTMLInputElement)?.value.trim();
         const email = (document.getElementById('demo-email') as HTMLInputElement)?.value.trim();
         const company = (document.getElementById('demo-company') as HTMLInputElement)?.value.trim();
-        const activeSites = (document.getElementById('demo-sites') as HTMLSelectElement)?.value;
+        const activeSites = hiddenSitesInput?.value || '3-5';
         const scheduledDate = bookingDateInput?.value;
         const scheduledTime = bookingTimeInput?.value;
 
@@ -1349,7 +1541,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             errorBox.classList.remove('hidden');
           }
           if (submitBtn) submitBtn.disabled = false;
-          if (submitBtnText) submitBtnText.textContent = 'Confirm Demo Booking';
+          if (submitBtnText) submitBtnText.textContent = 'Confirm 30-Min Demo Booking';
         }
       });
     }
@@ -1437,6 +1629,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       initMotionAnimations();
       initStickyScrollChoreography();
       initCounters();
+      initFaqAccordion();
       initEmbeddedBookingCalendar();
     }
 

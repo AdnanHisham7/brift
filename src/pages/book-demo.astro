@@ -22,10 +22,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   title="Schedule a Product Demo — Brift"
   description="Book a 30-minute 1-on-1 walkthrough of Brift Construction OS. See how daily attendance, material challans, and contractor advances are managed in real time."
 >
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 space-y-8">
     
     <!-- Top Back Navigation -->
-    <div class="mb-6 sm:mb-8">
+    <div>
       <a
         href={`${base}/`}
         class="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-500 hover:text-blue transition-colors group"
@@ -36,16 +36,42 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     </div>
 
     <!-- Clean Header Banner -->
-    <div class="max-w-2xl mb-8 sm:mb-10 space-y-2.5">
+    <div class="max-w-3xl space-y-2.5">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-mono font-semibold uppercase tracking-wider text-blue bg-blue/10 border border-blue/20">
         <span>30-Minute Live Walkthrough</span>
       </div>
       <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
-        Book a 1-on-1 Product Demo
+        Book Your 1-on-1 Product Demo
       </h1>
       <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
-        Select a date and time slot below. We will show you how Brift tracks daily muster rolls, vendor delivery challans, and cash advances live in the software — tailored to your active site count.
+        See how Brift locks daily muster rolls, vendor delivery challans, and cash advances live in the software — tailored to your active site count.
       </p>
+    </div>
+
+    <!-- Instant 1-Click WhatsApp Quick Path (Fastest & Easiest) -->
+    <div class="rounded-2xl border-2 border-emerald-500/30 bg-emerald-50/50 p-5 sm:p-7 shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
+      <div class="space-y-1.5 text-left">
+        <div class="flex items-center gap-2">
+          <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-emerald-600 text-white">
+            ⚡ FASTEST OPTION • 30 SECONDS
+          </span>
+          <span class="text-xs text-emerald-900 font-semibold hidden sm:inline">Instant human confirmation</span>
+        </div>
+        <h2 class="text-lg sm:text-xl font-bold text-slate-900">Prefer Booking Directly via WhatsApp?</h2>
+        <p class="text-xs sm:text-sm text-slate-600 max-w-2xl leading-relaxed">
+          Skip filling forms. Chat directly with our Solutions Desk. We will immediately confirm your 30-minute Google Meet or phone walkthrough.
+        </p>
+      </div>
+      <a
+        href="https://wa.me/919037532036?text=Hi%20Brift%20team,%20I%20would%20like%20to%20schedule%20a%2030-minute%20walkthrough%20of%20Brift%20for%20my%20construction%20company"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center gap-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white px-6 sm:px-7 py-3.5 sm:py-4 text-xs sm:text-sm font-bold shadow-sm hover:shadow transition-all whitespace-nowrap shrink-0 group active:scale-98"
+      >
+        <MessageSquare class="w-4 h-4" />
+        <span>Book via WhatsApp Desk</span>
+        <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+      </a>
     </div>
 
     <!-- Main Booking Layout -->
@@ -57,7 +83,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         <!-- Walkthrough Summary Card -->
         <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-xs space-y-5">
           <h2 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-500">
-            What to Expect
+            What to Expect in Your Session
           </h2>
 
           <div class="space-y-4 text-xs sm:text-sm">
@@ -114,14 +140,14 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         <!-- Quick Contact Assistance -->
         <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-xs text-slate-700 space-y-2.5">
           <span class="font-bold uppercase tracking-wider text-[11px] font-mono text-slate-900 block">
-            Prefer immediate scheduling?
+            Prefer direct assistance?
           </span>
           <p class="text-slate-600 leading-relaxed text-xs">
-            Connect directly with our team on WhatsApp or phone for immediate assistance:
+            Connect directly with our solutions desk via WhatsApp or phone:
           </p>
           <div class="flex flex-wrap gap-2 pt-1">
             <a
-              href="https://wa.me/919037532036?text=Hi%20Brift%20team,%20I%20would%20like%20to%20schedule%20a%20demo%20for%20my%20construction%20company"
+              href="https://wa.me/919037532036"
               target="_blank"
               rel="noopener noreferrer"
               class="inline-flex items-center gap-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 font-semibold transition-all shadow-xs"
@@ -147,7 +173,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           
           <div class="border-b border-slate-100 pb-4 mb-6 flex items-center justify-between">
             <div>
-              <span class="text-[11px] font-mono font-semibold uppercase tracking-wider text-blue block">Direct Scheduling</span>
+              <span class="text-[11px] font-mono font-semibold uppercase tracking-wider text-blue block">Self-Serve Scheduler</span>
               <h2 class="text-xl sm:text-2xl font-bold text-slate-900">Select Date & Time Slot</h2>
             </div>
             <span class="text-[10px] font-mono text-slate-600 bg-slate-100 border border-slate-200 px-2.5 py-1 rounded-full font-medium">
@@ -163,9 +189,18 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
               <div class="flex items-center justify-between">
                 <span class="text-xs font-mono font-bold text-slate-800 uppercase tracking-wide flex items-center gap-1.5">
                   <Calendar class="w-4 h-4 text-blue" />
-                  <span>1. Choose Preferred Date</span>
+                  <span>1. Choose Preferred Date & Time</span>
                 </span>
                 <span id="cal-selected-day-label" class="text-xs font-mono text-blue font-bold"></span>
+              </div>
+
+              <!-- Selected Slot Summary Banner -->
+              <div id="slot-selection-summary" class="flex items-center justify-between rounded-xl bg-blue/10 border border-blue/20 px-3.5 py-2.5 text-xs text-blue-950">
+                <div class="flex items-center gap-2 truncate">
+                  <Clock class="w-4 h-4 text-blue shrink-0" />
+                  <span class="truncate">Reserved Slot: <strong id="selected-slot-text">Tomorrow @ 11:30 AM IST</strong></span>
+                </div>
+                <span class="text-[10px] font-mono text-blue-800 bg-blue-100 px-2 py-0.5 rounded-md font-bold shrink-0">30 MINS</span>
               </div>
 
               <!-- Visual Month & Days Calendar Widget -->
@@ -204,17 +239,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
               <!-- Time Slot Grid -->
               <div class="space-y-2 pt-1">
-                <label class="block text-xs font-mono text-slate-700 font-semibold">2. Choose Time Slot (30 Mins) *</label>
+                <label class="block text-xs font-mono text-slate-700 font-semibold">2. Choose Time Slot (Tap to change) *</label>
                 <div id="time-slots-grid" class="grid grid-cols-3 sm:grid-cols-6 gap-2"></div>
-              </div>
-
-              <!-- Selected Slot Summary Banner -->
-              <div id="slot-selection-summary" class="flex items-center justify-between rounded-xl bg-blue/10 border border-blue/20 px-3.5 py-2.5 text-xs text-blue-950">
-                <div class="flex items-center gap-2 truncate">
-                  <Clock class="w-4 h-4 text-blue shrink-0" />
-                  <span class="truncate">Selected Slot: <strong id="selected-slot-text"></strong></span>
-                </div>
-                <span class="text-[10px] font-mono text-blue-800 bg-blue-100 px-2 py-0.5 rounded-md font-bold shrink-0">30 MINS</span>
               </div>
 
               <!-- Hidden form inputs -->
@@ -257,18 +283,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <div>
-                  <label for="demo-email" class="block text-xs font-medium text-slate-700 mb-1">Work Email (for Calendar Invite) *</label>
-                  <input
-                    type="email"
-                    id="demo-email"
-                    name="email"
-                    required
-                    placeholder="name@company.com"
-                    class="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-blue focus:ring-1 focus:ring-blue focus:outline-none transition-colors"
-                  />
-                </div>
-
-                <div>
                   <label for="demo-company" class="block text-xs font-medium text-slate-700 mb-1">Company / Contractor Name *</label>
                   <input
                     type="text"
@@ -279,21 +293,54 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                     class="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-blue focus:ring-1 focus:ring-blue focus:outline-none transition-colors"
                   />
                 </div>
+
+                <div>
+                  <label for="demo-email" class="block text-xs font-medium text-slate-700 mb-1">Work Email (for Google Meet invite) *</label>
+                  <input
+                    type="email"
+                    id="demo-email"
+                    name="email"
+                    required
+                    placeholder="name@company.com"
+                    class="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-blue focus:ring-1 focus:ring-blue focus:outline-none transition-colors"
+                  />
+                </div>
               </div>
 
-              <div>
-                <label for="demo-sites" class="block text-xs font-medium text-slate-700 mb-1">Active Projects Count *</label>
-                <select
-                  id="demo-sites"
-                  name="active_sites"
-                  required
-                  class="w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 focus:border-blue focus:ring-1 focus:ring-blue focus:outline-none transition-colors"
-                >
-                  <option value="1-2">1 to 2 Active Sites</option>
-                  <option value="3-5" selected>3 to 5 Active Sites</option>
-                  <option value="6-10">6 to 10 Active Sites</option>
-                  <option value="10+">10+ Multi-Site Projects</option>
-                </select>
+              <!-- Active Projects Count Pills -->
+              <div class="space-y-1.5">
+                <label class="block text-xs font-medium text-slate-700">Active Projects Count *</label>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="sites-pills-container">
+                  <button
+                    type="button"
+                    data-sites="1-2"
+                    class="sites-pill-btn py-2 px-3 text-xs font-medium rounded-lg border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 transition-all cursor-pointer text-center"
+                  >
+                    1–2 Sites
+                  </button>
+                  <button
+                    type="button"
+                    data-sites="3-5"
+                    class="sites-pill-btn is-active py-2 px-3 text-xs font-bold rounded-lg bg-blue text-white shadow-xs transition-all cursor-pointer text-center"
+                  >
+                    3–5 Sites
+                  </button>
+                  <button
+                    type="button"
+                    data-sites="6-10"
+                    class="sites-pill-btn py-2 px-3 text-xs font-medium rounded-lg border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 transition-all cursor-pointer text-center"
+                  >
+                    6–10 Sites
+                  </button>
+                  <button
+                    type="button"
+                    data-sites="10+"
+                    class="sites-pill-btn py-2 px-3 text-xs font-medium rounded-lg border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 transition-all cursor-pointer text-center"
+                  >
+                    10+ Multi-Site
+                  </button>
+                </div>
+                <input type="hidden" id="demo-sites" name="active_sites" value="3-5" />
               </div>
             </div>
 
@@ -308,7 +355,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                 class="w-full rounded-xl bg-blue hover:bg-blue-hover text-white font-bold text-sm py-3.5 px-6 shadow-sm transition-all cursor-pointer active:scale-98 flex items-center justify-center gap-2 group"
               >
                 <Calendar class="w-4 h-4" />
-                <span id="submit-demo-btn-text">Confirm Demo Booking</span>
+                <span id="submit-demo-btn-text">Confirm 30-Min Demo Booking</span>
                 <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
@@ -351,17 +398,17 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                 </div>
                 <div>
                   <span class="text-slate-500 block text-[11px]">Attendee:</span>
-                  <span id="conf-attendee" class="text-slate-900 font-medium"></span>
+                  <span id="conf-attendee" class="text-slate-800 font-medium"></span>
                 </div>
                 <div>
                   <span class="text-slate-500 block text-[11px]">Contact:</span>
-                  <span id="conf-phone" class="text-slate-900 font-mono"></span>
+                  <span id="conf-phone" class="text-slate-800 font-mono"></span>
                 </div>
               </div>
             </div>
 
-            <!-- Calendar Action Buttons -->
-            <div class="space-y-2 pt-1">
+            <!-- Action Buttons -->
+            <div class="space-y-2.5 pt-2">
               <a
                 id="btn-google-cal"
                 href="#"
@@ -426,6 +473,20 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       const errorBox = document.getElementById('demo-error-box');
 
       if (!form || !daysGrid || !slotsGrid) return;
+
+      // Active sites pills selector setup
+      const sitesPills = document.querySelectorAll('.sites-pill-btn');
+      const hiddenSitesInput = document.getElementById('demo-sites');
+      sitesPills.forEach((pill) => {
+        pill.addEventListener('click', () => {
+          sitesPills.forEach((p) => {
+            p.className = 'sites-pill-btn py-2 px-3 text-xs font-medium rounded-lg border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 transition-all cursor-pointer text-center';
+          });
+          pill.className = 'sites-pill-btn is-active py-2 px-3 text-xs font-bold rounded-lg bg-blue text-white shadow-xs transition-all cursor-pointer text-center';
+          const val = pill.getAttribute('data-sites');
+          if (hiddenSitesInput && val) hiddenSitesInput.value = val;
+        });
+      });
 
       const timeSlots = [
         '10:00 AM',
@@ -596,7 +657,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         const phone = document.getElementById('demo-phone')?.value.trim();
         const email = document.getElementById('demo-email')?.value.trim();
         const company = document.getElementById('demo-company')?.value.trim();
-        const activeSites = document.getElementById('demo-sites')?.value;
+        const activeSites = hiddenSitesInput?.value || '3-5';
         const scheduledDate = bookingDateInput?.value;
         const scheduledTime = bookingTimeInput?.value;
 

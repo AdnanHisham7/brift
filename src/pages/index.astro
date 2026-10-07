@@ -124,29 +124,29 @@ const faqItems = [
 
         </div>
 
-        <!-- Right: Editorial Brift UI Showcase (Custom Brand Image) -->
+        <!-- Right: Editorial Brift UI Showcase (Tall Hero Visual) -->
         <div data-motion="zoom-in" data-delay="200" class="lg:col-span-6 relative">
-          <div class="relative rounded-2xl sm:rounded-3xl border border-line bg-white p-3 sm:p-4 shadow-[0_15px_45px_-10px_rgba(14,17,22,0.1)] overflow-hidden">
+          <div class="relative rounded-2xl sm:rounded-3xl border border-line bg-white p-2.5 sm:p-3.5 shadow-[0_15px_45px_-10px_rgba(14,17,22,0.1)] overflow-hidden">
             
             <img
-              src={`${base}/images/brift_hero_editorial.jpg`}
-              alt="Brift Construction Operations Platform UI on laptop and mobile at active construction site"
-              class="w-full h-auto rounded-xl sm:rounded-2xl object-cover shadow-xs"
+              src={`${base}/images/brift_hero_tall.png`}
+              alt="Brift Construction Operations Platform - Where Did The Money Go - Connected Operational Trail"
+              class="w-full h-auto sm:max-h-[640px] lg:max-h-[680px] rounded-xl sm:rounded-2xl object-contain lg:object-cover object-top shadow-xs"
               loading="eager"
               fetchpriority="high"
-              width="1280"
-              height="720"
+              width="842"
+              height="1052"
             />
 
             <!-- Sliced Telemetry Overlay Chips -->
-            <div class="absolute top-6 left-6 rounded-xl border border-white/90 bg-white/95 backdrop-blur-md p-2.5 sm:p-3 shadow-lg hidden sm:block">
+            <div class="absolute bottom-6 left-6 rounded-xl border border-white/90 bg-white/95 backdrop-blur-md p-2.5 sm:p-3 shadow-lg hidden sm:block">
               <div class="flex items-center gap-2">
                 <span class="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
                   <Check class="w-3.5 h-3.5" />
                 </span>
                 <div>
-                  <span class="text-[9px] uppercase font-mono tracking-wider text-muted block">Attendance Record</span>
-                  <span class="text-xs font-bold text-ink block">Locked & Timestamped</span>
+                  <span class="text-[9px] uppercase font-mono tracking-wider text-muted block">Live Sync</span>
+                  <span class="text-xs font-bold text-ink block">Site to Office Connected</span>
                 </div>
               </div>
             </div>
@@ -156,7 +156,7 @@ const faqItems = [
                 <div class="h-2.5 w-2.5 rounded-full bg-emerald-500 animate-ping"></div>
                 <div>
                   <span class="text-[9px] uppercase font-mono tracking-wider text-muted block">Basement Mode</span>
-                  <span class="text-xs font-bold text-ink block">0 Signal • Auto-Sync</span>
+                  <span class="text-xs font-bold text-ink block">100% Offline Active</span>
                 </div>
               </div>
             </div>
@@ -356,13 +356,13 @@ const faqItems = [
               <CheckCircle2 class="w-4 h-4 text-emerald-600 shrink-0" />
               <span><strong>Result:</strong> Zero forgotten pocket diary advances. Both parties see the same audited record.</span>
             </div>
-            <!-- Mobile Fallback Image (No Gaps) -->
+            <!-- Mobile Fallback Image -->
             <div class="block lg:hidden pt-3">
-              <div class="rounded-xl border border-line overflow-hidden shadow-sm bg-slate-900">
+              <div class="rounded-xl border border-line overflow-hidden shadow-sm">
                 <img
-                  src={`${base}/images/brift_cash_advance.png`}
-                  alt="Subcontractor cash advance and auto-deduction settlement ledger in Brift"
-                  class="w-full h-auto object-cover object-top"
+                  src={`${base}/images/brift_m3_settlement.jpg`}
+                  alt="Cash advance source identification and settlement in Brift"
+                  class="w-full h-auto object-cover"
                   loading="lazy"
                   decoding="async"
                 />
@@ -388,13 +388,13 @@ const faqItems = [
               <CheckCircle2 class="w-4 h-4 text-emerald-600 shrink-0" />
               <span><strong>Result:</strong> Complete peace of mind and verified profit margins across all active sites.</span>
             </div>
-            <!-- Mobile Fallback Image (No Gaps) -->
+            <!-- Mobile Fallback Image -->
             <div class="block lg:hidden pt-3">
-              <div class="rounded-xl border border-line overflow-hidden shadow-sm bg-slate-900">
+              <div class="rounded-xl border border-line overflow-hidden shadow-sm">
                 <img
-                  src={`${base}/images/brift_admin_dashboard.png`}
+                  src={`${base}/images/brift_m4_reconciled.jpg`}
                   alt="Multi-Site Executive Overview Dashboard in Brift"
-                  class="w-full h-auto object-cover object-top"
+                  class="w-full h-auto object-cover"
                   loading="lazy"
                   decoding="async"
                 />
@@ -475,13 +475,13 @@ const faqItems = [
               </div>
             </div>
 
-            <!-- Screen Slide 3: Cash Advances Auto-Deductions (Real UI Image - No Gap) -->
+            <!-- Screen Slide 3: Cash Advances & Fund Source Tracking -->
             <div id="stage-slide-3" class="stage-screen-slide is-inactive">
-              <div class="relative w-full h-[410px] rounded-xl overflow-hidden border border-line shadow-xs bg-slate-900">
+              <div class="relative w-full h-[410px] rounded-xl overflow-hidden border border-line shadow-xs">
                 <img
-                  src={`${base}/images/brift_cash_advance.png`}
-                  alt="Subcontractor cash advance and auto-deduction settlement ledger in Brift"
-                  class="w-full h-full object-cover object-top"
+                  src={`${base}/images/brift_m3_settlement.jpg`}
+                  alt="Subcontractor cash advance and fund source tracking in Brift"
+                  class="w-full h-full object-cover"
                   loading="lazy"
                   decoding="async"
                 />
@@ -494,19 +494,19 @@ const faqItems = [
                   </span>
                   <div>
                     <span class="text-[9px] uppercase font-mono tracking-wider text-muted block">Advance Settlement</span>
-                    <span class="text-xs font-bold text-ink">₹35,000 Running Bill Advance Synced</span>
+                    <span class="text-xs font-bold text-ink">Company Funds vs Site Manager Funds Tracked</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Screen Slide 4: Owner Executive Multi-Site Dashboard (Real UI Image - No Gap) -->
+            <!-- Screen Slide 4: Owner Executive Multi-Site Dashboard -->
             <div id="stage-slide-4" class="stage-screen-slide is-inactive">
-              <div class="relative w-full h-[410px] rounded-xl overflow-hidden border border-line shadow-xs bg-slate-900">
+              <div class="relative w-full h-[410px] rounded-xl overflow-hidden border border-line shadow-xs">
                 <img
-                  src={`${base}/images/brift_admin_dashboard.png`}
-                  alt="Multi-site executive owner dashboard and PDF audit reports in Brift"
-                  class="w-full h-full object-cover object-top"
+                  src={`${base}/images/brift_m4_reconciled.jpg`}
+                  alt="From calling every site to seeing every site reconciled in Brift"
+                  class="w-full h-full object-cover"
                   loading="lazy"
                   decoding="async"
                 />
@@ -518,8 +518,8 @@ const faqItems = [
                     <BarChart3 class="w-4 h-4 font-bold" />
                   </span>
                   <div>
-                    <span class="text-[9px] uppercase font-mono tracking-wider text-muted block">Multi-Site Reconciliation</span>
-                    <span class="text-xs font-bold text-ink">All Sites Live &bull; 0 Phone Calls Needed</span>
+                    <span class="text-[9px] uppercase font-mono tracking-wider text-muted block">Executive Reconcile</span>
+                    <span class="text-xs font-bold text-ink">4 Active Sites &bull; ₹28.5L Live Company Funds</span>
                   </div>
                 </div>
               </div>
